@@ -1,8 +1,333 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JavaStduyRoad</title>
+    <url>/2020/06/08/JavaRoad/</url>
+    <content><![CDATA[<blockquote class="blockquote-center">本篇总结Java学习资源路线</blockquote>
+
+<ol>
+<li>根据JavaGuid<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/Java基础知识.md" target="_blank" rel="noopener">补基础</a>、</li>
+<li>重读《Head First  Java》</li>
+</ol>
+<blockquote>
+<p>文件名：JavaRoad</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaBasics（一）</title>
+    <url>/2020/06/09/JB1/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md#1-java-%E5%9F%BA%E6%9C%AC%E5%8A%9F" target="_blank" rel="noopener">Java基本功--JAVA入门</a></blockquote>
+
+<h1 id="Java-入门"><a href="#Java-入门" class="headerlink" title="Java 入门"></a>Java 入门</h1><h2 id="JVM-JDK-JRE"><a href="#JVM-JDK-JRE" class="headerlink" title="JVM JDK JRE"></a>JVM JDK JRE</h2><p>Java 虚拟机（JVM）是运行 Java 字节码的虚拟机。JVM 有针对不同系统的特定实现（Windows，Linux，macOS），目的是<strong>使用相同的字节码</strong>，它们都会给出相同的结果。<strong>字节码</strong>和不同系统的 <strong>JVM</strong> 实现是 Java 语言“一次编译，随处可以运行”的关键所在。</p>
+<p><strong>什么是字节码?采用字节码的好处是什么?</strong></p>
+<blockquote>
+<p>在 Java 中，JVM 可以理解的代码就叫做<code>字节码</code>（即扩展名为 <code>.class</code> 的文件），它不面向任何特定的处理器，只面向虚拟机。Java 语言通过字节码的方式，在一定程度上解决了传统解释型语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以 Java 程序运行时比较高效，而且，由于字节码并不针对一种特定的机器，因此，Java 程序无须重新编译便可在多种不同操作系统的计算机上运行。</p>
+</blockquote>
+<p><img src="/images/JB1/image-20200609155856790.png" alt="image-20200609155856790"></p>
+<p>【2020/6/12 坑】JIT AOT -&gt; <strong>Java 是编译与解释共存的语言</strong></p>
+<h4 id="为什么说-Java-语言“编译与解释并存”？"><a href="#为什么说-Java-语言“编译与解释并存”？" class="headerlink" title="为什么说 Java 语言“编译与解释并存”？"></a>为什么说 Java 语言“编译与解释并存”？</h4><p>高级编程语言按照程序的执行方式分为<strong>编译</strong>型和<strong>解释</strong>型两种。</p>
+<p>编译型语言是指编译器针对特定的操作系统将源代码<strong>一次性翻译</strong>成可被该平台执行的<strong>机器码</strong>；</p>
+<p>解释型语言是指解释器对源程序逐行解释成特定平台的机器码并<strong>立即执行</strong>。</p>
+<p>例子：你想阅读一本英文名著，你可以找一个英文翻译人员帮助你阅读， 有两种选择方式，你可以先等翻译人员将全本的英文名著（也就是源码）都翻译成汉语，再去阅读，也可以让翻译人员翻译一段，你在旁边阅读一段，慢慢把书读完。</p>
+<p>Java 语言既具有编译型语言的特征，也具有解释型语言的特征，</p>
+<p>因为 Java 程序要经过先编译，后解释两个步骤，由 Java 编写的程序需要先经过编译步骤，生成字节码（*.class 文件），这种字节码必须由 Java 解释器来解释执行。</p>
+<p>因此，我们可以认为 Java 语言编译与解释并存。</p>
+<h2 id="JDK-amp-JRE"><a href="#JDK-amp-JRE" class="headerlink" title="JDK &amp;JRE"></a>JDK &amp;JRE</h2><p><strong>JDK</strong> 是 Java Development Kit，它是功能齐全的 Java SDK。它拥有 JRE 所拥有的一切，还有编译器（javac）和工具（如 javadoc 和 jdb）。它能够创建和编译程序。<strong>JDK = SDK plus + JRE +…</strong></p>
+<p><strong>JRE</strong> 是 Java 运行时环境。它是运行已编译 Java 程序所需的所有内容的集合，包括 Java 虚拟机（JVM），Java 类库，java 命令和其他的一些基础构件。但是，它不能用于创建新程序。</p>
+<h3 id="Oracle-JDK-和-OpenJDK-的对比"><a href="#Oracle-JDK-和-OpenJDK-的对比" class="headerlink" title="Oracle JDK 和 OpenJDK 的对比"></a>Oracle JDK 和 OpenJDK 的对比</h3><ol>
+<li>OpenJDK<strong>完全开源</strong>，Oracle JDK 是 OpenJDK 的一个实现，并<strong>不是完全开源</strong>的；</li>
+<li>稳定性： Oracle JDK &gt;  OpenJDK</li>
+<li>响应性和 JVM : Oracle JDK &gt; OpenJDK</li>
+</ol>
+<h3 id="Java-和-C-的区别"><a href="#Java-和-C-的区别" class="headerlink" title="Java 和 C++的区别?"></a>Java 和 C++的区别?</h3><ol>
+<li>都是面向对象的语言，都支持封装、继承和多态</li>
+<li>Java 不提供指针来直接访问内存，程序内存更加安全</li>
+<li>Java 的类是单继承的，C++ 支持多重继承；虽然 Java 的类不可以多继承，但是接口可以多继承</li>
+<li>Java 有自动内存管理机制，不需要程序员手动释放无用内存</li>
+<li>在 C 语言中，字符串或字符数组最后都会有一个额外的字符‘\0’来表示结束。但是，Java 语言中<a href="https://blog.csdn.net/sszgg2006/article/details/49148189" target="_blank" rel="noopener">没有结束符这一概念</a>。</li>
+</ol>
+<h3 id="什么是-Java-程序的主类-应用程序和小程序的主类有何不同-amp-Java-应用程序与小程序之间有哪些差别"><a href="#什么是-Java-程序的主类-应用程序和小程序的主类有何不同-amp-Java-应用程序与小程序之间有哪些差别" class="headerlink" title="什么是 Java 程序的主类 应用程序和小程序的主类有何不同?&amp;Java 应用程序与小程序之间有哪些差别?"></a>什么是 Java 程序的主类 应用程序和小程序的主类有何不同?&amp;Java 应用程序与小程序之间有哪些差别?</h3><p>【2020/6/12 坑】小程序</p>
+<p>一个程序中可以有多个类，但只能有一个类是主类。在 Java 应用程序中，这个主类是指包含 main（）方法的类。</p>
+<p>而在 Java 小程序中，这个主类是一个继承自系统类 JApplet 或 Applet 的子类。应用程序的主类不一定要求是 public 类，但小程序的主类要求必须是 public 类。</p>
+<p>主类是 Java 程序执行的入口点。</p>
+<p>简单说应用程序是从主线程启动(也就是 <code>main()</code> 方法)。</p>
+<p>applet 小程序没有 <code>main()</code> 方法，主要是嵌在浏览器页面上运行(调用<code>init()</code>或者<code>run()</code>来启动)，嵌入浏览器这点跟 flash 的小游戏类似。</p>
+<h3 id="import-java-和-javax-有什么区别？"><a href="#import-java-和-javax-有什么区别？" class="headerlink" title="import java 和 javax 有什么区别？"></a>import java 和 javax 有什么区别？</h3><p>【2020/6/12 坑】</p>
+<h2 id="Java-语法"><a href="#Java-语法" class="headerlink" title="Java 语法"></a>Java 语法</h2><h3 id="字符型常量和字符串常量的区别"><a href="#字符型常量和字符串常量的区别" class="headerlink" title="字符型常量和字符串常量的区别?"></a>字符型常量和字符串常量的区别?</h3><ol>
+<li><p>形式上: 字符常量是单引号引起<code>&#39; &#39;</code>的<strong>一个字符</strong>; 字符串常量是双引号 <code>&quot; &quot;</code> 引起的<strong>若干个字符</strong></p>
+</li>
+<li><p>含义上: 字符常量相当于一个<strong>整型值</strong>( ASCII 值),可以参加表达式运算; </p>
+<p>字符串常量代表一个<strong>地址值</strong>(该字符串在内存中存放位置)</p>
+</li>
+<li><p>占内存大小 字符常量只占 2 个字节; 字符串常量占若干个字节 (<strong>注意： char 在 Java 中占两个字节</strong>)</p>
+</li>
+</ol>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p><strong>若编程语言足够有表达力，就不需要注释，尽量通过代码来阐述</strong></p>
+<p>去掉下面复杂的注释，只需要创建一个与注释所言同一事物的函数即可</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// check to see if the employee is eligible for full benefits</span></span><br><span class="line"><span class="keyword">if</span> ((employee.flags &amp; HOURLY_FLAG) &amp;&amp; (employee.age &gt; <span class="number">65</span>))</span><br></pre></td></tr></table></figure></div>
+
+<p>应替换为</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (employee.isEligibleForFullBenefits())</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="标识符和关键字的区别是什么？"><a href="#标识符和关键字的区别是什么？" class="headerlink" title="标识符和关键字的区别是什么？"></a>标识符和关键字的区别是什么？</h3><p>在我们编写程序的时候，需要大量地为程序、类、变量、方法等取名字，于是就有了标识符，简单来说，<strong>标识符就是一个名字</strong>。</p>
+<p>但是有一些标识符，Java 语言已经赋予了其特殊的含义，只能<strong>用于特定</strong>的地方，这种特殊的标识符就是<strong>关键字</strong>。因此，<strong>关键字是被赋予特殊含义的标识符</strong>。比如，在我们的日常生活中 ，“警察局”这个名字已经被赋予了特殊的含义，所以如果你开一家店，店的名字不能叫“警察局”，“警察局”就是我们日常生活中的关键字。</p>
+<h3 id="【坑】Java泛型了解么？什么是类型擦除？介绍一下常用的通配符？"><a href="#【坑】Java泛型了解么？什么是类型擦除？介绍一下常用的通配符？" class="headerlink" title="【坑】Java泛型了解么？什么是类型擦除？介绍一下常用的通配符？"></a>【坑】Java泛型了解么？什么是类型擦除？介绍一下常用的通配符？</h3><p>【2020/6/12 坑】Java 泛型（generics）是 JDK 5 中引入的一个新特性, 泛型提供了编译时<strong>类型安全检测机制</strong>，该机制允许程序员在编译时检测到<strong>非法的类型</strong>。泛型的本质是<strong>参数化类型</strong>，也就是说所操作的数据类型被指定为一个参数。</p>
+<p><strong>Java的泛型是伪泛型，这是因为Java在编译期间，所有的泛型信息都会被擦掉，这也就是通常所说类型擦除 。</strong> 更多关于类型擦除的问题，可以查看这篇文章：<a href="https://www.cnblogs.com/wuqinglong/p/9456193.html" target="_blank" rel="noopener">《Java泛型类型擦除以及类型擦除带来的问题》</a> 。</p>
+<h4 id="泛型一般有三种使用方式-泛型类、泛型接口、泛型方法。"><a href="#泛型一般有三种使用方式-泛型类、泛型接口、泛型方法。" class="headerlink" title="泛型一般有三种使用方式:泛型类、泛型接口、泛型方法。"></a>泛型一般有三种使用方式:泛型类、泛型接口、泛型方法。</h4><p><strong>1.泛型类</strong>：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//此处T可以随便写为任意标识，常见的如T、E、K、V等形式的参数常用于表示泛型</span></span><br><span class="line"><span class="comment">//在实例化泛型类时，必须指定T的具体类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generic</span>&lt;<span class="title">T</span>&gt;</span>&#123; </span><br><span class="line">   </span><br><span class="line">    <span class="keyword">private</span> T key;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Generic</span><span class="params">(T key)</span> </span>&#123; </span><br><span class="line">        <span class="keyword">this</span>.key = key;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getKey</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">return</span> key;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>如何实例化泛型类：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">Generic&lt;Integer&gt; genericInteger = <span class="keyword">new</span> Generic&lt;Integer&gt;(<span class="number">123456</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>2.泛型接口</strong> ：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Generator</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">method</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>实现泛型接口，不指定类型： </p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GeneratorImpl</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">Generator</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>实现泛型接口，指定类型：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GeneratorImpl</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">Generator</span>&lt;<span class="title">String</span>&gt;</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>3.泛型方法</strong> ：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt; E &gt; <span class="function"><span class="keyword">void</span> <span class="title">printArray</span><span class="params">( E[] inputArray )</span></span></span><br><span class="line"><span class="function"></span>&#123;         </span><br><span class="line">      <span class="keyword">for</span> ( E element : inputArray )&#123;        </span><br><span class="line">         System.out.printf( <span class="string">"%s "</span>, element );</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println();</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>使用：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 创建不同类型数组： Integer, Double 和 Character</span></span><br><span class="line">Integer[] intArray = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;;</span><br><span class="line">String[] stringArray = &#123; <span class="string">"Hello"</span>, <span class="string">"World"</span> &#125;;</span><br><span class="line">printArray( intArray  ); </span><br><span class="line">printArray( stringArray  );</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="常用的通配符为：-T，E，K，V，？"><a href="#常用的通配符为：-T，E，K，V，？" class="headerlink" title="常用的通配符为： T，E，K，V，？"></a><strong>常用的通配符为： T，E，K，V，？</strong></h4><ul>
+<li>？ 表示不确定的 java 类型</li>
+<li>T (type) 表示具体的一个java类型</li>
+<li>K V (key value) 分别代表java键值中的Key Value</li>
+<li>E (element) 代表Element</li>
+</ul>
+<p>更多关于Java 泛型中的通配符可以查看这篇文章：<a href="https://juejin.im/post/5d5789d26fb9a06ad0056bd9" target="_blank" rel="noopener">《聊一聊-JAVA 泛型中的通配符 T，E，K，V，？》</a></p>
+<h3 id="和equals的区别"><a href="#和equals的区别" class="headerlink" title="==和equals的区别"></a>==和equals的区别</h3><p><strong><code>=</code></strong> : 它的作用是判断两个对象的<strong>地址</strong>是不是相等。即判断两个对象是不是同一个对象。</p>
+<p>(<strong>基本数据类型==比较的是值，引用数据类型==比较的是内存地址</strong>)</p>
+<blockquote>
+<p>因为 Java 只有值传递，所以，对于 == 来说，不管是比较基本数据类型，还是引用数据类型的变量，其本质比较的都是值，只是引用类型变量存的值是对象的地址。</p>
+</blockquote>
+<p><strong><code>equals()</code></strong> : 它的作用也是判断两个对象是否相等，它不能用于比较基本数据类型的变量。<code>equals()</code>方法存在于<code>Object</code>类中，而<code>Object</code>类是所有类的直接或间接父类。</p>
+<p><code>Object</code>类<code>equals()</code>方法：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="hashCode-与-equals"><a href="#hashCode-与-equals" class="headerlink" title="hashCode()与 equals()"></a>hashCode()与 equals()</h3><h4 id="hashCode-介绍"><a href="#hashCode-介绍" class="headerlink" title="hashCode()介绍"></a><strong>hashCode()</strong>介绍</h4><p><code>hashCode()</code> 的作用是获取哈希码，也称为散列码；它实际上是返回一个 int 整数。这个哈希码的作用是确定该对象在哈希表中的索引位置。</p>
+<h4 id="【坑】什么要有-hashCode？"><a href="#【坑】什么要有-hashCode？" class="headerlink" title="【坑】什么要有 hashCode？"></a><strong>【坑】什么要有 hashCode？</strong></h4><p>例子：“<code>HashSet</code> 如何检查重复？”</p>
+<p>【2020/6/12 坑：Headfirst java 阅读：hashset】</p>
+<ol>
+<li>对象加入 <code>HashSet</code></li>
+<li><code>HashSet</code> 计算对象的 hashcode 值 判断对象加入的位置， </li>
+<li>同时也会与其他已经加入的对象的 hashcode 值作比较，</li>
+<li>如果没有相符的 hashcode，<code>HashSet</code> 会假设对象没有重复出现。</li>
+<li>但是如果发现有相同 hashcode 值的对象，</li>
+<li>这时会调用 equals（）方法来检查 hashcode 相等的对象是否真的相同。</li>
+<li>如果两者相同，<code>HashSet</code> 就不会让其加入操作成功。如果不同的话，就会重新散列到其他位置。【Headfirst java】</li>
+</ol>
+<ul>
+<li>结果：大大减少了 equals 的次数，提高了执行速度。</li>
+</ul>
+<h4 id="为什么重写-equals-时必须重写-hashCode-方法？"><a href="#为什么重写-equals-时必须重写-hashCode-方法？" class="headerlink" title="为什么重写 equals 时必须重写 hashCode 方法？"></a><strong>为什么重写 <code>equals</code> 时必须重写 <code>hashCode</code> 方法？</strong></h4><p>【2020/6/12 坑】如果两个对象相等，则 hashcode 一定也是相同的。两个对象相等,对两个对象分别调用 equals 方法都返回 true。但是，两个对象有相同的 hashcode 值，它们也不一定是相等的 。<strong>因此，equals 方法被覆盖过，则 <code>hashCode</code> 方法也必须被覆盖。</strong></p>
+<blockquote>
+<p>文件名：JB1</p>
+</blockquote>
+<h4 id="为什么两个对象有相同的-hashcode-值，它们也不一定是相等的？"><a href="#为什么两个对象有相同的-hashcode-值，它们也不一定是相等的？" class="headerlink" title="为什么两个对象有相同的 hashcode 值，它们也不一定是相等的？"></a><strong>为什么两个对象有相同的 hashcode 值，它们也不一定是相等的？</strong></h4><p>不同的对象有可能得到相同的 <code>hashCode</code></p>
+<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p>Java中有8种基本数据类型，分别为：</p>
+<ol>
+<li>6种数字类型 ：byte、short、int、long、float、double</li>
+<li>1种字符类型：char</li>
+<li>1中布尔型：boolean。</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li>Java 里使用 long 类型的数据一定要在数值后面加上 <strong>L</strong>，否则将作为整型解析：</li>
+<li><code>char a = &#39;h&#39;</code>char :单引号，<code>String a = &quot;hello&quot;</code> :双引号</li>
+</ol>
+<h4 id="自动装箱与拆箱【坑】"><a href="#自动装箱与拆箱【坑】" class="headerlink" title="自动装箱与拆箱【坑】"></a>自动装箱与拆箱【坑】</h4><ul>
+<li><strong>装箱</strong>：将基本类型用它们对应的引用类型包装起来；</li>
+<li><strong>拆箱</strong>：将包装类型转换为基本数据类型；</li>
+</ul>
+<h4 id="8种基本类型的包装类和常量池【坑】"><a href="#8种基本类型的包装类和常量池【坑】" class="headerlink" title="8种基本类型的包装类和常量池【坑】"></a>8种基本类型的包装类和常量池【坑】</h4><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="什么是方法的返回值-返回值在类的方法里的作用是什么"><a href="#什么是方法的返回值-返回值在类的方法里的作用是什么" class="headerlink" title="什么是方法的返回值?返回值在类的方法里的作用是什么?"></a>什么是方法的返回值?返回值在类的方法里的作用是什么?</h3><ul>
+<li>方法的返回值：获取到的某个方法体中的代码执行后产生的结果！（前提是该方法可能产生结果）。</li>
+<li>返回值的作用：接收出结果，使得它可以用于其他的操作！</li>
+</ul>
+<h3 id="为什么-Java-中只有值传递？"><a href="#为什么-Java-中只有值传递？" class="headerlink" title="为什么 Java 中只有值传递？"></a>为什么 Java 中只有值传递？</h3><ul>
+<li><p>按<strong>值</strong>调用(call by value)表示方法接收的是调用者提供的<strong>值</strong>。</p>
+</li>
+<li><p>按<strong>引用</strong>调用（call by reference)表示方法接收的是调用者提供的<strong>变量地址</strong>。【<strong>改地址</strong>】</p>
+<p>一个方法可以修改传递<strong>引用</strong>所对应的变量值，而不能修改传递<strong>值</strong>调用所对应的变量值。</p>
+</li>
+<li><p><strong>引用类型</strong>的按<strong>值</strong>传递，传递的是<strong>对象的地</strong>址</p>
+</li>
+<li><p>引用数据数据类型分为三种：<strong>① 接口 ② 类 ③ 数组</strong></p>
+</li>
+<li><p>对象引用是按<strong>值</strong>传递</p>
+</li>
+</ul>
+<h3 id="【坑】重载和重写的区别"><a href="#【坑】重载和重写的区别" class="headerlink" title="【坑】重载和重写的区别"></a>【坑】重载和重写的区别</h3><blockquote>
+<p>重载就是同样的一个方法能够根据<strong>输入数据的不同</strong>，做出<strong>不同的处理</strong></p>
+<p>重写就是当子类继承自父类的相同方法，输入数据一样，但要做出有别于父类的响应时，你就要<strong>覆盖父类方法</strong></p>
+</blockquote>
+<ul>
+<li><strong>重载</strong>就是同一个类中多个同名方法根据不同的传参来执行不同的逻辑处理。</li>
+<li><strong>重写</strong>就是子类对父类方法的重新改造，外部样子不能改变，<strong>内部逻辑可以改变</strong>。</li>
+</ul>
+<p>【坑 2020/6/13 重写不懂】</p>
+<h3 id="深拷贝-vs-浅拷贝"><a href="#深拷贝-vs-浅拷贝" class="headerlink" title="深拷贝 vs 浅拷贝"></a>深拷贝 vs 浅拷贝</h3><ol>
+<li><strong>浅拷贝</strong>：对基本数据类型进行值传递，对引用数据类型进行引用传递般的拷贝，此为浅拷贝。</li>
+<li><strong>深拷贝</strong>：对基本数据类型进行值传递，对引用数据类型，<strong>创建一个新的对象，并复制其内容</strong>，此为深拷贝。</li>
+</ol>
+<h3 id="方法的四种类型"><a href="#方法的四种类型" class="headerlink" title="方法的四种类型"></a>方法的四种类型</h3><p>1、无参数无返回值的方法</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 无参数无返回值的方法(如果方法没有返回值，不能不写，必须写void，表示没有返回值)</span><br><span class="line">public void f1() &#123;</span><br><span class="line">    System.out.println(&quot;无参数无返回值的方法&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>2、有参数无返回值的方法</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">* 有参数无返回值的方法</span><br><span class="line">* 参数列表由零组到多组“参数类型+形参名”组合而成，多组参数之间以英文逗号（,）隔开，形参类型和形参名之间以英文空格隔开</span><br><span class="line">*&#x2F;</span><br><span class="line">public void f2(int a, String b, int c) &#123;</span><br><span class="line">    System.out.println(a + &quot;--&gt;&quot; + b + &quot;--&gt;&quot; + c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>3、有返回值无参数的方法</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 有返回值无参数的方法（返回值可以是任意的类型,在函数里面必须有return关键字返回对应的类型）</span><br><span class="line">public int f3() &#123;</span><br><span class="line">    System.out.println(&quot;有返回值无参数的方法&quot;);</span><br><span class="line">    return 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>4、有返回值有参数的方法</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 有返回值有参数的方法</span><br><span class="line">public int f4(int a, int b) &#123;</span><br><span class="line">    return a * b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>5、return 在无返回值方法的特殊使用</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; return在无返回值方法的特殊使用</span><br><span class="line">public void f5(int a) &#123;</span><br><span class="line">    if (a&gt;10) &#123;</span><br><span class="line">    return;&#x2F;&#x2F;表示结束所在方法 （f5方法）的执行,下方的输出语句不会执行</span><br><span class="line">&#125;</span><br><span class="line">    System.out.println(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>JavaBasics</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>力扣刷题总结文章模板</title>
+    <url>/2020/06/11/LTemp/</url>
+    <content><![CDATA[<h1 id="题目：-名字-Easy-Medium-Hard"><a href="#题目：-名字-Easy-Medium-Hard" class="headerlink" title="题目： 名字   Easy/Medium/Hard"></a>题目： 名字   Easy/Medium/Hard</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li><h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3></li>
+<li></li>
+</ol>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li></li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
+<li><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4></li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li></li>
+</ul>
+<blockquote>
+<p>文件名：LTemp</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreArray</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>56 合并区间 medium</title>
+    <url>/2020/06/08/LEA1/</url>
+    <content><![CDATA[<h1 id="56-合并区间-medium"><a href="#56-合并区间-medium" class="headerlink" title="#56 合并区间 medium"></a>#56 <a href="https://leetcode-cn.com/explore/featured/card/array-and-string/198/introduction-to-array/770/" target="_blank" rel="noopener">合并区间</a> medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><p>无法解决：</p>
+<ul>
+<li>二维数组排序，自己想像冒泡那样移动</li>
+<li>合并后另外开一个数组的大小自己没办法掌握</li>
+</ul>
+<p>总结： JAVA语法和Arrays函数不熟练</p>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习<a href="https://leetcode-cn.com/problems/merge-intervals/solution/chi-jing-ran-yi-yan-miao-dong-by-sweetiee/" target="_blank" rel="noopener">题解</a>代码</h2><h3 id="合并逻辑："><a href="#合并逻辑：" class="headerlink" title="合并逻辑："></a><strong>合并逻辑</strong>：</h3><p> <strong>第一个区间的起始位置 ≤ 第二个区间的起始位置</strong>，如果不满足这个假设，交换这两个区间</p>
+<img src="/images/LEA/91d75169b1cdb15560d361f8cb7050adfe7906c955afbe8846b92d1beba8a0d7-image.png" alt="image.png" style="zoom:33%;" />
+
+<h3 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h3><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ol>
+<li><p>排序数组（sort是调优后的快排） 【按照区间起始值比较整个区间】</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">Arrays.sort(intervals, (v1, v2) -&gt; v1[<span class="number">0</span>] - v2[<span class="number">0</span>])</span><br></pre></td></tr></table></figure></div>
+
+<p>其中【不懂坑先记住】 <code>(v1, v2) -&gt; v1[0] - v2[0])</code> 是lambda表达式，传入一个自定义比较器Comparator</p>
+<p>逻辑：假设传来两个值，<code>v1</code> 与 <code>v2</code>，那么他们的先后顺序以 <code>v1[0]</code> 比 <code>v2[0]</code> 的结果为准，即：若 <code>v1[0] &lt; v2[0]</code> 则 <code>v1 &lt; v2</code>，若 <code>=</code> 则 <code>=</code>，若 <code>&gt;</code> 则 <code>&gt;</code></p>
+</li>
+<li><p>合并逻辑</p>
+<p>反向思考：<strong>排序后不合并的情况少</strong></p>
+</li>
+<li><p>拷贝数组，返回结果</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">Arrays.copyOf(res, idx + <span class="number">1</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>实现现数组的复制，返回复制后的数组，参数是被复制的数组和复制的长度</p>
+</li>
+</ol>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><h4 id="第一种：排序"><a href="#第一种：排序" class="headerlink" title="第一种：排序"></a>第一种：排序</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//简洁代码</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] merge(<span class="keyword">int</span>[][] intervals) &#123;</span><br><span class="line">        <span class="comment">// 先按照区间起始位置排序</span></span><br><span class="line">        Arrays.sort(intervals, (v1, v2) -&gt; v1[<span class="number">0</span>] - v2[<span class="number">0</span>]);</span><br><span class="line">        <span class="comment">// 遍历区间</span></span><br><span class="line">        <span class="keyword">int</span>[][] res = <span class="keyword">new</span> <span class="keyword">int</span>[intervals.length][<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> idx = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] interval: intervals) &#123;</span><br><span class="line">            <span class="comment">// 如果结果数组是空的，或者当前区间的起始位置 &gt; 结果数组中最后区间的终止位置，</span></span><br><span class="line">            <span class="comment">// 则不合并，直接将当前区间加入结果数组。</span></span><br><span class="line">            <span class="keyword">if</span> (idx == -<span class="number">1</span> || interval[<span class="number">0</span>] &gt; res[idx][<span class="number">1</span>]) &#123;</span><br><span class="line">                res[++idx] = interval;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 反之将当前区间合并至结果数组的最后区间</span></span><br><span class="line">                res[idx][<span class="number">1</span>] = Math.max(res[idx][<span class="number">1</span>], interval[<span class="number">1</span>]);</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Arrays.copyOf(res, idx + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="第二种：枚举【遍历】"><a href="#第二种：枚举【遍历】" class="headerlink" title="第二种：枚举【遍历】"></a>第二种：枚举【遍历】</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//类似冒泡，枚举所有可能</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[][] merge(<span class="keyword">int</span>[][] intervals) &#123;</span><br><span class="line">    <span class="keyword">int</span> len = intervals.length;</span><br><span class="line">    <span class="keyword">if</span> (len &lt; <span class="number">2</span>) <span class="keyword">return</span> intervals;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>; <span class="comment">// 合并次数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (intervals[i][<span class="number">0</span>] &lt;= intervals[j][<span class="number">1</span>] &amp;&amp; intervals[i][<span class="number">1</span>] &gt;= intervals[j][<span class="number">0</span>]) &#123;</span><br><span class="line">                intervals[j][<span class="number">0</span>] = Math.min(intervals[j][<span class="number">0</span>], intervals[i][<span class="number">0</span>]);</span><br><span class="line">                intervals[j][<span class="number">1</span>] = Math.max(intervals[j][<span class="number">1</span>], intervals[i][<span class="number">1</span>]);</span><br><span class="line">                intervals[i] = <span class="keyword">null</span>; <span class="comment">// 清空前者</span></span><br><span class="line">                cnt++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>[][] res = <span class="keyword">new</span> <span class="keyword">int</span>[len - cnt][<span class="number">2</span>]; <span class="comment">// len - cnt 合并后个数</span></span><br><span class="line">    <span class="keyword">int</span> ri = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] pair : intervals) &#123;</span><br><span class="line">        <span class="keyword">if</span> (pair != <span class="keyword">null</span>) res[ri++] = pair;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><p>if语句判断-1情况，后面越界可忽略</p>
+</li>
+<li><p><code>intervals[j] = new int []{start,end};</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> [] a = &#123;<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">a[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">a[<span class="number">1</span>] = <span class="number">3</span>;</span><br></pre></td></tr></table></figure></div>
+
+
+
+
+
+
+</li>
+</ul>
+<blockquote>
+<p>文件名：LEA1</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreArray</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面试题 01.07 旋转矩阵 medium</title>
+    <url>/2020/06/11/LEA2/</url>
+    <content><![CDATA[<h1 id="旋转矩阵-medium"><a href="#旋转矩阵-medium" class="headerlink" title="旋转矩阵 medium"></a><a href="https://leetcode-cn.com/problems/rotate-matrix-lcci/" target="_blank" rel="noopener">旋转矩阵</a> medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><p>无法解决：</p>
+<ul>
+<li>不带开销旋转出错值</li>
+</ul>
+<p>问题总结： 陷入拿辅助数组copy的思维定势</p>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习<a href="https://leetcode-cn.com/problems/merge-intervals/solution/chi-jing-ran-yi-yan-miao-dong-by-sweetiee/" target="_blank" rel="noopener">题解</a>代码</h2><h3 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h3><p> 观察旋转逻辑给出代码复现思路：【先进行转置然后对每一行以中点进行翻转】</p>
+<h3 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h3><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><p>原地翻转一个temp变量即可</p>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = matrix.length;</span><br><span class="line">        <span class="comment">// 先以对角线（左上-右下）为轴进行翻转</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[j][i];</span><br><span class="line">                matrix[j][i] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 再对每一行以中点进行翻转</span></span><br><span class="line">        <span class="keyword">int</span> mid = n &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; mid; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[i][n - <span class="number">1</span> - j];</span><br><span class="line">                matrix[i][n - <span class="number">1</span> - j] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><p><code>int mid = n &gt;&gt; 1;</code>:算术右移</p>
+<p><img src="/images/LEA2/image-20200611130319775.png" alt="image-20200611130319775"></p>
+<blockquote>
+<p>文件名：LEA2</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreArray</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello Hexo</title>
-    <url>/2020/06/07/hello-world/</url>
+    <url>/2020/06/07/hellohexo/</url>
     <content><![CDATA[<p>搭建完个人博客主站，主要参考以下网站：</p>
 <ol>
 <li><p><a href="https://tding.top/archives/aad98408.html" target="_blank" rel="noopener">小丁主题美化 </a></p>
@@ -15,6 +340,13 @@
 </li>
 </ol>
 <p>后续美化升级可以按照1，2来。</p>
+<h1 id="hexo-常用操作"><a href="#hexo-常用操作" class="headerlink" title="hexo 常用操作"></a>hexo 常用操作</h1><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">hexo deploy &#x2F;&#x2F;部署到服务器上</span><br></pre></td></tr></table></figure></div>
+
+
+
+<blockquote>
+<p>文件名：hellohexo</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>Hexo_NexT配置</category>
@@ -24,15 +356,337 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode_Explore_Array</title>
-    <url>/2020/06/08/LEA/</url>
-    <content><![CDATA[]]></content>
+    <title>面试题 01.08.零矩阵 Medium</title>
+    <url>/2020/06/11/LEA3/</url>
+    <content><![CDATA[<h1 id="题目：-面试题-01-08-零矩阵-Medium"><a href="#题目：-面试题-01-08-零矩阵-Medium" class="headerlink" title="题目： 面试题 01.08. 零矩阵 Medium"></a>题目： <a href="https://leetcode-cn.com/problems/zero-matrix-lcci/" target="_blank" rel="noopener">面试题 01.08. 零矩阵</a> Medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li>线性思维无法解决判断0为原本数据存在的还是后来生成的</li>
+</ol>
+<h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3><ol>
+<li>思路一：开两个一维数组存放要清理的行列</li>
+<li>思路二：需要设零的行i：将该行的第一列元素<code>matrix[i][0]</code>设为0，表示该行需要清零；<br>需要设为零的列j：将该列的第一行元素<code>matrix[0][j]</code>设为0，表示该列需要清零；<br>根据第一行和第一列的标记，进行清零操作</li>
+</ol>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习<a href="https://leetcode-cn.com/problems/merge-intervals/solution/chi-jing-ran-yi-yan-miao-dong-by-sweetiee/" target="_blank" rel="noopener">题解</a>代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><p>1.开两个一维数组存放要清理的行列，遍历即可</p>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
+<li>问题1</li>
+</ul>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">boolean</span>[] line = <span class="keyword">new</span> <span class="keyword">boolean</span>[matrix.length];</span><br><span class="line">      <span class="keyword">boolean</span>[] column = <span class="keyword">new</span> <span class="keyword">boolean</span>[matrix[<span class="number">0</span>].length];</span><br><span class="line">      <span class="comment">// 找出要清零的行列</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">              <span class="keyword">if</span> (matrix[i][j] == <span class="number">0</span>) &#123;</span><br><span class="line">                  line[i] = <span class="keyword">true</span>;</span><br><span class="line">                  column[j] = <span class="keyword">true</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 开始对行清零</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (line[i]) &#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">                  matrix[i][j] = <span class="number">0</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 开始对列清零</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix[<span class="number">0</span>].length; i++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (column[i]) &#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix.length; j++) &#123;</span><br><span class="line">                  matrix[j][i] = <span class="number">0</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><p>两个boolean数组，更加方便针对行列判断</p>
+</li>
+<li><p>java 对boolean类型默认为false</p>
+</li>
+<li><p>二维数组 a.length为里面包含的一维数组个数</p>
+<p>a[0].length为其中一维数组包含元素个数</p>
+</li>
+</ul>
+<h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3><h4 id="解题逻辑：-1"><a href="#解题逻辑：-1" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><p>需要设零的行i：将该行的第一列元素<code>matrix[i][0]</code>设为0，表示该行需要清零；<br>需要设为零的列j：将该列的第一行元素<code>matrix[0][j]</code>设为0，表示该列需要清零；<br>根据第一行和第一列的标记，进行清零操作</p>
+<h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题：-1"><a href="#解决自己问题：-1" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
+<li>问题2</li>
+</ul>
+<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setZeroes</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> shu = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">boolean</span> hen = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">                        hen = <span class="keyword">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (j == <span class="number">0</span>) &#123;</span><br><span class="line">                        shu = <span class="keyword">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    matrix[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">                    matrix[<span class="number">0</span>][j] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[i][<span class="number">0</span>] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; matrix[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">                    matrix[i][j] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; matrix[<span class="number">0</span>].length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[<span class="number">0</span>][i] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; matrix.length; j++) &#123;</span><br><span class="line">                    matrix[j][i] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (shu) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">                matrix[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (hen) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix[<span class="number">0</span>].length; i++) &#123;</span><br><span class="line">                matrix[<span class="number">0</span>][i] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips-1"><a href="#tips-1" class="headerlink" title="tips:"></a>tips:</h4><blockquote>
+<p>文件名：LEA3</p>
+</blockquote>
+]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
       <tags>
         <tag>LeetCode</tag>
         <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreArray</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaBasics（二）</title>
+    <url>/2020/06/13/JB2/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md#2-java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1" target="_blank" rel="noopener">Java基本功--JAVA面向对象</a></blockquote>
+
+<h1 id="JAVA面向对象"><a href="#JAVA面向对象" class="headerlink" title="JAVA面向对象"></a>JAVA面向对象</h1><h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><h3 id="面向对象和面向过程的区别"><a href="#面向对象和面向过程的区别" class="headerlink" title="面向对象和面向过程的区别"></a>面向对象和面向过程的区别</h3><ul>
+<li><strong>面向过程</strong> ：面向过程<strong>性能</strong>比面向对象<strong>高</strong>。 因为类调用时需要<strong>实例化</strong>，<strong>开销比较大</strong>，比较消耗资源，所以当性能是最重要的考量因素的时候，比如单片机、嵌入式开发、Linux/Unix 等一般采用面向过程开发。但是，<strong>面向过程没有面向对象易维护、易复用、易扩展。</strong></li>
+<li><strong>面向对象</strong> ：面向对象<strong>易维护、易复用、易扩展</strong>。 因为面向对象有封装、继承、多态性的特性，所以可以设计出<strong>低耦合</strong>的系统，使系统更加灵活、更加易于维护。但是，<strong>面向对象性能比面向过程低</strong>。</li>
+</ul>
+<h3 id="【坑】构造器-Constructor-是否可被-override"><a href="#【坑】构造器-Constructor-是否可被-override" class="headerlink" title="【坑】构造器 Constructor 是否可被 override?"></a>【坑】构造器 Constructor 是否可被 override?</h3><p> Constructor 不能被 override（重写）,但是可以 overload（重载）,所以你可以看到一个类中有多个构造函数的情况。</p>
+<h3 id="【坑】在-Java-中定义一个不做事且没有参数的构造方法的作用"><a href="#【坑】在-Java-中定义一个不做事且没有参数的构造方法的作用" class="headerlink" title="【坑】在 Java 中定义一个不做事且没有参数的构造方法的作用"></a>【坑】在 Java 中定义一个不做事且没有参数的构造方法的作用</h3><p>Java 程序在执行子类的构造方法之前，</p>
+<p>如果<strong>没有</strong>用 <code>super()</code>来调用父类特定的构造方法，</p>
+<p>则会调用父类中“<strong>没有参数的构造方法</strong>”。</p>
+<p>因此，如果父类中只定义了<strong>有参数</strong>的构造方法，而在子类的构造方法中又<strong>没有</strong>用 <code>super()</code>来调用父类中特定的构造方法，</p>
+<p>则编译时将发生<strong>错误</strong>，因为 Java 程序在父类中找不到没有参数的构造方法可供执行。</p>
+<p><strong>解决办法</strong>是在父类里加上一个不做事且没有参数的构造方法。</p>
+<h3 id="成员变量与局部变量的区别有哪些？"><a href="#成员变量与局部变量的区别有哪些？" class="headerlink" title="成员变量与局部变量的区别有哪些？"></a>成员变量与局部变量的区别有哪些？</h3><ol>
+<li>从<strong>语法</strong>形式上看:成员变量是<strong>属于类</strong>的，而局部变量是在方法中定义的变量或是<strong>方法的参数</strong>；成员变量可以被 public,private,static 等修饰符所<strong>修饰</strong>，而局部变量不能被访问控制修饰符及 static 所修饰；但是，成员变量和局部变量都能被 <strong>final 所修饰</strong>。</li>
+<li>从变量在内存中的存储方式来看:如果成员变量是使用<code>static</code>修饰的，那么这个成员变量是<strong>属于类</strong>的，如果没有使用<code>static</code>修饰，这个成员变量是<strong>属于实例</strong>的。而对象存在于<strong>堆内存</strong>，局部变量则存在于<strong>栈内存</strong>。</li>
+<li>从变量在内存中的生存时间上看:成员变量是对象的一部分，它随着<strong>对象的创建而存在</strong>，而局部变量随着方法的调用而<strong>自动消失</strong>。</li>
+<li>成员变量如果没有被赋初值:则会自动以类型的默认值而<strong>赋值</strong>（一种情况例外:被 final 修饰的成员变量也必须显式地赋值），而局部变量则<strong>不会自动赋值</strong>。</li>
+</ol>
+<h3 id="创建一个对象用什么运算符-对象实体与对象引用有何不同"><a href="#创建一个对象用什么运算符-对象实体与对象引用有何不同" class="headerlink" title="创建一个对象用什么运算符?对象实体与对象引用有何不同?"></a>创建一个对象用什么运算符?对象实体与对象引用有何不同?</h3><p><strong>new</strong> 运算符，new 创建对象实例（对象实例在<strong>堆</strong>内存中），对象引用指向对象实例（对象引用存放在<strong>栈</strong>内存中）。一个对象引用可以指向 0 个或 1 个对象（一根绳子可以不系气球，也可以系一个气球）;一个对象可以有 n 个引用指向它（可以用 n 条绳子系住一个气球）。</p>
+<h3 id="一个类的构造方法的作用是什么-若一个类没有声明构造方法，该程序能正确执行吗-为什么"><a href="#一个类的构造方法的作用是什么-若一个类没有声明构造方法，该程序能正确执行吗-为什么" class="headerlink" title="一个类的构造方法的作用是什么? 若一个类没有声明构造方法，该程序能正确执行吗? 为什么?"></a>一个类的构造方法的作用是什么? 若一个类没有声明构造方法，该程序能正确执行吗? 为什么?</h3><ul>
+<li><p>主要作用：完成对类对象的<strong>初始化</strong>工作</p>
+</li>
+<li><p>可以执行</p>
+<p>有默认的不带参数的构造方法。</p>
+<p>如果我们自己添加了类的构造方法（无论是否有参），Java 就不会再添加默认的无参数的构造方法了，这时候，就不能直接 new 一个对象而不传递参数了，所以我们一直在不知不觉地使用构造方法，这也是为什么我们在创建对象的时候后面要加一个括号（因为要调用无参的构造方法）。如果我们<strong>重载</strong>了有参的构造方法，记得都要把<strong>无参的构造方法也写出来</strong>（无论是否用到），因为这可以帮助我们在创建对象的时候少踩坑。</p>
+</li>
+</ul>
+<h4 id="构造方法有哪些特性？"><a href="#构造方法有哪些特性？" class="headerlink" title="构造方法有哪些特性？"></a>构造方法有哪些特性？</h4><ol>
+<li>名字与<strong>类名</strong>相同。</li>
+<li><strong>没有返回值</strong>，但不能用 void 声明构造函数。</li>
+<li>生成类的对象时<strong>自动执行</strong>，无需调用。</li>
+</ol>
+<h4 id="在调用子类构造方法之前会先调用父类没有参数的构造方法-其目的是"><a href="#在调用子类构造方法之前会先调用父类没有参数的构造方法-其目的是" class="headerlink" title="在调用子类构造方法之前会先调用父类没有参数的构造方法,其目的是?"></a>在调用子类构造方法之前会先调用父类没有参数的构造方法,其目的是?</h4><p>帮助子类做初始化工作。</p>
+<h3 id="对象的相等与指向他们的引用相等-两者有什么不同"><a href="#对象的相等与指向他们的引用相等-两者有什么不同" class="headerlink" title="对象的相等与指向他们的引用相等,两者有什么不同?"></a>对象的相等与指向他们的引用相等,两者有什么不同?</h3><ul>
+<li><p>对象的相等，比的是内存中存放的<strong>内容</strong>是否相等。</p>
+</li>
+<li><p>而引用相等，比较的是他们指向的内存<strong>地址</strong>是否相等。</p>
+</li>
+</ul>
+<h2 id="面向对象三大特征"><a href="#面向对象三大特征" class="headerlink" title="面向对象三大特征"></a>面向对象三大特征</h2><h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p><strong>封装</strong>：指把一个对象的状态信息（也就是属性）<strong>隐藏</strong>在对象内部，<strong>不允许</strong>外部对象直接访问对象的内部信息。但是可以提供一些可以被外界访问的<strong>方法</strong>来操作属性</p>
+<p><strong>举例</strong>：就好像我们看不到挂在墙上的空调的内部的零件信息（也就是属性），但是可以通过遥控器（方法）来控制空调。如果属性不想被外界访问，我们大可不必提供方法给外界访问。但是如果一个类没有提供给外界访问的方法，那么这个类也没有什么意义了。就好像如果没有空调遥控器，那么我们就无法操控空凋制冷，空调本身就没有意义了（当然现在还有很多其他方法 ，这里只是为了举例子）。</p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p><strong>继承</strong>：是使用已存在的类的定义作为基础建立新类的技术，新类的定义可以增加新的数据或新的功能，也可以用父类的功能，但不能选择性地继承父类。</p>
+<p>作用：通过使用继承，可以快速地创建新的类，可以提高代码的<strong>重用</strong>，程序的<strong>可维护性</strong>，节省大量创建新类的<strong>时间</strong> ，提高我们的<strong>开发效率</strong>。</p>
+<p>要点：</p>
+<ol>
+<li>子类拥有父类对象所有的属性和方法（包括私有属性和私有方法），但是父类中的私有属性和方法子类是无法访问，<strong>只是拥有</strong>。</li>
+<li>子类可以拥有自己属性和方法，即子类可以对父类进行扩展。</li>
+<li>子类可以用自己的方式实现父类的方法。。</li>
+</ol>
+<h3 id="多态【坑】"><a href="#多态【坑】" class="headerlink" title="多态【坑】"></a>多态【坑】</h3><p><strong>多态</strong>，顾名思义，表示一个对象具有多种的状态。</p>
+<p>具体表现为<strong>父类</strong>的引用指向<strong>子类</strong>的实例</p>
+<p><strong>多态的特点:</strong></p>
+<ul>
+<li>对象类型和引用类型之间具有继承（类）/实现（接口）的关系；</li>
+<li>对象类型不可变，引用类型可变；</li>
+<li>方法具有多态性，属性不具有多态性；</li>
+<li>引用类型变量发出的方法调用的到底是哪个类中的方法，必须在程序运行期间才能确定；</li>
+<li>多态不能调用“只在<strong>子类存在</strong>但在<strong>父类不存在</strong>”的方法；</li>
+<li>如果子类重写了父类的方法，真正执行的是子类覆盖的方法，如果子类没有覆盖父类的方法，执行的是父类的方法。</li>
+</ul>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><h4 id="在一个静态方法内调用一个非静态成员为什么是非法的"><a href="#在一个静态方法内调用一个非静态成员为什么是非法的" class="headerlink" title="在一个静态方法内调用一个非静态成员为什么是非法的?"></a>在一个静态方法内调用一个非静态成员为什么是非法的?</h4><p>由于静态方法可以不通过对象进行调用，因此在静态方法里，不能调用其他非静态变量，也不可以访问非静态变量成员。</p>
+<h4 id="静态方法和实例方法有何不同"><a href="#静态方法和实例方法有何不同" class="headerlink" title="静态方法和实例方法有何不同"></a>静态方法和实例方法有何不同</h4><ol>
+<li>在外部调用静态方法时，可以使用<strong>“类名.方法名”</strong>的方式，也可以使用<strong>“对象名.方法名”</strong>的方式。而实例方法只有后面这种方式。也就是说，调用静态方法可以<strong>无需创建对象</strong>。</li>
+<li>静态方法在访问本类的成员时，只允许访问<strong>静态成员</strong>（即静态成员变量和静态方法），而不允许访问<strong>实例成员变量和实例方法</strong>；实例方法则无此限制。</li>
+</ol>
+<h4 id="常见关键字总结-static-final-this-super"><a href="#常见关键字总结-static-final-this-super" class="headerlink" title="常见关键字总结:static,final,this,super"></a>常见关键字总结:static,final,this,super</h4><p>详见笔主的这篇文章: <a href="https://snailclimb.gitee.io/javaguide/#/docs/java/basic/final,static,this,super2.3.3" target="_blank" rel="noopener">https://snailclimb.gitee.io/javaguide/#/docs/java/basic/final,static,this,super2.3.3</a>. </p>
+<h2 id="接口和抽象类【坑】"><a href="#接口和抽象类【坑】" class="headerlink" title="接口和抽象类【坑】"></a>接口和抽象类【坑】</h2><h4 id="接口和抽象类的区别是什么？"><a href="#接口和抽象类的区别是什么？" class="headerlink" title="接口和抽象类的区别是什么？"></a>接口和抽象类的区别是什么？</h4><ol>
+<li>接口的方法默认是 public，所有方法在接口中<strong>不能有实现</strong>(Java 8 开始接口方法可以有默认实现），而抽象类可以有非抽象的方法。</li>
+<li>接口中除了 static、final 变量，不能有<strong>其他变量</strong>，而抽象类中则不一定。</li>
+<li>一个类可以实现多个接口，但只能实现<strong>一个抽象类</strong>。接口自己本身可以通过 extends 关键字扩展多个接口。</li>
+<li>接口方法默认修饰符是 public，抽象方法可以有 public、protected 和 default 这些修饰符（抽象方法就是为了被重写所以不能使用 private 关键字修饰！）。</li>
+<li>从设计层面来说，抽象是对<strong>类的抽象</strong>，是一种模板设计，而接口是对<strong>行为的抽象</strong>，是一种行为的规范。</li>
+</ol>
+<h2 id="其它重要知识点"><a href="#其它重要知识点" class="headerlink" title="其它重要知识点"></a>其它重要知识点</h2><h4 id="2-5-1-String-StringBuffer-和-StringBuilder【坑】-的区别是什么-String-为什么是不可变的"><a href="#2-5-1-String-StringBuffer-和-StringBuilder【坑】-的区别是什么-String-为什么是不可变的" class="headerlink" title="2.5.1. String StringBuffer 和 StringBuilder【坑】 的区别是什么? String 为什么是不可变的?"></a>2.5.1. String StringBuffer 和 StringBuilder【坑】 的区别是什么? String 为什么是不可变的?</h4><p>简单的来说：<code>String</code> 类中使用 <strong>final</strong> 关键字修饰字符数组来保存字符串，<code>private final char value[]</code>，所以<code>String</code> 对象是不可变的。</p>
+<p>补充（来自<a href="https://github.com/Snailclimb/JavaGuide/issues/675" target="_blank" rel="noopener">issue 675</a>）：在 Java 9 之后，String 类的实现改用 byte 数组存储字符串 <code>private final byte[] value</code>;</p>
+<p>而 <strong><code>StringBuilder</code></strong> 与 <strong><code>StringBuffer</code></strong> 都继承自 <code>AbstractStringBuilder</code> 类，在 <code>AbstractStringBuilder</code> 中也是使用字符数组保存字符串<code>char[]value</code> 但是<strong>没有用</strong> <code>final</code>关键字修饰，所以这两种对象都是可变的。</p>
+<p><strong>线程安全性</strong></p>
+<ul>
+<li><p><code>String</code> 中的对象是<strong>不可变</strong>的，也就可以理解为常量，线程安全。<code>AbstractStringBuilder</code>是 <code>StringBuilder</code> 与 <code>StringBuffer</code> 的公共父类，定义了一些字符串的基本操作，如 <code>expandCapacity</code>、<code>append</code>、<code>insert</code>、<code>indexOf</code> 等公共方法。</p>
+</li>
+<li><p><code>StringBuffer</code> 对方法加了同步锁或者对调用的方法加了<strong>同步锁</strong>，所以是线程安全的。</p>
+</li>
+<li><p><code>StringBuilder</code> 并<strong>没有</strong>对方法进行加同步锁，所以是非线程安全的。</p>
+</li>
+</ul>
+<p><strong>性能</strong>【坑】</p>
+<p>每次对 <code>String</code> 类型进行改变的时候，都会生成一个新的 <code>String</code> 对象，然后将指针指向新的 <code>String</code> 对象。<code>StringBuffer</code> 每次都会对 <code>StringBuffer</code> 对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用 <code>StringBuilder</code> 相比使用 <code>StringBuffer</code> 仅能获得 10%~15% 左右的性能提升，但却要冒多线程不安全的风险。</p>
+<p><strong>对于三者使用的总结：</strong></p>
+<ol>
+<li>操作少量的数据: 适用 <code>String</code></li>
+<li>单线程操作字符串缓冲区下操作大量数据: 适用 <code>StringBuilder</code></li>
+<li>多线程操作字符串缓冲区下操作大量数据: 适用 <code>StringBuffer</code></li>
+</ol>
+<h4 id="Object-类的常见方法总结【坑】"><a href="#Object-类的常见方法总结【坑】" class="headerlink" title="Object 类的常见方法总结【坑】"></a>Object 类的常见方法总结【坑】</h4><p>Object 类是一个特殊的类，是所有类的父类。它主要提供了以下 11 个方法：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> Class&lt;?&gt; getClass()<span class="comment">//native方法，用于返回当前运行时对象的Class对象，使用了final关键字修饰，故不允许子类重写。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> <span class="comment">//native方法，用于返回对象的哈希码，主要使用在哈希表中，比如JDK中的HashMap。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span><span class="comment">//用于比较2个对象的内存地址是否相等，String类对该方法进行了重写用户比较字符串的值是否相等。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">native</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException<span class="comment">//naitive方法，用于创建并返回当前对象的一份拷贝。一般情况下，对于任何对象 x，表达式 x.clone() != x 为true，x.clone().getClass() == x.getClass() 为true。Object本身没有实现Cloneable接口，所以不重写clone方法并且进行调用的话会发生CloneNotSupportedException异常。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span><span class="comment">//返回类的名字@实例的哈希码的16进制的字符串。建议Object所有的子类都重写这个方法。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">notify</span><span class="params">()</span><span class="comment">//native方法，并且不能重写。唤醒一个在此对象监视器上等待的线程(监视器相当于就是锁的概念)。如果有多个线程在等待只会任意唤醒一个。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">notifyAll</span><span class="params">()</span><span class="comment">//native方法，并且不能重写。跟notify一样，唯一的区别就是会唤醒在此对象监视器上等待的所有线程，而不是一个线程。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">(<span class="keyword">long</span> timeout)</span> <span class="keyword">throws</span> InterruptedException<span class="comment">//native方法，并且不能重写。暂停线程的执行。注意：sleep方法没有释放锁，而wait方法释放了锁 。timeout是等待时间。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">(<span class="keyword">long</span> timeout, <span class="keyword">int</span> nanos)</span> <span class="keyword">throws</span> InterruptedException<span class="comment">//多了nanos参数，这个参数表示额外时间（以毫微秒为单位，范围是 0-999999）。 所以超时的时间还需要加上nanos毫秒。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException<span class="comment">//跟之前的2个wait方法一样，只不过该方法一直等待，没有超时时间这个概念</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>&#123; &#125;<span class="comment">//实例被垃圾回收器回收的时候触发的操作</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="与-equals-重要"><a href="#与-equals-重要" class="headerlink" title="== 与 equals(重要)"></a>== 与 equals(重要)</h4><p><strong>==</strong> : 它的作用是判断两个对象的<strong>地址</strong>是不是相等。即，判断两个对象是不是同一个对象(基本数据类型==比较的是值，引用数据类型==比较的是内存地址)。</p>
+<p><strong>equals()</strong> : 它的作用也是判断两个对象是否<strong>相</strong>等。但它一般有两种使用情况：</p>
+<ul>
+<li>情况 1：类<strong>没有覆盖</strong> equals() 方法。则通过 equals() 比较该类的两个对象时，等价于通过<strong>“==”</strong>比较这两个对象。</li>
+<li>情况 2：类<strong>覆盖了</strong> equals() 方法。一般，我们都覆盖 equals() 方法来比较两个<strong>对象的内容</strong>是否相等；若它们的内容相等，则返回 true (即，认为这两个对象相等)。</li>
+</ul>
+<p><strong>举个例子：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String a = <span class="keyword">new</span> String(<span class="string">"ab"</span>); <span class="comment">// a 为一个引用</span></span><br><span class="line">        String b = <span class="keyword">new</span> String(<span class="string">"ab"</span>); <span class="comment">// b为另一个引用,对象的内容一样</span></span><br><span class="line">        String aa = <span class="string">"ab"</span>; <span class="comment">// 放在常量池中</span></span><br><span class="line">        String bb = <span class="string">"ab"</span>; <span class="comment">// 从常量池中查找</span></span><br><span class="line">        <span class="keyword">if</span> (aa == bb) <span class="comment">// true</span></span><br><span class="line">            System.out.println(<span class="string">"aa==bb"</span>);</span><br><span class="line">        <span class="keyword">if</span> (a == b) <span class="comment">// false，非同一对象</span></span><br><span class="line">            System.out.println(<span class="string">"a==b"</span>);</span><br><span class="line">        <span class="keyword">if</span> (a.equals(b)) <span class="comment">// true</span></span><br><span class="line">            System.out.println(<span class="string">"aEQb"</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">42</span> == <span class="number">42.0</span>) &#123; <span class="comment">// true</span></span><br><span class="line">            System.out.println(<span class="string">"true"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>说明：</strong></p>
+<ul>
+<li>String 中的 equals 方法是被<strong>重写</strong>过的，因为 object 的 equals 方法是比较的对象的内存地址，而 String 的 equals 方法比较的是<strong>对象的值</strong>。</li>
+<li>当创建 String 类型的对象时，虚拟机会在常量池中查找有没有已经存在的值和要创建的值相同的对象，如果<strong>有就把它赋给当前引用</strong>。如果没有就在常量池中重新创建一个 String 对象。</li>
+</ul>
+<h3 id="hashCode-与-equals-重要"><a href="#hashCode-与-equals-重要" class="headerlink" title="hashCode 与 equals (重要)"></a>hashCode 与 equals (重要)</h3><p>面试官可能会问你：“你重写过 hashcode 和 equals 么，为什么重写 equals 时必须重写 hashCode 方法？”</p>
+<h4 id="hashCode（）介绍"><a href="#hashCode（）介绍" class="headerlink" title="hashCode（）介绍"></a>hashCode（）介绍</h4><p>hashCode() 的作用是获取哈希码，也称为散列码；它实际上是返回一个 <strong>int 整数</strong>。这个哈希码的作用是确定该对象在哈希表中的<strong>索引位置</strong>。hashCode() 定义在 JDK 的 Object.java 中，这就意味着 Java 中的任何类都包含有 hashCode() 函数。</p>
+<p>散列表存储的是<strong>键值对</strong>(key-value)，它的特点是：能根据“<strong>键</strong>”快速的检索出对应的“值”。这其中就利用到了<strong>散列码</strong>！（可以快速找到所需要的对象）</p>
+<h4 id="为什么要有-hashCode"><a href="#为什么要有-hashCode" class="headerlink" title="为什么要有 hashCode"></a>为什么要有 hashCode</h4><p><strong>我们先以“HashSet 如何检查重复”为例子来说明为什么要有 hashCode：</strong> 当你把对象加入 <strong>HashSet</strong> 时，HashSet 会先计算对象的 <strong>hashcode</strong> 值来判断对象加入的位置，同时也会与该位置其他已经加入的对象的 hashcode 值作比较，如果没有相符的 hashcode，HashSet 会假设对象没有<strong>重复出现</strong>。但是如果发现有相同 hashcode 值的对象，这时会调用 <code>equals()</code>方法来检查 hashcode 相等的对象是否真的相同。如果两者相同，HashSet 就不会让其加入操作成功。如果不同的话，就会<strong>重新散列到其他位置</strong>。（摘自我的 Java 启蒙书《Head first java》第二版）。这样我们就大大减少了 equals 的次数，相应就大大提高了执行速度。</p>
+<p>通过我们可以看出：<code>hashCode()</code> 的作用就是<strong>获取哈希码</strong>，也称为散列码；它实际上是返回一个 int 整数。这个<strong>哈希码的作用</strong>是确定该对象在哈希表中的索引位置。<strong><code>hashCode()</code>在散列表中才有用，在其它情况下没用</strong>。在散列表中 hashCode() 的作用是获取对象的散列码，进而确定该对象在散列表中的位置。</p>
+<h4 id="hashCode（）与-equals（）的相关规定"><a href="#hashCode（）与-equals（）的相关规定" class="headerlink" title="hashCode（）与 equals（）的相关规定"></a>hashCode（）与 equals（）的相关规定</h4><ol>
+<li>如果两个对象相等，则 hashcode 一定也是相同的</li>
+<li>两个对象相等,对两个对象分别调用 equals 方法都返回 true</li>
+<li>两个对象有相同的 hashcode 值，它们也不一定是相等的</li>
+<li><strong>因此，equals 方法被覆盖过，则 hashCode 方法也必须被覆盖</strong></li>
+<li>hashCode() 的默认行为是对堆上的对象产生独特值。如果没有重写 hashCode()，则该 class 的两个对象无论如何都不会相等（即使这两个对象指向相同的数据）</li>
+</ol>
+<p>推荐阅读：<a href="https://www.cnblogs.com/skywang12345/p/3324958.html" target="_blank" rel="noopener">Java hashCode() 和 equals()的若干问题解答</a></p>
+<h3 id="Java-序列化中如果有些字段不想进行序列化，怎么办？【坑】"><a href="#Java-序列化中如果有些字段不想进行序列化，怎么办？【坑】" class="headerlink" title="Java 序列化中如果有些字段不想进行序列化，怎么办？【坑】"></a>Java 序列化中如果有些字段不想进行序列化，怎么办？【坑】</h3><p>对于不想进行序列化的变量，使用 transient 关键字修饰。</p>
+<p>transient 关键字的作用是：阻止实例中那些用此关键字修饰的的变量序列化；当对象被反序列化时，被 transient 修饰的变量值不会被持久化和恢复。transient 只能修饰变量，不能修饰类和方法。</p>
+<h3 id="获取用键盘输入常用的两种方法"><a href="#获取用键盘输入常用的两种方法" class="headerlink" title="获取用键盘输入常用的两种方法"></a>获取用键盘输入常用的两种方法</h3><p>方法 1：通过 Scanner</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">String s  = input.nextLine();</span><br><span class="line">input.close();</span><br></pre></td></tr></table></figure></div>
+
+<p>方法 2：通过 BufferedReader</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">BufferedReader input = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">String s = input.readLine();</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="Java-核心技术"><a href="#Java-核心技术" class="headerlink" title="Java 核心技术"></a>Java 核心技术</h1><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h3 id="Collections-工具类和-Arrays-工具类常见方法总结"><a href="#Collections-工具类和-Arrays-工具类常见方法总结" class="headerlink" title="Collections 工具类和 Arrays 工具类常见方法总结"></a>Collections 工具类和 Arrays 工具类常见方法总结</h3><p>详见笔主的这篇文章: <a href="https://gitee.com/SnailClimb/JavaGuide/blob/master/docs/java/basic/Arrays,CollectionsCommonMethods.md" target="_blank" rel="noopener">https://gitee.com/SnailClimb/JavaGuide/blob/master/docs/java/basic/Arrays,CollectionsCommonMethods.md</a></p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><h4 id="Java-异常类层次结构图"><a href="#Java-异常类层次结构图" class="headerlink" title="Java 异常类层次结构图"></a>Java 异常类层次结构图</h4><p>图片来自：<a href="https://simplesnippets.tech/exception-handling-in-java-part-1/" target="_blank" rel="noopener">https://simplesnippets.tech/exception-handling-in-java-part-1/</a></p>
+<p>图片来自：<a href="https://chercher.tech/java-programming/exceptions-java" target="_blank" rel="noopener">https://chercher.tech/java-programming/exceptions-java</a></p>
+<p>在 Java 中，所有的异常都有一个共同的祖先 java.lang 包中的 <strong>Throwable 类</strong>。Throwable： 有两个重要的子类：<strong>Exception（异常）</strong> 和 <strong>Error（错误）</strong> ，二者都是 Java 异常处理的重要子类，各自都包含大量子类。</p>
+<p><strong>Error（错误）:是程序无法处理的错误</strong>，表示运行应用程序中较严重问题。大多数错误与代码编写者执行的操作无关，而表示代码运行时 <strong>JVM</strong>（Java 虚拟机）出现的问题。例如，Java 虚拟机运行错误（Virtual MachineError），当 JVM 不再有继续执行操作所需的内存资源时，将出现 OutOfMemoryError。这些异常发生时，Java 虚拟机（JVM）一般会选择线程终止。</p>
+<p>这些错误表示故障发生于虚拟机自身、或者发生在虚拟机试图执行应用时，如 Java 虚拟机运行错误（Virtual MachineError）、类定义错误（NoClassDefFoundError）等。这些错误是<strong>不可查</strong>的，因为它们在应用程序的控制和处理能力之 外，而且绝大多数是程序运行时不允许出现的状况。对于设计合理的应用程序来说，即使确实发生了错误，本质上也不应该试图去处理它所引起的异常状况。在 Java 中，错误通过 Error 的子类描述。</p>
+<p><strong>Exception（异常）:是程序本身可以处理的异常</strong>。Exception 类有一个重要的子类 <strong>RuntimeException</strong>。RuntimeException 异常由 Java 虚拟机抛出。<strong>NullPointerException</strong>（要访问的变量没有引用任何对象时，抛出该异常）、<strong>ArithmeticException</strong>（算术运算异常，一个整数除以 0 时，抛出该异常）和 <strong>ArrayIndexOutOfBoundsException</strong> （下标越界异常）。</p>
+<p><strong>注意：异常和错误的区别：异常能被程序本身处理，错误是无法处理。</strong></p>
+<h3 id="Throwable-类常用方法"><a href="#Throwable-类常用方法" class="headerlink" title="Throwable 类常用方法"></a>Throwable 类常用方法</h3><ul>
+<li><strong><code>public string getMessage()</code></strong>:返回异常发生时的简要描述</li>
+<li><strong><code>public string toString()</code></strong>:返回异常发生时的详细信息</li>
+<li><strong><code>public string getLocalizedMessage()</code></strong>:返回异常对象的本地化信息。使用 <code>Throwable</code>的子类覆盖这个方法，可以生成本地化信息。如果子类没有覆盖该方法，则该方法返回的信息与 <code>getMessage（）</code>返回的结果相同</li>
+<li><strong><code>public void printStackTrace()</code></strong>:在控制台上打印 <code>Throwable</code> 对象封装的异常信息</li>
+</ul>
+<h3 id="try-catch-finally"><a href="#try-catch-finally" class="headerlink" title="try-catch-finally"></a>try-catch-finally</h3><ul>
+<li><strong>try 块：</strong> 用于捕获异常。其后可接零个或多个 catch 块，如果没有 catch 块，则必须跟一个 finally 块。</li>
+<li><strong>catch 块：</strong> 用于处理 try 捕获到的异常。</li>
+<li><strong>finally 块：</strong> 无论是否捕获或处理异常，finally 块里的语句都会被执行。当在 try 块或 catch 块中遇到 return 语句时，finally 语句块将在方法返回之前被执行。</li>
+</ul>
+<p><strong>在以下 4 种特殊情况下，finally 块不会被执行：</strong>【坑】</p>
+<ol>
+<li>在 finally 语句块第一行发生了异常。 因为在其他行，finally 块还是会得到执行</li>
+<li>在前面的代码中用了 System.exit(int)已退出程序。 exit 是带参函数 ；若该语句在异常语句之后，finally 会执行</li>
+<li>程序所在的线程死亡。</li>
+<li>关闭 CPU。</li>
+</ol>
+<p>下面这部分内容来自 issue:<a href="https://github.com/Snailclimb/JavaGuide/issues/190。" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/issues/190。</a></p>
+<p><strong>注意：</strong> 当 try 语句和 finally 语句中都有 return 语句时，在方法返回之前，finally 语句的内容将被执行，并且 finally 语句的返回值将会覆盖原始的返回值。如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> value * value;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (value == <span class="number">2</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>如果调用 <code>f(2)</code>，返回值将是 0，因为 finally 语句的返回值<strong>覆盖</strong>了 try 语句块的返回值。</p>
+<h3 id="使用-try-with-resources-来代替try-catch-finally"><a href="#使用-try-with-resources-来代替try-catch-finally" class="headerlink" title="使用 try-with-resources 来代替try-catch-finally"></a>使用 <code>try-with-resources</code> 来代替<code>try-catch-finally</code></h3><p>《Effecitve Java》中明确指出：</p>
+<blockquote>
+<p>面对必须要关闭的资源，我们总是应该优先使用<strong>try-with-resources</strong>而不是<code>try-finally</code>。随之产生的代码更简短，更清晰，产生的异常对我们也更有用。<code>try-with-resources</code>语句让我们更容易编写必须要关闭的资源的代码，若采用<code>try-finally</code>则几乎做不到这点。</p>
+</blockquote>
+<p>Java 中类似于<code>InputStream</code>、<code>OutputStream</code> 、<code>Scanner</code> 、<code>PrintWriter</code>等的资源都需要我们调用<code>close()</code>方法来手动关闭，一般情况下我们都是通过<code>try-catch-finally</code>语句来实现这个需求，如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//读取文本文件的内容</span></span><br><span class="line">Scanner scanner = <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    scanner = <span class="keyword">new</span> Scanner(<span class="keyword">new</span> File(<span class="string">"D://read.txt"</span>));</span><br><span class="line">    <span class="keyword">while</span> (scanner.hasNext()) &#123;</span><br><span class="line">        System.out.println(scanner.nextLine());</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (scanner != <span class="keyword">null</span>) &#123;</span><br><span class="line">        scanner.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>使用Java 7之后的 <code>try-with-resources</code> 语句改造上面的代码:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> (Scanner scanner = <span class="keyword">new</span> Scanner(<span class="keyword">new</span> File(<span class="string">"test.txt"</span>))) &#123;</span><br><span class="line">    <span class="keyword">while</span> (scanner.hasNext()) &#123;</span><br><span class="line">        System.out.println(scanner.nextLine());</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException fnfe) &#123;</span><br><span class="line">    fnfe.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>当然多个资源需要关闭的时候，使用 <code>try-with-resources</code> 实现起来也非常简单，如果你还是用<code>try-catch-finally</code>可能会带来很多问题。</p>
+<p>通过使用分号分隔，可以在<code>try-with-resources</code>块中声明多个资源：</p>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h3 id="简述线程、程序、进程的基本概念。以及他们之间关系是什么"><a href="#简述线程、程序、进程的基本概念。以及他们之间关系是什么" class="headerlink" title="简述线程、程序、进程的基本概念。以及他们之间关系是什么?"></a>简述线程、程序、进程的基本概念。以及他们之间关系是什么?</h3><ul>
+<li><p><strong>线程</strong>与进程相似，但线程是一个比进程更小的执行单位。一个进程在其执行的过程中可以产生<strong>多个线程</strong>。与进程不同的是同类的多个线程共享<strong>同一块内存空间</strong>和<strong>一组系统资源</strong>，所以系统在产生一个线程，或是在各个线程之间作切换工作时，<strong>负担</strong>要比进程<strong>小</strong>得多，也正因为如此，线程也被称为<strong>轻量级进程</strong>。</p>
+</li>
+<li><p><strong>程序</strong>是含有<strong>指令和数据</strong>的<strong>文件</strong>，被存储在磁盘或其他的数据存储设备中，也就是说程序是<strong>静态的代码</strong>。</p>
+</li>
+<li><p><strong>进程</strong>是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。</p>
+<p>系统运行一个程序即是一个进程从创建，运行到消亡的过程。简单来说，一个进程就是一个<strong>执行中的程序</strong>，它在计算机中一个指令接着一个指令地执行着，同时，每个进程还占有某些系统资源如 CPU 时间，内存空间，文件，输入输出设备的使用权等等。换句话说，当程序在执行时，将会被操作系统<strong>载入内存</strong>中。</p>
+<p> 线程是进程划分成的<strong>更小的运行单位</strong>。线程和进程最大的不同在于基本上<strong>各进程是独立的</strong>，而<strong>各线程则不一定</strong>，因为同一进程中的线程极有可能会<strong>相互影响</strong>。</p>
+<p>从另一角度来说，进程属于操作系统的范畴，主要是同一段时间内，可以同时执行<strong>一个以上的程序</strong>，而线程则是在同一程序内几乎同时执行一<strong>个以上的程序段</strong>。</p>
+</li>
+</ul>
+<h3 id="线程有哪些基本状态"><a href="#线程有哪些基本状态" class="headerlink" title="线程有哪些基本状态?"></a>线程有哪些基本状态?</h3><p>Java 线程在运行的生命周期中的指定时刻只可能处于下面 6 种不同状态的其中一个状态（图源《Java 并发编程艺术》4.1.4 节）。</p>
+<p><a href="https://camo.githubusercontent.com/bd21f0c6bf04fe410fa5397897cc47b9278ae5cb/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f31392d312d32392f4a6176612545372542412542462545372541382538422545372539412538342545372538412542362545362538302538312e706e67" target="_blank" rel="noopener"><img src="https://camo.githubusercontent.com/bd21f0c6bf04fe410fa5397897cc47b9278ae5cb/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f31392d312d32392f4a6176612545372542412542462545372541382538422545372539412538342545372538412542362545362538302538312e706e67" alt="Java线程的状态"></a></p>
+<p>线程在生命周期中并不是固定处于某一个状态而是随着代码的执行在不同状态之间切换。Java 线程状态变迁如下图所示（图源《Java 并发编程艺术》4.1.4 节）：</p>
+<p><a href="https://camo.githubusercontent.com/88ca089de34d29350d6b72ee1b9e9c8f8f8691f2/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f31392d312d32392f4a6176612532302545372542412542462545372541382538422545372538412542362545362538302538312545352538462539382545382542462538312e706e67" target="_blank" rel="noopener"><img src="https://camo.githubusercontent.com/88ca089de34d29350d6b72ee1b9e9c8f8f8691f2/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f31392d312d32392f4a6176612532302545372542412542462545372541382538422545372538412542362545362538302538312545352538462539382545382542462538312e706e67" alt="Java线程状态变迁"></a></p>
+<p>由上图可以看出：</p>
+<p>线程创建之后它将处于 <strong>NEW（新建）</strong> 状态，调用 <code>start()</code> 方法后开始运行，线程这时候处于 <strong>READY（可运行）</strong> 状态。可运行状态的线程获得了 cpu 时间片（timeslice）后就处于 <strong>RUNNING（运行）</strong> 状态。</p>
+<blockquote>
+<p>操作系统隐藏 Java 虚拟机（JVM）中的 READY 和 RUNNING 状态，它只能看到 RUNNABLE 状态（图源：<a href="https://howtodoinjava.com/" target="_blank" rel="noopener">HowToDoInJava</a>：<a href="https://howtodoinjava.com/java/multi-threading/java-thread-life-cycle-and-thread-states/" target="_blank" rel="noopener">Java Thread Life Cycle and Thread States</a>），所以 Java 系统一般将这两个状态统称为 <strong>RUNNABLE（运行中）</strong> 状态 。</p>
+</blockquote>
+<p>当线程执行 <code>wait()</code>方法之后，线程进入 <strong>WAITING（等待）</strong>状态。进入等待状态的线程需要依靠其他线程的通知才能够返回到运行状态，而 <strong>TIME_WAITING(超时等待)</strong> 状态相当于在等待状态的基础上增加了超时限制，比如通过 <code>sleep（long millis）</code>方法或 <code>wait（long millis）</code>方法可以将 Java 线程置于 TIMED WAITING 状态。当超时时间到达后 Java 线程将会返回到 RUNNABLE 状态。当线程调用同步方法时，在没有获取到锁的情况下，线程将会进入到 <strong>BLOCKED（阻塞）</strong> 状态。线程在执行 Runnable 的<code>run()</code>方法之后将会进入到 <strong>TERMINATED（终止）</strong> 状态。</p>
+<h1 id="文件与-I-O-流"><a href="#文件与-I-O-流" class="headerlink" title="文件与 I\O 流"></a>文件与 I\O 流</h1><h3 id="Java-中-IO-流分为几种"><a href="#Java-中-IO-流分为几种" class="headerlink" title="Java 中 IO 流分为几种?"></a>Java 中 IO 流分为几种?</h3><ul>
+<li>按照流的流向分，可以分为<strong>输入流</strong>和<strong>输出流</strong>；</li>
+<li>按照操作单元划分，可以划分为<strong>字节流</strong>和<strong>字符流</strong>；</li>
+<li>按照流的角色划分为<strong>节点流</strong>和<strong>处理流</strong>。</li>
+</ul>
+<p>Java Io 流共涉及 40 多个类，这些类看上去很杂乱，但实际上很有规则，而且彼此之间存在非常紧密的联系， Java I0 流的 40 多个类都是从如下 4 个抽象类基类中派生出来的。</p>
+<ul>
+<li>InputStream/Reader: 所有的输入流的基类，前者是字节输入流，后者是字符输入流。</li>
+<li>OutputStream/Writer: 所有输出流的基类，前者是字节输出流，后者是字符输出流。</li>
+</ul>
+<p>按操作方式分类结构图：</p>
+<p><img src="https://camo.githubusercontent.com/639ec442b39898de071c3e4fd098215fb48f11e9/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f323031392d362f494f2d2545362539332538442545342542442539432545362539362542392545352542432538462545352538382538362545372542312542422e706e67" alt="IO-æä½æ¹å¼åç±»"></p>
+<p>按操作对象分类结构图：</p>
+<p><a href="https://camo.githubusercontent.com/4a44e49ab13eacac26cbb0e481db73d6d11181b7/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f323031392d362f494f2d2545362539332538442545342542442539432545352541462542392545382542312541312545352538382538362545372542312542422e706e67" target="_blank" rel="noopener"><img src="https://camo.githubusercontent.com/4a44e49ab13eacac26cbb0e481db73d6d11181b7/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f323031392d362f494f2d2545362539332538442545342542442539432545352541462542392545382542312541312545352538382538362545372542312542422e706e67" alt="IO-操作对象分类"></a></p>
+<h4 id="既然有了字节流-为什么还要有字符流"><a href="#既然有了字节流-为什么还要有字符流" class="headerlink" title="既然有了字节流,为什么还要有字符流?"></a>既然有了字节流,为什么还要有字符流?</h4><p>问题本质想问：<strong>不管是文件读写还是网络发送接收，信息的最小存储单元都是字节，那为什么 I/O 流操作要分为字节流操作和字符流操作呢？</strong></p>
+<p>回答：字符流是由 Java 虚拟机将字节转换得到的，问题就出在这个过程还算是非常耗时，并且，如果我们不知道<strong>编码类型</strong>就很容易出现<strong>乱码</strong>问题。所以， I/O 流就干脆提供了一个直接操作字符的接口，方便我们平时对字符进行流操作。如果音频文件、图片等媒体文件用字节流比较好，如果涉及到字符的话使用字符流比较好。</p>
+<h4 id="BIO-NIO-AIO-有什么区别-【坑】"><a href="#BIO-NIO-AIO-有什么区别-【坑】" class="headerlink" title="BIO,NIO,AIO 有什么区别?【坑】"></a>BIO,NIO,AIO 有什么区别?【坑】</h4><ul>
+<li><p><strong>BIO (Blocking I/O):</strong> 同步阻塞 I/O 模式，数据的读取写入必须<strong>阻塞</strong>在一个线程内等待其完成。</p>
+<p>在活动连接数不是特别高（小于单机 1000）的情况下，这种模型是比较不错的，可以让每一个连接专注于自己的 I/O 并且编程模型简单，也不用过多考虑系统的过载、限流等问题。线程池本身就是一个天然的漏斗，可以缓冲一些系统处理不了的连接或请求。但是，当面对十万甚至百万级连接的时候，传统的 BIO 模型是无能为力的。因此，我们需要一种更高效的 I/O 处理模型来应对更高的并发量。</p>
+</li>
+<li><p><strong>NIO (Non-blocking/New I/O):</strong> NIO 是一种<strong>同步非阻塞</strong>的 I/O 模型，在 Java 1.4 中引入了 NIO 框架，对应 java.nio 包，提供了 Channel , Selector，Buffer 等抽象。NIO 中的 N 可以理解为 Non-blocking，不单纯是 New。它支持面向缓冲的，基于通道的 I/O 操作方法。 NIO 提供了与传统 BIO 模型中的 <code>Socket</code> 和 <code>ServerSocket</code> 相对应的 <code>SocketChannel</code> 和 <code>ServerSocketChannel</code> 两种不同的套接字通道实现,两种通道都支持阻塞和非阻塞两种模式。阻塞模式使用就像传统中的支持一样，比较简单，但是性能和可靠性都不好；非阻塞模式正好与之相反。对于低负载、低并发的应用程序，可以使用同步阻塞 I/O 来提升开发速率和更好的维护性；对于高负载、高并发的（网络）应用，应使用 NIO 的非阻塞模式来开发</p>
+</li>
+<li><p><strong>AIO (Asynchronous I/O):</strong> AIO 也就是 NIO 2。在 Java 7 中引入了 NIO 的改进版 NIO 2,它是异步非阻塞的 IO 模型。异步 IO 是基于事件和回调机制实现的，也就是应用操作之后会直接返回，不会堵塞在那里，当后台处理完成，操作系统会通知相应的线程进行后续的操作。AIO 是异步 IO 的缩写，虽然 NIO 在网络操作中，提供了非阻塞的方法，但是 NIO 的 IO 行为还是同步的。对于 NIO 来说，我们的业务线程是在 IO 操作准备好时，得到通知，接着就由这个线程自行进行 IO 操作，IO 操作本身是同步的。查阅网上相关资料，我发现就目前来说 AIO 的应用还不是很广泛，Netty 之前也尝试使用过 AIO，不过又放弃了。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaBasics</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LEA6</title>
+    <url>/2020/06/14/LEA6/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>LEA5</title>
+    <url>/2020/06/14/LEA5/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>498 对角线遍历 medium</title>
+    <url>/2020/06/14/LEA4/</url>
+    <content><![CDATA[<h1 id="题目：498-对角线遍历-Medium"><a href="#题目：498-对角线遍历-Medium" class="headerlink" title="题目：498. 对角线遍历 Medium"></a>题目：<a href="https://leetcode-cn.com/problems/diagonal-traverse/" target="_blank" rel="noopener">498. 对角线遍历</a> Medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li>转向临界值判断出现问题</li>
+<li>传入数组为空判断</li>
+</ol>
+<h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//模拟遍历过程，寻找临界值</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] findDiagonalOrder(<span class="keyword">int</span>[][] matrix) &#123;</span><br><span class="line">        <span class="keyword">int</span> row = matrix.length;</span><br><span class="line">        <span class="keyword">if</span>(row == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];<span class="comment">//int[0]即表示空；</span></span><br><span class="line">        <span class="keyword">int</span> col = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span> Lnum=row*col;</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[Lnum];</span><br><span class="line">        <span class="keyword">int</span> m=<span class="number">0</span>;<span class="keyword">int</span> n=<span class="number">0</span>; <span class="keyword">boolean</span> o = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i&lt;Lnum;i++)&#123;</span><br><span class="line">            res[i] = matrix[m][n];</span><br><span class="line">            <span class="keyword">if</span>(o)&#123;                              </span><br><span class="line">                <span class="keyword">if</span>(m!=<span class="number">0</span>&amp;&amp;n&lt;matrix[<span class="number">0</span>].length-<span class="number">1</span>)&#123;</span><br><span class="line">                    m--;n++;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">if</span>(n&lt;matrix[<span class="number">0</span>].length-<span class="number">1</span>)&#123;</span><br><span class="line">                        o = <span class="keyword">false</span>;</span><br><span class="line">                        n++;</span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        o = <span class="keyword">false</span>;</span><br><span class="line">                        m++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(n!=<span class="number">0</span>&amp;&amp;m&lt;matrix.length-<span class="number">1</span>)&#123;</span><br><span class="line">                    m++;n--;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">if</span>(m&lt;matrix.length-<span class="number">1</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        o = <span class="keyword">true</span>;</span><br><span class="line">                        m++;</span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        o = <span class="keyword">true</span>;</span><br><span class="line">                        n++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li><p>解决许多复杂问题的常见策略是首先解决该问题的<strong>简化问题</strong></p>
+</li>
+<li><p>首先考虑按照<strong>逐条对角线打印元素</strong>，而不考虑翻转的情况。</p>
+</li>
+<li><p>对于<strong>奇数编号的对角线</strong>，只需要将迭代结果<strong>翻转</strong>再加入结果数组即可</p>
+<p><img src="/images/LEA4/img1.png" alt="img"></p>
+</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
+<li><code>if (matrix == null || matrix.length == 0) {return new int[0];}</code>判断传来数组问题</li>
+<li>翻转集合更方便 <code>Collections.reverse(intermediate);</code></li>
+</ul>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] findDiagonalOrder(<span class="keyword">int</span>[][] matrix) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Check for empty matrices</span></span><br><span class="line">        <span class="keyword">if</span> (matrix == <span class="keyword">null</span> || matrix.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Variables to track the size of the matrix</span></span><br><span class="line">        <span class="keyword">int</span> N = matrix.length;</span><br><span class="line">        <span class="keyword">int</span> M = matrix[<span class="number">0</span>].length;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// The two arrays as explained in the algorithm</span></span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[N*M];</span><br><span class="line">        <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">        ArrayList&lt;Integer&gt; intermediate = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// We have to go over all the elements in the first</span></span><br><span class="line">        <span class="comment">// row and the last column to cover all possible diagonals</span></span><br><span class="line">        <span class="comment">//N+M-1 为总对角线条数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> d = <span class="number">0</span>; d &lt; N + M - <span class="number">1</span>; d++) &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// Clear the intermediate array every time we start</span></span><br><span class="line">            <span class="comment">// to process another diagonal</span></span><br><span class="line">            intermediate.clear();</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// We need to figure out the "head" of this diagonal</span></span><br><span class="line">            <span class="comment">// The elements in the first row and the last column</span></span><br><span class="line">            <span class="comment">// are the respective heads.</span></span><br><span class="line">            <span class="comment">// r临界值从10开始为d-m+1</span></span><br><span class="line">            <span class="comment">//c临界值从10开始都为m-1 </span></span><br><span class="line">            <span class="keyword">int</span> r = d &lt; M ? <span class="number">0</span> : d - M + <span class="number">1</span>;    </span><br><span class="line">            <span class="keyword">int</span> c = d &lt; M ? d : M - <span class="number">1</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// Iterate until one of the indices goes out of scope</span></span><br><span class="line">            <span class="comment">// Take note of the index math to go down the diagonal</span></span><br><span class="line">            <span class="comment">//从上到下遍历所有条数</span></span><br><span class="line">            <span class="keyword">while</span> (r &lt; N &amp;&amp; c &gt; -<span class="number">1</span>) &#123;</span><br><span class="line">                </span><br><span class="line">                intermediate.add(matrix[r][c]);</span><br><span class="line">                ++r;</span><br><span class="line">                --c;</span><br><span class="line">            &#125;</span><br><span class="line">                </span><br><span class="line">            <span class="comment">// Reverse even numbered diagonals. The</span></span><br><span class="line">            <span class="comment">// article says we have to reverse odd </span></span><br><span class="line">            <span class="comment">// numbered articles but here, the numbering</span></span><br><span class="line">            <span class="comment">// is starting from 0 :P</span></span><br><span class="line">            <span class="comment">//翻转加入</span></span><br><span class="line">            <span class="keyword">if</span> (d % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                Collections.reverse(intermediate);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; intermediate.size(); i++) &#123;</span><br><span class="line">                result[k++] = intermediate.get(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li>return new int[0]；表示返回空数组</li>
+</ul>
+<blockquote>
+<p>文件名：LEA4</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreArray</tag>
       </tags>
   </entry>
 </search>
