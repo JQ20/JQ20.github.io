@@ -1,13 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JavaWeb(一)</title>
+    <url>/2020/07/25/javaweb1/</url>
+    <content><![CDATA[<h1 id="HTML-amp-CSS"><a href="#HTML-amp-CSS" class="headerlink" title="HTML&amp;CSS"></a>HTML&amp;CSS</h1><h2 id="B-S软件结构"><a href="#B-S软件结构" class="headerlink" title="B/S软件结构"></a>B/S软件结构</h2><h2 id="一些标签"><a href="#一些标签" class="headerlink" title="一些标签"></a>一些标签</h2><h4 id="table"><a href="#table" class="headerlink" title="table"></a>table</h4><ul>
+<li><p><strong>tr</strong>   table data row</p>
+</li>
+<li><p><strong>td</strong>  table data cell</p>
+</li>
+<li><p><strong>th</strong> table header cell</p>
+</li>
+</ul>
+<h2 id="css-选择器"><a href="#css-选择器" class="headerlink" title="css 选择器"></a>css 选择器</h2><ol>
+<li>标签名选择器  div{ }</li>
+<li>id选择器 <strong>#</strong>id { } id=””</li>
+<li>class选择器 <strong>.</strong>class{ }  class=””</li>
+<li>组合选择器  1，2，3…{ }</li>
+</ol>
+<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>JS是弱类型语言，定义变量的时候类型不确定可变。</p>
+<h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><ol>
+<li>交互（浏览器页面信息动态交互，用户输入与客户端反馈）</li>
+<li>安全性（不允许直接访问本地硬盘）</li>
+<li>跨平台性（只要是可以解释JS的浏览器都可以执行，平台无关）</li>
+</ol>
+<h2 id="与Html结合"><a href="#与Html结合" class="headerlink" title="与Html结合"></a>与Html结合</h2><ol>
+<li>直接在body，head 中用<script>标签引入</li>
+<li>单独写在js文件中，用<script>引入</li>
+</ol>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>自动扩容</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="定义方式"><a href="#定义方式" class="headerlink" title="定义方式"></a>定义方式</h3><ol>
+<li><code>function fun() {}</code> 直接加return 代表有返回值</li>
+<li><code>var fun =fuction() { }</code></li>
+</ol>
+<h3 id="js函数不能重载，只会覆盖上层定义"><a href="#js函数不能重载，只会覆盖上层定义" class="headerlink" title="js函数不能重载，只会覆盖上层定义"></a>js函数不能重载，只会覆盖上层定义</h3><h3 id="arguments隐形参数（只在function内部，无需定义）"><a href="#arguments隐形参数（只在function内部，无需定义）" class="headerlink" title="arguments隐形参数（只在function内部，无需定义）"></a>arguments隐形参数（只在function内部，无需定义）</h3><p>类似于传入参数的可变长数组集合</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line">fun(<span class="number">1</span>,<span class="string">"a"</span>,<span class="literal">true</span>)</span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">arguments</span>[<span class="number">0</span>]) <span class="comment">//1</span></span><br><span class="line">alert(<span class="built_in">arguments</span>[<span class="number">1</span>]) <span class="comment">//"a"</span></span><br><span class="line">alert(<span class="built_in">arguments</span>[<span class="number">2</span>])  <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">亦可进行遍历</span><br><span class="line"></span><br><span class="line">js中+ 不同类型为字符串拼接</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="自定义对象"><a href="#自定义对象" class="headerlink" title="自定义对象"></a>自定义对象</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="keyword">new</span> object()</span><br><span class="line">name.value = value;</span><br><span class="line">name.fun =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">访问</span><br><span class="line">name.value</span><br><span class="line"></span><br><span class="line">&#123;&#125; <span class="comment">//自定义空对象 object类</span></span><br><span class="line"><span class="keyword">var</span> variable =&#123;</span><br><span class="line">    name1:value,</span><br><span class="line">    name2,value,</span><br><span class="line">    name_of_function : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="js事件"><a href="#js事件" class="headerlink" title="js事件"></a>js事件</h3><h4 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h4><ul>
+<li><strong>onload</strong> ：浏览器解析完自动触发事件</li>
+<li><strong>onclick</strong> :   常用于按钮的点击响应操作。</li>
+<li><strong>onblur</strong> : 失去焦点事件： 常用用于输入框失去焦点后验证其输入内容是否合法。</li>
+<li><strong>onchange</strong> : 内容发生改变事件： 常用于下拉列表和输入框内容发生改变后操作</li>
+<li><strong>onsubmit</strong>  : 表单提交事件： 常用于表单提交前，验证所有表单项是否合法</li>
+</ul>
+<h4 id="静态注册和动态注册"><a href="#静态注册和动态注册" class="headerlink" title="静态注册和动态注册"></a>静态注册和动态注册</h4><p>注册：告诉浏览器，当时间响应后执行哪些操作代码，叫事件注册</p>
+<p>静态：html事件属性直接赋值于事件响应后的代码</p>
+<p>动态：通过js代码得到标签的dom对象，通过dom对象.事件名 = functiong(){} 赋予事件响应后代码</p>
+<p>动态注册<strong>基本步骤</strong>：</p>
+<ol>
+<li>获取标签对象</li>
+<li>标签对象.事件名= functiong(){}</li>
+</ol>
+<p><strong>onload</strong> 加载完成事件</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// onload 事件动态注册。是固定写法</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">alert(<span class="string">" 动态注册的 onload  事件"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//静态注册 onload 事件</span></span><br><span class="line"><span class="comment">//onload 事件是浏览器解析完页面之后就会自动触发的事件</span></span><br><span class="line">&lt;body onload=<span class="string">"onloadFun();"</span>&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p> <strong>onclick</strong> 单击事件</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 动态注册 onclick 事件</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// 1 获取标签对象</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* document 是 JavaScript 语言提供的一个对象（文档） &lt;br/&gt;</span></span><br><span class="line"><span class="comment">* getElementById 通过 id 属性获取标签对象</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">var</span> btnObj = <span class="built_in">document</span>.getElementById(<span class="string">"btn01"</span>);</span><br><span class="line"><span class="comment">// alert( btnObj );</span></span><br><span class="line"><span class="comment">// 2 通过标签对象 . 事件名 = function()&#123;&#125;</span></span><br><span class="line">btnObj.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">alert(<span class="string">" 动态注册的 onclick  事件"</span>);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">  &lt;!-- 静态注册 onClick 事件 --&gt;</span><br><span class="line">&lt;button onclick=<span class="string">"onclickFun();"</span>&gt;按钮 <span class="number">1</span> &lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;button id="btn01"&gt;按钮 2&lt;/</span>button&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>onblur</strong> 失去焦点事件</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 静态注册失去焦点事件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onblurFun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// console 是控制台对象，是由 JavaScript 语言提供，专门用来向浏览器的控制器打印输出， 用于测试使用</span></span><br><span class="line"><span class="comment">// log() 是打印的方法</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">" 静态注册失去焦点事件"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 动态注册 onblur 事件</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">//1 获取标签对象</span></span><br><span class="line"><span class="keyword">var</span> passwordObj = <span class="built_in">document</span>.getElementById(<span class="string">"password"</span>);</span><br><span class="line"><span class="comment">// alert(passwordObj);</span></span><br><span class="line"><span class="comment">//2 通过标签对象 . 事件名 = function()&#123;&#125;;</span></span><br><span class="line">passwordObj.onblur = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">" 动态注册失去焦点事件"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">用户名:<span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">onblur</span>=<span class="string">"onblurFun();"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line">密码:&lt;input id="password" type="text" &gt;&lt;br/&gt;</span><br></pre></td></tr></table></figure></div>
+
+]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaStduyRoad</title>
     <url>/2020/06/08/JavaRoad/</url>
     <content><![CDATA[<blockquote class="blockquote-center">本篇总结Java学习资源路线</blockquote>
 
 <ol>
 <li>根据JavaGuid<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/Java基础知识.md" target="_blank" rel="noopener">补基础</a>、</li>
-<li>重读《Head First  Java》</li>
+<li>重读《Head First  Java》JAVASE</li>
+<li>javaweb</li>
 </ol>
 <blockquote>
 <p>文件名：JavaRoad</p>
@@ -21,299 +88,46 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaBasics（一）</title>
-    <url>/2020/06/09/JB1/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md#1-java-%E5%9F%BA%E6%9C%AC%E5%8A%9F" target="_blank" rel="noopener">Java基本功--JAVA入门</a></blockquote>
-
-<h1 id="Java-入门"><a href="#Java-入门" class="headerlink" title="Java 入门"></a>Java 入门</h1><h2 id="JVM-JDK-JRE"><a href="#JVM-JDK-JRE" class="headerlink" title="JVM JDK JRE"></a>JVM JDK JRE</h2><p>Java 虚拟机（JVM）是运行 Java 字节码的虚拟机。JVM 有针对不同系统的特定实现（Windows，Linux，macOS），目的是<strong>使用相同的字节码</strong>，它们都会给出相同的结果。<strong>字节码</strong>和不同系统的 <strong>JVM</strong> 实现是 Java 语言“一次编译，随处可以运行”的关键所在。</p>
-<p><strong>什么是字节码?采用字节码的好处是什么?</strong></p>
-<blockquote>
-<p>在 Java 中，JVM 可以理解的代码就叫做<code>字节码</code>（即扩展名为 <code>.class</code> 的文件），它不面向任何特定的处理器，只面向虚拟机。Java 语言通过字节码的方式，在一定程度上解决了传统解释型语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以 Java 程序运行时比较高效，而且，由于字节码并不针对一种特定的机器，因此，Java 程序无须重新编译便可在多种不同操作系统的计算机上运行。</p>
-</blockquote>
-<p><img src="/images/JB1/image-20200609155856790.png" alt="image-20200609155856790"></p>
-<p>【2020/6/12 坑】JIT AOT -&gt; <strong>Java 是编译与解释共存的语言</strong></p>
-<h4 id="为什么说-Java-语言“编译与解释并存”？"><a href="#为什么说-Java-语言“编译与解释并存”？" class="headerlink" title="为什么说 Java 语言“编译与解释并存”？"></a>为什么说 Java 语言“编译与解释并存”？</h4><p>高级编程语言按照程序的执行方式分为<strong>编译</strong>型和<strong>解释</strong>型两种。</p>
-<p>编译型语言是指编译器针对特定的操作系统将源代码<strong>一次性翻译</strong>成可被该平台执行的<strong>机器码</strong>；</p>
-<p>解释型语言是指解释器对源程序逐行解释成特定平台的机器码并<strong>立即执行</strong>。</p>
-<p>例子：你想阅读一本英文名著，你可以找一个英文翻译人员帮助你阅读， 有两种选择方式，你可以先等翻译人员将全本的英文名著（也就是源码）都翻译成汉语，再去阅读，也可以让翻译人员翻译一段，你在旁边阅读一段，慢慢把书读完。</p>
-<p>Java 语言既具有编译型语言的特征，也具有解释型语言的特征，</p>
-<p>因为 Java 程序要经过先编译，后解释两个步骤，由 Java 编写的程序需要先经过编译步骤，生成字节码（*.class 文件），这种字节码必须由 Java 解释器来解释执行。</p>
-<p>因此，我们可以认为 Java 语言编译与解释并存。</p>
-<h2 id="JDK-amp-JRE"><a href="#JDK-amp-JRE" class="headerlink" title="JDK &amp;JRE"></a>JDK &amp;JRE</h2><p><strong>JDK</strong> 是 Java Development Kit，它是功能齐全的 Java SDK。它拥有 JRE 所拥有的一切，还有编译器（javac）和工具（如 javadoc 和 jdb）。它能够创建和编译程序。<strong>JDK = SDK plus + JRE +…</strong></p>
-<p><strong>JRE</strong> 是 Java 运行时环境。它是运行已编译 Java 程序所需的所有内容的集合，包括 Java 虚拟机（JVM），Java 类库，java 命令和其他的一些基础构件。但是，它不能用于创建新程序。</p>
-<h3 id="Oracle-JDK-和-OpenJDK-的对比"><a href="#Oracle-JDK-和-OpenJDK-的对比" class="headerlink" title="Oracle JDK 和 OpenJDK 的对比"></a>Oracle JDK 和 OpenJDK 的对比</h3><ol>
-<li>OpenJDK<strong>完全开源</strong>，Oracle JDK 是 OpenJDK 的一个实现，并<strong>不是完全开源</strong>的；</li>
-<li>稳定性： Oracle JDK &gt;  OpenJDK</li>
-<li>响应性和 JVM : Oracle JDK &gt; OpenJDK</li>
-</ol>
-<h3 id="Java-和-C-的区别"><a href="#Java-和-C-的区别" class="headerlink" title="Java 和 C++的区别?"></a>Java 和 C++的区别?</h3><ol>
-<li>都是面向对象的语言，都支持封装、继承和多态</li>
-<li>Java 不提供指针来直接访问内存，程序内存更加安全</li>
-<li>Java 的类是单继承的，C++ 支持多重继承；虽然 Java 的类不可以多继承，但是接口可以多继承</li>
-<li>Java 有自动内存管理机制，不需要程序员手动释放无用内存</li>
-<li>在 C 语言中，字符串或字符数组最后都会有一个额外的字符‘\0’来表示结束。但是，Java 语言中<a href="https://blog.csdn.net/sszgg2006/article/details/49148189" target="_blank" rel="noopener">没有结束符这一概念</a>。</li>
-</ol>
-<h3 id="什么是-Java-程序的主类-应用程序和小程序的主类有何不同-amp-Java-应用程序与小程序之间有哪些差别"><a href="#什么是-Java-程序的主类-应用程序和小程序的主类有何不同-amp-Java-应用程序与小程序之间有哪些差别" class="headerlink" title="什么是 Java 程序的主类 应用程序和小程序的主类有何不同?&amp;Java 应用程序与小程序之间有哪些差别?"></a>什么是 Java 程序的主类 应用程序和小程序的主类有何不同?&amp;Java 应用程序与小程序之间有哪些差别?</h3><p>【2020/6/12 坑】小程序</p>
-<p>一个程序中可以有多个类，但只能有一个类是主类。在 Java 应用程序中，这个主类是指包含 main（）方法的类。</p>
-<p>而在 Java 小程序中，这个主类是一个继承自系统类 JApplet 或 Applet 的子类。应用程序的主类不一定要求是 public 类，但小程序的主类要求必须是 public 类。</p>
-<p>主类是 Java 程序执行的入口点。</p>
-<p>简单说应用程序是从主线程启动(也就是 <code>main()</code> 方法)。</p>
-<p>applet 小程序没有 <code>main()</code> 方法，主要是嵌在浏览器页面上运行(调用<code>init()</code>或者<code>run()</code>来启动)，嵌入浏览器这点跟 flash 的小游戏类似。</p>
-<h3 id="import-java-和-javax-有什么区别？"><a href="#import-java-和-javax-有什么区别？" class="headerlink" title="import java 和 javax 有什么区别？"></a>import java 和 javax 有什么区别？</h3><p>【2020/6/12 坑】</p>
-<h2 id="Java-语法"><a href="#Java-语法" class="headerlink" title="Java 语法"></a>Java 语法</h2><h3 id="字符型常量和字符串常量的区别"><a href="#字符型常量和字符串常量的区别" class="headerlink" title="字符型常量和字符串常量的区别?"></a>字符型常量和字符串常量的区别?</h3><ol>
-<li><p>形式上: 字符常量是单引号引起<code>&#39; &#39;</code>的<strong>一个字符</strong>; 字符串常量是双引号 <code>&quot; &quot;</code> 引起的<strong>若干个字符</strong></p>
-</li>
-<li><p>含义上: 字符常量相当于一个<strong>整型值</strong>( ASCII 值),可以参加表达式运算; </p>
-<p>字符串常量代表一个<strong>地址值</strong>(该字符串在内存中存放位置)</p>
-</li>
-<li><p>占内存大小 字符常量只占 2 个字节; 字符串常量占若干个字节 (<strong>注意： char 在 Java 中占两个字节</strong>)</p>
-</li>
-</ol>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p><strong>若编程语言足够有表达力，就不需要注释，尽量通过代码来阐述</strong></p>
-<p>去掉下面复杂的注释，只需要创建一个与注释所言同一事物的函数即可</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// check to see if the employee is eligible for full benefits</span></span><br><span class="line"><span class="keyword">if</span> ((employee.flags &amp; HOURLY_FLAG) &amp;&amp; (employee.age &gt; <span class="number">65</span>))</span><br></pre></td></tr></table></figure></div>
-
-<p>应替换为</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (employee.isEligibleForFullBenefits())</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="标识符和关键字的区别是什么？"><a href="#标识符和关键字的区别是什么？" class="headerlink" title="标识符和关键字的区别是什么？"></a>标识符和关键字的区别是什么？</h3><p>在我们编写程序的时候，需要大量地为程序、类、变量、方法等取名字，于是就有了标识符，简单来说，<strong>标识符就是一个名字</strong>。</p>
-<p>但是有一些标识符，Java 语言已经赋予了其特殊的含义，只能<strong>用于特定</strong>的地方，这种特殊的标识符就是<strong>关键字</strong>。因此，<strong>关键字是被赋予特殊含义的标识符</strong>。比如，在我们的日常生活中 ，“警察局”这个名字已经被赋予了特殊的含义，所以如果你开一家店，店的名字不能叫“警察局”，“警察局”就是我们日常生活中的关键字。</p>
-<h3 id="【坑】Java泛型了解么？什么是类型擦除？介绍一下常用的通配符？"><a href="#【坑】Java泛型了解么？什么是类型擦除？介绍一下常用的通配符？" class="headerlink" title="【坑】Java泛型了解么？什么是类型擦除？介绍一下常用的通配符？"></a>【坑】Java泛型了解么？什么是类型擦除？介绍一下常用的通配符？</h3><p>【2020/6/12 坑】Java 泛型（generics）是 JDK 5 中引入的一个新特性, 泛型提供了编译时<strong>类型安全检测机制</strong>，该机制允许程序员在编译时检测到<strong>非法的类型</strong>。泛型的本质是<strong>参数化类型</strong>，也就是说所操作的数据类型被指定为一个参数。</p>
-<p><strong>Java的泛型是伪泛型，这是因为Java在编译期间，所有的泛型信息都会被擦掉，这也就是通常所说类型擦除 。</strong> 更多关于类型擦除的问题，可以查看这篇文章：<a href="https://www.cnblogs.com/wuqinglong/p/9456193.html" target="_blank" rel="noopener">《Java泛型类型擦除以及类型擦除带来的问题》</a> 。</p>
-<h4 id="泛型一般有三种使用方式-泛型类、泛型接口、泛型方法。"><a href="#泛型一般有三种使用方式-泛型类、泛型接口、泛型方法。" class="headerlink" title="泛型一般有三种使用方式:泛型类、泛型接口、泛型方法。"></a>泛型一般有三种使用方式:泛型类、泛型接口、泛型方法。</h4><p><strong>1.泛型类</strong>：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//此处T可以随便写为任意标识，常见的如T、E、K、V等形式的参数常用于表示泛型</span></span><br><span class="line"><span class="comment">//在实例化泛型类时，必须指定T的具体类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generic</span>&lt;<span class="title">T</span>&gt;</span>&#123; </span><br><span class="line">   </span><br><span class="line">    <span class="keyword">private</span> T key;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Generic</span><span class="params">(T key)</span> </span>&#123; </span><br><span class="line">        <span class="keyword">this</span>.key = key;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getKey</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">return</span> key;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>如何实例化泛型类：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">Generic&lt;Integer&gt; genericInteger = <span class="keyword">new</span> Generic&lt;Integer&gt;(<span class="number">123456</span>);</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>2.泛型接口</strong> ：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Generator</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">method</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>实现泛型接口，不指定类型： </p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GeneratorImpl</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">Generator</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>实现泛型接口，指定类型：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GeneratorImpl</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">Generator</span>&lt;<span class="title">String</span>&gt;</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>3.泛型方法</strong> ：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt; E &gt; <span class="function"><span class="keyword">void</span> <span class="title">printArray</span><span class="params">( E[] inputArray )</span></span></span><br><span class="line"><span class="function"></span>&#123;         </span><br><span class="line">      <span class="keyword">for</span> ( E element : inputArray )&#123;        </span><br><span class="line">         System.out.printf( <span class="string">"%s "</span>, element );</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println();</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>使用：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 创建不同类型数组： Integer, Double 和 Character</span></span><br><span class="line">Integer[] intArray = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;;</span><br><span class="line">String[] stringArray = &#123; <span class="string">"Hello"</span>, <span class="string">"World"</span> &#125;;</span><br><span class="line">printArray( intArray  ); </span><br><span class="line">printArray( stringArray  );</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="常用的通配符为：-T，E，K，V，？"><a href="#常用的通配符为：-T，E，K，V，？" class="headerlink" title="常用的通配符为： T，E，K，V，？"></a><strong>常用的通配符为： T，E，K，V，？</strong></h4><ul>
-<li>？ 表示不确定的 java 类型</li>
-<li>T (type) 表示具体的一个java类型</li>
-<li>K V (key value) 分别代表java键值中的Key Value</li>
-<li>E (element) 代表Element</li>
-</ul>
-<p>更多关于Java 泛型中的通配符可以查看这篇文章：<a href="https://juejin.im/post/5d5789d26fb9a06ad0056bd9" target="_blank" rel="noopener">《聊一聊-JAVA 泛型中的通配符 T，E，K，V，？》</a></p>
-<h3 id="和equals的区别"><a href="#和equals的区别" class="headerlink" title="==和equals的区别"></a>==和equals的区别</h3><p><strong><code>=</code></strong> : 它的作用是判断两个对象的<strong>地址</strong>是不是相等。即判断两个对象是不是同一个对象。</p>
-<p>(<strong>基本数据类型==比较的是值，引用数据类型==比较的是内存地址</strong>)</p>
-<blockquote>
-<p>因为 Java 只有值传递，所以，对于 == 来说，不管是比较基本数据类型，还是引用数据类型的变量，其本质比较的都是值，只是引用类型变量存的值是对象的地址。</p>
-</blockquote>
-<p><strong><code>equals()</code></strong> : 它的作用也是判断两个对象是否相等，它不能用于比较基本数据类型的变量。<code>equals()</code>方法存在于<code>Object</code>类中，而<code>Object</code>类是所有类的直接或间接父类。</p>
-<p><code>Object</code>类<code>equals()</code>方法：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="hashCode-与-equals"><a href="#hashCode-与-equals" class="headerlink" title="hashCode()与 equals()"></a>hashCode()与 equals()</h3><h4 id="hashCode-介绍"><a href="#hashCode-介绍" class="headerlink" title="hashCode()介绍"></a><strong>hashCode()</strong>介绍</h4><p><code>hashCode()</code> 的作用是获取哈希码，也称为散列码；它实际上是返回一个 int 整数。这个哈希码的作用是确定该对象在哈希表中的索引位置。</p>
-<h4 id="【坑】什么要有-hashCode？"><a href="#【坑】什么要有-hashCode？" class="headerlink" title="【坑】什么要有 hashCode？"></a><strong>【坑】什么要有 hashCode？</strong></h4><p>例子：“<code>HashSet</code> 如何检查重复？”</p>
-<p>【2020/6/12 坑：Headfirst java 阅读：hashset】</p>
-<ol>
-<li>对象加入 <code>HashSet</code></li>
-<li><code>HashSet</code> 计算对象的 hashcode 值 判断对象加入的位置， </li>
-<li>同时也会与其他已经加入的对象的 hashcode 值作比较，</li>
-<li>如果没有相符的 hashcode，<code>HashSet</code> 会假设对象没有重复出现。</li>
-<li>但是如果发现有相同 hashcode 值的对象，</li>
-<li>这时会调用 equals（）方法来检查 hashcode 相等的对象是否真的相同。</li>
-<li>如果两者相同，<code>HashSet</code> 就不会让其加入操作成功。如果不同的话，就会重新散列到其他位置。【Headfirst java】</li>
-</ol>
-<ul>
-<li>结果：大大减少了 equals 的次数，提高了执行速度。</li>
-</ul>
-<h4 id="为什么重写-equals-时必须重写-hashCode-方法？"><a href="#为什么重写-equals-时必须重写-hashCode-方法？" class="headerlink" title="为什么重写 equals 时必须重写 hashCode 方法？"></a><strong>为什么重写 <code>equals</code> 时必须重写 <code>hashCode</code> 方法？</strong></h4><p>【2020/6/12 坑】如果两个对象相等，则 hashcode 一定也是相同的。两个对象相等,对两个对象分别调用 equals 方法都返回 true。但是，两个对象有相同的 hashcode 值，它们也不一定是相等的 。<strong>因此，equals 方法被覆盖过，则 <code>hashCode</code> 方法也必须被覆盖。</strong></p>
-<blockquote>
-<p>文件名：JB1</p>
-</blockquote>
-<h4 id="为什么两个对象有相同的-hashcode-值，它们也不一定是相等的？"><a href="#为什么两个对象有相同的-hashcode-值，它们也不一定是相等的？" class="headerlink" title="为什么两个对象有相同的 hashcode 值，它们也不一定是相等的？"></a><strong>为什么两个对象有相同的 hashcode 值，它们也不一定是相等的？</strong></h4><p>不同的对象有可能得到相同的 <code>hashCode</code></p>
-<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p>Java中有8种基本数据类型，分别为：</p>
-<ol>
-<li>6种数字类型 ：byte、short、int、long、float、double</li>
-<li>1种字符类型：char</li>
-<li>1中布尔型：boolean。</li>
-</ol>
-<p>注意：</p>
-<ol>
-<li>Java 里使用 long 类型的数据一定要在数值后面加上 <strong>L</strong>，否则将作为整型解析：</li>
-<li><code>char a = &#39;h&#39;</code>char :单引号，<code>String a = &quot;hello&quot;</code> :双引号</li>
-</ol>
-<h4 id="自动装箱与拆箱【坑】"><a href="#自动装箱与拆箱【坑】" class="headerlink" title="自动装箱与拆箱【坑】"></a>自动装箱与拆箱【坑】</h4><ul>
-<li><strong>装箱</strong>：将基本类型用它们对应的引用类型包装起来；</li>
-<li><strong>拆箱</strong>：将包装类型转换为基本数据类型；</li>
-</ul>
-<h4 id="8种基本类型的包装类和常量池【坑】"><a href="#8种基本类型的包装类和常量池【坑】" class="headerlink" title="8种基本类型的包装类和常量池【坑】"></a>8种基本类型的包装类和常量池【坑】</h4><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="什么是方法的返回值-返回值在类的方法里的作用是什么"><a href="#什么是方法的返回值-返回值在类的方法里的作用是什么" class="headerlink" title="什么是方法的返回值?返回值在类的方法里的作用是什么?"></a>什么是方法的返回值?返回值在类的方法里的作用是什么?</h3><ul>
-<li>方法的返回值：获取到的某个方法体中的代码执行后产生的结果！（前提是该方法可能产生结果）。</li>
-<li>返回值的作用：接收出结果，使得它可以用于其他的操作！</li>
-</ul>
-<h3 id="为什么-Java-中只有值传递？"><a href="#为什么-Java-中只有值传递？" class="headerlink" title="为什么 Java 中只有值传递？"></a>为什么 Java 中只有值传递？</h3><ul>
-<li><p>按<strong>值</strong>调用(call by value)表示方法接收的是调用者提供的<strong>值</strong>。</p>
-</li>
-<li><p>按<strong>引用</strong>调用（call by reference)表示方法接收的是调用者提供的<strong>变量地址</strong>。【<strong>改地址</strong>】</p>
-<p>一个方法可以修改传递<strong>引用</strong>所对应的变量值，而不能修改传递<strong>值</strong>调用所对应的变量值。</p>
-</li>
-<li><p><strong>引用类型</strong>的按<strong>值</strong>传递，传递的是<strong>对象的地</strong>址</p>
-</li>
-<li><p>引用数据数据类型分为三种：<strong>① 接口 ② 类 ③ 数组</strong></p>
-</li>
-<li><p>对象引用是按<strong>值</strong>传递</p>
-</li>
-</ul>
-<h3 id="【坑】重载和重写的区别"><a href="#【坑】重载和重写的区别" class="headerlink" title="【坑】重载和重写的区别"></a>【坑】重载和重写的区别</h3><blockquote>
-<p>重载就是同样的一个方法能够根据<strong>输入数据的不同</strong>，做出<strong>不同的处理</strong></p>
-<p>重写就是当子类继承自父类的相同方法，输入数据一样，但要做出有别于父类的响应时，你就要<strong>覆盖父类方法</strong></p>
-</blockquote>
-<ul>
-<li><strong>重载</strong>就是同一个类中多个同名方法根据不同的传参来执行不同的逻辑处理。</li>
-<li><strong>重写</strong>就是子类对父类方法的重新改造，外部样子不能改变，<strong>内部逻辑可以改变</strong>。</li>
-</ul>
-<p>【坑 2020/6/13 重写不懂】</p>
-<h3 id="深拷贝-vs-浅拷贝"><a href="#深拷贝-vs-浅拷贝" class="headerlink" title="深拷贝 vs 浅拷贝"></a>深拷贝 vs 浅拷贝</h3><ol>
-<li><strong>浅拷贝</strong>：对基本数据类型进行值传递，对引用数据类型进行引用传递般的拷贝，此为浅拷贝。</li>
-<li><strong>深拷贝</strong>：对基本数据类型进行值传递，对引用数据类型，<strong>创建一个新的对象，并复制其内容</strong>，此为深拷贝。</li>
-</ol>
-<h3 id="方法的四种类型"><a href="#方法的四种类型" class="headerlink" title="方法的四种类型"></a>方法的四种类型</h3><p>1、无参数无返回值的方法</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 无参数无返回值的方法(如果方法没有返回值，不能不写，必须写void，表示没有返回值)</span><br><span class="line">public void f1() &#123;</span><br><span class="line">    System.out.println(&quot;无参数无返回值的方法&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>2、有参数无返回值的方法</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">* 有参数无返回值的方法</span><br><span class="line">* 参数列表由零组到多组“参数类型+形参名”组合而成，多组参数之间以英文逗号（,）隔开，形参类型和形参名之间以英文空格隔开</span><br><span class="line">*&#x2F;</span><br><span class="line">public void f2(int a, String b, int c) &#123;</span><br><span class="line">    System.out.println(a + &quot;--&gt;&quot; + b + &quot;--&gt;&quot; + c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>3、有返回值无参数的方法</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 有返回值无参数的方法（返回值可以是任意的类型,在函数里面必须有return关键字返回对应的类型）</span><br><span class="line">public int f3() &#123;</span><br><span class="line">    System.out.println(&quot;有返回值无参数的方法&quot;);</span><br><span class="line">    return 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>4、有返回值有参数的方法</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 有返回值有参数的方法</span><br><span class="line">public int f4(int a, int b) &#123;</span><br><span class="line">    return a * b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>5、return 在无返回值方法的特殊使用</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; return在无返回值方法的特殊使用</span><br><span class="line">public void f5(int a) &#123;</span><br><span class="line">    if (a&gt;10) &#123;</span><br><span class="line">    return;&#x2F;&#x2F;表示结束所在方法 （f5方法）的执行,下方的输出语句不会执行</span><br><span class="line">&#125;</span><br><span class="line">    System.out.println(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
-      <categories>
-        <category>JavaBasics</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>力扣刷题总结文章模板</title>
-    <url>/2020/06/11/LTemp/</url>
-    <content><![CDATA[<h1 id="题目：-名字-Easy-Medium-Hard"><a href="#题目：-名字-Easy-Medium-Hard" class="headerlink" title="题目： 名字   Easy/Medium/Hard"></a>题目： 名字   Easy/Medium/Hard</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+    <title>LES1</title>
+    <url>/2020/07/03/LEAS1/</url>
+    <content><![CDATA[<h1 id="题目：-最长公共前缀-Easy"><a href="#题目：-最长公共前缀-Easy" class="headerlink" title="题目： 最长公共前缀  Easy"></a>题目： <a href="https://leetcode-cn.com/problems/longest-common-prefix/" target="_blank" rel="noopener">最长公共前缀</a>  Easy</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
 <li><h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3></li>
 <li></li>
 </ol>
 <h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
-<li></li>
+<li><strong>横向扫描</strong>，依次遍历每个字符串，更新最长公共前缀</li>
 </ul>
-<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
-<li><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4></li>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h4><ul>
+<li><pre><code class="java"><span class="function"><span class="keyword">public</span> <span class="keyword">char</span> <span class="title">charAt</span><span class="params">(<span class="keyword">int</span> index)</span><span class="comment">//返回指定字符</span></span>
+<span class="function"><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- &#96;&#96;&#96;java</span><br><span class="line">  public String substring(int beginIndex, int endIndex)&#x2F;&#x2F;返回子串 begin与end相等返回&quot;&quot;</span><br></pre></td></tr></table></figure></div></span>
+<span class="function"></span></code></pre>
+</li>
 </ul>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-
-
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs == <span class="keyword">null</span> || strs.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        String prefix = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> count = strs.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; count; i++) &#123;</span><br><span class="line">            prefix = longestCommonPrefix(prefix, strs[i]);</span><br><span class="line">            <span class="keyword">if</span> (prefix.length() == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> prefix;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String str1, String str2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = Math.min(str1.length(), str2.length());</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (index &lt; length &amp;&amp; str1.charAt(index) == str2.charAt(index)) &#123;</span><br><span class="line">            index++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str1.substring(<span class="number">0</span>, index);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
-<li></li>
+<li>substring返回子串 begin与end相等返回””</li>
 </ul>
-<blockquote>
-<p>文件名：LTemp</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreArray</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>56 合并区间 medium</title>
-    <url>/2020/06/08/LEA1/</url>
-    <content><![CDATA[<h1 id="56-合并区间-medium"><a href="#56-合并区间-medium" class="headerlink" title="#56 合并区间 medium"></a>#56 <a href="https://leetcode-cn.com/explore/featured/card/array-and-string/198/introduction-to-array/770/" target="_blank" rel="noopener">合并区间</a> medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><p>无法解决：</p>
+<h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3><h4 id="解题逻辑：-1"><a href="#解题逻辑：-1" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li><p><strong>纵向扫描</strong>从前往后遍历所有字符串的每一列，比较相同列上的字符是否相同，如果相同则继续对下一列进行比较，如果不相同则当前列不再属于公共前缀，当前列之前的部分为最长公共前缀。</p>
+<p><img src="/images/LEAS1/14_fig2.png" alt="fig2"></p>
+</li>
+</ul>
+<h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="重点-1"><a href="#重点-1" class="headerlink" title="重点"></a>重点</h4><ul>
+<li>临界值判断之一：被比较字符串长度超过初始字符串长度时停止</li>
+</ul>
+<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs == <span class="keyword">null</span> || strs.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> length = strs[<span class="number">0</span>].length();</span><br><span class="line">        <span class="keyword">int</span> count = strs.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">            <span class="keyword">char</span> c = strs[<span class="number">0</span>].charAt(i);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; count; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == strs[j].length() || strs[j].charAt(i) != c) &#123;</span><br><span class="line">                    <span class="keyword">return</span> strs[<span class="number">0</span>].substring(<span class="number">0</span>, i);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> strs[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips-1"><a href="#tips-1" class="headerlink" title="tips:"></a>tips:</h4><h3 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h3><p><strong>解题逻辑</strong>：</p>
 <ul>
-<li>二维数组排序，自己想像冒泡那样移动</li>
-<li>合并后另外开一个数组的大小自己没办法掌握</li>
+<li>分治算法</li>
 </ul>
-<p>总结： JAVA语法和Arrays函数不熟练</p>
-<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习<a href="https://leetcode-cn.com/problems/merge-intervals/solution/chi-jing-ran-yi-yan-miao-dong-by-sweetiee/" target="_blank" rel="noopener">题解</a>代码</h2><h3 id="合并逻辑："><a href="#合并逻辑：" class="headerlink" title="合并逻辑："></a><strong>合并逻辑</strong>：</h3><p> <strong>第一个区间的起始位置 ≤ 第二个区间的起始位置</strong>，如果不满足这个假设，交换这两个区间</p>
-<img src="/images/LEA/91d75169b1cdb15560d361f8cb7050adfe7906c955afbe8846b92d1beba8a0d7-image.png" alt="image.png" style="zoom:33%;" />
-
-<h3 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h3><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ol>
-<li><p>排序数组（sort是调优后的快排） 【按照区间起始值比较整个区间】</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">Arrays.sort(intervals, (v1, v2) -&gt; v1[<span class="number">0</span>] - v2[<span class="number">0</span>])</span><br></pre></td></tr></table></figure></div>
-
-<p>其中【不懂坑先记住】 <code>(v1, v2) -&gt; v1[0] - v2[0])</code> 是lambda表达式，传入一个自定义比较器Comparator</p>
-<p>逻辑：假设传来两个值，<code>v1</code> 与 <code>v2</code>，那么他们的先后顺序以 <code>v1[0]</code> 比 <code>v2[0]</code> 的结果为准，即：若 <code>v1[0] &lt; v2[0]</code> 则 <code>v1 &lt; v2</code>，若 <code>=</code> 则 <code>=</code>，若 <code>&gt;</code> 则 <code>&gt;</code></p>
-</li>
-<li><p>合并逻辑</p>
-<p>反向思考：<strong>排序后不合并的情况少</strong></p>
-</li>
-<li><p>拷贝数组，返回结果</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">Arrays.copyOf(res, idx + <span class="number">1</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p>实现现数组的复制，返回复制后的数组，参数是被复制的数组和复制的长度</p>
-</li>
-</ol>
-<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><h4 id="第一种：排序"><a href="#第一种：排序" class="headerlink" title="第一种：排序"></a>第一种：排序</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//简洁代码</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] merge(<span class="keyword">int</span>[][] intervals) &#123;</span><br><span class="line">        <span class="comment">// 先按照区间起始位置排序</span></span><br><span class="line">        Arrays.sort(intervals, (v1, v2) -&gt; v1[<span class="number">0</span>] - v2[<span class="number">0</span>]);</span><br><span class="line">        <span class="comment">// 遍历区间</span></span><br><span class="line">        <span class="keyword">int</span>[][] res = <span class="keyword">new</span> <span class="keyword">int</span>[intervals.length][<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> idx = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] interval: intervals) &#123;</span><br><span class="line">            <span class="comment">// 如果结果数组是空的，或者当前区间的起始位置 &gt; 结果数组中最后区间的终止位置，</span></span><br><span class="line">            <span class="comment">// 则不合并，直接将当前区间加入结果数组。</span></span><br><span class="line">            <span class="keyword">if</span> (idx == -<span class="number">1</span> || interval[<span class="number">0</span>] &gt; res[idx][<span class="number">1</span>]) &#123;</span><br><span class="line">                res[++idx] = interval;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 反之将当前区间合并至结果数组的最后区间</span></span><br><span class="line">                res[idx][<span class="number">1</span>] = Math.max(res[idx][<span class="number">1</span>], interval[<span class="number">1</span>]);</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Arrays.copyOf(res, idx + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="第二种：枚举【遍历】"><a href="#第二种：枚举【遍历】" class="headerlink" title="第二种：枚举【遍历】"></a>第二种：枚举【遍历】</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//类似冒泡，枚举所有可能</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[][] merge(<span class="keyword">int</span>[][] intervals) &#123;</span><br><span class="line">    <span class="keyword">int</span> len = intervals.length;</span><br><span class="line">    <span class="keyword">if</span> (len &lt; <span class="number">2</span>) <span class="keyword">return</span> intervals;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>; <span class="comment">// 合并次数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (intervals[i][<span class="number">0</span>] &lt;= intervals[j][<span class="number">1</span>] &amp;&amp; intervals[i][<span class="number">1</span>] &gt;= intervals[j][<span class="number">0</span>]) &#123;</span><br><span class="line">                intervals[j][<span class="number">0</span>] = Math.min(intervals[j][<span class="number">0</span>], intervals[i][<span class="number">0</span>]);</span><br><span class="line">                intervals[j][<span class="number">1</span>] = Math.max(intervals[j][<span class="number">1</span>], intervals[i][<span class="number">1</span>]);</span><br><span class="line">                intervals[i] = <span class="keyword">null</span>; <span class="comment">// 清空前者</span></span><br><span class="line">                cnt++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>[][] res = <span class="keyword">new</span> <span class="keyword">int</span>[len - cnt][<span class="number">2</span>]; <span class="comment">// len - cnt 合并后个数</span></span><br><span class="line">    <span class="keyword">int</span> ri = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] pair : intervals) &#123;</span><br><span class="line">        <span class="keyword">if</span> (pair != <span class="keyword">null</span>) res[ri++] = pair;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
-<li><p>if语句判断-1情况，后面越界可忽略</p>
-</li>
-<li><p><code>intervals[j] = new int []{start,end};</code></p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> [] a = &#123;<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">a[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">a[<span class="number">1</span>] = <span class="number">3</span>;</span><br></pre></td></tr></table></figure></div>
-
-
-
-
-
-
-</li>
-</ul>
-<blockquote>
-<p>文件名：LEA1</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreArray</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面试题 01.07 旋转矩阵 medium</title>
-    <url>/2020/06/11/LEA2/</url>
-    <content><![CDATA[<h1 id="旋转矩阵-medium"><a href="#旋转矩阵-medium" class="headerlink" title="旋转矩阵 medium"></a><a href="https://leetcode-cn.com/problems/rotate-matrix-lcci/" target="_blank" rel="noopener">旋转矩阵</a> medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><p>无法解决：</p>
+<h3 id="解决方案四"><a href="#解决方案四" class="headerlink" title="解决方案四"></a>解决方案四</h3><p><strong>解题逻辑</strong>：</p>
 <ul>
-<li>不带开销旋转出错值</li>
+<li>二分查找</li>
 </ul>
-<p>问题总结： 陷入拿辅助数组copy的思维定势</p>
-<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习<a href="https://leetcode-cn.com/problems/merge-intervals/solution/chi-jing-ran-yi-yan-miao-dong-by-sweetiee/" target="_blank" rel="noopener">题解</a>代码</h2><h3 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h3><p> 观察旋转逻辑给出代码复现思路：【先进行转置然后对每一行以中点进行翻转】</p>
-<h3 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h3><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><p>原地翻转一个temp变量即可</p>
-<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = matrix.length;</span><br><span class="line">        <span class="comment">// 先以对角线（左上-右下）为轴进行翻转</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[j][i];</span><br><span class="line">                matrix[j][i] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 再对每一行以中点进行翻转</span></span><br><span class="line">        <span class="keyword">int</span> mid = n &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; mid; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[i][n - <span class="number">1</span> - j];</span><br><span class="line">                matrix[i][n - <span class="number">1</span> - j] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><p><code>int mid = n &gt;&gt; 1;</code>:算术右移</p>
-<p><img src="/images/LEA2/image-20200611130319775.png" alt="image-20200611130319775"></p>
 <blockquote>
-<p>文件名：LEA2</p>
+<p>文件名：LAS1</p>
 </blockquote>
 ]]></content>
       <categories>
@@ -326,82 +140,13 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello Hexo</title>
-    <url>/2020/06/07/hellohexo/</url>
-    <content><![CDATA[<p>搭建完个人博客主站，主要参考以下网站：</p>
-<ol>
-<li><p><a href="https://tding.top/archives/aad98408.html" target="_blank" rel="noopener">小丁主题美化 </a></p>
-</li>
-<li><p><a href="https://blog.juanertu.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/page/3/" target="_blank" rel="noopener">ConstOwn主题美化</a></p>
-</li>
-<li><p><a href="https://blog.csdn.net/qq_32623363/article/details/100524856?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase" target="_blank" rel="noopener">Typora写博客</a></p>
-</li>
-<li><p><a href="https://hasaik.com/posts/ab21860c.html" target="_blank" rel="noopener">很详细的教程博客</a></p>
-</li>
-</ol>
-<p>后续美化升级可以按照1，2来。</p>
-<h1 id="hexo-常用操作"><a href="#hexo-常用操作" class="headerlink" title="hexo 常用操作"></a>hexo 常用操作</h1><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">hexo deploy &#x2F;&#x2F;部署到服务器上</span><br></pre></td></tr></table></figure></div>
-
-
-
-<blockquote>
-<p>文件名：hellohexo</p>
-</blockquote>
+    <title>IDEASCK</title>
+    <url>/2020/07/03/IDEASCK/</url>
+    <content><![CDATA[<h1 id="IntelliJ-快捷键"><a href="#IntelliJ-快捷键" class="headerlink" title="IntelliJ 快捷键"></a>IntelliJ 快捷键</h1><p><code>System.out.println（）</code> ——<strong>sout Enter</strong></p>
 ]]></content>
       <categories>
-        <category>Hexo_NexT配置</category>
+        <category>快捷键</category>
       </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面试题 01.08.零矩阵 Medium</title>
-    <url>/2020/06/11/LEA3/</url>
-    <content><![CDATA[<h1 id="题目：-面试题-01-08-零矩阵-Medium"><a href="#题目：-面试题-01-08-零矩阵-Medium" class="headerlink" title="题目： 面试题 01.08. 零矩阵 Medium"></a>题目： <a href="https://leetcode-cn.com/problems/zero-matrix-lcci/" target="_blank" rel="noopener">面试题 01.08. 零矩阵</a> Medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
-<li>线性思维无法解决判断0为原本数据存在的还是后来生成的</li>
-</ol>
-<h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3><ol>
-<li>思路一：开两个一维数组存放要清理的行列</li>
-<li>思路二：需要设零的行i：将该行的第一列元素<code>matrix[i][0]</code>设为0，表示该行需要清零；<br>需要设为零的列j：将该列的第一行元素<code>matrix[0][j]</code>设为0，表示该列需要清零；<br>根据第一行和第一列的标记，进行清零操作</li>
-</ol>
-<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习<a href="https://leetcode-cn.com/problems/merge-intervals/solution/chi-jing-ran-yi-yan-miao-dong-by-sweetiee/" target="_blank" rel="noopener">题解</a>代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><p>1.开两个一维数组存放要清理的行列，遍历即可</p>
-<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
-<li>问题1</li>
-</ul>
-<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">boolean</span>[] line = <span class="keyword">new</span> <span class="keyword">boolean</span>[matrix.length];</span><br><span class="line">      <span class="keyword">boolean</span>[] column = <span class="keyword">new</span> <span class="keyword">boolean</span>[matrix[<span class="number">0</span>].length];</span><br><span class="line">      <span class="comment">// 找出要清零的行列</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">              <span class="keyword">if</span> (matrix[i][j] == <span class="number">0</span>) &#123;</span><br><span class="line">                  line[i] = <span class="keyword">true</span>;</span><br><span class="line">                  column[j] = <span class="keyword">true</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 开始对行清零</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (line[i]) &#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">                  matrix[i][j] = <span class="number">0</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 开始对列清零</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix[<span class="number">0</span>].length; i++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (column[i]) &#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix.length; j++) &#123;</span><br><span class="line">                  matrix[j][i] = <span class="number">0</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
-<li><p>两个boolean数组，更加方便针对行列判断</p>
-</li>
-<li><p>java 对boolean类型默认为false</p>
-</li>
-<li><p>二维数组 a.length为里面包含的一维数组个数</p>
-<p>a[0].length为其中一维数组包含元素个数</p>
-</li>
-</ul>
-<h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3><h4 id="解题逻辑：-1"><a href="#解题逻辑：-1" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><p>需要设零的行i：将该行的第一列元素<code>matrix[i][0]</code>设为0，表示该行需要清零；<br>需要设为零的列j：将该列的第一行元素<code>matrix[0][j]</code>设为0，表示该列需要清零；<br>根据第一行和第一列的标记，进行清零操作</p>
-<h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题：-1"><a href="#解决自己问题：-1" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
-<li>问题2</li>
-</ul>
-<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setZeroes</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> shu = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">boolean</span> hen = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">                        hen = <span class="keyword">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (j == <span class="number">0</span>) &#123;</span><br><span class="line">                        shu = <span class="keyword">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    matrix[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">                    matrix[<span class="number">0</span>][j] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[i][<span class="number">0</span>] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; matrix[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">                    matrix[i][j] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; matrix[<span class="number">0</span>].length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[<span class="number">0</span>][i] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; matrix.length; j++) &#123;</span><br><span class="line">                    matrix[j][i] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (shu) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">                matrix[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (hen) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix[<span class="number">0</span>].length; i++) &#123;</span><br><span class="line">                matrix[<span class="number">0</span>][i] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h4 id="tips-1"><a href="#tips-1" class="headerlink" title="tips:"></a>tips:</h4><blockquote>
-<p>文件名：LEA3</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreArray</tag>
-      </tags>
   </entry>
   <entry>
     <title>JavaBasics（二）</title>
@@ -636,14 +381,217 @@
       </tags>
   </entry>
   <entry>
-    <title>LEA6</title>
-    <url>/2020/06/14/LEA6/</url>
-    <content><![CDATA[]]></content>
+    <title>JavaBasics（一）</title>
+    <url>/2020/06/09/JB1/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md#1-java-%E5%9F%BA%E6%9C%AC%E5%8A%9F" target="_blank" rel="noopener">Java基本功--JAVA入门</a></blockquote>
+
+<h1 id="Java-入门"><a href="#Java-入门" class="headerlink" title="Java 入门"></a>Java 入门</h1><h2 id="JVM-JDK-JRE"><a href="#JVM-JDK-JRE" class="headerlink" title="JVM JDK JRE"></a>JVM JDK JRE</h2><p>Java 虚拟机（JVM）是运行 Java 字节码的虚拟机。JVM 有针对不同系统的特定实现（Windows，Linux，macOS），目的是<strong>使用相同的字节码</strong>，它们都会给出相同的结果。<strong>字节码</strong>和不同系统的 <strong>JVM</strong> 实现是 Java 语言“一次编译，随处可以运行”的关键所在。</p>
+<p><strong>什么是字节码?采用字节码的好处是什么?</strong></p>
+<blockquote>
+<p>在 Java 中，JVM 可以理解的代码就叫做<code>字节码</code>（即扩展名为 <code>.class</code> 的文件），它不面向任何特定的处理器，只面向虚拟机。Java 语言通过字节码的方式，在一定程度上解决了传统解释型语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以 Java 程序运行时比较高效，而且，由于字节码并不针对一种特定的机器，因此，Java 程序无须重新编译便可在多种不同操作系统的计算机上运行。</p>
+</blockquote>
+<p><img src="/images/JB1/image-20200609155856790.png" alt="image-20200609155856790"></p>
+<p>【2020/6/12 坑】JIT AOT -&gt; <strong>Java 是编译与解释共存的语言</strong></p>
+<h4 id="为什么说-Java-语言“编译与解释并存”？"><a href="#为什么说-Java-语言“编译与解释并存”？" class="headerlink" title="为什么说 Java 语言“编译与解释并存”？"></a>为什么说 Java 语言“编译与解释并存”？</h4><p>高级编程语言按照程序的执行方式分为<strong>编译</strong>型和<strong>解释</strong>型两种。</p>
+<p>编译型语言是指编译器针对特定的操作系统将源代码<strong>一次性翻译</strong>成可被该平台执行的<strong>机器码</strong>；</p>
+<p>解释型语言是指解释器对源程序逐行解释成特定平台的机器码并<strong>立即执行</strong>。</p>
+<p>例子：你想阅读一本英文名著，你可以找一个英文翻译人员帮助你阅读， 有两种选择方式，你可以先等翻译人员将全本的英文名著（也就是源码）都翻译成汉语，再去阅读，也可以让翻译人员翻译一段，你在旁边阅读一段，慢慢把书读完。</p>
+<p>Java 语言既具有编译型语言的特征，也具有解释型语言的特征，</p>
+<p>因为 Java 程序要经过先编译，后解释两个步骤，由 Java 编写的程序需要先经过编译步骤，生成字节码（*.class 文件），这种字节码必须由 Java 解释器来解释执行。</p>
+<p>因此，我们可以认为 Java 语言编译与解释并存。</p>
+<h2 id="JDK-amp-JRE"><a href="#JDK-amp-JRE" class="headerlink" title="JDK &amp;JRE"></a>JDK &amp;JRE</h2><p><strong>JDK</strong> 是 Java Development Kit，它是功能齐全的 Java SDK。它拥有 JRE 所拥有的一切，还有编译器（javac）和工具（如 javadoc 和 jdb）。它能够创建和编译程序。<strong>JDK = SDK plus + JRE +…</strong></p>
+<p><strong>JRE</strong> 是 Java 运行时环境。它是运行已编译 Java 程序所需的所有内容的集合，包括 Java 虚拟机（JVM），Java 类库，java 命令和其他的一些基础构件。但是，它不能用于创建新程序。</p>
+<h3 id="Oracle-JDK-和-OpenJDK-的对比"><a href="#Oracle-JDK-和-OpenJDK-的对比" class="headerlink" title="Oracle JDK 和 OpenJDK 的对比"></a>Oracle JDK 和 OpenJDK 的对比</h3><ol>
+<li>OpenJDK<strong>完全开源</strong>，Oracle JDK 是 OpenJDK 的一个实现，并<strong>不是完全开源</strong>的；</li>
+<li>稳定性： Oracle JDK &gt;  OpenJDK</li>
+<li>响应性和 JVM : Oracle JDK &gt; OpenJDK</li>
+</ol>
+<h3 id="Java-和-C-的区别"><a href="#Java-和-C-的区别" class="headerlink" title="Java 和 C++的区别?"></a>Java 和 C++的区别?</h3><ol>
+<li>都是面向对象的语言，都支持封装、继承和多态</li>
+<li>Java 不提供指针来直接访问内存，程序内存更加安全</li>
+<li>Java 的类是单继承的，C++ 支持多重继承；虽然 Java 的类不可以多继承，但是接口可以多继承</li>
+<li>Java 有自动内存管理机制，不需要程序员手动释放无用内存</li>
+<li>在 C 语言中，字符串或字符数组最后都会有一个额外的字符‘\0’来表示结束。但是，Java 语言中<a href="https://blog.csdn.net/sszgg2006/article/details/49148189" target="_blank" rel="noopener">没有结束符这一概念</a>。</li>
+</ol>
+<h3 id="什么是-Java-程序的主类-应用程序和小程序的主类有何不同-amp-Java-应用程序与小程序之间有哪些差别"><a href="#什么是-Java-程序的主类-应用程序和小程序的主类有何不同-amp-Java-应用程序与小程序之间有哪些差别" class="headerlink" title="什么是 Java 程序的主类 应用程序和小程序的主类有何不同?&amp;Java 应用程序与小程序之间有哪些差别?"></a>什么是 Java 程序的主类 应用程序和小程序的主类有何不同?&amp;Java 应用程序与小程序之间有哪些差别?</h3><p>【2020/6/12 坑】小程序</p>
+<p>一个程序中可以有多个类，但只能有一个类是主类。在 Java 应用程序中，这个主类是指包含 main（）方法的类。</p>
+<p>而在 Java 小程序中，这个主类是一个继承自系统类 JApplet 或 Applet 的子类。应用程序的主类不一定要求是 public 类，但小程序的主类要求必须是 public 类。</p>
+<p>主类是 Java 程序执行的入口点。</p>
+<p>简单说应用程序是从主线程启动(也就是 <code>main()</code> 方法)。</p>
+<p>applet 小程序没有 <code>main()</code> 方法，主要是嵌在浏览器页面上运行(调用<code>init()</code>或者<code>run()</code>来启动)，嵌入浏览器这点跟 flash 的小游戏类似。</p>
+<h3 id="import-java-和-javax-有什么区别？"><a href="#import-java-和-javax-有什么区别？" class="headerlink" title="import java 和 javax 有什么区别？"></a>import java 和 javax 有什么区别？</h3><p>【2020/6/12 坑】</p>
+<h2 id="Java-语法"><a href="#Java-语法" class="headerlink" title="Java 语法"></a>Java 语法</h2><h3 id="字符型常量和字符串常量的区别"><a href="#字符型常量和字符串常量的区别" class="headerlink" title="字符型常量和字符串常量的区别?"></a>字符型常量和字符串常量的区别?</h3><ol>
+<li><p>形式上: 字符常量是单引号引起<code>&#39; &#39;</code>的<strong>一个字符</strong>; 字符串常量是双引号 <code>&quot; &quot;</code> 引起的<strong>若干个字符</strong></p>
+</li>
+<li><p>含义上: 字符常量相当于一个<strong>整型值</strong>( ASCII 值),可以参加表达式运算; </p>
+<p>字符串常量代表一个<strong>地址值</strong>(该字符串在内存中存放位置)</p>
+</li>
+<li><p>占内存大小 字符常量只占 2 个字节; 字符串常量占若干个字节 (<strong>注意： char 在 Java 中占两个字节</strong>)</p>
+</li>
+</ol>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p><strong>若编程语言足够有表达力，就不需要注释，尽量通过代码来阐述</strong></p>
+<p>去掉下面复杂的注释，只需要创建一个与注释所言同一事物的函数即可</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// check to see if the employee is eligible for full benefits</span></span><br><span class="line"><span class="keyword">if</span> ((employee.flags &amp; HOURLY_FLAG) &amp;&amp; (employee.age &gt; <span class="number">65</span>))</span><br></pre></td></tr></table></figure></div>
+
+<p>应替换为</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (employee.isEligibleForFullBenefits())</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="标识符和关键字的区别是什么？"><a href="#标识符和关键字的区别是什么？" class="headerlink" title="标识符和关键字的区别是什么？"></a>标识符和关键字的区别是什么？</h3><p>在我们编写程序的时候，需要大量地为程序、类、变量、方法等取名字，于是就有了标识符，简单来说，<strong>标识符就是一个名字</strong>。</p>
+<p>但是有一些标识符，Java 语言已经赋予了其特殊的含义，只能<strong>用于特定</strong>的地方，这种特殊的标识符就是<strong>关键字</strong>。因此，<strong>关键字是被赋予特殊含义的标识符</strong>。比如，在我们的日常生活中 ，“警察局”这个名字已经被赋予了特殊的含义，所以如果你开一家店，店的名字不能叫“警察局”，“警察局”就是我们日常生活中的关键字。</p>
+<h3 id="【坑】Java泛型了解么？什么是类型擦除？介绍一下常用的通配符？"><a href="#【坑】Java泛型了解么？什么是类型擦除？介绍一下常用的通配符？" class="headerlink" title="【坑】Java泛型了解么？什么是类型擦除？介绍一下常用的通配符？"></a>【坑】Java泛型了解么？什么是类型擦除？介绍一下常用的通配符？</h3><p>【2020/6/12 坑】Java 泛型（generics）是 JDK 5 中引入的一个新特性, 泛型提供了编译时<strong>类型安全检测机制</strong>，该机制允许程序员在编译时检测到<strong>非法的类型</strong>。泛型的本质是<strong>参数化类型</strong>，也就是说所操作的数据类型被指定为一个参数。</p>
+<p><strong>Java的泛型是伪泛型，这是因为Java在编译期间，所有的泛型信息都会被擦掉，这也就是通常所说类型擦除 。</strong> 更多关于类型擦除的问题，可以查看这篇文章：<a href="https://www.cnblogs.com/wuqinglong/p/9456193.html" target="_blank" rel="noopener">《Java泛型类型擦除以及类型擦除带来的问题》</a> 。</p>
+<h4 id="泛型一般有三种使用方式-泛型类、泛型接口、泛型方法。"><a href="#泛型一般有三种使用方式-泛型类、泛型接口、泛型方法。" class="headerlink" title="泛型一般有三种使用方式:泛型类、泛型接口、泛型方法。"></a>泛型一般有三种使用方式:泛型类、泛型接口、泛型方法。</h4><p><strong>1.泛型类</strong>：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//此处T可以随便写为任意标识，常见的如T、E、K、V等形式的参数常用于表示泛型</span></span><br><span class="line"><span class="comment">//在实例化泛型类时，必须指定T的具体类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generic</span>&lt;<span class="title">T</span>&gt;</span>&#123; </span><br><span class="line">   </span><br><span class="line">    <span class="keyword">private</span> T key;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Generic</span><span class="params">(T key)</span> </span>&#123; </span><br><span class="line">        <span class="keyword">this</span>.key = key;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getKey</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">return</span> key;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>如何实例化泛型类：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">Generic&lt;Integer&gt; genericInteger = <span class="keyword">new</span> Generic&lt;Integer&gt;(<span class="number">123456</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>2.泛型接口</strong> ：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Generator</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">method</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>实现泛型接口，不指定类型： </p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GeneratorImpl</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">Generator</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>实现泛型接口，指定类型：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GeneratorImpl</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">Generator</span>&lt;<span class="title">String</span>&gt;</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>3.泛型方法</strong> ：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt; E &gt; <span class="function"><span class="keyword">void</span> <span class="title">printArray</span><span class="params">( E[] inputArray )</span></span></span><br><span class="line"><span class="function"></span>&#123;         </span><br><span class="line">      <span class="keyword">for</span> ( E element : inputArray )&#123;        </span><br><span class="line">         System.out.printf( <span class="string">"%s "</span>, element );</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println();</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>使用：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 创建不同类型数组： Integer, Double 和 Character</span></span><br><span class="line">Integer[] intArray = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;;</span><br><span class="line">String[] stringArray = &#123; <span class="string">"Hello"</span>, <span class="string">"World"</span> &#125;;</span><br><span class="line">printArray( intArray  ); </span><br><span class="line">printArray( stringArray  );</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="常用的通配符为：-T，E，K，V，？"><a href="#常用的通配符为：-T，E，K，V，？" class="headerlink" title="常用的通配符为： T，E，K，V，？"></a><strong>常用的通配符为： T，E，K，V，？</strong></h4><ul>
+<li>？ 表示不确定的 java 类型</li>
+<li>T (type) 表示具体的一个java类型</li>
+<li>K V (key value) 分别代表java键值中的Key Value</li>
+<li>E (element) 代表Element</li>
+</ul>
+<p>更多关于Java 泛型中的通配符可以查看这篇文章：<a href="https://juejin.im/post/5d5789d26fb9a06ad0056bd9" target="_blank" rel="noopener">《聊一聊-JAVA 泛型中的通配符 T，E，K，V，？》</a></p>
+<h3 id="和equals的区别"><a href="#和equals的区别" class="headerlink" title="==和equals的区别"></a>==和equals的区别</h3><p><strong><code>=</code></strong> : 它的作用是判断两个对象的<strong>地址</strong>是不是相等。即判断两个对象是不是同一个对象。</p>
+<p>(<strong>基本数据类型==比较的是值，引用数据类型==比较的是内存地址</strong>)</p>
+<blockquote>
+<p>因为 Java 只有值传递，所以，对于 == 来说，不管是比较基本数据类型，还是引用数据类型的变量，其本质比较的都是值，只是引用类型变量存的值是对象的地址。</p>
+</blockquote>
+<p><strong><code>equals()</code></strong> : 它的作用也是判断两个对象是否相等，它不能用于比较基本数据类型的变量。<code>equals()</code>方法存在于<code>Object</code>类中，而<code>Object</code>类是所有类的直接或间接父类。</p>
+<p><code>Object</code>类<code>equals()</code>方法：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="hashCode-与-equals"><a href="#hashCode-与-equals" class="headerlink" title="hashCode()与 equals()"></a>hashCode()与 equals()</h3><h4 id="hashCode-介绍"><a href="#hashCode-介绍" class="headerlink" title="hashCode()介绍"></a><strong>hashCode()</strong>介绍</h4><p><code>hashCode()</code> 的作用是获取哈希码，也称为散列码；它实际上是返回一个 int 整数。这个哈希码的作用是确定该对象在哈希表中的索引位置。</p>
+<h4 id="【坑】什么要有-hashCode？"><a href="#【坑】什么要有-hashCode？" class="headerlink" title="【坑】什么要有 hashCode？"></a><strong>【坑】什么要有 hashCode？</strong></h4><p>例子：“<code>HashSet</code> 如何检查重复？”</p>
+<p>【2020/6/12 坑：Headfirst java 阅读：hashset】</p>
+<ol>
+<li>对象加入 <code>HashSet</code></li>
+<li><code>HashSet</code> 计算对象的 hashcode 值 判断对象加入的位置， </li>
+<li>同时也会与其他已经加入的对象的 hashcode 值作比较，</li>
+<li>如果没有相符的 hashcode，<code>HashSet</code> 会假设对象没有重复出现。</li>
+<li>但是如果发现有相同 hashcode 值的对象，</li>
+<li>这时会调用 equals（）方法来检查 hashcode 相等的对象是否真的相同。</li>
+<li>如果两者相同，<code>HashSet</code> 就不会让其加入操作成功。如果不同的话，就会重新散列到其他位置。【Headfirst java】</li>
+</ol>
+<ul>
+<li>结果：大大减少了 equals 的次数，提高了执行速度。</li>
+</ul>
+<h4 id="为什么重写-equals-时必须重写-hashCode-方法？"><a href="#为什么重写-equals-时必须重写-hashCode-方法？" class="headerlink" title="为什么重写 equals 时必须重写 hashCode 方法？"></a><strong>为什么重写 <code>equals</code> 时必须重写 <code>hashCode</code> 方法？</strong></h4><p>【2020/6/12 坑】如果两个对象相等，则 hashcode 一定也是相同的。两个对象相等,对两个对象分别调用 equals 方法都返回 true。但是，两个对象有相同的 hashcode 值，它们也不一定是相等的 。<strong>因此，equals 方法被覆盖过，则 <code>hashCode</code> 方法也必须被覆盖。</strong></p>
+<blockquote>
+<p>文件名：JB1</p>
+</blockquote>
+<h4 id="为什么两个对象有相同的-hashcode-值，它们也不一定是相等的？"><a href="#为什么两个对象有相同的-hashcode-值，它们也不一定是相等的？" class="headerlink" title="为什么两个对象有相同的 hashcode 值，它们也不一定是相等的？"></a><strong>为什么两个对象有相同的 hashcode 值，它们也不一定是相等的？</strong></h4><p>不同的对象有可能得到相同的 <code>hashCode</code></p>
+<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p>Java中有8种基本数据类型，分别为：</p>
+<ol>
+<li>6种数字类型 ：byte、short、int、long、float、double</li>
+<li>1种字符类型：char</li>
+<li>1中布尔型：boolean。</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li>Java 里使用 long 类型的数据一定要在数值后面加上 <strong>L</strong>，否则将作为整型解析：</li>
+<li><code>char a = &#39;h&#39;</code>char :单引号，<code>String a = &quot;hello&quot;</code> :双引号</li>
+</ol>
+<h4 id="自动装箱与拆箱【坑】"><a href="#自动装箱与拆箱【坑】" class="headerlink" title="自动装箱与拆箱【坑】"></a>自动装箱与拆箱【坑】</h4><ul>
+<li><strong>装箱</strong>：将基本类型用它们对应的引用类型包装起来；</li>
+<li><strong>拆箱</strong>：将包装类型转换为基本数据类型；</li>
+</ul>
+<h4 id="8种基本类型的包装类和常量池【坑】"><a href="#8种基本类型的包装类和常量池【坑】" class="headerlink" title="8种基本类型的包装类和常量池【坑】"></a>8种基本类型的包装类和常量池【坑】</h4><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="什么是方法的返回值-返回值在类的方法里的作用是什么"><a href="#什么是方法的返回值-返回值在类的方法里的作用是什么" class="headerlink" title="什么是方法的返回值?返回值在类的方法里的作用是什么?"></a>什么是方法的返回值?返回值在类的方法里的作用是什么?</h3><ul>
+<li>方法的返回值：获取到的某个方法体中的代码执行后产生的结果！（前提是该方法可能产生结果）。</li>
+<li>返回值的作用：接收出结果，使得它可以用于其他的操作！</li>
+</ul>
+<h3 id="为什么-Java-中只有值传递？"><a href="#为什么-Java-中只有值传递？" class="headerlink" title="为什么 Java 中只有值传递？"></a>为什么 Java 中只有值传递？</h3><ul>
+<li><p>按<strong>值</strong>调用(call by value)表示方法接收的是调用者提供的<strong>值</strong>。</p>
+</li>
+<li><p>按<strong>引用</strong>调用（call by reference)表示方法接收的是调用者提供的<strong>变量地址</strong>。【<strong>改地址</strong>】</p>
+<p>一个方法可以修改传递<strong>引用</strong>所对应的变量值，而不能修改传递<strong>值</strong>调用所对应的变量值。</p>
+</li>
+<li><p><strong>引用类型</strong>的按<strong>值</strong>传递，传递的是<strong>对象的地</strong>址</p>
+</li>
+<li><p>引用数据数据类型分为三种：<strong>① 接口 ② 类 ③ 数组</strong></p>
+</li>
+<li><p>对象引用是按<strong>值</strong>传递</p>
+</li>
+</ul>
+<h3 id="【坑】重载和重写的区别"><a href="#【坑】重载和重写的区别" class="headerlink" title="【坑】重载和重写的区别"></a>【坑】重载和重写的区别</h3><blockquote>
+<p>重载就是同样的一个方法能够根据<strong>输入数据的不同</strong>，做出<strong>不同的处理</strong></p>
+<p>重写就是当子类继承自父类的相同方法，输入数据一样，但要做出有别于父类的响应时，你就要<strong>覆盖父类方法</strong></p>
+</blockquote>
+<ul>
+<li><strong>重载</strong>就是同一个类中多个同名方法根据不同的传参来执行不同的逻辑处理。</li>
+<li><strong>重写</strong>就是子类对父类方法的重新改造，外部样子不能改变，<strong>内部逻辑可以改变</strong>。</li>
+</ul>
+<p>【坑 2020/6/13 重写不懂】</p>
+<h3 id="深拷贝-vs-浅拷贝"><a href="#深拷贝-vs-浅拷贝" class="headerlink" title="深拷贝 vs 浅拷贝"></a>深拷贝 vs 浅拷贝</h3><ol>
+<li><strong>浅拷贝</strong>：对基本数据类型进行值传递，对引用数据类型进行引用传递般的拷贝，此为浅拷贝。</li>
+<li><strong>深拷贝</strong>：对基本数据类型进行值传递，对引用数据类型，<strong>创建一个新的对象，并复制其内容</strong>，此为深拷贝。</li>
+</ol>
+<h3 id="方法的四种类型"><a href="#方法的四种类型" class="headerlink" title="方法的四种类型"></a>方法的四种类型</h3><p>1、无参数无返回值的方法</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 无参数无返回值的方法(如果方法没有返回值，不能不写，必须写void，表示没有返回值)</span><br><span class="line">public void f1() &#123;</span><br><span class="line">    System.out.println(&quot;无参数无返回值的方法&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>2、有参数无返回值的方法</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">* 有参数无返回值的方法</span><br><span class="line">* 参数列表由零组到多组“参数类型+形参名”组合而成，多组参数之间以英文逗号（,）隔开，形参类型和形参名之间以英文空格隔开</span><br><span class="line">*&#x2F;</span><br><span class="line">public void f2(int a, String b, int c) &#123;</span><br><span class="line">    System.out.println(a + &quot;--&gt;&quot; + b + &quot;--&gt;&quot; + c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>3、有返回值无参数的方法</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 有返回值无参数的方法（返回值可以是任意的类型,在函数里面必须有return关键字返回对应的类型）</span><br><span class="line">public int f3() &#123;</span><br><span class="line">    System.out.println(&quot;有返回值无参数的方法&quot;);</span><br><span class="line">    return 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>4、有返回值有参数的方法</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 有返回值有参数的方法</span><br><span class="line">public int f4(int a, int b) &#123;</span><br><span class="line">    return a * b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>5、return 在无返回值方法的特殊使用</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; return在无返回值方法的特殊使用</span><br><span class="line">public void f5(int a) &#123;</span><br><span class="line">    if (a&gt;10) &#123;</span><br><span class="line">    return;&#x2F;&#x2F;表示结束所在方法 （f5方法）的执行,下方的输出语句不会执行</span><br><span class="line">&#125;</span><br><span class="line">    System.out.println(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>JavaBasics</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
   </entry>
   <entry>
-    <title>LEA5</title>
-    <url>/2020/06/14/LEA5/</url>
-    <content><![CDATA[]]></content>
+    <title>Hello Hexo</title>
+    <url>/2020/06/07/hellohexo/</url>
+    <content><![CDATA[<p>搭建完个人博客主站，主要参考以下网站：</p>
+<ol>
+<li><p><a href="https://tding.top/archives/aad98408.html" target="_blank" rel="noopener">小丁主题美化 </a></p>
+</li>
+<li><p><a href="https://blog.juanertu.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/page/3/" target="_blank" rel="noopener">ConstOwn主题美化</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/qq_32623363/article/details/100524856?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase" target="_blank" rel="noopener">Typora写博客</a></p>
+</li>
+<li><p><a href="https://hasaik.com/posts/ab21860c.html" target="_blank" rel="noopener">很详细的教程博客</a></p>
+</li>
+</ol>
+<p>后续美化升级可以按照1，2来。</p>
+<h1 id="hexo-常用操作"><a href="#hexo-常用操作" class="headerlink" title="hexo 常用操作"></a>hexo 常用操作</h1><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">hexo deploy &#x2F;&#x2F;部署到服务器上</span><br></pre></td></tr></table></figure></div>
+
+
+
+<blockquote>
+<p>文件名：hellohexo</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hexo_NexT配置</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>498 对角线遍历 medium</title>
@@ -678,6 +626,176 @@
 </ul>
 <blockquote>
 <p>文件名：LEA4</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreArray</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面试题 01.07 旋转矩阵 medium</title>
+    <url>/2020/06/11/LEA2/</url>
+    <content><![CDATA[<h1 id="旋转矩阵-medium"><a href="#旋转矩阵-medium" class="headerlink" title="旋转矩阵 medium"></a><a href="https://leetcode-cn.com/problems/rotate-matrix-lcci/" target="_blank" rel="noopener">旋转矩阵</a> medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><p>无法解决：</p>
+<ul>
+<li>不带开销旋转出错值</li>
+</ul>
+<p>问题总结： 陷入拿辅助数组copy的思维定势</p>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习<a href="https://leetcode-cn.com/problems/merge-intervals/solution/chi-jing-ran-yi-yan-miao-dong-by-sweetiee/" target="_blank" rel="noopener">题解</a>代码</h2><h3 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h3><p> 观察旋转逻辑给出代码复现思路：【先进行转置然后对每一行以中点进行翻转】</p>
+<h3 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h3><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><p>原地翻转一个temp变量即可</p>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = matrix.length;</span><br><span class="line">        <span class="comment">// 先以对角线（左上-右下）为轴进行翻转</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[j][i];</span><br><span class="line">                matrix[j][i] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 再对每一行以中点进行翻转</span></span><br><span class="line">        <span class="keyword">int</span> mid = n &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; mid; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[i][n - <span class="number">1</span> - j];</span><br><span class="line">                matrix[i][n - <span class="number">1</span> - j] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><p><code>int mid = n &gt;&gt; 1;</code>:算术右移</p>
+<p><img src="/images/LEA2/image-20200611130319775.png" alt="image-20200611130319775"></p>
+<blockquote>
+<p>文件名：LEA2</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreArray</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面试题 01.08.零矩阵 Medium</title>
+    <url>/2020/06/11/LEA3/</url>
+    <content><![CDATA[<h1 id="题目：-面试题-01-08-零矩阵-Medium"><a href="#题目：-面试题-01-08-零矩阵-Medium" class="headerlink" title="题目： 面试题 01.08. 零矩阵 Medium"></a>题目： <a href="https://leetcode-cn.com/problems/zero-matrix-lcci/" target="_blank" rel="noopener">面试题 01.08. 零矩阵</a> Medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li>线性思维无法解决判断0为原本数据存在的还是后来生成的</li>
+</ol>
+<h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3><ol>
+<li>思路一：开两个一维数组存放要清理的行列</li>
+<li>思路二：需要设零的行i：将该行的第一列元素<code>matrix[i][0]</code>设为0，表示该行需要清零；<br>需要设为零的列j：将该列的第一行元素<code>matrix[0][j]</code>设为0，表示该列需要清零；<br>根据第一行和第一列的标记，进行清零操作</li>
+</ol>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习<a href="https://leetcode-cn.com/problems/merge-intervals/solution/chi-jing-ran-yi-yan-miao-dong-by-sweetiee/" target="_blank" rel="noopener">题解</a>代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><p>1.开两个一维数组存放要清理的行列，遍历即可</p>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
+<li>问题1</li>
+</ul>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">boolean</span>[] line = <span class="keyword">new</span> <span class="keyword">boolean</span>[matrix.length];</span><br><span class="line">      <span class="keyword">boolean</span>[] column = <span class="keyword">new</span> <span class="keyword">boolean</span>[matrix[<span class="number">0</span>].length];</span><br><span class="line">      <span class="comment">// 找出要清零的行列</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">              <span class="keyword">if</span> (matrix[i][j] == <span class="number">0</span>) &#123;</span><br><span class="line">                  line[i] = <span class="keyword">true</span>;</span><br><span class="line">                  column[j] = <span class="keyword">true</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 开始对行清零</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (line[i]) &#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">                  matrix[i][j] = <span class="number">0</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 开始对列清零</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix[<span class="number">0</span>].length; i++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (column[i]) &#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix.length; j++) &#123;</span><br><span class="line">                  matrix[j][i] = <span class="number">0</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><p>两个boolean数组，更加方便针对行列判断</p>
+</li>
+<li><p>java 对boolean类型默认为false</p>
+</li>
+<li><p>二维数组 a.length为里面包含的一维数组个数</p>
+<p>a[0].length为其中一维数组包含元素个数</p>
+</li>
+</ul>
+<h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3><h4 id="解题逻辑：-1"><a href="#解题逻辑：-1" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><p>需要设零的行i：将该行的第一列元素<code>matrix[i][0]</code>设为0，表示该行需要清零；<br>需要设为零的列j：将该列的第一行元素<code>matrix[0][j]</code>设为0，表示该列需要清零；<br>根据第一行和第一列的标记，进行清零操作</p>
+<h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题：-1"><a href="#解决自己问题：-1" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
+<li>问题2</li>
+</ul>
+<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setZeroes</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> shu = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">boolean</span> hen = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">                        hen = <span class="keyword">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (j == <span class="number">0</span>) &#123;</span><br><span class="line">                        shu = <span class="keyword">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    matrix[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">                    matrix[<span class="number">0</span>][j] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[i][<span class="number">0</span>] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; matrix[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">                    matrix[i][j] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; matrix[<span class="number">0</span>].length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[<span class="number">0</span>][i] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; matrix.length; j++) &#123;</span><br><span class="line">                    matrix[j][i] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (shu) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">                matrix[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (hen) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix[<span class="number">0</span>].length; i++) &#123;</span><br><span class="line">                matrix[<span class="number">0</span>][i] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips-1"><a href="#tips-1" class="headerlink" title="tips:"></a>tips:</h4><blockquote>
+<p>文件名：LEA3</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreArray</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>力扣刷题总结文章模板</title>
+    <url>/2020/06/11/LTemp/</url>
+    <content><![CDATA[<h1 id="题目：-名字-Easy-Medium-Hard"><a href="#题目：-名字-Easy-Medium-Hard" class="headerlink" title="题目： 名字   Easy/Medium/Hard"></a>题目： 名字   Easy/Medium/Hard</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li><h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3></li>
+<li></li>
+</ol>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li></li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
+<li><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4></li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li></li>
+</ul>
+<blockquote>
+<p>文件名：LTemp</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreArray</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>56 合并区间 medium</title>
+    <url>/2020/06/08/LEA1/</url>
+    <content><![CDATA[<h1 id="56-合并区间-medium"><a href="#56-合并区间-medium" class="headerlink" title="#56 合并区间 medium"></a>#56 <a href="https://leetcode-cn.com/explore/featured/card/array-and-string/198/introduction-to-array/770/" target="_blank" rel="noopener">合并区间</a> medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><p>无法解决：</p>
+<ul>
+<li>二维数组排序，自己想像冒泡那样移动</li>
+<li>合并后另外开一个数组的大小自己没办法掌握</li>
+</ul>
+<p>总结： JAVA语法和Arrays函数不熟练</p>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习<a href="https://leetcode-cn.com/problems/merge-intervals/solution/chi-jing-ran-yi-yan-miao-dong-by-sweetiee/" target="_blank" rel="noopener">题解</a>代码</h2><h3 id="合并逻辑："><a href="#合并逻辑：" class="headerlink" title="合并逻辑："></a><strong>合并逻辑</strong>：</h3><p> <strong>第一个区间的起始位置 ≤ 第二个区间的起始位置</strong>，如果不满足这个假设，交换这两个区间</p>
+<img src="/images/LEA/91d75169b1cdb15560d361f8cb7050adfe7906c955afbe8846b92d1beba8a0d7-image.png" alt="image.png" style="zoom:33%;" />
+
+<h3 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h3><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ol>
+<li><p>排序数组（sort是调优后的快排） 【按照区间起始值比较整个区间】</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">Arrays.sort(intervals, (v1, v2) -&gt; v1[<span class="number">0</span>] - v2[<span class="number">0</span>])</span><br></pre></td></tr></table></figure></div>
+
+<p>其中【不懂坑先记住】 <code>(v1, v2) -&gt; v1[0] - v2[0])</code> 是lambda表达式，传入一个自定义比较器Comparator</p>
+<p>逻辑：假设传来两个值，<code>v1</code> 与 <code>v2</code>，那么他们的先后顺序以 <code>v1[0]</code> 比 <code>v2[0]</code> 的结果为准，即：若 <code>v1[0] &lt; v2[0]</code> 则 <code>v1 &lt; v2</code>，若 <code>=</code> 则 <code>=</code>，若 <code>&gt;</code> 则 <code>&gt;</code></p>
+</li>
+<li><p>合并逻辑</p>
+<p>反向思考：<strong>排序后不合并的情况少</strong></p>
+</li>
+<li><p>拷贝数组，返回结果</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">Arrays.copyOf(res, idx + <span class="number">1</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>实现现数组的复制，返回复制后的数组，参数是被复制的数组和复制的长度</p>
+</li>
+</ol>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><h4 id="第一种：排序"><a href="#第一种：排序" class="headerlink" title="第一种：排序"></a>第一种：排序</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//简洁代码</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] merge(<span class="keyword">int</span>[][] intervals) &#123;</span><br><span class="line">        <span class="comment">// 先按照区间起始位置排序</span></span><br><span class="line">        Arrays.sort(intervals, (v1, v2) -&gt; v1[<span class="number">0</span>] - v2[<span class="number">0</span>]);</span><br><span class="line">        <span class="comment">// 遍历区间</span></span><br><span class="line">        <span class="keyword">int</span>[][] res = <span class="keyword">new</span> <span class="keyword">int</span>[intervals.length][<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> idx = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] interval: intervals) &#123;</span><br><span class="line">            <span class="comment">// 如果结果数组是空的，或者当前区间的起始位置 &gt; 结果数组中最后区间的终止位置，</span></span><br><span class="line">            <span class="comment">// 则不合并，直接将当前区间加入结果数组。</span></span><br><span class="line">            <span class="keyword">if</span> (idx == -<span class="number">1</span> || interval[<span class="number">0</span>] &gt; res[idx][<span class="number">1</span>]) &#123;</span><br><span class="line">                res[++idx] = interval;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 反之将当前区间合并至结果数组的最后区间</span></span><br><span class="line">                res[idx][<span class="number">1</span>] = Math.max(res[idx][<span class="number">1</span>], interval[<span class="number">1</span>]);</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Arrays.copyOf(res, idx + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="第二种：枚举【遍历】"><a href="#第二种：枚举【遍历】" class="headerlink" title="第二种：枚举【遍历】"></a>第二种：枚举【遍历】</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//类似冒泡，枚举所有可能</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[][] merge(<span class="keyword">int</span>[][] intervals) &#123;</span><br><span class="line">    <span class="keyword">int</span> len = intervals.length;</span><br><span class="line">    <span class="keyword">if</span> (len &lt; <span class="number">2</span>) <span class="keyword">return</span> intervals;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>; <span class="comment">// 合并次数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (intervals[i][<span class="number">0</span>] &lt;= intervals[j][<span class="number">1</span>] &amp;&amp; intervals[i][<span class="number">1</span>] &gt;= intervals[j][<span class="number">0</span>]) &#123;</span><br><span class="line">                intervals[j][<span class="number">0</span>] = Math.min(intervals[j][<span class="number">0</span>], intervals[i][<span class="number">0</span>]);</span><br><span class="line">                intervals[j][<span class="number">1</span>] = Math.max(intervals[j][<span class="number">1</span>], intervals[i][<span class="number">1</span>]);</span><br><span class="line">                intervals[i] = <span class="keyword">null</span>; <span class="comment">// 清空前者</span></span><br><span class="line">                cnt++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>[][] res = <span class="keyword">new</span> <span class="keyword">int</span>[len - cnt][<span class="number">2</span>]; <span class="comment">// len - cnt 合并后个数</span></span><br><span class="line">    <span class="keyword">int</span> ri = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] pair : intervals) &#123;</span><br><span class="line">        <span class="keyword">if</span> (pair != <span class="keyword">null</span>) res[ri++] = pair;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><p>if语句判断-1情况，后面越界可忽略</p>
+</li>
+<li><p><code>intervals[j] = new int []{start,end};</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> [] a = &#123;<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">a[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">a[<span class="number">1</span>] = <span class="number">3</span>;</span><br></pre></td></tr></table></figure></div>
+
+
+
+
+
+
+</li>
+</ul>
+<blockquote>
+<p>文件名：LEA1</p>
 </blockquote>
 ]]></content>
       <categories>
