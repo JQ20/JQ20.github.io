@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>移除元素</title>
-    <url>/2020/08/10/LEAD4/</url>
+    <url>/blog/2020/08/10/LEAD4/</url>
     <content><![CDATA[<h1 id="题目：-移除元素-Easy"><a href="#题目：-移除元素-Easy" class="headerlink" title="题目： 移除元素 Easy"></a>题目： 移除元素 Easy</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="解题逻辑：双指针-快慢指针"><a href="#解题逻辑：双指针-快慢指针" class="headerlink" title="解题逻辑：双指针-快慢指针"></a>解题逻辑：双指针-快慢指针</h3><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeElement</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> slow = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> fast=<span class="number">0</span>; fast&lt;nums.length ; fast++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[fast] != val)&#123;</span><br><span class="line">                nums[slow] = nums[fast];</span><br><span class="line">                slow++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow;      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 
@@ -30,52 +30,52 @@
   </entry>
   <entry>
     <title>LEAD6</title>
-    <url>/2020/08/10/LEAD6/</url>
+    <url>/blog/2020/08/10/LEAD6/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>LEAD13</title>
-    <url>/2020/08/10/LEAD13/</url>
+    <url>/blog/2020/08/10/LEAD13/</url>
     <content><![CDATA[<h1 id="测试直接新建"><a href="#测试直接新建" class="headerlink" title="测试直接新建"></a>测试直接新建</h1>]]></content>
   </entry>
   <entry>
     <title>LEAD5</title>
-    <url>/2020/08/10/LEAD5/</url>
+    <url>/blog/2020/08/10/LEAD5/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>LEAD12</title>
-    <url>/2020/08/10/LEAD12/</url>
+    <url>/blog/2020/08/10/LEAD12/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>LEAD11</title>
-    <url>/2020/08/10/LEAD11/</url>
+    <url>/blog/2020/08/10/LEAD11/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>LEAD10</title>
-    <url>/2020/08/10/LEAD10/</url>
+    <url>/blog/2020/08/10/LEAD10/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>LEAD9</title>
-    <url>/2020/08/10/LEAD9/</url>
+    <url>/blog/2020/08/10/LEAD9/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>LEAD8</title>
-    <url>/2020/08/10/LEAD8/</url>
+    <url>/blog/2020/08/10/LEAD8/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>LEAD7</title>
-    <url>/2020/08/10/LEAD7/</url>
+    <url>/blog/2020/08/10/LEAD7/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>两数之和 II - 输入有序数组</title>
-    <url>/2020/08/10/LEAD3/</url>
+    <url>/blog/2020/08/10/LEAD3/</url>
     <content><![CDATA[<h1 id="题目：两数之和-II-输入有序数组-Easy"><a href="#题目：两数之和-II-输入有序数组-Easy" class="headerlink" title="题目：两数之和 II - 输入有序数组 Easy"></a>题目：两数之和 II - 输入有序数组 Easy</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> l =<span class="number">0</span>;l&lt;numbers.length-<span class="number">1</span>;l++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> h=l+<span class="number">1</span>;h&lt;numbers.length;h++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(numbers[l]+numbers[h]==target)&#123;</span><br><span class="line">                    result[<span class="number">0</span>]=l+<span class="number">1</span>;</span><br><span class="line">                    result[<span class="number">1</span>]=h+<span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">return</span> result;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>  <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="改进部分"><a href="#改进部分" class="headerlink" title="改进部分"></a>改进部分</h4><ul>
@@ -112,7 +112,7 @@
   </entry>
   <entry>
     <title>数组拆分Ⅰ</title>
-    <url>/2020/08/10/LEAD2/</url>
+    <url>/blog/2020/08/10/LEAD2/</url>
     <content><![CDATA[<h1 id="题目：-数组拆分Ⅰ-Easy"><a href="#题目：-数组拆分Ⅰ-Easy" class="headerlink" title="题目： 数组拆分Ⅰ  Easy"></a>题目： 数组拆分Ⅰ  Easy</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">arrayPairSum</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i += <span class="number">2</span>) &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
@@ -133,7 +133,7 @@
   </entry>
   <entry>
     <title>ReverseString</title>
-    <url>/2020/08/10/LEAD1/</url>
+    <url>/blog/2020/08/10/LEAD1/</url>
     <content><![CDATA[<h1 id="题目：-ReverseString-Easy"><a href="#题目：-ReverseString-Easy" class="headerlink" title="题目： ReverseString   Easy"></a>题目： ReverseString   Easy</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
 <li>处理字符数组为空或长度为零情况</li>
 </ol>
@@ -162,7 +162,7 @@
   </entry>
   <entry>
     <title>498 对角线遍历 medium</title>
-    <url>/2020/06/14/LEA4/</url>
+    <url>/blog/2020/06/14/LEA4/</url>
     <content><![CDATA[<h1 id="题目：498-对角线遍历-Medium"><a href="#题目：498-对角线遍历-Medium" class="headerlink" title="题目：498. 对角线遍历 Medium"></a>题目：<a href="https://leetcode-cn.com/problems/diagonal-traverse/" target="_blank" rel="noopener">498. 对角线遍历</a> Medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
 <li>转向临界值判断出现问题</li>
 <li>传入数组为空判断</li>
@@ -206,7 +206,7 @@
   </entry>
   <entry>
     <title>面试题 01.08.零矩阵 Medium</title>
-    <url>/2020/06/11/LEA3/</url>
+    <url>/blog/2020/06/11/LEA3/</url>
     <content><![CDATA[<h1 id="题目：-面试题-01-08-零矩阵-Medium"><a href="#题目：-面试题-01-08-零矩阵-Medium" class="headerlink" title="题目： 面试题 01.08. 零矩阵 Medium"></a>题目： <a href="https://leetcode-cn.com/problems/zero-matrix-lcci/" target="_blank" rel="noopener">面试题 01.08. 零矩阵</a> Medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
 <li>线性思维无法解决判断0为原本数据存在的还是后来生成的</li>
 </ol>
@@ -254,7 +254,7 @@
   </entry>
   <entry>
     <title>面试题 01.07 旋转矩阵 medium</title>
-    <url>/2020/06/11/LEA2/</url>
+    <url>/blog/2020/06/11/LEA2/</url>
     <content><![CDATA[<h1 id="旋转矩阵-medium"><a href="#旋转矩阵-medium" class="headerlink" title="旋转矩阵 medium"></a><a href="https://leetcode-cn.com/problems/rotate-matrix-lcci/" target="_blank" rel="noopener">旋转矩阵</a> medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><p>无法解决：</p>
 <ul>
 <li>不带开销旋转出错值</li>
@@ -283,7 +283,7 @@
   </entry>
   <entry>
     <title>56 合并区间 medium</title>
-    <url>/2020/06/08/LEA1/</url>
+    <url>/blog/2020/06/08/LEA1/</url>
     <content><![CDATA[<h1 id="56-合并区间-medium"><a href="#56-合并区间-medium" class="headerlink" title="#56 合并区间 medium"></a>#56 <a href="https://leetcode-cn.com/explore/featured/card/array-and-string/198/introduction-to-array/770/" target="_blank" rel="noopener">合并区间</a> medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><p>无法解决：</p>
 <ul>
 <li>二维数组排序，自己想像冒泡那样移动</li>
@@ -343,7 +343,7 @@
   </entry>
   <entry>
     <title>力扣刷题总结文章模板</title>
-    <url>/2020/06/11/LTemp/</url>
+    <url>/blog/2020/06/11/LTemp/</url>
     <content><![CDATA[<h1 id="题目：-名字-Easy-Medium-Hard"><a href="#题目：-名字-Easy-Medium-Hard" class="headerlink" title="题目： 名字   Easy/Medium/Hard"></a>题目： 名字   Easy/Medium/Hard</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
 <li><h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3></li>
 <li></li>
@@ -376,7 +376,7 @@
   </entry>
   <entry>
     <title>KMP算法</title>
-    <url>/2020/08/07/LEAS4/</url>
+    <url>/blog/2020/08/07/LEAS4/</url>
     <content><![CDATA[<h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><h2 id="1-ASCII编码表"><a href="#1-ASCII编码表" class="headerlink" title="1.ASCII编码表"></a>1.<a href="https://www.jianshu.com/p/b4a24355c448" target="_blank" rel="noopener">ASCII编码表</a></h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><blockquote>
 <p>在计算机中，一个字节可以表示<strong>八位二进制数</strong>，一个二进制数由0和1两种状态，因此一个字节有<strong>256</strong>种状态。如果这 256 中状态每一个都对应一个符号，就能通过 <strong>1 字节的数据表示 256 个字符</strong>。美国人于是就制定了一套编码（其实就是个字典），描述<strong>英语中</strong>的字符和这 8 位二进制数的对应关系，这被称为 ASCII 码</p>
 </blockquote>
@@ -410,7 +410,7 @@
   </entry>
   <entry>
     <title>翻转字符串里的单词</title>
-    <url>/2020/08/04/LEAS3/</url>
+    <url>/blog/2020/08/04/LEAS3/</url>
     <content><![CDATA[<h1 id="题目：-翻转字符串里的单词-Medium"><a href="#题目：-翻转字符串里的单词-Medium" class="headerlink" title="题目： 翻转字符串里的单词   Medium"></a>题目： <a href="https://leetcode-cn.com/problems/reverse-words-in-a-string" target="_blank" rel="noopener">翻转字符串里的单词</a>   Medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
 <li><h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3></li>
 <li></li>
@@ -463,7 +463,7 @@
   </entry>
   <entry>
     <title>最长回文子串</title>
-    <url>/2020/07/25/LEAS2/</url>
+    <url>/blog/2020/07/25/LEAS2/</url>
     <content><![CDATA[<h1 id="题目：-最长回文子串-Medium"><a href="#题目：-最长回文子串-Medium" class="headerlink" title="题目： 最长回文子串   Medium"></a>题目： <a href="https://leetcode-cn.com/problems/longest-palindromic-substring/" target="_blank" rel="noopener">最长回文子串</a>   Medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
 <li><h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3></li>
 <li></li>
@@ -513,7 +513,7 @@
   </entry>
   <entry>
     <title>JavaWeb(一)</title>
-    <url>/2020/07/25/javaweb1/</url>
+    <url>/blog/2020/07/25/javaweb1/</url>
     <content><![CDATA[<h1 id="HTML-amp-CSS"><a href="#HTML-amp-CSS" class="headerlink" title="HTML&amp;CSS"></a>HTML&amp;CSS</h1><h2 id="B-S软件结构"><a href="#B-S软件结构" class="headerlink" title="B/S软件结构"></a>B/S软件结构</h2><h2 id="一些标签"><a href="#一些标签" class="headerlink" title="一些标签"></a>一些标签</h2><h4 id="table"><a href="#table" class="headerlink" title="table"></a>table</h4><ul>
 <li><p><strong>tr</strong>   table data row</p>
 </li>
@@ -645,7 +645,7 @@
   </entry>
   <entry>
     <title>算法学习笔记（一）</title>
-    <url>/2020/07/26/Algorithm1/</url>
+    <url>/blog/2020/07/26/Algorithm1/</url>
     <content><![CDATA[<h1 id="算法基础"><a href="#算法基础" class="headerlink" title="算法基础"></a>算法基础</h1><h2 id="数据结构的存储方式"><a href="#数据结构的存储方式" class="headerlink" title="数据结构的存储方式"></a><a href="https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/xue-xi-shu-ju-jie-gou-he-suan-fa-de-gao-xiao-fang-fa#yi-shu-ju-jie-gou-de-cun-chu-fang-shi" target="_blank" rel="noopener">数据结构的存储方式</a></h2><h3 id="底层基础数据储存方式：数组、链表。"><a href="#底层基础数据储存方式：数组、链表。" class="headerlink" title="底层基础数据储存方式：数组、链表。"></a>底层基础数据储存方式：<strong>数组、链表</strong>。</h3><p>优缺点比较：</p>
 <ul>
 <li>数组：紧凑连续存储，随机访问，节约空间；需要一次分配足够大的空间，否则需要扩容操作，插入删除操作需要挪动保证连续O(n)。</li>
@@ -670,7 +670,7 @@
   </entry>
   <entry>
     <title>最长公共前缀</title>
-    <url>/2020/07/03/LEAS1/</url>
+    <url>/blog/2020/07/03/LEAS1/</url>
     <content><![CDATA[<h1 id="题目：-最长公共前缀-Easy"><a href="#题目：-最长公共前缀-Easy" class="headerlink" title="题目： 最长公共前缀  Easy"></a>题目： <a href="https://leetcode-cn.com/problems/longest-common-prefix/" target="_blank" rel="noopener">最长公共前缀</a>  Easy</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
 <li><h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3></li>
 <li></li>
@@ -722,7 +722,7 @@
   </entry>
   <entry>
     <title>IDEA快捷键</title>
-    <url>/2020/07/03/IDEASCK/</url>
+    <url>/blog/2020/07/03/IDEASCK/</url>
     <content><![CDATA[<h1 id="IntelliJ-快捷键"><a href="#IntelliJ-快捷键" class="headerlink" title="IntelliJ 快捷键"></a>IntelliJ 快捷键</h1><p><code>System.out.println（）</code> —— <strong>sout + Enter</strong></p>
 ]]></content>
       <categories>
@@ -731,7 +731,7 @@
   </entry>
   <entry>
     <title>JavaStduyRoad</title>
-    <url>/2020/06/08/JavaRoad/</url>
+    <url>/blog/2020/06/08/JavaRoad/</url>
     <content><![CDATA[<blockquote class="blockquote-center">本篇总结Java学习资源路线</blockquote>
 
 <ol>
@@ -752,7 +752,7 @@
   </entry>
   <entry>
     <title>JavaBasics（二）</title>
-    <url>/2020/06/13/JB2/</url>
+    <url>/blog/2020/06/13/JB2/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md#2-java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1" target="_blank" rel="noopener">Java基本功--JAVA面向对象</a></blockquote>
 
 <h1 id="JAVA面向对象"><a href="#JAVA面向对象" class="headerlink" title="JAVA面向对象"></a>JAVA面向对象</h1><h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><h3 id="面向对象和面向过程的区别"><a href="#面向对象和面向过程的区别" class="headerlink" title="面向对象和面向过程的区别"></a>面向对象和面向过程的区别</h3><ul>
@@ -984,7 +984,7 @@
   </entry>
   <entry>
     <title>JavaBasics（一）</title>
-    <url>/2020/06/09/JB1/</url>
+    <url>/blog/2020/06/09/JB1/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md#1-java-%E5%9F%BA%E6%9C%AC%E5%8A%9F" target="_blank" rel="noopener">Java基本功--JAVA入门</a></blockquote>
 
 <h1 id="Java-入门"><a href="#Java-入门" class="headerlink" title="Java 入门"></a>Java 入门</h1><h2 id="JVM-JDK-JRE"><a href="#JVM-JDK-JRE" class="headerlink" title="JVM JDK JRE"></a>JVM JDK JRE</h2><p>Java 虚拟机（JVM）是运行 Java 字节码的虚拟机。JVM 有针对不同系统的特定实现（Windows，Linux，macOS），目的是<strong>使用相同的字节码</strong>，它们都会给出相同的结果。<strong>字节码</strong>和不同系统的 <strong>JVM</strong> 实现是 Java 语言“一次编译，随处可以运行”的关键所在。</p>
@@ -1167,7 +1167,7 @@
   </entry>
   <entry>
     <title>Hello Hexo</title>
-    <url>/2020/06/07/hellohexo/</url>
+    <url>/blog/2020/06/07/hellohexo/</url>
     <content><![CDATA[<p>搭建完个人博客主站，主要参考以下网站：</p>
 <ol>
 <li><p><a href="https://tding.top/archives/aad98408.html" target="_blank" rel="noopener">小丁主题美化 </a></p>
