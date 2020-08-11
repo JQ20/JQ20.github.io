@@ -661,6 +661,9 @@
 </ul>
 <p><strong>树</strong>：两种表示方法：堆（完全二叉树）-&gt;数组存储；链表衍生-&gt;二叉搜索树、AVL 树、红黑树、区间树、B 树等</p>
 ]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
       <tags>
         <tag>AlgorithmBasics</tag>
       </tags>
