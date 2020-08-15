@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="LeetCode,LeetCodeExplore,LeetcodeExploreA&S," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Work harder to be better">
+<meta name="description" content="题目： 杨辉三角 ii  Easy解决方案一解题逻辑：双List 迭代构造至所需行数 动态规划，双List 迭代构造至所需行数  代码分析：实现代码12345678910111213141516public List&lt;Integer&gt; getRow(int rowIndex) &amp;#123;    List&lt;Integer&gt; pre &#x3D; new ArrayList&lt;&amp;g">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LEAD7">
-<meta property="og:url" content="https://gitee.com/JQ20/JQ20.git/2020/08/10/LEAD7/index.html">
+<meta property="og:title" content="杨辉三角ii">
+<meta property="og:url" content="https://gitee.com/JQ20/JQ20.git/2020/08/14/LEAD7/index.html">
 <meta property="og:site_name" content="JQBlog">
-<meta property="og:description" content="Work harder to be better">
-<meta property="article:published_time" content="2020-08-10T13:11:22.000Z">
-<meta property="article:modified_time" content="2020-08-10T13:11:22.828Z">
+<meta property="og:description" content="题目： 杨辉三角 ii  Easy解决方案一解题逻辑：双List 迭代构造至所需行数 动态规划，双List 迭代构造至所需行数  代码分析：实现代码12345678910111213141516public List&lt;Integer&gt; getRow(int rowIndex) &amp;#123;    List&lt;Integer&gt; pre &#x3D; new ArrayList&lt;&amp;g">
+<meta property="article:published_time" content="2020-08-14T04:53:20.000Z">
+<meta property="article:modified_time" content="2020-08-14T08:22:41.222Z">
 <meta property="article:author" content="JamesQiang">
-<meta property="article:tag" content="Programming">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="Leetcode">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="LeetCodeExplore">
+<meta property="article:tag" content="LeetcodeExploreA&amp;S">
 <meta name="twitter:card" content="summary">
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://gitee.com/JQ20/JQ20.git/2020/08/10/LEAD7/"/>
+  <link rel="canonical" href="https://gitee.com/JQ20/JQ20.git/2020/08/14/LEAD7/"/>
 
 
 
 
 
-  <title>LEAD7 | JQBlog</title>
+  <title>杨辉三角ii | JQBlog</title>
   
 
 
@@ -300,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/10/LEAD7/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/14/LEAD7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -317,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LEAD7</h1>
+          <h1 class="post-title" itemprop="name headline">杨辉三角ii</h1>
         
 
         <div class="post-meta">
@@ -329,8 +329,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-10T21:11:22+08:00">
-                2020-08-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-14T12:53:20+08:00">
+                2020-08-14
               </time>
             
 
@@ -345,12 +345,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-10T21:11:22+08:00">
-                2020-08-10
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-14T16:22:41+08:00">
+                2020-08-14
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -373,7 +395,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  321
                 </span>
               
 
@@ -410,7 +432,24 @@
       
 
       
-        
+        <h1 id="题目：-杨辉三角-ii-Easy"><a href="#题目：-杨辉三角-ii-Easy" class="headerlink" title="题目： 杨辉三角 ii  Easy"></a>题目： 杨辉三角 ii  Easy</h1><h2 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h2><h4 id="解题逻辑：双List-迭代构造至所需行数"><a href="#解题逻辑：双List-迭代构造至所需行数" class="headerlink" title="解题逻辑：双List 迭代构造至所需行数"></a><strong>解题逻辑</strong>：双List 迭代构造至所需行数</h4><ul>
+<li>动态规划，双List 迭代构造至所需行数</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; pre = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    List&lt;Integer&gt; cur = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= rowIndex; i++) &#123;</span><br><span class="line">        cur = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j == <span class="number">0</span> || j == i) &#123;</span><br><span class="line">                cur.add(<span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                cur.add(pre.get(j - <span class="number">1</span>) + pre.get(j));</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        pre = cur;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cur;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="优化一"><a href="#优化一" class="headerlink" title="优化一"></a>优化一</h2><h4 id="解题逻辑：单List-覆盖cur"><a href="#解题逻辑：单List-覆盖cur" class="headerlink" title="解题逻辑：单List 覆盖cur"></a><strong>解题逻辑</strong>：单List 覆盖cur</h4><ul>
+<li>需要临时变量存储pre 的j处的值</li>
+</ul>
+<h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pre = <span class="number">1</span>;</span><br><span class="line">    List&lt;Integer&gt; cur = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    cur.add(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= rowIndex; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = cur.get(j);</span><br><span class="line">            cur.set(j, pre + cur.get(j));</span><br><span class="line">            pre = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        cur.add(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cur;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="优化二"><a href="#优化二" class="headerlink" title="优化二"></a>优化二</h2><h4 id="解题逻辑：从后往前获取值，无需temp"><a href="#解题逻辑：从后往前获取值，无需temp" class="headerlink" title="解题逻辑：从后往前获取值，无需temp"></a><strong>解题逻辑</strong>：从后往前获取值，无需temp</h4><h4 id="代码分析：-2"><a href="#代码分析：-2" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码-2"><a href="#实现代码-2" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pre = <span class="number">1</span>;</span><br><span class="line">    List&lt;Integer&gt; cur = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    cur.add(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= rowIndex; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = cur.get(j);</span><br><span class="line">            cur.set(j, pre + cur.get(j));</span><br><span class="line">            pre = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        cur.add(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cur;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<blockquote>
+<p>文件名：LEAD7</p>
+</blockquote>
+
       
     </div>
     
@@ -425,6 +464,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+          
+            <a href="/tags/LeetCodeExplore/" rel="tag"># LeetCodeExplore</a>
+          
+            <a href="/tags/LeetcodeExploreA-S/" rel="tag"># LeetcodeExploreA&S</a>
+          
+        </div>
+      
 
       
       
@@ -434,8 +483,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/08/10/LEAD6/" rel="next" title="LEAD6">
-                <i class="fa fa-chevron-left"></i> LEAD6
+              <a href="/2020/08/12/LEAD8/" rel="next" title="LEAD8">
+                <i class="fa fa-chevron-left"></i> LEAD8
               </a>
             
           </div>
@@ -444,8 +493,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/08/10/LEAD8/" rel="prev" title="LEAD8">
-                LEAD8 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/08/15/LEAD6/" rel="prev" title="反转字符串中单词 Ⅲ">
+                反转字符串中单词 Ⅲ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -498,8 +547,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -554,9 +612,9 @@
             <div class="links-of-author motion-element">
                 
                   <span class="links-of-author-item">
-                    <a href="https://github.com/JQ20" target="_blank" title="GitHub">
+                    <a href="mailto:1378787092@qq.com" target="_blank" title="E-Mail">
                       
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
                 
             </div>
@@ -573,6 +631,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目：-杨辉三角-ii-Easy"><span class="nav-number">1.</span> <span class="nav-text">题目： 杨辉三角 ii  Easy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案一"><span class="nav-number">1.1.</span> <span class="nav-text">解决方案一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题逻辑：双List-迭代构造至所需行数"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">解题逻辑：双List 迭代构造至所需行数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码分析："><span class="nav-number">1.1.0.2.</span> <span class="nav-text">代码分析：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现代码"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">实现代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化一"><span class="nav-number">1.2.</span> <span class="nav-text">优化一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题逻辑：单List-覆盖cur"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">解题逻辑：单List 覆盖cur</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码分析：-1"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">代码分析：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现代码-1"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">实现代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化二"><span class="nav-number">1.3.</span> <span class="nav-text">优化二</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题逻辑：从后往前获取值，无需temp"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">解题逻辑：从后往前获取值，无需temp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码分析：-2"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">代码分析：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现代码-2"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">实现代码</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -601,7 +675,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19.1k</span>
+    <span title="Site words total count">20.5k</span>
   
 </div>
 
