@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="LeetCode,LeetCodeExplore,LeetcodeExploreA&S," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Work harder to be better">
+<meta name="description" content="题目：寻找旋转排序数组中的最小值   Medium解决方案一解题逻辑：二分查找 找到变化点从而判断旋转位置  代码分析：实现代码1234567891011121314151617class solution&amp;#123;    public int findMin(int[] nums)&amp;#123;        if(nums.length &#x3D;&#x3D; 1) return nums[0];">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LEAD11">
-<meta property="og:url" content="https://gitee.com/JQ20/JQ20.git/2020/08/10/LEAD11/index.html">
+<meta property="og:title" content="寻找旋转排序数组中的最小值">
+<meta property="og:url" content="https://gitee.com/JQ20/JQ20.git/2020/08/17/LEAD10/index.html">
 <meta property="og:site_name" content="JQBlog">
-<meta property="og:description" content="Work harder to be better">
-<meta property="article:published_time" content="2020-08-10T13:12:04.000Z">
-<meta property="article:modified_time" content="2020-08-10T13:12:04.981Z">
+<meta property="og:description" content="题目：寻找旋转排序数组中的最小值   Medium解决方案一解题逻辑：二分查找 找到变化点从而判断旋转位置  代码分析：实现代码1234567891011121314151617class solution&amp;#123;    public int findMin(int[] nums)&amp;#123;        if(nums.length &#x3D;&#x3D; 1) return nums[0];">
+<meta property="article:published_time" content="2020-08-17T04:53:20.000Z">
+<meta property="article:modified_time" content="2020-08-19T07:01:55.810Z">
 <meta property="article:author" content="JamesQiang">
-<meta property="article:tag" content="Programming">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="Leetcode">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="LeetCodeExplore">
+<meta property="article:tag" content="LeetcodeExploreA&amp;S">
 <meta name="twitter:card" content="summary">
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://gitee.com/JQ20/JQ20.git/2020/08/10/LEAD11/"/>
+  <link rel="canonical" href="https://gitee.com/JQ20/JQ20.git/2020/08/17/LEAD10/"/>
 
 
 
 
 
-  <title>LEAD11 | JQBlog</title>
+  <title>寻找旋转排序数组中的最小值 | JQBlog</title>
   
 
 
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/10/LEAD11/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/17/LEAD10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LEAD11</h1>
+          <h1 class="post-title" itemprop="name headline">寻找旋转排序数组中的最小值</h1>
         
 
         <div class="post-meta">
@@ -328,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-10T21:12:04+08:00">
-                2020-08-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-17T12:53:20+08:00">
+                2020-08-17
               </time>
             
 
@@ -344,12 +344,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-10T21:12:04+08:00">
-                2020-08-10
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-19T15:01:55+08:00">
+                2020-08-19
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -372,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  155
                 </span>
               
 
@@ -409,7 +431,18 @@
       
 
       
-        
+        <h1 id="题目：寻找旋转排序数组中的最小值-Medium"><a href="#题目：寻找旋转排序数组中的最小值-Medium" class="headerlink" title="题目：寻找旋转排序数组中的最小值   Medium"></a>题目：<a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/xun-zhao-xuan-zhuan-pai-lie-shu-zu-zhong-de-zui-xi/" target="_blank" rel="noopener">寻找旋转排序数组中的最小值</a>   Medium</h1><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑：二分查找"><a href="#解题逻辑：二分查找" class="headerlink" title="解题逻辑：二分查找"></a><strong>解题逻辑</strong>：二分查找</h4><ul>
+<li>找到变化点从而判断旋转位置</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">solution</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.length == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums[right] &gt; nums[<span class="number">0</span>]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="comment">//二分查找</span></span><br><span class="line">        <span class="keyword">while</span>(right &gt;= left)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = left + (right -left)/<span class="number">2</span>; <span class="comment">//防止溢出</span></span><br><span class="line">            <span class="keyword">if</span>(nums[mid] &gt; nums[mid+<span class="number">1</span>]) <span class="keyword">return</span> nums[mid+<span class="number">1</span>]; <span class="comment">//找到变化点，确认最小值</span></span><br><span class="line">            <span class="keyword">if</span>(nums[mid-<span class="number">1</span>] &gt; nums[mid]) <span class="keyword">return</span> nums[mid];</span><br><span class="line">            <span class="keyword">if</span>(nums[mid] &gt; nums[<span class="number">0</span>])</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">             <span class="keyword">else</span> right = mid - <span class="number">1</span>;                         </span><br><span class="line">		&#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li></li>
+</ul>
+<blockquote>
+<p>文件名：LEAD10</p>
+</blockquote>
+
       
     </div>
     
@@ -424,6 +457,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+          
+            <a href="/tags/LeetCodeExplore/" rel="tag"># LeetCodeExplore</a>
+          
+            <a href="/tags/LeetcodeExploreA-S/" rel="tag"># LeetcodeExploreA&S</a>
+          
+        </div>
+      
 
       
       
@@ -433,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/08/10/LEAD10/" rel="next" title="LEAD10">
-                <i class="fa fa-chevron-left"></i> LEAD10
+              <a href="/2020/08/17/LEAD11/" rel="next" title="删除排序数组中的重复项">
+                <i class="fa fa-chevron-left"></i> 删除排序数组中的重复项
               </a>
             
           </div>
@@ -443,8 +486,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/08/10/LEAD12/" rel="prev" title="LEAD12">
-                LEAD12 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/08/18/LEAD13/" rel="prev" title="数组和字符串篇总结">
+                数组和字符串篇总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -497,8 +540,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -573,6 +625,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目：寻找旋转排序数组中的最小值-Medium"><span class="nav-number">1.</span> <span class="nav-text">题目：寻找旋转排序数组中的最小值   Medium</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案一"><span class="nav-number">1.0.1.</span> <span class="nav-text">解决方案一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题逻辑：二分查找"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">解题逻辑：二分查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码分析："><span class="nav-number">1.0.1.2.</span> <span class="nav-text">代码分析：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现代码"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">实现代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tips"><span class="nav-number">1.0.1.4.</span> <span class="nav-text">tips:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -600,7 +668,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.5k</span>
+    <span title="Site words total count">21.9k</span>
   
 </div>
 

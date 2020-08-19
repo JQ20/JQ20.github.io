@@ -87,7 +87,7 @@
 <meta property="og:description" content="旋转矩阵 medium1.自己构思无法解决：  不带开销旋转出错值  问题总结： 陷入拿辅助数组copy的思维定势 2.学习题解代码解题逻辑： 观察旋转逻辑给出代码复现思路：【先进行转置然后对每一行以中点进行翻转】 代码分析：解决自己问题：原地翻转一个temp变量即可 实现代码12345678910111213141516171819202122class Solution &amp;#123;    p">
 <meta property="og:image" content="https://gitee.com/images/LEA2/image-20200611130319775.png">
 <meta property="article:published_time" content="2020-06-11T04:31:47.000Z">
-<meta property="article:modified_time" content="2020-08-10T07:35:42.800Z">
+<meta property="article:modified_time" content="2020-08-18T09:16:07.409Z">
 <meta property="article:author" content="JamesQiang">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="LeetCodeExplore">
@@ -346,8 +346,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-10T15:35:42+08:00">
-                2020-08-10
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-18T17:16:07+08:00">
+                2020-08-18
               </time>
             
           </span>
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  246
+                  247
                 </span>
               
 
@@ -440,7 +440,7 @@
 <p>问题总结： 陷入拿辅助数组copy的思维定势</p>
 <h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习<a href="https://leetcode-cn.com/problems/merge-intervals/solution/chi-jing-ran-yi-yan-miao-dong-by-sweetiee/" target="_blank" rel="noopener">题解</a>代码</h2><h3 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h3><p> 观察旋转逻辑给出代码复现思路：【先进行转置然后对每一行以中点进行翻转】</p>
 <h3 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h3><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><p>原地翻转一个temp变量即可</p>
-<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = matrix.length;</span><br><span class="line">        <span class="comment">// 先以对角线（左上-右下）为轴进行翻转</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[j][i];</span><br><span class="line">                matrix[j][i] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 再对每一行以中点进行翻转</span></span><br><span class="line">        <span class="keyword">int</span> mid = n &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; mid; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[i][n - <span class="number">1</span> - j];</span><br><span class="line">                matrix[i][n - <span class="number">1</span> - j] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = matrix.length;</span><br><span class="line">        <span class="comment">// 先以对角线（左上-&gt;右下）为轴进行翻转</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[j][i];</span><br><span class="line">                matrix[j][i] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 再对每一行以中点进行翻转</span></span><br><span class="line">        <span class="keyword">int</span> mid = n &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; mid; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[i][n - <span class="number">1</span> - j];</span><br><span class="line">                matrix[i][n - <span class="number">1</span> - j] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 
 
@@ -675,7 +675,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.5k</span>
+    <span title="Site words total count">21.9k</span>
   
 </div>
 
