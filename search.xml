@@ -1,6 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>最长公共前缀</title>
+    <url>/2020/07/03/LEAS1/</url>
+    <content><![CDATA[<h1 id="题目：-最长公共前缀-Easy"><a href="#题目：-最长公共前缀-Easy" class="headerlink" title="题目： 最长公共前缀  Easy"></a>题目： <a href="https://leetcode-cn.com/problems/longest-common-prefix/" target="_blank" rel="noopener">最长公共前缀</a>  Easy</h1><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li><strong>横向扫描</strong>，依次遍历每个字符串，更新最长公共前缀</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h4><ul>
+<li><pre><code class="java"><span class="function"><span class="keyword">public</span> <span class="keyword">char</span> <span class="title">charAt</span><span class="params">(<span class="keyword">int</span> index)</span><span class="comment">//返回指定字符</span></span>
+<span class="function"><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- &#96;&#96;&#96;java</span><br><span class="line">  public String substring(int beginIndex, int endIndex)&#x2F;&#x2F;返回子串 begin与end相等返回&quot;&quot;</span><br></pre></td></tr></table></figure></div></span>
+<span class="function"></span></code></pre>
+</li>
+</ul>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs == <span class="keyword">null</span> || strs.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        String prefix = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> count = strs.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; count; i++) &#123;</span><br><span class="line">            prefix = longestCommonPrefix(prefix, strs[i]);</span><br><span class="line">            <span class="keyword">if</span> (prefix.length() == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> prefix;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String str1, String str2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = Math.min(str1.length(), str2.length());</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (index &lt; length &amp;&amp; str1.charAt(index) == str2.charAt(index)) &#123;</span><br><span class="line">            index++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str1.substring(<span class="number">0</span>, index);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li>substring返回子串 begin与end相等返回””</li>
+</ul>
+<h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3><h4 id="解题逻辑：-1"><a href="#解题逻辑：-1" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li><p><strong>纵向扫描</strong>从前往后遍历所有字符串的每一列，比较相同列上的字符是否相同，如果相同则继续对下一列进行比较，如果不相同则当前列不再属于公共前缀，当前列之前的部分为最长公共前缀。</p>
+<p><img src="/images/LEAS1/14_fig2.png" alt="fig2"></p>
+</li>
+</ul>
+<h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="重点-1"><a href="#重点-1" class="headerlink" title="重点"></a>重点</h4><ul>
+<li>临界值判断之一：被比较字符串长度超过初始字符串长度时停止</li>
+</ul>
+<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs == <span class="keyword">null</span> || strs.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> length = strs[<span class="number">0</span>].length();</span><br><span class="line">        <span class="keyword">int</span> count = strs.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">            <span class="keyword">char</span> c = strs[<span class="number">0</span>].charAt(i);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; count; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == strs[j].length() || strs[j].charAt(i) != c) &#123;</span><br><span class="line">                    <span class="keyword">return</span> strs[<span class="number">0</span>].substring(<span class="number">0</span>, i);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> strs[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips-1"><a href="#tips-1" class="headerlink" title="tips:"></a>tips:</h4><h3 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h3><p><strong>解题逻辑</strong>：</p>
+<ul>
+<li>分治算法</li>
+</ul>
+<h3 id="解决方案四"><a href="#解决方案四" class="headerlink" title="解决方案四"></a>解决方案四</h3><p><strong>解题逻辑</strong>：</p>
+<ul>
+<li>二分查找</li>
+<li><img src="/images/LEAS1/14_fig4.png" alt="fig4"></li>
+</ul>
+<h5 id="实现代码-2"><a href="#实现代码-2" class="headerlink" title="实现代码"></a>实现代码</h5><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs == <span class="keyword">null</span> || strs.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> minLength = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (String str : strs) &#123;</span><br><span class="line">            minLength = Math.min(minLength, str.length());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>, high = minLength;</span><br><span class="line">        <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (high - low + <span class="number">1</span>) / <span class="number">2</span> + low;</span><br><span class="line">            <span class="keyword">if</span> (isCommonPrefix(strs, mid)) &#123;</span><br><span class="line">                low = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                high = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> strs[<span class="number">0</span>].substring(<span class="number">0</span>, low);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isCommonPrefix</span><span class="params">(String[] strs, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">        String str0 = strs[<span class="number">0</span>].substring(<span class="number">0</span>, length);</span><br><span class="line">        <span class="keyword">int</span> count = strs.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; count; i++) &#123;</span><br><span class="line">            String str = strs[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (str0.charAt(j) != str.charAt(j)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<blockquote>
+<p>文件名：LAS1</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreA&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KMP算法</title>
+    <url>/2020/08/07/LEAS4/</url>
+    <content><![CDATA[<h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><h2 id="1-ASCII编码表"><a href="#1-ASCII编码表" class="headerlink" title="1.ASCII编码表"></a>1.<a href="https://www.jianshu.com/p/b4a24355c448" target="_blank" rel="noopener">ASCII编码表</a></h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><blockquote>
+<p>在计算机中，一个字节可以表示<strong>八位二进制数</strong>，一个二进制数由0和1两种状态，因此一个字节有<strong>256</strong>种状态。如果这 256 中状态每一个都对应一个符号，就能通过 <strong>1 字节的数据表示 256 个字符</strong>。美国人于是就制定了一套编码（其实就是个字典），描述<strong>英语中</strong>的字符和这 8 位二进制数的对应关系，这被称为 ASCII 码</p>
+</blockquote>
+<p>前128个字符编码英语为确定，后128字符由其他国家定义未定义</p>
+<p>强制类型转换遵循ASCII表 ,常用<code>&#39;a&#39; = 97,&#39;A&#39; = 65,0 = 48</code></p>
+<h1 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h1><h2 id="方法一：构造next数组"><a href="#方法一：构造next数组" class="headerlink" title="方法一：构造next数组"></a>方法一：<a href="https://leetcode-cn.com/leetbook/read/array-and-string/cpoo6/" target="_blank" rel="noopener">构造next数组</a></h2><h3 id="核心思想：构造next数组，在匹配不成功时减少回退数量"><a href="#核心思想：构造next数组，在匹配不成功时减少回退数量" class="headerlink" title="核心思想：构造next数组，在匹配不成功时减少回退数量"></a><strong>核心思想</strong>：构造next数组，在匹配不成功时减少回退数量</h3><h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>传统暴力依次匹配进行每一轮匹配时，总是会重复对 A 进行比较。也就是说，对于 S 中的每个字符，我们都需要从 T 第一个位置重新开始比较，并且 S 前面的 A 越多，浪费的时间也就越多。假设 S 的长度为 mmm，T 的长度为 nnn，理论上讲，最坏情况下迭代 m−n+1m - n + 1m−n+1 轮，每轮最多进行 n 次比对，一共比较了 (m−n+1)×n次，当 m&gt;&gt;n时，渐进时间复杂度为 <strong>O(mn)</strong></p>
+<p>KMP 复杂度可降到O(m+n)</p>
+<h4 id="构建next数组"><a href="#构建next数组" class="headerlink" title="构建next数组"></a>构建next数组</h4><p><strong><code>P[i]</code> 对应的下标，为 <code>P[0...i + 1]</code> 的最长公共前缀后缀的长度</strong></p>
+<img src="/images/LEAS4/8cd158c08b74130068b580d6d8830ecb700af1e84897ac07a6c533b9c6c0c6a6-8.png" alt="8.png" style="zoom:50%;" />
+
+<h2 id="方法二：构建影子变量，状态转换"><a href="#方法二：构建影子变量，状态转换" class="headerlink" title="方法二：构建影子变量，状态转换"></a>方法二：构建影子变量，状态转换</h2><h3 id="核心思想：确定状态转换行为"><a href="#核心思想：确定状态转换行为" class="headerlink" title="核心思想：确定状态转换行为"></a>核心思想：确定状态转换行为</h3><p>得明确两个变量，一个是当前的<strong>匹配状态</strong>，另一个是<strong>遇到的字符</strong>；</p>
+<p>确定了这两个变量后，就可以知道这个情况下应该转移到哪个状态。</p>
+<p>为了描述状态转移图，我们定义一个二维 dp 数组，它的含义如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">dp[j][c] = next</span><br><span class="line"><span class="number">0</span> &lt;= j &lt; M，代表当前的状态</span><br><span class="line"><span class="number">0</span> &lt;= c &lt; <span class="number">256</span>，代表遇到的字符（ASCII 码）</span><br><span class="line"><span class="number">0</span> &lt;= next &lt;= M，代表下一个状态</span><br><span class="line"></span><br><span class="line">dp[<span class="number">4</span>][<span class="string">'A'</span>] = <span class="number">3</span> 表示：</span><br><span class="line">当前是状态 <span class="number">4</span>，如果遇到字符 A，</span><br><span class="line">pat 应该转移到状态 <span class="number">3</span></span><br><span class="line"></span><br><span class="line">dp[<span class="number">1</span>][<span class="string">'B'</span>] = <span class="number">2</span> 表示：</span><br><span class="line">当前是状态 <span class="number">1</span>，如果遇到字符 B，</span><br><span class="line">pat 应该转移到状态 <span class="number">2</span></span><br></pre></td></tr></table></figure></div>
+
+<p>在 <code>pat</code> 匹配 <code>txt</code> 的过程中，只要明确了「当前处在哪个状态」和「遇到的字符是什么」这两个问题，就可以确定应该转移到哪个状态（推进或回退）。</p>
+<img src="/images/LEAS4/1.gif" style="zoom:50%;" />
+
+<p>完整代码</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(needle.equals(<span class="string">""</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(haystack.equals(<span class="string">""</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 构造KMP中的dp矩阵</span></span><br><span class="line">        <span class="keyword">int</span> m = needle.length();</span><br><span class="line">        <span class="comment">// 各个状态(行)遇到下一个字符(列)跳转到哪个状态</span></span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m][<span class="number">256</span>]; </span><br><span class="line">        <span class="comment">// 影子状态</span></span><br><span class="line">        <span class="keyword">int</span> X = <span class="number">0</span>;  </span><br><span class="line">        dp[<span class="number">0</span>][needle.charAt(<span class="number">0</span>)] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">256</span>; j++) &#123;</span><br><span class="line">                <span class="comment">//假设下个字符不匹配，此时要回去看影子状态，从而得知跳转到哪个状态</span></span><br><span class="line">                dp[i][j] = dp[X][j];  </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 只有pat上i的字符匹配，跳转到下个状态</span></span><br><span class="line">            dp[i][needle.charAt(i)] = i + <span class="number">1</span>;  </span><br><span class="line">            <span class="comment">// 更新影子状态</span></span><br><span class="line">            X = dp[X][needle.charAt(i)];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 构造dp完成后，开始search</span></span><br><span class="line">        <span class="comment">// 初始状态为0</span></span><br><span class="line">        <span class="keyword">int</span> s = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; haystack.length(); i++) &#123;</span><br><span class="line">            s = dp[s][haystack.charAt(i)];</span><br><span class="line">            <span class="keyword">if</span> (s == m) &#123;</span><br><span class="line">                <span class="keyword">return</span> i - m + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 匹配失败，返回-1</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="双指针解法"><a href="#双指针解法" class="headerlink" title="双指针解法"></a>双指针解法</h1>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreA&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>翻转字符串里的单词</title>
+    <url>/2020/08/04/LEAS3/</url>
+    <content><![CDATA[<h1 id="题目：-反转字符串里的单词-Medium"><a href="#题目：-反转字符串里的单词-Medium" class="headerlink" title="题目： 反转字符串里的单词   Medium"></a>题目： <a href="https://leetcode-cn.com/problems/reverse-words-in-a-string" target="_blank" rel="noopener">反转字符串里的单词</a>   Medium</h1><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑：API解决"><a href="#解题逻辑：API解决" class="headerlink" title="解题逻辑：API解决"></a><strong>解题逻辑</strong>：API解决</h4><ul>
+<li><p><code>split</code>（拆分），<code>reverse</code>（翻转）和 <code>join</code>（连接）</p>
+<p><img src="/images/LEAS3/fun2.png" alt="fig"></p>
+</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
+<li>API String  trim()</li>
+<li>API String[] split()</li>
+<li>API Collections.reverse(wordList)</li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#join-java.lang.CharSequence-java.lang.Iterable-" target="_blank" rel="noopener">API</a> String.join((CharSequence delimiter,Iterable&lt;? extends CharSequence&gt; elements)</li>
+</ul>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">reverseWords</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        s = s.trm(); <span class="comment">//去除首位空白字符</span></span><br><span class="line">        List&lt;String&gt; wordList = Arrays.asList(s.split(<span class="string">"\\s+"</span>)); </span><br><span class="line">        <span class="comment">//正则表达式 \s 匹配任何空白字符，包括空格、制表符、换页符等。与 [ \f\n\r\t\v] 等效。</span></span><br><span class="line">        <span class="comment">// + 一次或多次匹配前面的字符或子表达式。</span></span><br><span class="line">        Collections.reverse(wordList);</span><br><span class="line">        <span class="keyword">return</span> String.join(<span class="string">" "</span>,wordList);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><p>熟悉api</p>
+</li>
+<li><p><code>StringUtils.join()</code>与 <code>String.join()</code></p>
+<p>参数顺序不一样，另外，StringUtils.join(）可以传入Integer或者其他类型的集合或数组，而String.join()尽可以传入实现charSequence接口类型的集合或数组。</p>
+</li>
+</ul>
+<h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3><h4 id="解题逻辑：无API手动实现"><a href="#解题逻辑：无API手动实现" class="headerlink" title="解题逻辑：无API手动实现"></a><strong>解题逻辑</strong>：无API手动实现</h4><ul>
+<li>java的String为不可变</li>
+<li>对于不可变字符串转化成其他可变的数据结构，同时还需要在转化的过程中去除空格。</li>
+<li>StringBuffer与SringBuilder<a href="https://blog.csdn.net/csxypr/article/details/92378336" target="_blank" rel="noopener">差异</a>前者线程安全后者未加锁</li>
+</ul>
+<h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> StringBuilder <span class="title">trimSpaces</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        <span class="comment">//去除首尾的空格 双指针	</span></span><br><span class="line">        <span class="keyword">int</span> left =<span class="number">0</span>,right = s.length()-<span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right &amp;&amp; s.charAt(left)==<span class="string">" "</span>) ++left;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right &amp;&amp; s.charAt(right)==<span class="string">" "</span>) ++right;</span><br><span class="line">        </span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">while</span>(left &lt;= right)&#123;</span><br><span class="line">            <span class="keyword">char</span> c = s.charAt(left);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(c != <span class="string">" "</span>) sb.append(c);</span><br><span class="line">            <span class="comment">//插入空格分割字符，多余空格忽略</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(sb.charAt(sb.length()-<span class="number">1</span>) != <span class="string">" "</span>) sb.apend(C);</span><br><span class="line">            </span><br><span class="line">            ++left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reverseEachWord</span><span class="params">(StringBuilder sb)</span></span>&#123;</span><br><span class="line">        <span class="comment">//翻转单个单词</span></span><br><span class="line">        <span class="keyword">int</span> n = sb.length();</span><br><span class="line">       	<span class="keyword">int</span> start = <span class="number">0</span>, end = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (start &lt; n)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (end &lt; n &amp;&amp; sb.charAt(end) != <span class="string">" "</span>) ++end;</span><br><span class="line">            </span><br><span class="line">            reverse(sb, start , end-<span class="number">1</span>);</span><br><span class="line">            </span><br><span class="line">            start = end + <span class="number">1</span>;</span><br><span class="line">            ++end;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reverse</span><span class="params">(StringBuilder sb, <span class="keyword">int</span> left ,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="comment">//翻转区间字符</span></span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">            <span class="keyword">char</span> temp = sb.charAt(left);</span><br><span class="line">            sb.setCharAt(left++,sb.charAt(right));</span><br><span class="line">            sb.setCharAt(right--,temp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">reverseWords</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        <span class="comment">//翻转单词串，返回结果</span></span><br><span class="line">        StringBuilder sb = trimSpaces(s);</span><br><span class="line">        </span><br><span class="line">        reverse(sb,<span class="number">0</span>,sb.length()-<span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        reverseEachWord(sb);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>文件名：LEAS3</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreA&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最长回文子串</title>
+    <url>/2020/07/25/LEAS2/</url>
+    <content><![CDATA[<h1 id="题目：-最长回文子串-Medium"><a href="#题目：-最长回文子串-Medium" class="headerlink" title="题目： 最长回文子串   Medium"></a>题目： <a href="https://leetcode-cn.com/problems/longest-palindromic-substring/" target="_blank" rel="noopener">最长回文子串</a>   Medium</h1><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑：暴力破解"><a href="#解题逻辑：暴力破解" class="headerlink" title="解题逻辑：暴力破解"></a><strong>解题逻辑</strong>：暴力破解</h4><ul>
+<li>暴力破解</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> s_len = s.length();</span><br><span class="line">        <span class="keyword">if</span>(s_len &lt;<span class="number">2</span>) <span class="keyword">return</span> s;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> maxlen = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">char</span>[] charArray = s.toCharArray();</span><br><span class="line">		<span class="comment">//枚举所有长度大于1的子串</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s_len - <span class="number">1</span> ; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span> ; j &lt; s_len ; j++)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(j - i + <span class="number">1</span> &gt; maxlen &amp;&amp; validPalindromic(charArray,i,j))&#123;</span><br><span class="line">                        begin = i;</span><br><span class="line">                        maxlen = j - i + <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substring(begin ,begin + maxlen);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">validPalindromic</span><span class="params">(<span class="keyword">char</span>[] charArray,<span class="keyword">int</span> begin,<span class="keyword">int</span> end)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//双指针-头尾指针 判断字符串是否为回文子串</span></span><br><span class="line">        <span class="keyword">while</span>(end &gt; begin)&#123;</span><br><span class="line">            <span class="keyword">if</span>(charArray[begin] != charArray[end])</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            begin++;end--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3></li>
+</ul>
+<h4 id="解题逻辑：中心扩散法"><a href="#解题逻辑：中心扩散法" class="headerlink" title="解题逻辑：中心扩散法"></a><strong>解题逻辑</strong>：中心扩散法</h4><ul>
+<li>中心扩散法</li>
+</ul>
+<h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
+<li><p>分奇、偶讨论中心点的情况</p>
+</li>
+<li><p>归纳奇偶中心点起始begin值，向下取整找规律</p>
+<p><img src="/images/LEAS2/image-20200802222133300.png" alt="image-20200802222133300"></p>
+</li>
+</ul>
+<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestpalindrome</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.length();</span><br><span class="line">        <span class="keyword">if</span>(len &lt; <span class="number">2</span>) <span class="keyword">return</span> s;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> maxLen = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">char</span>[] charArray = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;len-<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> oddLen= expandAroundCenter(charArray, i,i);</span><br><span class="line">            <span class="keyword">int</span> evenLen = expandAroundCenter(charArray,i,i+<span class="number">1</span>);</span><br><span class="line">           </span><br><span class="line">            <span class="keyword">int</span> curMaxlen = Math.max(oddLen,evenLen);</span><br><span class="line">         	<span class="comment">//找最长回文子串</span></span><br><span class="line">            <span class="keyword">if</span>(curMaxLen &gt; maxLen)&#123;</span><br><span class="line">                maxLen = curMaxLen;</span><br><span class="line">                begin =  i -(maxlen - <span class="number">1</span> ) / <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> s.substring(begin,begin + maxLen );</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">            </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">expandAroundCenter</span><span class="params">(<span class="keyword">char</span>[] charArray,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> len = charArray.length;</span><br><span class="line">        <span class="keyword">int</span> i = left;</span><br><span class="line">        <span class="keyword">int</span> j = right;</span><br><span class="line">        <span class="keyword">while</span>(i&gt;=<span class="number">0</span>&amp;&amp;j&lt;len)&#123;</span><br><span class="line">            <span class="keyword">if</span>(charArray[i] == charArray[j])&#123;</span><br><span class="line">                i--;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//跳出循环时，恰好满足 s.charAt(i) !=s.charAt(j),</span></span><br><span class="line">        <span class="comment">// 回文串长度是 j-i+1-2 =j-i-1</span></span><br><span class="line">        <span class="keyword">return</span> j-i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips-1"><a href="#tips-1" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><code>char[] charArray = s.toCharArray();</code> 字符串转字符数组</li>
+</ul>
+<blockquote>
+<p>文件名：LAS2</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreA&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数组和字符串篇总结</title>
     <url>/2020/08/18/LEAD13/</url>
     <content><![CDATA[<h1 id="数组和字符串篇总结"><a href="#数组和字符串篇总结" class="headerlink" title="数组和字符串篇总结"></a>数组和字符串篇总结</h1><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>地址：<a href="https://leetcode-cn.com/leetbook/detail/array-and-string/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/detail/array-and-string/</a></p>
@@ -13,13 +186,13 @@
 </ul>
 <h2 id="数组操作类型题"><a href="#数组操作类型题" class="headerlink" title="数组操作类型题"></a>数组操作类型题</h2><ol>
 <li><a href="https://leetcode-cn.com/problems/find-pivot-index/" target="_blank" rel="noopener"><em>寻找数组中心索引 Easy</em></a></li>
-<li><a href="https://leetcode-cn.com/problems/search-insert-position/solution/sou-suo-cha-ru-wei-zhi-by-leetcode-solution/" target="_blank" rel="noopener">搜索插入位置 Easy</a>  二分法</li>
-<li>合并区间 数组排序，lambda表达式</li>
+<li><a href="https://leetcode-cn.com/problems/search-insert-position/solution/sou-suo-cha-ru-wei-zhi-by-leetcode-solution/" target="_blank" rel="noopener">搜索插入位置 Easy</a>  <strong>二分法</strong></li>
+<li><a href="https://jq20.gitee.io/2020/06/08/LEA1/" target="_blank" rel="noopener">合并区间</a> <strong>数组排序，lambda表达式</strong></li>
 </ol>
 <h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><ol>
-<li>旋转矩阵  <strong>转置矩阵思想</strong></li>
-<li>零矩阵 <strong>记录数组作用</strong></li>
-<li>对角线遍历  <strong>简化问题；分情况奇偶</strong></li>
+<li><a href="https://jq20.gitee.io/2020/06/11/LEA2/" target="_blank" rel="noopener">旋转矩阵</a>  <strong>转置矩阵思想</strong></li>
+<li><a href="https://jq20.gitee.io/2020/06/11/LEA3/" target="_blank" rel="noopener">零矩阵</a> <strong>记录数组作用</strong></li>
+<li><a href="https://jq20.gitee.io/2020/06/14/LEA4/" target="_blank" rel="noopener">对角线遍历</a>  <strong>简化问题；分情况奇偶</strong></li>
 </ol>
 <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ol>
 <li>最长公共前缀  <strong>二分法；分治[未更新]</strong></li>
@@ -28,23 +201,55 @@
 <li>KMP算法之“实现 strStr()”   <strong>滑动窗口【未更新】；KMP算法【未更新】；双指针【未更新】；KMP变式之状态转换法</strong></li>
 </ol>
 <h2 id="双指针技巧"><a href="#双指针技巧" class="headerlink" title="双指针技巧"></a>双指针技巧</h2><ol>
-<li>反转字符串</li>
-<li>数组拆分</li>
-<li>两数之和 II - 输入有序数组 </li>
-<li>移除元素 </li>
-<li>最大连续1的个数</li>
-<li>长度最小的子数组  <strong>灵活移动慢指针</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/10/LEAD1/" target="_blank" rel="noopener">反转字符串</a></li>
+<li><a href="https://jq20.gitee.io/2020/08/10/LEAD2/" target="_blank" rel="noopener">数组拆分</a></li>
+<li><a href="https://jq20.gitee.io/2020/08/10/LEAD4/" target="_blank" rel="noopener">两数之和 II - 输入有序数组</a> </li>
+<li><a href="https://jq20.gitee.io/2020/08/10/LEAD4/" target="_blank" rel="noopener">移除元素</a> </li>
+<li><a href="https://jq20.gitee.io/2020/08/11/LEAD5/" target="_blank" rel="noopener">最大连续1的个数</a></li>
+<li><a href="https://jq20.gitee.io/2020/08/12/LEAD8/" target="_blank" rel="noopener">长度最小的子数组</a>  <strong>灵活移动慢指针</strong></li>
 </ol>
 <h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><ol>
-<li>杨辉三角 <strong>动态规划；Arraylist使用</strong></li>
-<li>杨辉三角 Ⅱ </li>
-<li>反转字符串中的单词 III <strong>StringBuffer使用</strong></li>
-<li>寻找旋转排列数组中的最小值 <strong>二分查找</strong></li>
-<li>删除排序数组中的重复项  <strong>双指针</strong></li>
-<li>移动零 <strong>双指针</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/10/LEAD9/" target="_blank" rel="noopener">杨辉三角</a> <strong>动态规划；Arraylist使用</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/14/LEAD7/" target="_blank" rel="noopener">杨辉三角 Ⅱ</a> </li>
+<li><a href="https://jq20.gitee.io/2020/08/15/LEAD6/" target="_blank" rel="noopener">反转字符串中的单词 III</a> <strong>StringBuffer使用</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/18/LEAD13/" target="_blank" rel="noopener">寻找旋转排列数组中的最小值</a> <strong>二分查找</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/17/LEAD11/" target="_blank" rel="noopener">删除排序数组中的重复项</a>  <strong>双指针</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/17/LEAD12/" target="_blank" rel="noopener">移动零</a> <strong>双指针</strong></li>
 </ol>
 <blockquote>
 <p>文件名：LEAD13</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreA&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>长度最小的子数组</title>
+    <url>/2020/08/12/LEAD8/</url>
+    <content><![CDATA[<h1 id="题目：-209-长度最小的子数组-Medium"><a href="#题目：-209-长度最小的子数组-Medium" class="headerlink" title="题目： 209. 长度最小的子数组  Medium"></a>题目： <a href="https://leetcode-cn.com/problems/minimum-size-subarray-sum/" target="_blank" rel="noopener">209. 长度最小的子数组</a>  Medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li>双指针执行情况判断混乱</li>
+</ol>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑：暴力破解"><a href="#解题逻辑：暴力破解" class="headerlink" title="解题逻辑：暴力破解"></a><strong>解题逻辑</strong>：暴力破解</h4><ul>
+<li><code>Integer.MAX_VALUE</code> 表示int类整数的最大值是2的31次方-1</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; n; j++) &#123;</span><br><span class="line">                sum += nums[j];</span><br><span class="line">                <span class="keyword">if</span> (sum &gt;= s) &#123;</span><br><span class="line">                    ans = Math.min(ans, j - i + <span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans == Integer.MAX_VALUE ? <span class="number">0</span> : ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3><h4 id="解题逻辑：双指针"><a href="#解题逻辑：双指针" class="headerlink" title="解题逻辑：双指针"></a><strong>解题逻辑</strong>：双指针</h4><h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
+<li>通过移动start指针遍历所有情况</li>
+</ul>
+<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> ans = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>, end = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (end &lt; n)&#123;</span><br><span class="line">            sum += nums[end];</span><br><span class="line">            <span class="keyword">while</span>(sum &gt;= s) &#123;</span><br><span class="line">                ans = Math.min(ans, end - start + <span class="number">1</span>);</span><br><span class="line">                sum -= nums[start];</span><br><span class="line">                start++;</span><br><span class="line">            &#125;</span><br><span class="line">            end++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans == Integer.MAX_VALUE ? <span class="number">0</span> : ans ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li>多用 +=，-=</li>
+</ul>
+<blockquote>
+<p>文件名：LEAD8</p>
 </blockquote>
 ]]></content>
       <categories>
@@ -164,38 +369,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LEAD8</title>
-    <url>/2020/08/12/LEAD8/</url>
-    <content><![CDATA[<h1 id="题目：-209-长度最小的子数组-Medium"><a href="#题目：-209-长度最小的子数组-Medium" class="headerlink" title="题目： 209. 长度最小的子数组  Medium"></a>题目： <a href="https://leetcode-cn.com/problems/minimum-size-subarray-sum/" target="_blank" rel="noopener">209. 长度最小的子数组</a>  Medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
-<li>双指针执行情况判断混乱</li>
-</ol>
-<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑：暴力破解"><a href="#解题逻辑：暴力破解" class="headerlink" title="解题逻辑：暴力破解"></a><strong>解题逻辑</strong>：暴力破解</h4><ul>
-<li><code>Integer.MAX_VALUE</code> 表示int类整数的最大值是2的31次方-1</li>
-</ul>
-<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; n; j++) &#123;</span><br><span class="line">                sum += nums[j];</span><br><span class="line">                <span class="keyword">if</span> (sum &gt;= s) &#123;</span><br><span class="line">                    ans = Math.min(ans, j - i + <span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans == Integer.MAX_VALUE ? <span class="number">0</span> : ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3><h4 id="解题逻辑：双指针"><a href="#解题逻辑：双指针" class="headerlink" title="解题逻辑：双指针"></a><strong>解题逻辑</strong>：双指针</h4><h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
-<li>通过移动start指针遍历所有情况</li>
-</ul>
-<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> ans = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>, end = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (end &lt; n)&#123;</span><br><span class="line">            sum += nums[end];</span><br><span class="line">            <span class="keyword">while</span>(sum &gt;= s) &#123;</span><br><span class="line">                ans = Math.min(ans, end - start + <span class="number">1</span>);</span><br><span class="line">                sum -= nums[start];</span><br><span class="line">                start++;</span><br><span class="line">            &#125;</span><br><span class="line">            end++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans == Integer.MAX_VALUE ? <span class="number">0</span> : ans ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
-<li>多用 +=，-=</li>
-</ul>
-<blockquote>
-<p>文件名：LEAD8</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreA&amp;S</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>移除元素</title>
     <url>/2020/08/10/LEAD4/</url>
     <content><![CDATA[<h1 id="题目：-移除元素-Easy"><a href="#题目：-移除元素-Easy" class="headerlink" title="题目： 移除元素  Easy"></a>题目： <a href="https://leetcode-cn.com/problems/remove-element/solution/yi-chu-yuan-su-by-leetcode/" target="_blank" rel="noopener">移除元素</a>  Easy</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="解题逻辑：双指针-快慢指针"><a href="#解题逻辑：双指针-快慢指针" class="headerlink" title="解题逻辑：双指针-快慢指针"></a>解题逻辑：双指针-快慢指针</h3><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeElement</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> slow = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> fast=<span class="number">0</span>; fast&lt;nums.length ; fast++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[fast] != val)&#123;</span><br><span class="line">                nums[slow] = nums[fast];</span><br><span class="line">                slow++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow;      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
@@ -221,145 +394,6 @@
         <tag>LeetCode</tag>
         <tag>LeetCodeExplore</tag>
         <tag>LeetcodeExploreA&amp;S</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>翻转字符串里的单词</title>
-    <url>/2020/08/04/LEAS3/</url>
-    <content><![CDATA[<h1 id="题目：-反转字符串里的单词-Medium"><a href="#题目：-反转字符串里的单词-Medium" class="headerlink" title="题目： 反转字符串里的单词   Medium"></a>题目： <a href="https://leetcode-cn.com/problems/reverse-words-in-a-string" target="_blank" rel="noopener">反转字符串里的单词</a>   Medium</h1><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑：API解决"><a href="#解题逻辑：API解决" class="headerlink" title="解题逻辑：API解决"></a><strong>解题逻辑</strong>：API解决</h4><ul>
-<li><p><code>split</code>（拆分），<code>reverse</code>（翻转）和 <code>join</code>（连接）</p>
-<p><img src="/images/LEAS3/fun2.png" alt="fig"></p>
-</li>
-</ul>
-<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
-<li>API String  trim()</li>
-<li>API String[] split()</li>
-<li>API Collections.reverse(wordList)</li>
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#join-java.lang.CharSequence-java.lang.Iterable-" target="_blank" rel="noopener">API</a> String.join((CharSequence delimiter,Iterable&lt;? extends CharSequence&gt; elements)</li>
-</ul>
-<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">reverseWords</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        s = s.trm(); <span class="comment">//去除首位空白字符</span></span><br><span class="line">        List&lt;String&gt; wordList = Arrays.asList(s.split(<span class="string">"\\s+"</span>)); </span><br><span class="line">        <span class="comment">//正则表达式 \s 匹配任何空白字符，包括空格、制表符、换页符等。与 [ \f\n\r\t\v] 等效。</span></span><br><span class="line">        <span class="comment">// + 一次或多次匹配前面的字符或子表达式。</span></span><br><span class="line">        Collections.reverse(wordList);</span><br><span class="line">        <span class="keyword">return</span> String.join(<span class="string">" "</span>,wordList);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
-<li><p>熟悉api</p>
-</li>
-<li><p><code>StringUtils.join()</code>与 <code>String.join()</code></p>
-<p>参数顺序不一样，另外，StringUtils.join(）可以传入Integer或者其他类型的集合或数组，而String.join()尽可以传入实现charSequence接口类型的集合或数组。</p>
-</li>
-</ul>
-<h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3><h4 id="解题逻辑：无API手动实现"><a href="#解题逻辑：无API手动实现" class="headerlink" title="解题逻辑：无API手动实现"></a><strong>解题逻辑</strong>：无API手动实现</h4><ul>
-<li>java的String为不可变</li>
-<li>对于不可变字符串转化成其他可变的数据结构，同时还需要在转化的过程中去除空格。</li>
-<li>StringBuffer与SringBuilder<a href="https://blog.csdn.net/csxypr/article/details/92378336" target="_blank" rel="noopener">差异</a>前者线程安全后者未加锁</li>
-</ul>
-<h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> StringBuilder <span class="title">trimSpaces</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        <span class="comment">//去除首尾的空格 双指针	</span></span><br><span class="line">        <span class="keyword">int</span> left =<span class="number">0</span>,right = s.length()-<span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right &amp;&amp; s.charAt(left)==<span class="string">" "</span>) ++left;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right &amp;&amp; s.charAt(right)==<span class="string">" "</span>) ++right;</span><br><span class="line">        </span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">while</span>(left &lt;= right)&#123;</span><br><span class="line">            <span class="keyword">char</span> c = s.charAt(left);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(c != <span class="string">" "</span>) sb.append(c);</span><br><span class="line">            <span class="comment">//插入空格分割字符，多余空格忽略</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(sb.charAt(sb.length()-<span class="number">1</span>) != <span class="string">" "</span>) sb.apend(C);</span><br><span class="line">            </span><br><span class="line">            ++left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reverseEachWord</span><span class="params">(StringBuilder sb)</span></span>&#123;</span><br><span class="line">        <span class="comment">//翻转单个单词</span></span><br><span class="line">        <span class="keyword">int</span> n = sb.length();</span><br><span class="line">       	<span class="keyword">int</span> start = <span class="number">0</span>, end = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (start &lt; n)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (end &lt; n &amp;&amp; sb.charAt(end) != <span class="string">" "</span>) ++end;</span><br><span class="line">            </span><br><span class="line">            reverse(sb, start , end-<span class="number">1</span>);</span><br><span class="line">            </span><br><span class="line">            start = end + <span class="number">1</span>;</span><br><span class="line">            ++end;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reverse</span><span class="params">(StringBuilder sb, <span class="keyword">int</span> left ,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="comment">//翻转区间字符</span></span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">            <span class="keyword">char</span> temp = sb.charAt(left);</span><br><span class="line">            sb.setCharAt(left++,sb.charAt(right));</span><br><span class="line">            sb.setCharAt(right--,temp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">reverseWords</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        <span class="comment">//翻转单词串，返回结果</span></span><br><span class="line">        StringBuilder sb = trimSpaces(s);</span><br><span class="line">        </span><br><span class="line">        reverse(sb,<span class="number">0</span>,sb.length()-<span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        reverseEachWord(sb);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<blockquote>
-<p>文件名：LEAS3</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreArray</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>最长回文子串</title>
-    <url>/2020/07/25/LEAS2/</url>
-    <content><![CDATA[<h1 id="题目：-最长回文子串-Medium"><a href="#题目：-最长回文子串-Medium" class="headerlink" title="题目： 最长回文子串   Medium"></a>题目： <a href="https://leetcode-cn.com/problems/longest-palindromic-substring/" target="_blank" rel="noopener">最长回文子串</a>   Medium</h1><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑：暴力破解"><a href="#解题逻辑：暴力破解" class="headerlink" title="解题逻辑：暴力破解"></a><strong>解题逻辑</strong>：暴力破解</h4><ul>
-<li>暴力破解</li>
-</ul>
-<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> s_len = s.length();</span><br><span class="line">        <span class="keyword">if</span>(s_len &lt;<span class="number">2</span>) <span class="keyword">return</span> s;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> maxlen = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">char</span>[] charArray = s.toCharArray();</span><br><span class="line">		<span class="comment">//枚举所有长度大于1的子串</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s_len - <span class="number">1</span> ; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span> ; j &lt; s_len ; j++)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(j - i + <span class="number">1</span> &gt; maxlen &amp;&amp; validPalindromic(charArray,i,j))&#123;</span><br><span class="line">                        begin = i;</span><br><span class="line">                        maxlen = j - i + <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substring(begin ,begin + maxlen);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">validPalindromic</span><span class="params">(<span class="keyword">char</span>[] charArray,<span class="keyword">int</span> begin,<span class="keyword">int</span> end)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//双指针-头尾指针 判断字符串是否为回文子串</span></span><br><span class="line">        <span class="keyword">while</span>(end &gt; begin)&#123;</span><br><span class="line">            <span class="keyword">if</span>(charArray[begin] != charArray[end])</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            begin++;end--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
-<li><h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3></li>
-</ul>
-<h4 id="解题逻辑：中心扩散法"><a href="#解题逻辑：中心扩散法" class="headerlink" title="解题逻辑：中心扩散法"></a><strong>解题逻辑</strong>：中心扩散法</h4><ul>
-<li>中心扩散法</li>
-</ul>
-<h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
-<li><p>分奇、偶讨论中心点的情况</p>
-</li>
-<li><p>归纳奇偶中心点起始begin值，向下取整找规律</p>
-<p><img src="/images/LEAS2/image-20200802222133300.png" alt="image-20200802222133300"></p>
-</li>
-</ul>
-<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestpalindrome</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.length();</span><br><span class="line">        <span class="keyword">if</span>(len &lt; <span class="number">2</span>) <span class="keyword">return</span> s;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> maxLen = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">char</span>[] charArray = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;len-<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> oddLen= expandAroundCenter(charArray, i,i);</span><br><span class="line">            <span class="keyword">int</span> evenLen = expandAroundCenter(charArray,i,i+<span class="number">1</span>);</span><br><span class="line">           </span><br><span class="line">            <span class="keyword">int</span> curMaxlen = Math.max(oddLen,evenLen);</span><br><span class="line">         	<span class="comment">//找最长回文子串</span></span><br><span class="line">            <span class="keyword">if</span>(curMaxLen &gt; maxLen)&#123;</span><br><span class="line">                maxLen = curMaxLen;</span><br><span class="line">                begin =  i -(maxlen - <span class="number">1</span> ) / <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> s.substring(begin,begin + maxLen );</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">            </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">expandAroundCenter</span><span class="params">(<span class="keyword">char</span>[] charArray,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> len = charArray.length;</span><br><span class="line">        <span class="keyword">int</span> i = left;</span><br><span class="line">        <span class="keyword">int</span> j = right;</span><br><span class="line">        <span class="keyword">while</span>(i&gt;=<span class="number">0</span>&amp;&amp;j&lt;len)&#123;</span><br><span class="line">            <span class="keyword">if</span>(charArray[i] == charArray[j])&#123;</span><br><span class="line">                i--;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//跳出循环时，恰好满足 s.charAt(i) !=s.charAt(j),</span></span><br><span class="line">        <span class="comment">// 回文串长度是 j-i+1-2 =j-i-1</span></span><br><span class="line">        <span class="keyword">return</span> j-i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h4 id="tips-1"><a href="#tips-1" class="headerlink" title="tips:"></a>tips:</h4><ul>
-<li><code>char[] charArray = s.toCharArray();</code> 字符串转字符数组</li>
-</ul>
-<blockquote>
-<p>文件名：LAS2</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreArray</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>最长公共前缀</title>
-    <url>/2020/07/03/LEAS1/</url>
-    <content><![CDATA[<h1 id="题目：-最长公共前缀-Easy"><a href="#题目：-最长公共前缀-Easy" class="headerlink" title="题目： 最长公共前缀  Easy"></a>题目： <a href="https://leetcode-cn.com/problems/longest-common-prefix/" target="_blank" rel="noopener">最长公共前缀</a>  Easy</h1><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
-<li><strong>横向扫描</strong>，依次遍历每个字符串，更新最长公共前缀</li>
-</ul>
-<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h4><ul>
-<li><pre><code class="java"><span class="function"><span class="keyword">public</span> <span class="keyword">char</span> <span class="title">charAt</span><span class="params">(<span class="keyword">int</span> index)</span><span class="comment">//返回指定字符</span></span>
-<span class="function"><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- &#96;&#96;&#96;java</span><br><span class="line">  public String substring(int beginIndex, int endIndex)&#x2F;&#x2F;返回子串 begin与end相等返回&quot;&quot;</span><br></pre></td></tr></table></figure></div></span>
-<span class="function"></span></code></pre>
-</li>
-</ul>
-<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs == <span class="keyword">null</span> || strs.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        String prefix = strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> count = strs.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; count; i++) &#123;</span><br><span class="line">            prefix = longestCommonPrefix(prefix, strs[i]);</span><br><span class="line">            <span class="keyword">if</span> (prefix.length() == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> prefix;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String str1, String str2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = Math.min(str1.length(), str2.length());</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (index &lt; length &amp;&amp; str1.charAt(index) == str2.charAt(index)) &#123;</span><br><span class="line">            index++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str1.substring(<span class="number">0</span>, index);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
-<li>substring返回子串 begin与end相等返回””</li>
-</ul>
-<h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3><h4 id="解题逻辑：-1"><a href="#解题逻辑：-1" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
-<li><p><strong>纵向扫描</strong>从前往后遍历所有字符串的每一列，比较相同列上的字符是否相同，如果相同则继续对下一列进行比较，如果不相同则当前列不再属于公共前缀，当前列之前的部分为最长公共前缀。</p>
-<p><img src="/images/LEAS1/14_fig2.png" alt="fig2"></p>
-</li>
-</ul>
-<h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="重点-1"><a href="#重点-1" class="headerlink" title="重点"></a>重点</h4><ul>
-<li>临界值判断之一：被比较字符串长度超过初始字符串长度时停止</li>
-</ul>
-<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs == <span class="keyword">null</span> || strs.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> length = strs[<span class="number">0</span>].length();</span><br><span class="line">        <span class="keyword">int</span> count = strs.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">            <span class="keyword">char</span> c = strs[<span class="number">0</span>].charAt(i);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; count; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == strs[j].length() || strs[j].charAt(i) != c) &#123;</span><br><span class="line">                    <span class="keyword">return</span> strs[<span class="number">0</span>].substring(<span class="number">0</span>, i);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> strs[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="tips-1"><a href="#tips-1" class="headerlink" title="tips:"></a>tips:</h4><h3 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h3><p><strong>解题逻辑</strong>：</p>
-<ul>
-<li>分治算法</li>
-</ul>
-<h3 id="解决方案四"><a href="#解决方案四" class="headerlink" title="解决方案四"></a>解决方案四</h3><p><strong>解题逻辑</strong>：</p>
-<ul>
-<li>二分查找</li>
-<li><img src="/images/LEAS1/14_fig4.png" alt="fig4"></li>
-</ul>
-<h5 id="实现代码-2"><a href="#实现代码-2" class="headerlink" title="实现代码"></a>实现代码</h5><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (strs == <span class="keyword">null</span> || strs.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> minLength = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (String str : strs) &#123;</span><br><span class="line">            minLength = Math.min(minLength, str.length());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>, high = minLength;</span><br><span class="line">        <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (high - low + <span class="number">1</span>) / <span class="number">2</span> + low;</span><br><span class="line">            <span class="keyword">if</span> (isCommonPrefix(strs, mid)) &#123;</span><br><span class="line">                low = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                high = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> strs[<span class="number">0</span>].substring(<span class="number">0</span>, low);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isCommonPrefix</span><span class="params">(String[] strs, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">        String str0 = strs[<span class="number">0</span>].substring(<span class="number">0</span>, length);</span><br><span class="line">        <span class="keyword">int</span> count = strs.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; count; i++) &#123;</span><br><span class="line">            String str = strs[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (str0.charAt(j) != str.charAt(j)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-<blockquote>
-<p>文件名：LAS1</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreArray</tag>
       </tags>
   </entry>
   <entry>
@@ -776,40 +810,6 @@
         <tag>LeetCode</tag>
         <tag>LeetCodeExplore</tag>
         <tag>LeetcodeExploreA&amp;S</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>KMP算法</title>
-    <url>/2020/08/07/LEAS4/</url>
-    <content><![CDATA[<h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><h2 id="1-ASCII编码表"><a href="#1-ASCII编码表" class="headerlink" title="1.ASCII编码表"></a>1.<a href="https://www.jianshu.com/p/b4a24355c448" target="_blank" rel="noopener">ASCII编码表</a></h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><blockquote>
-<p>在计算机中，一个字节可以表示<strong>八位二进制数</strong>，一个二进制数由0和1两种状态，因此一个字节有<strong>256</strong>种状态。如果这 256 中状态每一个都对应一个符号，就能通过 <strong>1 字节的数据表示 256 个字符</strong>。美国人于是就制定了一套编码（其实就是个字典），描述<strong>英语中</strong>的字符和这 8 位二进制数的对应关系，这被称为 ASCII 码</p>
-</blockquote>
-<p>前128个字符编码英语为确定，后128字符由其他国家定义未定义</p>
-<p>强制类型转换遵循ASCII表 ,常用<code>&#39;a&#39; = 97,&#39;A&#39; = 65,0 = 48</code></p>
-<h1 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h1><h2 id="方法一：构造next数组"><a href="#方法一：构造next数组" class="headerlink" title="方法一：构造next数组"></a>方法一：<a href="https://leetcode-cn.com/leetbook/read/array-and-string/cpoo6/" target="_blank" rel="noopener">构造next数组</a></h2><h3 id="核心思想：构造next数组，在匹配不成功时减少回退数量"><a href="#核心思想：构造next数组，在匹配不成功时减少回退数量" class="headerlink" title="核心思想：构造next数组，在匹配不成功时减少回退数量"></a><strong>核心思想</strong>：构造next数组，在匹配不成功时减少回退数量</h3><h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>传统暴力依次匹配进行每一轮匹配时，总是会重复对 A 进行比较。也就是说，对于 S 中的每个字符，我们都需要从 T 第一个位置重新开始比较，并且 S 前面的 A 越多，浪费的时间也就越多。假设 S 的长度为 mmm，T 的长度为 nnn，理论上讲，最坏情况下迭代 m−n+1m - n + 1m−n+1 轮，每轮最多进行 n 次比对，一共比较了 (m−n+1)×n次，当 m&gt;&gt;n时，渐进时间复杂度为 <strong>O(mn)</strong></p>
-<p>KMP 复杂度可降到O(m+n)</p>
-<h4 id="构建next数组"><a href="#构建next数组" class="headerlink" title="构建next数组"></a>构建next数组</h4><p><strong><code>P[i]</code> 对应的下标，为 <code>P[0...i + 1]</code> 的最长公共前缀后缀的长度</strong></p>
-<img src="/images/LEAS4/8cd158c08b74130068b580d6d8830ecb700af1e84897ac07a6c533b9c6c0c6a6-8.png" alt="8.png" style="zoom:50%;" />
-
-<h2 id="方法二：构建影子变量，状态转换"><a href="#方法二：构建影子变量，状态转换" class="headerlink" title="方法二：构建影子变量，状态转换"></a>方法二：构建影子变量，状态转换</h2><h3 id="核心思想：确定状态转换行为"><a href="#核心思想：确定状态转换行为" class="headerlink" title="核心思想：确定状态转换行为"></a>核心思想：确定状态转换行为</h3><p>得明确两个变量，一个是当前的<strong>匹配状态</strong>，另一个是<strong>遇到的字符</strong>；</p>
-<p>确定了这两个变量后，就可以知道这个情况下应该转移到哪个状态。</p>
-<p>为了描述状态转移图，我们定义一个二维 dp 数组，它的含义如下：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">dp[j][c] = next</span><br><span class="line"><span class="number">0</span> &lt;= j &lt; M，代表当前的状态</span><br><span class="line"><span class="number">0</span> &lt;= c &lt; <span class="number">256</span>，代表遇到的字符（ASCII 码）</span><br><span class="line"><span class="number">0</span> &lt;= next &lt;= M，代表下一个状态</span><br><span class="line"></span><br><span class="line">dp[<span class="number">4</span>][<span class="string">'A'</span>] = <span class="number">3</span> 表示：</span><br><span class="line">当前是状态 <span class="number">4</span>，如果遇到字符 A，</span><br><span class="line">pat 应该转移到状态 <span class="number">3</span></span><br><span class="line"></span><br><span class="line">dp[<span class="number">1</span>][<span class="string">'B'</span>] = <span class="number">2</span> 表示：</span><br><span class="line">当前是状态 <span class="number">1</span>，如果遇到字符 B，</span><br><span class="line">pat 应该转移到状态 <span class="number">2</span></span><br></pre></td></tr></table></figure></div>
-
-<p>在 <code>pat</code> 匹配 <code>txt</code> 的过程中，只要明确了「当前处在哪个状态」和「遇到的字符是什么」这两个问题，就可以确定应该转移到哪个状态（推进或回退）。</p>
-<img src="/images/LEAS4/1.gif" style="zoom:50%;" />
-
-<p>完整代码</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(needle.equals(<span class="string">""</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(haystack.equals(<span class="string">""</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 构造KMP中的dp矩阵</span></span><br><span class="line">        <span class="keyword">int</span> m = needle.length();</span><br><span class="line">        <span class="comment">// 各个状态(行)遇到下一个字符(列)跳转到哪个状态</span></span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m][<span class="number">256</span>]; </span><br><span class="line">        <span class="comment">// 影子状态</span></span><br><span class="line">        <span class="keyword">int</span> X = <span class="number">0</span>;  </span><br><span class="line">        dp[<span class="number">0</span>][needle.charAt(<span class="number">0</span>)] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">256</span>; j++) &#123;</span><br><span class="line">                <span class="comment">//假设下个字符不匹配，此时要回去看影子状态，从而得知跳转到哪个状态</span></span><br><span class="line">                dp[i][j] = dp[X][j];  </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 只有pat上i的字符匹配，跳转到下个状态</span></span><br><span class="line">            dp[i][needle.charAt(i)] = i + <span class="number">1</span>;  </span><br><span class="line">            <span class="comment">// 更新影子状态</span></span><br><span class="line">            X = dp[X][needle.charAt(i)];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 构造dp完成后，开始search</span></span><br><span class="line">        <span class="comment">// 初始状态为0</span></span><br><span class="line">        <span class="keyword">int</span> s = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; haystack.length(); i++) &#123;</span><br><span class="line">            s = dp[s][haystack.charAt(i)];</span><br><span class="line">            <span class="keyword">if</span> (s == m) &#123;</span><br><span class="line">                <span class="keyword">return</span> i - m + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 匹配失败，返回-1</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
-
-<h1 id="双指针解法"><a href="#双指针解法" class="headerlink" title="双指针解法"></a>双指针解法</h1>]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreArray</tag>
       </tags>
   </entry>
   <entry>
