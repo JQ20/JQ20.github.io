@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>数组和字符串篇总结</title>
+    <url>/2020/08/18/LEAD13/</url>
+    <content><![CDATA[<h1 id="数组和字符串篇总结"><a href="#数组和字符串篇总结" class="headerlink" title="数组和字符串篇总结"></a>数组和字符串篇总结</h1><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>地址：<a href="https://leetcode-cn.com/leetbook/detail/array-and-string/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/detail/array-and-string/</a></p>
+<p>本 LeetBook 中，介绍 <code>数组</code> 和 <code>字符串</code>。包含以下要点：</p>
+<ul>
+<li><strong>二维数组</strong>理解和使用</li>
+<li><strong>字符串</strong>的理解和使用</li>
+<li>选修：字符串匹配中<code>KMP算法</code></li>
+<li><strong>双指针</strong>技巧</li>
+</ul>
+<h2 id="数组操作类型题"><a href="#数组操作类型题" class="headerlink" title="数组操作类型题"></a>数组操作类型题</h2><ol>
+<li><a href="https://leetcode-cn.com/problems/find-pivot-index/" target="_blank" rel="noopener"><em>寻找数组中心索引 Easy</em></a></li>
+<li><a href="https://leetcode-cn.com/problems/search-insert-position/solution/sou-suo-cha-ru-wei-zhi-by-leetcode-solution/" target="_blank" rel="noopener">搜索插入位置 Easy</a>  <strong>二分法</strong></li>
+<li><a href="https://jq20.gitee.io/2020/06/08/LEA1/" target="_blank" rel="noopener">合并区间</a> <strong>数组排序，lambda表达式</strong></li>
+</ol>
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><ol>
+<li><a href="https://jq20.gitee.io/2020/06/11/LEA2/" target="_blank" rel="noopener">旋转矩阵</a>  <strong>转置矩阵思想</strong></li>
+<li><a href="https://jq20.gitee.io/2020/06/11/LEA3/" target="_blank" rel="noopener">零矩阵</a> <strong>记录数组作用</strong></li>
+<li><a href="https://jq20.gitee.io/2020/06/14/LEA4/" target="_blank" rel="noopener">对角线遍历</a>  <strong>简化问题；分情况奇偶</strong></li>
+</ol>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ol>
+<li><a href="https://jq20.gitee.io/2020/07/03/LEAS1/" target="_blank" rel="noopener">最长公共前缀</a>  <strong>二分法；分治[未更新]</strong></li>
+<li><a href="https://jq20.gitee.io/2020/07/25/LEAS2/" target="_blank" rel="noopener">最长回文子串</a>  <strong>中心扩散法 ；双指针判断回文串</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/04/LEAS3/" target="_blank" rel="noopener">翻转字符串里的单词</a>  <strong>字符串操作api；双指针处理字符串；StringBuilder</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/07/LEAS4/" target="_blank" rel="noopener">KMP算法之“实现 strStr()”</a>   <strong>滑动窗口【未更新】；KMP算法【未更新】；双指针【未更新】；KMP变式之状态转换法</strong></li>
+</ol>
+<h2 id="双指针技巧"><a href="#双指针技巧" class="headerlink" title="双指针技巧"></a>双指针技巧</h2><ol>
+<li><a href="https://jq20.gitee.io/2020/08/10/LEAD1/" target="_blank" rel="noopener">反转字符串</a></li>
+<li><a href="https://jq20.gitee.io/2020/08/10/LEAD2/" target="_blank" rel="noopener">数组拆分</a></li>
+<li><a href="https://jq20.gitee.io/2020/08/10/LEAD4/" target="_blank" rel="noopener">两数之和 II - 输入有序数组</a> </li>
+<li><a href="https://jq20.gitee.io/2020/08/10/LEAD4/" target="_blank" rel="noopener">移除元素</a> </li>
+<li><a href="https://jq20.gitee.io/2020/08/11/LEAD5/" target="_blank" rel="noopener">最大连续1的个数</a></li>
+<li><a href="https://jq20.gitee.io/2020/08/12/LEAD8/" target="_blank" rel="noopener">长度最小的子数组</a>  <strong>灵活移动慢指针</strong></li>
+</ol>
+<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><ol>
+<li><a href="https://jq20.gitee.io/2020/08/10/LEAD9/" target="_blank" rel="noopener">杨辉三角</a> <strong>动态规划；Arraylist使用</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/14/LEAD7/" target="_blank" rel="noopener">杨辉三角 Ⅱ</a> </li>
+<li><a href="https://jq20.gitee.io/2020/08/15/LEAD6/" target="_blank" rel="noopener">反转字符串中的单词 III</a> <strong>StringBuffer使用</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/18/LEAD13/" target="_blank" rel="noopener">寻找旋转排列数组中的最小值</a> <strong>二分查找</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/17/LEAD11/" target="_blank" rel="noopener">删除排序数组中的重复项</a>  <strong>双指针</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/17/LEAD12/" target="_blank" rel="noopener">移动零</a> <strong>双指针</strong></li>
+</ol>
+<blockquote>
+<p>文件名：LEAD13</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreA&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>最长公共前缀</title>
     <url>/2020/07/03/LEAS1/</url>
     <content><![CDATA[<h1 id="题目：-最长公共前缀-Easy"><a href="#题目：-最长公共前缀-Easy" class="headerlink" title="题目： 最长公共前缀  Easy"></a>题目： <a href="https://leetcode-cn.com/problems/longest-common-prefix/" target="_blank" rel="noopener">最长公共前缀</a>  Easy</h1><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
@@ -162,62 +218,6 @@
 </ul>
 <blockquote>
 <p>文件名：LAS2</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreA&amp;S</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数组和字符串篇总结</title>
-    <url>/2020/08/18/LEAD13/</url>
-    <content><![CDATA[<h1 id="数组和字符串篇总结"><a href="#数组和字符串篇总结" class="headerlink" title="数组和字符串篇总结"></a>数组和字符串篇总结</h1><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>地址：<a href="https://leetcode-cn.com/leetbook/detail/array-and-string/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/detail/array-and-string/</a></p>
-<p>本 LeetBook 中，介绍 <code>数组</code> 和 <code>字符串</code>。包含以下要点：</p>
-<ul>
-<li><strong>二维数组</strong>理解和使用</li>
-<li><strong>字符串</strong>的理解和使用</li>
-<li>选修：字符串匹配中<code>KMP算法</code></li>
-<li><strong>双指针</strong>技巧</li>
-</ul>
-<h2 id="数组操作类型题"><a href="#数组操作类型题" class="headerlink" title="数组操作类型题"></a>数组操作类型题</h2><ol>
-<li><a href="https://leetcode-cn.com/problems/find-pivot-index/" target="_blank" rel="noopener"><em>寻找数组中心索引 Easy</em></a></li>
-<li><a href="https://leetcode-cn.com/problems/search-insert-position/solution/sou-suo-cha-ru-wei-zhi-by-leetcode-solution/" target="_blank" rel="noopener">搜索插入位置 Easy</a>  <strong>二分法</strong></li>
-<li><a href="https://jq20.gitee.io/2020/06/08/LEA1/" target="_blank" rel="noopener">合并区间</a> <strong>数组排序，lambda表达式</strong></li>
-</ol>
-<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><ol>
-<li><a href="https://jq20.gitee.io/2020/06/11/LEA2/" target="_blank" rel="noopener">旋转矩阵</a>  <strong>转置矩阵思想</strong></li>
-<li><a href="https://jq20.gitee.io/2020/06/11/LEA3/" target="_blank" rel="noopener">零矩阵</a> <strong>记录数组作用</strong></li>
-<li><a href="https://jq20.gitee.io/2020/06/14/LEA4/" target="_blank" rel="noopener">对角线遍历</a>  <strong>简化问题；分情况奇偶</strong></li>
-</ol>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ol>
-<li>最长公共前缀  <strong>二分法；分治[未更新]</strong></li>
-<li>最长回文子串  <strong>中心扩散法 ；双指针判断回文串</strong></li>
-<li>翻转字符串里的单词  <strong>字符串操作api；双指针处理字符串；StringBuilder</strong></li>
-<li>KMP算法之“实现 strStr()”   <strong>滑动窗口【未更新】；KMP算法【未更新】；双指针【未更新】；KMP变式之状态转换法</strong></li>
-</ol>
-<h2 id="双指针技巧"><a href="#双指针技巧" class="headerlink" title="双指针技巧"></a>双指针技巧</h2><ol>
-<li><a href="https://jq20.gitee.io/2020/08/10/LEAD1/" target="_blank" rel="noopener">反转字符串</a></li>
-<li><a href="https://jq20.gitee.io/2020/08/10/LEAD2/" target="_blank" rel="noopener">数组拆分</a></li>
-<li><a href="https://jq20.gitee.io/2020/08/10/LEAD4/" target="_blank" rel="noopener">两数之和 II - 输入有序数组</a> </li>
-<li><a href="https://jq20.gitee.io/2020/08/10/LEAD4/" target="_blank" rel="noopener">移除元素</a> </li>
-<li><a href="https://jq20.gitee.io/2020/08/11/LEAD5/" target="_blank" rel="noopener">最大连续1的个数</a></li>
-<li><a href="https://jq20.gitee.io/2020/08/12/LEAD8/" target="_blank" rel="noopener">长度最小的子数组</a>  <strong>灵活移动慢指针</strong></li>
-</ol>
-<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><ol>
-<li><a href="https://jq20.gitee.io/2020/08/10/LEAD9/" target="_blank" rel="noopener">杨辉三角</a> <strong>动态规划；Arraylist使用</strong></li>
-<li><a href="https://jq20.gitee.io/2020/08/14/LEAD7/" target="_blank" rel="noopener">杨辉三角 Ⅱ</a> </li>
-<li><a href="https://jq20.gitee.io/2020/08/15/LEAD6/" target="_blank" rel="noopener">反转字符串中的单词 III</a> <strong>StringBuffer使用</strong></li>
-<li><a href="https://jq20.gitee.io/2020/08/18/LEAD13/" target="_blank" rel="noopener">寻找旋转排列数组中的最小值</a> <strong>二分查找</strong></li>
-<li><a href="https://jq20.gitee.io/2020/08/17/LEAD11/" target="_blank" rel="noopener">删除排序数组中的重复项</a>  <strong>双指针</strong></li>
-<li><a href="https://jq20.gitee.io/2020/08/17/LEAD12/" target="_blank" rel="noopener">移动零</a> <strong>双指针</strong></li>
-</ol>
-<blockquote>
-<p>文件名：LEAD13</p>
 </blockquote>
 ]]></content>
       <categories>
