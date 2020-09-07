@@ -25,7 +25,7 @@
 <li><a href="https://jq20.gitee.io/2020/07/03/LEAS1/" target="_blank" rel="noopener">最长公共前缀</a>  <strong>二分法；分治[未更新]</strong></li>
 <li><a href="https://jq20.gitee.io/2020/07/25/LEAS2/" target="_blank" rel="noopener">最长回文子串</a>  <strong>中心扩散法 ；双指针判断回文串</strong></li>
 <li><a href="https://jq20.gitee.io/2020/08/04/LEAS3/" target="_blank" rel="noopener">翻转字符串里的单词</a>  <strong>字符串操作api；双指针处理字符串；StringBuilder</strong></li>
-<li><a href="https://jq20.gitee.io/2020/08/07/LEAS4/" target="_blank" rel="noopener">KMP算法之“实现 strStr()”</a>   <strong>滑动窗口【未更新】；KMP算法【未更新】；双指针【未更新】；KMP变式之状态转换法</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/07/LEAS4/" target="_blank" rel="noopener">KMP算法之“实现 strStr()”</a>  <strong>KMP算法；双指针；KMP之状态转换法;Sunday算法；逐一匹配</strong></li>
 </ol>
 <h2 id="双指针技巧"><a href="#双指针技巧" class="headerlink" title="双指针技巧"></a>双指针技巧</h2><ol>
 <li><a href="https://jq20.gitee.io/2020/08/10/LEAD1/" target="_blank" rel="noopener">反转字符串</a></li>
@@ -35,7 +35,7 @@
 <li><a href="https://jq20.gitee.io/2020/08/11/LEAD5/" target="_blank" rel="noopener">最大连续1的个数</a></li>
 <li><a href="https://jq20.gitee.io/2020/08/12/LEAD8/" target="_blank" rel="noopener">长度最小的子数组</a>  <strong>灵活移动慢指针</strong></li>
 </ol>
-<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><ol>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><ol>
 <li><a href="https://jq20.gitee.io/2020/08/10/LEAD9/" target="_blank" rel="noopener">杨辉三角</a> <strong>动态规划；Arraylist使用</strong></li>
 <li><a href="https://jq20.gitee.io/2020/08/14/LEAD7/" target="_blank" rel="noopener">杨辉三角 Ⅱ</a> </li>
 <li><a href="https://jq20.gitee.io/2020/08/15/LEAD6/" target="_blank" rel="noopener">反转字符串中的单词 III</a> <strong>StringBuffer使用</strong></li>
@@ -46,6 +46,7 @@
 <blockquote>
 <p>文件名：LEAD13</p>
 </blockquote>
+<p>​                          </p>
 ]]></content>
       <categories>
         <category>LeetCode</category>
@@ -110,6 +111,725 @@
       </tags>
   </entry>
   <entry>
+    <title>队列和栈篇总结</title>
+    <url>/2020/08/07/LEQS1/</url>
+    <content><![CDATA[<h1 id="队列和栈篇总结"><a href="#队列和栈篇总结" class="headerlink" title="队列和栈篇总结"></a>队列和栈篇总结</h1><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>地址：<a href="https://leetcode-cn.com/leetbook/read/queue-stack/xkrhpg/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/queue-stack/xkrhpg/</a></p>
+<ul>
+<li>队列：先进先出</li>
+<li>栈：后入先出</li>
+</ul>
+<p>包含内容：</p>
+<ol>
+<li>FIFO 和 LIFO 处理顺序的原理；</li>
+<li><strong>实现</strong>队列和栈数据结构；</li>
+<li>熟悉<strong>内置</strong>的队列和栈结构；</li>
+<li>解决基本的<strong>队列相关问题</strong>，尤其是 <strong>BFS</strong>；</li>
+<li>解决基本的<strong>栈相关问题</strong>；</li>
+<li>理解在使用 <strong>DFS</strong> 和其他 <strong>递归 算法</strong>来解决问题时，系统<strong>栈</strong>是如何发挥作用的。</li>
+</ol>
+<h2 id="队列：先入先出数据结构"><a href="#队列：先入先出数据结构" class="headerlink" title="队列：先入先出数据结构"></a>队列：先入先出数据结构</h2><ol>
+<li>队列构造与内置函数：<strong>Queue，Deque的常见用法</strong>,<strong>数组构建循环队列</strong></li>
+</ol>
+<h2 id="队列和广度优先搜索"><a href="#队列和广度优先搜索" class="headerlink" title="队列和广度优先搜索"></a>队列和广度优先搜索</h2><ol>
+<li>转盘问题之<strong>BFS解题框架</strong> , 双向BFS【坑】</li>
+<li>岛屿数量：<strong>BFS，DFS，并查集</strong>【坑】</li>
+<li>完全平方数：<strong>BFS+队列</strong></li>
+</ol>
+<h2 id="栈：后入先出的数据结构"><a href="#栈：后入先出的数据结构" class="headerlink" title="栈：后入先出的数据结构"></a>栈：后入先出的数据结构</h2><ol>
+<li>最小栈：<strong>java实现栈及常见用法</strong>，辅助栈，栈存差值</li>
+<li>有效括号：<strong>HashMap键值匹配用法</strong></li>
+<li>每日温度：单调栈</li>
+<li>逆波兰表达式求值：栈实现，数组实现栈</li>
+</ol>
+<h2 id="栈和深度优先搜索"><a href="#栈和深度优先搜索" class="headerlink" title="栈和深度优先搜索"></a>栈和深度优先搜索</h2><ol>
+<li>克隆图：<strong>DFS，BFS</strong></li>
+<li>目标和：<strong>递归栈，动态规划</strong>【坑】</li>
+<li>二叉树的中序遍历：栈</li>
+<li>字符串解码：栈，递归栈【坑】，<code>API String，Character，StringBuffer，LinkedList</code></li>
+<li>图像渲染：DFS，BFS【坑】BFS</li>
+<li>钥匙和房间：BFS</li>
+<li></li>
+</ol>
+<blockquote>
+<p>文件名：LEQS1</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>矩阵</title>
+    <url>/2020/09/06/LEQS15/</url>
+    <content><![CDATA[<h1 id="题目：-矩阵-Medium"><a href="#题目：-矩阵-Medium" class="headerlink" title="题目：  矩阵   Medium"></a>题目： <a href="https://leetcode-cn.com/problems/01-matrix/" target="_blank" rel="noopener"> 矩阵</a>   Medium</h1><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑：BFS"><a href="#解题逻辑：BFS" class="headerlink" title="解题逻辑：BFS"></a><strong>解题逻辑</strong>：BFS</h4><ul>
+<li><img src="/images/LEQS15/image-20200907093328374.png" alt="image-20200907093328374"></li>
+<li>然后将修改过的1入栈，后面第二轮遍历到的1值到0的距离就是修改过的1值加一，后面几轮依此类推可保证当修改1值的时候为最短距离</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] updateMatrix(<span class="keyword">int</span>[][] matrix) &#123;</span><br><span class="line">        <span class="comment">// 首先将所有的 0 都入队，并且将 1 的位置设置成 -1，表示该位置是 未被访问过的 1</span></span><br><span class="line">        Queue&lt;<span class="keyword">int</span>[]&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> m = matrix.length, n = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] == <span class="number">0</span>) &#123;</span><br><span class="line">                    queue.offer(<span class="keyword">new</span> <span class="keyword">int</span>[] &#123;i, j&#125;);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    matrix[i][j] = -<span class="number">1</span>;</span><br><span class="line">                &#125; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span>[] dx = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;-<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span>[] dy = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">0</span>, <span class="number">0</span>, -<span class="number">1</span>, <span class="number">1</span>&#125;;</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span>[] point = queue.poll();</span><br><span class="line">            <span class="keyword">int</span> x = point[<span class="number">0</span>], y = point[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">int</span> newX = x + dx[i];</span><br><span class="line">                <span class="keyword">int</span> newY = y + dy[i];</span><br><span class="line">                <span class="comment">// 如果四邻域的点是 -1，表示这个点是未被访问过的 1</span></span><br><span class="line">                <span class="comment">// 所以这个点到 0 的距离就可以更新成 matrix[x][y] + 1。</span></span><br><span class="line">                <span class="keyword">if</span> (newX &gt;= <span class="number">0</span> &amp;&amp; newX &lt; m &amp;&amp; newY &gt;= <span class="number">0</span> &amp;&amp; newY &lt; n </span><br><span class="line">                        &amp;&amp; matrix[newX][newY] == -<span class="number">1</span>) &#123;</span><br><span class="line">                    matrix[newX][newY] = matrix[x][y] + <span class="number">1</span>;</span><br><span class="line">                    queue.offer(<span class="keyword">new</span> <span class="keyword">int</span>[] &#123;newX, newY&#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> matrix;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li>入栈直接创建一维数组：<code>new int[] {i,j}</code></li>
+<li>遍历上下左右四邻域可采用两个一维数组循环操作</li>
+</ul>
+<h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3><h3 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h3><blockquote>
+<p>文件名：LEQS15</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二叉树的中序遍历</title>
+    <url>/2020/09/02/LEQS12/</url>
+    <content><![CDATA[<h1 id="题目：-二叉树的中序遍历-Medium"><a href="#题目：-二叉树的中序遍历-Medium" class="headerlink" title="题目： 二叉树的中序遍历   Medium"></a>题目： <a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/" target="_blank" rel="noopener">二叉树的中序遍历</a>   Medium</h1><h2 id="1-自己构思-递归实现中序遍历"><a href="#1-自己构思-递归实现中序遍历" class="headerlink" title="1.自己构思 : 递归实现中序遍历"></a>1.自己构思 : 递归实现中序遍历</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        dfs(root,res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(TreeNode node , List&lt;Integer&gt; res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(node == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        dfs(node.left , res);</span><br><span class="line">        res.add(node.val);</span><br><span class="line">        dfs(node.right ,res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一-基于栈遍历"><a href="#解决方案一-基于栈遍历" class="headerlink" title="解决方案一: 基于栈遍历"></a>解决方案一: 基于栈遍历</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li>通过栈结构，先遍历左子树入栈，当左节点为空时，出栈加入队列。</li>
+<li>此时出栈顺序是后进的左节点先出，然后是根节点，最后是右节点</li>
+</ul>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List &lt; Integer &gt; inorderTraversal(TreeNode root) &#123;</span><br><span class="line">        List &lt; Integer &gt; res = <span class="keyword">new</span> ArrayList &lt; &gt; ();</span><br><span class="line">        Stack &lt; TreeNode &gt; stack = <span class="keyword">new</span> Stack &lt; &gt; ();</span><br><span class="line">        TreeNode curr = root;</span><br><span class="line">        <span class="keyword">while</span> (curr != <span class="keyword">null</span> || !stack.isEmpty()) &#123;</span><br><span class="line">            <span class="comment">//遍历左子树，压栈</span></span><br><span class="line">            <span class="keyword">while</span> (curr != <span class="keyword">null</span>) &#123;</span><br><span class="line">                stack.push(curr);</span><br><span class="line">                curr = curr.left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//不存在左节点后，向上出栈并记录，并将右节点入栈</span></span><br><span class="line">            <span class="comment">//右节点弹出后，栈顶元素为向上的第二个根节点</span></span><br><span class="line">            curr = stack.pop();</span><br><span class="line">            res.add(curr.val);	</span><br><span class="line">            curr = curr.right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3><h3 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h3><blockquote>
+<p>文件名：LEQS12</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>逆波兰表达式求值</title>
+    <url>/2020/08/30/LEQS9/</url>
+    <content><![CDATA[<h1 id="题目：逆波兰表达式求值-Medium"><a href="#题目：逆波兰表达式求值-Medium" class="headerlink" title="题目：逆波兰表达式求值   Medium"></a>题目：<a href="https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/" target="_blank" rel="noopener">逆波兰表达式求值</a>   Medium</h1><h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="逆波兰表达式："><a href="#逆波兰表达式：" class="headerlink" title="逆波兰表达式："></a>逆波兰表达式：</h3><p>逆波兰表达式是一种<strong>后缀表达式</strong>，所谓后缀就是指算符写在后面。</p>
+<ul>
+<li>平常使用的算式则是一种中缀表达式，如 ( 1 + 2 ) * ( 3 + 4 ) 。</li>
+<li>该算式的逆波兰表达式写法为 ( ( 1 2 + ) ( 3 4 + ) * ) 。</li>
+</ul>
+<p>逆波兰表达式主要有以下两个优点：</p>
+<ul>
+<li>去掉括号后表达式无歧义，上式即便写成 1 2 + 3 4 + * 也可以依据次序计算出正确结果。</li>
+<li>适合用栈操作运算：遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中。</li>
+</ul>
+<h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li>判断运算符和数字函数，并进行运算</li>
+</ol>
+<h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3><ol>
+<li><p>采用switch代替if-else，效率优化，进行对运算符和数字的判断</p>
+</li>
+<li><p><code>valueOf(s)</code> 返回保存指定的 String 的值的 Integer 对象，（<a href="https://blog.csdn.net/wufaliang003/article/details/82347077" target="_blank" rel="noopener">需要拆装箱</a>）</p>
+<p><code>**parseInt(String s)**</code>返回用十进制参数表示的整数值。</p>
+</li>
+</ol>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一：栈实现"><a href="#解决方案一：栈实现" class="headerlink" title="解决方案一：栈实现"></a>解决方案一：栈实现</h3><h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 栈实现   </span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">evalRPN</span><span class="params">(String[] tokens)</span> </span>&#123;</span><br><span class="line">		Deque&lt;Integer&gt; numStack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">		Integer op1, op2;</span><br><span class="line">		<span class="keyword">for</span> (String s : tokens) &#123;</span><br><span class="line">			<span class="keyword">switch</span> (s) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">"+"</span>:</span><br><span class="line">				op2 = numStack.pop();</span><br><span class="line">				op1 = numStack.pop();</span><br><span class="line">				numStack.push(op1 + op2);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">"-"</span>:</span><br><span class="line">				op2 = numStack.pop();</span><br><span class="line">				op1 = numStack.pop();</span><br><span class="line">				numStack.push(op1 - op2);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">"*"</span>:</span><br><span class="line">				op2 = numStack.pop();</span><br><span class="line">				op1 = numStack.pop();</span><br><span class="line">				numStack.push(op1 * op2);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">"/"</span>:</span><br><span class="line">				op2 = numStack.pop();</span><br><span class="line">				op1 = numStack.pop();</span><br><span class="line">				numStack.push(op1 / op2);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line">				numStack.push(Integer.valueOf(s));</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> numStack.pop();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="解法二：数组模拟栈结构"><a href="#解法二：数组模拟栈结构" class="headerlink" title="解法二：数组模拟栈结构"></a>解法二：数组模拟栈结构</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">	<span class="comment">//纯数组模拟栈实现</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">evalRPN</span><span class="params">(String[] tokens)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[] numStack = <span class="keyword">new</span> <span class="keyword">int</span>[tokens.length / <span class="number">2</span> + <span class="number">1</span>];</span><br><span class="line">		<span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (String s : tokens) &#123;</span><br><span class="line">			<span class="keyword">switch</span> (s) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">"+"</span>:</span><br><span class="line">				numStack[index - <span class="number">2</span>] += numStack[--index];</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">"-"</span>:</span><br><span class="line">				numStack[index - <span class="number">2</span>] -= numStack[--index];</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">"*"</span>:</span><br><span class="line">				numStack[index - <span class="number">2</span>] *= numStack[--index];</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">"/"</span>:</span><br><span class="line">				numStack[index - <span class="number">2</span>] /= numStack[--index];</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line">				<span class="comment">// numStack[index++] = Integer.valueOf(s);</span></span><br><span class="line">				<span class="comment">//valueOf改为parseInt，减少自动拆箱装箱操作</span></span><br><span class="line">				numStack[index++] = Integer.parseInt(s);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> numStack[<span class="number">0</span>];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<blockquote>
+<p>文件名：LEQS9</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有效的括号</title>
+    <url>/2020/08/11/LEQS7/</url>
+    <content><![CDATA[<h1 id="题目：-有效的括号-Easy"><a href="#题目：-有效的括号-Easy" class="headerlink" title="题目： 有效的括号 Easy"></a>题目： <a href="https://leetcode-cn.com/problems/valid-parentheses/" target="_blank" rel="noopener">有效的括号</a> Easy</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><ol>
+<li>漏判<strong>遍历结束</strong>后，栈中是否有左括号</li>
+<li>快速判断采用<strong>哈希映射</strong>（HashMap）存储每一种括号</li>
+<li>优化流程，注意到有效字符串的长度<strong>一定为偶</strong>数，因此如果字符串的长度为奇数，我们可以直接返回 \text{False}False，省去后续的遍历判断过程。</li>
+</ol>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        LinkedList&lt;Character&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : s.toCharArray()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (c == <span class="string">'['</span>) stack.push(<span class="string">']'</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">'('</span>) stack.push(<span class="string">')'</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">'&#123;'</span>) stack.push(<span class="string">'&#125;'</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (stack.isEmpty() || c != stack.pop()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stack.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑：栈匹配"><a href="#解题逻辑：栈匹配" class="headerlink" title="解题逻辑：栈匹配"></a><strong>解题逻辑</strong>：栈匹配</h4><h4 id="前置知识：HashMap用法；Map-Entry详解"><a href="#前置知识：HashMap用法；Map-Entry详解" class="headerlink" title="前置知识：HashMap用法；Map.Entry详解"></a>前置知识：<a href="https://blog.csdn.net/wdays83892469/article/details/79615609" target="_blank" rel="noopener"><em>HashMap用法</em></a>；<a href="https://blog.csdn.net/yaomingyang/article/details/78748130" target="_blank" rel="noopener">Map.Entry详解</a></h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">HashMap&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;(); <span class="comment">//创建HashMap</span></span><br><span class="line">map.put(<span class="string">"zhang"</span>, <span class="string">"31"</span>);<span class="comment">//存放键值对</span></span><br><span class="line">map.containsKey(<span class="string">"zhang"</span>));<span class="comment">//键中是否包含这个数据</span></span><br><span class="line">map.get(<span class="string">"zhang"</span>));<span class="comment">//通过键拿值</span></span><br><span class="line">map.isEmpty());<span class="comment">//判空</span></span><br><span class="line">map.remove(<span class="string">"zhang"</span>));<span class="comment">//从键值中删除</span></span><br><span class="line">map.clear();<span class="comment">//清楚表</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="对Java中使用两个大括号进行初始化的理解"><a href="#对Java中使用两个大括号进行初始化的理解" class="headerlink" title="对Java中使用两个大括号进行初始化的理解"></a><a href="https://www.cnblogs.com/matd/p/10978167.html" target="_blank" rel="noopener">对Java中使用两个大括号进行初始化的理解</a></h4><p><strong>使用匿名内部类 + 实例化代码块儿 = 使用两个大括号进行初始化</strong></p>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="comment">//奇数直接返回，简化判断</span></span><br><span class="line">        <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        Map&lt;Character, Character&gt; pairs = <span class="keyword">new</span> HashMap&lt;Character, Character&gt;() &#123;&#123;</span><br><span class="line">            put(<span class="string">')'</span>, <span class="string">'('</span>);</span><br><span class="line">            put(<span class="string">']'</span>, <span class="string">'['</span>);</span><br><span class="line">            put(<span class="string">'&#125;'</span>, <span class="string">'&#123;'</span>);</span><br><span class="line">        &#125;&#125;;</span><br><span class="line">        Stack&lt;Character&gt; stack = <span class="keyword">new</span> Stack&lt;Character&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">char</span> ch = s.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (pairs.containsKey(ch))&#123;     <span class="comment">//遇到闭符号查找栈顶是否有匹配的开符号</span></span><br><span class="line">                <span class="keyword">if</span> (stack.isEmpty() || stack.peek() != pairs.get(ch)) </span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                stack.pop();</span><br><span class="line">            &#125; <span class="keyword">else</span> stack.push(ch);			<span class="comment">//将开符号压入栈中</span></span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stack.isEmpty(); 	<span class="comment">//排除多余开符号情况</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="无map版："><a href="#无map版：" class="headerlink" title="无map版："></a>无map版：</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.isEmpty())</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        Stack&lt;Character&gt; stack=<span class="keyword">new</span> Stack&lt;Character&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c:s.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span>(c==<span class="string">'('</span>)</span><br><span class="line">                stack.push(<span class="string">')'</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">'&#123;'</span>)</span><br><span class="line">                stack.push(<span class="string">'&#125;'</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">'['</span>)</span><br><span class="line">                stack.push(<span class="string">']'</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(stack.empty()||c!=stack.pop())</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(stack.empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li></li>
+</ul>
+<blockquote>
+<p>文件名：LEQS7</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>钥匙和房间</title>
+    <url>/2020/09/06/LEQS16/</url>
+    <content><![CDATA[<h1 id="题目：-钥匙和房间-Medium"><a href="#题目：-钥匙和房间-Medium" class="headerlink" title="题目： 钥匙和房间   Medium"></a>题目： <a href="https://leetcode-cn.com/problems/keys-and-rooms/" target="_blank" rel="noopener">钥匙和房间</a>   Medium</h1><h3 id="解决方案一-DFS"><a href="#解决方案一-DFS" class="headerlink" title="解决方案一 : DFS"></a>解决方案一 : DFS</h3><h4 id="解题逻辑：DFS"><a href="#解题逻辑：DFS" class="headerlink" title="解题逻辑：DFS"></a><strong>解题逻辑</strong>：DFS</h4><ul>
+<li>用num来记录所有能打开的房间，遍历完成后与总数比较得结果</li>
+<li>用boolean[] visit 来避免重复访问结点</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span>[] vis;</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canVisitAllRooms</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; rooms)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = rooms.size();</span><br><span class="line">        num = <span class="number">0</span>;</span><br><span class="line">        vis = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</span><br><span class="line">        dfs(rooms, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> num == n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; rooms, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        vis[x] = <span class="keyword">true</span>;</span><br><span class="line">        num++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> it : rooms.get(x)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!vis[it]) &#123;</span><br><span class="line">                dfs(rooms, it);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="解决方案二：BFS"><a href="#解决方案二：BFS" class="headerlink" title="解决方案二：BFS"></a>解决方案二：BFS</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canVisitAllRooms</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; rooms)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = rooms.size(), num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">boolean</span>[] vis = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</span><br><span class="line">        Queue&lt;Integer&gt; que = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line">        vis[<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">        que.offer(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">while</span> (!que.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> x = que.poll();</span><br><span class="line">            num++;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> it : rooms.get(x)) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!vis[it]) &#123;</span><br><span class="line">                    vis[it] = <span class="keyword">true</span>;</span><br><span class="line">                    que.offer(it);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num == n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h4><ul>
+<li>去重可用hashset</li>
+</ul>
+<h3 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h3><blockquote>
+<p>文件名：LEQS16</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像渲染</title>
+    <url>/2020/09/05/LEQS14/</url>
+    <content><![CDATA[<h1 id="题目：-图像渲染-Easy"><a href="#题目：-图像渲染-Easy" class="headerlink" title="题目：  图像渲染   Easy"></a>题目： <a href="https://leetcode-cn.com/problems/flood-fill/" target="_blank" rel="noopener"> 图像渲染</a>   Easy</h1><h2 id="1-自己构思：递归栈"><a href="#1-自己构思：递归栈" class="headerlink" title="1.自己构思：递归栈"></a>1.自己构思：递归栈</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li>未考虑oldColor == newColor情况</li>
+</ol>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> oldColor;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] floodFill(<span class="keyword">int</span>[][] image, <span class="keyword">int</span> sr, <span class="keyword">int</span> sc, <span class="keyword">int</span> newColor) &#123;</span><br><span class="line">        oldColor = image[sr][sc];</span><br><span class="line">       <span class="comment">// if(oldColor == newColor) return image;</span></span><br><span class="line">       <span class="comment">// dfs(image,sr,sc,newColor);</span></span><br><span class="line">        <span class="keyword">if</span> (currColor != newColor) &#123;</span><br><span class="line">            dfs(image, sr, sc, currColor, newColor);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> image;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span>[][] image, <span class="keyword">int</span> sr, <span class="keyword">int</span> sc, <span class="keyword">int</span> newColor)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(sr&lt;<span class="number">0</span>||sc&lt;<span class="number">0</span>||sr&gt;=image.length||sc&gt;=image[<span class="number">0</span>].length||image[sr][sc] != oldColor) <span class="keyword">return</span>;</span><br><span class="line">        image[sr][sc] = newColor;</span><br><span class="line">        dfs(image,sr+<span class="number">1</span>,sc,newColor);</span><br><span class="line">        dfs(image,sr,sc+<span class="number">1</span>,newColor);</span><br><span class="line">        dfs(image,sr-<span class="number">1</span>,sc,newColor);</span><br><span class="line">        dfs(image,sr,sc-<span class="number">1</span>,newColor);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一：广度优先搜索"><a href="#解决方案一：广度优先搜索" class="headerlink" title="解决方案一：广度优先搜索"></a>解决方案一：广度优先搜索</h3><h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="优化自己代码"><a href="#优化自己代码" class="headerlink" title="优化自己代码"></a>优化自己代码</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3></li>
+</ul>
+<h3 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h3><blockquote>
+<p>文件名：LEQS14</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字符串解码</title>
+    <url>/2020/09/05/LEQS13/</url>
+    <content><![CDATA[<h1 id="题目：-字符串解码-Medium"><a href="#题目：-字符串解码-Medium" class="headerlink" title="题目： 字符串解码   Medium"></a>题目： <a href="https://leetcode-cn.com/problems/decode-string/" target="_blank" rel="noopener">字符串解码</a>   Medium</h1><h2 id="1-自己构思：栈"><a href="#1-自己构思：栈" class="headerlink" title="1.自己构思：栈"></a>1.自己构思：栈</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li>出栈后克隆数个单字符以及最后组合成结果字符串的方式方法不清楚</li>
+<li>遇到右括号出栈时字符串颠倒错误</li>
+<li>最后出栈时，从栈底到栈头遍历出栈，LinkedList好处出来了</li>
+</ol>
+<h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3><ol>
+<li><p>出栈时遇到左括号后， 弹出，根据此时栈顶数字将出栈字符反序拼接并复制，最后再压入栈中。</p>
+<p>反序时采用 <code>Collections.reverse()</code>颠倒，因为只是将括号内的各个字符串由出栈存入的逆序变为正序，然后结合再入栈</p>
+<p>例如：[“abc” ,”def”]，出栈存入list【“def”,”abc”】,反转【“abc” ,”def”】，然后拼接压栈即可。</p>
+<p>采用<code>StringBuffer reverse()</code>函数会将整个括号内的每个字符全部反转，<code>&quot;abc&quot;+&quot;def&quot;</code> 变为 <code>“fedcba”</code>不符合题意。</p>
+</li>
+<li><p>重复如上操作，最终将栈中的元素按照从栈底到栈顶的顺序拼接起来。</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th align="center">API Character</th>
+<th align="center">API LinkedList</th>
+<th align="center">API StringBuffer</th>
+<th>API String</th>
+<th>API Integer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">.isDigit()</td>
+<td align="center">.addLast(digits)</td>
+<td align="center">.append(s)</td>
+<td>.charAt(ptr);</td>
+<td>parseInt(c);</td>
+</tr>
+<tr>
+<td align="center">.isLetter()</td>
+<td align="center">.removeLast()</td>
+<td align="center">.toString()</td>
+<td>.valueOf(n);</td>
+<td></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">.peekLast()</td>
+<td align="center"></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一：栈结构"><a href="#解决方案一：栈结构" class="headerlink" title="解决方案一：栈结构"></a>解决方案一：栈结构</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li><img src="/images/LEQS13/image-20200904094102267.png" alt="image-20200904094102267" style="zoom: 80%;" />
+
+</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="重点："><a href="#重点：" class="headerlink" title="重点："></a>重点：</h4><ul>
+<li><code>while (repTime-- &gt; 0)</code> 遍历reptime次</li>
+<li><code>String.valueOf()</code>将变量或者char[]转换成字符串</li>
+</ul>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">   <span class="keyword">int</span> prt; <span class="comment">//定义遍历字符串指针</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> prt; <span class="comment">//定义遍历字符串指针</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDigit</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        StringBuffer num = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        <span class="keyword">while</span>(Character.isDigit(s.charAt(prt)))</span><br><span class="line">            num.append(s.charAt(prt++));</span><br><span class="line">        <span class="keyword">return</span> num.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getString</span><span class="params">(Deque&lt;String&gt; stack)</span></span>&#123;</span><br><span class="line">        StringBuffer ds = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        <span class="comment">//从栈底到栈头遍历</span></span><br><span class="line">        <span class="keyword">while</span>(stack.peekLast()!=<span class="keyword">null</span>)</span><br><span class="line">            ds.append(stack.removeLast());</span><br><span class="line"><span class="comment">//        ds.reverse();</span></span><br><span class="line">        <span class="keyword">return</span> ds.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">decodeString</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        Deque&lt;String&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        prt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(prt &lt; s.length())&#123;</span><br><span class="line">            <span class="keyword">if</span>(Character.isDigit(s.charAt(prt)))&#123;</span><br><span class="line">                stack.push(getDigit(s));</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(s.charAt(prt) == <span class="string">']'</span> )&#123;</span><br><span class="line">                ++prt;</span><br><span class="line"><span class="comment">//                StringBuffer sub = new StringBuffer();</span></span><br><span class="line"><span class="comment">//                while(!"[".equals(stack.peekFirst()))&#123;</span></span><br><span class="line"><span class="comment">//                    sub.append(stack.pop());</span></span><br><span class="line"><span class="comment">//                &#125;</span></span><br><span class="line"><span class="comment">//                sub.reverse();</span></span><br><span class="line"><span class="comment">//                stack.pop();</span></span><br><span class="line"><span class="comment">//                int times = Integer.parseInt(stack.pop());</span></span><br><span class="line"><span class="comment">//                while(times-- &gt; 0)</span></span><br><span class="line"><span class="comment">//                    stack.push(sub.toString());</span></span><br><span class="line"></span><br><span class="line">                LinkedList&lt;String&gt; sub = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">                <span class="keyword">while</span>(!<span class="string">"["</span>.equals(stack.peekFirst()))&#123;</span><br><span class="line">                    sub.addFirst(stack.pop());</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                Collections.reverse(sub);</span><br><span class="line">                stack.pop();</span><br><span class="line">                <span class="keyword">int</span> times = Integer.parseInt(stack.pop());</span><br><span class="line">                StringBuffer t = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">                String o = getString(sub);</span><br><span class="line">                <span class="keyword">while</span>(times-- &gt; <span class="number">0</span>)</span><br><span class="line">                    t.append(o);</span><br><span class="line">                stack.push(t.toString());</span><br><span class="line"></span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                stack.push(String.valueOf(s.charAt(prt++)));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> getString(stack);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><h3 id="解决方案二：递归栈"><a href="#解决方案二：递归栈" class="headerlink" title="解决方案二：递归栈"></a>解决方案二：递归栈</h3></li>
+</ul>
+<h3 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h3><blockquote>
+<p>文件名：LEQS13</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>克隆图</title>
+    <url>/2020/08/31/LEQS10/</url>
+    <content><![CDATA[<h1 id="题目：-克隆图-Medium"><a href="#题目：-克隆图-Medium" class="headerlink" title="题目： 克隆图 Medium"></a>题目： <a href="https://leetcode-cn.com/problems/clone-graph/" target="_blank" rel="noopener">克隆图</a> Medium</h1><h3 id="解决方案一-DFS"><a href="#解决方案一-DFS" class="headerlink" title="解决方案一:DFS"></a>解决方案一:DFS</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li><a href="https://blog.csdn.net/wdays83892469/article/details/79615609" target="_blank" rel="noopener">HashMap</a>记录已访问节点避免递归过程中死循环</li>
+<li><img src="/images/LEQS10/3.png" alt="fig3"></li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> HashMap &lt;Node, Node&gt; visited = <span class="keyword">new</span> HashMap &lt;&gt; ();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">cloneGraph</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> node;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果该节点已经被访问过了，则直接从哈希表中取出对应的克隆节点返回</span></span><br><span class="line">        <span class="keyword">if</span> (visited.containsKey(node)) &#123;</span><br><span class="line">            <span class="keyword">return</span> visited.get(node);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 克隆节点，注意到为了深拷贝我们不会克隆它的邻居的列表</span></span><br><span class="line">        Node cloneNode = <span class="keyword">new</span> Node(node.val, <span class="keyword">new</span> ArrayList());</span><br><span class="line">        <span class="comment">// 哈希表存储</span></span><br><span class="line">        visited.put(node, cloneNode);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历该节点的邻居并更新克隆节点的邻居列表</span></span><br><span class="line">        <span class="keyword">for</span> (Node neighbor: node.neighbors) &#123;</span><br><span class="line">            cloneNode.neighbors.add(cloneGraph(neighbor));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cloneNode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><h2 id="解决方案二：BFS"><a href="#解决方案二：BFS" class="headerlink" title="解决方案二：BFS"></a>解决方案二：BFS</h2></li>
+</ul>
+<img src="/images/LEQS10/4.png" alt="fig4" style="zoom: 33%;" />
+
+<h4 id="要点："><a href="#要点：" class="headerlink" title="要点："></a>要点：</h4><ul>
+<li>将hasmap中的键对应原本的节点图，并且进行克隆，克隆得到的结点存储在对应的值当中。</li>
+<li>如此，既能在创建键的过程中实现判断结点是否遍历，又能对结点进行对应克隆。</li>
+<li>最后返回题目提供的结点在hashmap表中对应的值结点即可。</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">cloneGraph</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> node;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        HashMap&lt;Node, Node&gt; visited = <span class="keyword">new</span> HashMap();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将题目给定的节点添加到队列</span></span><br><span class="line">        LinkedList&lt;Node&gt; queue = <span class="keyword">new</span> LinkedList&lt;Node&gt; ();</span><br><span class="line">        queue.add(node);</span><br><span class="line">        <span class="comment">// 克隆第一个节点并存储到哈希表中</span></span><br><span class="line">        visited.put(node, <span class="keyword">new</span> Node(node.val, <span class="keyword">new</span> ArrayList()));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 广度优先搜索</span></span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            <span class="comment">// 取出队列的头节点</span></span><br><span class="line">            Node n = queue.remove();</span><br><span class="line">            <span class="comment">// 遍历该节点的邻居</span></span><br><span class="line">            <span class="keyword">for</span> (Node neighbor: n.neighbors) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!visited.containsKey(neighbor)) &#123;</span><br><span class="line">                    <span class="comment">// 如果没有被访问过，就克隆并存储在哈希表中</span></span><br><span class="line">                    visited.put(neighbor, <span class="keyword">new</span> Node(neighbor.val, <span class="keyword">new</span> ArrayList()));</span><br><span class="line">                    <span class="comment">// 将邻居节点加入队列中</span></span><br><span class="line">                    queue.add(neighbor);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 更新克隆节点的邻居列表</span></span><br><span class="line">                visited.get(n).neighbors.add(visited.get(neighbor));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">		<span class="comment">//返回的即是对应的值克隆节点</span></span><br><span class="line">        <span class="keyword">return</span> visited.get(node); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<blockquote>
+<p>文件名：LEQS10</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>完全平方数</title>
+    <url>/2020/08/11/LEQS4/</url>
+    <content><![CDATA[<h1 id="题目：完全平方数-Medium"><a href="#题目：完全平方数-Medium" class="headerlink" title="题目：完全平方数   Medium"></a>题目：<a href="https://leetcode-cn.com/problems/perfect-squares/" target="_blank" rel="noopener">完全平方数</a>   Medium</h1><h3 id="解决方案一：BFS-队列"><a href="#解决方案一：BFS-队列" class="headerlink" title="解决方案一：BFS+队列"></a>解决方案一：BFS+队列</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li><p>当每一次都可以判断出多种情况，有多次的时候就适合用BFS-广度优先遍历</p>
+<p>队列：用来存储每一轮遍历得到的节点；<br>标记：对于遍历过的节点，应该将它标记，防止重复遍历。</p>
+</li>
+<li><p>为了节省遍历的时间，曾经（ n - 以前出现的平方数） 这个值出现过，则在此出现这样的数时直接忽略。</p>
+</li>
+<li><img src="/images/LEQS4/e7f3e392ad7b1068c8f0e05bad898b100ef20741112ea93b2f8a9fab9a75f95a-leetcode279.png" alt="leetcode279.png" style="zoom:50%;" />
+
+</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><ul>
+<li>每减一次代表组成的平方数找到一种情况</li>
+</ul>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">//构造结点，包含代表当前找寻到的情况步数step和结点的平方数值</span></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> val;</span><br><span class="line">        <span class="keyword">int</span> step;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> val,<span class="keyword">int</span> step)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.val = val;</span><br><span class="line">            <span class="keyword">this</span>.step = step;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numSquares</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        Queue&lt;Node&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        q.add(<span class="keyword">new</span> Node(n, <span class="number">1</span>));</span><br><span class="line">        <span class="keyword">boolean</span>[] record =<span class="keyword">new</span> <span class="keyword">boolean</span>[n];</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(!q.isEmpty())&#123;</span><br><span class="line">            <span class="comment">//出队列数值信息</span></span><br><span class="line">            <span class="keyword">int</span> val = q.peek().val;</span><br><span class="line">            <span class="keyword">int</span> step = q.peek().step;</span><br><span class="line">            q.remove();</span><br><span class="line">            <span class="comment">//进行当前层数的广度遍历</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;;i++)&#123;</span><br><span class="line">                <span class="comment">//试探下一层数值情况方便进行结束条件判断</span></span><br><span class="line">				<span class="keyword">int</span> nextVal = val - i*i;</span><br><span class="line">                <span class="comment">//结束条件1：达到最大平方数</span></span><br><span class="line">                <span class="keyword">if</span>(nextVal &lt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">//结束条件2：找到最短路径,返回所需值</span></span><br><span class="line">                <span class="keyword">if</span>(nextVal == <span class="number">0</span> ) <span class="keyword">return</span> step;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">//避免相同结点重复入队列，重复值的路径一定大于第一次结点出现时的路径</span></span><br><span class="line">                <span class="comment">//并且将下个结点进入队列.</span></span><br><span class="line">                <span class="keyword">if</span>(!record[nextVal])&#123;</span><br><span class="line">                    q.add(<span class="keyword">new</span> Node(nextVal,step + <span class="number">1</span>));</span><br><span class="line">                    record[nextVal] = <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">           </span><br><span class="line">		&#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li></li>
+</ul>
+<blockquote>
+<p>文件名：LEQS4</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>队列构造与内置用法</title>
+    <url>/2020/08/11/LEQS2/</url>
+    <content><![CDATA[<h1 id="java-内置队列库实现常见队列操作"><a href="#java-内置队列库实现常见队列操作" class="headerlink" title="java 内置队列库实现常见队列操作"></a>java 内置队列库实现常见队列操作</h1><ol>
+<li>Queue<T>  q  = new LinkedList();</li>
+<li>q.offer();/add();</li>
+<li>q.poll();/remove();</li>
+<li>//add()和remove()方法在失败的时候会抛出异常(不推荐)</li>
+<li><img src="/images/LEQS2/image-20200903170626591.png" alt="image-20200903170626591" style="zoom: 80%;" />
+
+</li>
+</ol>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// "static void main" must be defined in a public class.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. Initialize a queue.</span></span><br><span class="line">        Queue&lt;Integer&gt; q = <span class="keyword">new</span> LinkedList();</span><br><span class="line">        <span class="comment">// 2. Get the first element - return null if queue is empty.</span></span><br><span class="line">        System.out.println(<span class="string">"The first element is: "</span> + q.peek());</span><br><span class="line">        <span class="comment">// 3. Push new element.</span></span><br><span class="line">        q.offer(<span class="number">5</span>);</span><br><span class="line">        q.offer(<span class="number">13</span>);</span><br><span class="line">        q.offer(<span class="number">8</span>);</span><br><span class="line">        q.offer(<span class="number">6</span>);</span><br><span class="line">        <span class="comment">// 4. Pop an element.</span></span><br><span class="line">        q.poll();</span><br><span class="line">        <span class="comment">// 5. Get the first element.</span></span><br><span class="line">        System.out.println(<span class="string">"The first element is: "</span> + q.peek());</span><br><span class="line">        <span class="comment">// 7. Get the size of the queue.</span></span><br><span class="line">        System.out.println(<span class="string">"The size is: "</span> + q.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ol>
+<li>java.util.* 代表导入util包下的所有类不包含接口</li>
+<li>queue为接口需要重新导入</li>
+<li><a href="https://cloud.tencent.com/developer/article/1515562" target="_blank" rel="noopener">阅读</a></li>
+<li>java14,util包在javabase/java/util</li>
+</ol>
+<h1 id="低效率列表实现"><a href="#低效率列表实现" class="headerlink" title="低效率列表实现"></a>低效率列表实现</h1><h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// "static void main" must be defined in a public class.</span></span><br><span class="line"><span class="comment">//低效率浪费空间</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyQueue</span> </span>&#123;</span><br><span class="line">    <span class="comment">// store elements</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Integer&gt; data;         </span><br><span class="line">    <span class="comment">// a pointer to indicate the start position</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> p_start;            </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        p_start = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** Insert an element into the queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">enQueue</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        data.add(x);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;;    </span><br><span class="line">    <span class="comment">/** Delete an element from the queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty() == <span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        p_start++;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** Get the front item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data.get(p_start);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** Checks whether the queue is empty or not. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> p_start &gt;= data.size();</span><br><span class="line">    &#125;     </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MyQueue q = <span class="keyword">new</span> MyQueue();</span><br><span class="line">        q.enQueue(<span class="number">5</span>);</span><br><span class="line">        q.enQueue(<span class="number">3</span>);</span><br><span class="line">        <span class="keyword">if</span> (q.isEmpty() == <span class="keyword">false</span>) &#123;</span><br><span class="line">            System.out.println(q.Front());</span><br><span class="line">        &#125;</span><br><span class="line">        q.deQueue();</span><br><span class="line">        <span class="keyword">if</span> (q.isEmpty() == <span class="keyword">false</span>) &#123;</span><br><span class="line">            System.out.println(q.Front());</span><br><span class="line">        &#125;</span><br><span class="line">        q.deQueue();</span><br><span class="line">        <span class="keyword">if</span> (q.isEmpty() == <span class="keyword">false</span>) &#123;</span><br><span class="line">            System.out.println(q.Front());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="循环队列数组实现"><a href="#循环队列数组实现" class="headerlink" title="循环队列数组实现"></a>循环队列数组实现</h1><h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><ul>
+<li>计算队尾指针位置<img src="/images/LEQS2/image-20200822155337704.png" alt="image-20200822155337704" style="zoom:50%;" /></li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCircularQueue</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] queue;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> headIndex;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> capacity;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Initialize your data structure here. Set the size of the queue to be k. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyCircularQueue</span><span class="params">(<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.capacity = k;</span><br><span class="line">        <span class="keyword">this</span>.queue =  <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        <span class="keyword">this</span>.headIndex = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.count = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Insert an element into the circular queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">enQueue</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.count == <span class="keyword">this</span>.capacity) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">this</span>.count++;</span><br><span class="line">        <span class="keyword">this</span>.queue[(<span class="keyword">this</span>.headIndex + <span class="keyword">this</span>.count -<span class="number">1</span>) % <span class="keyword">this</span>.capacity] = value;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Delete an element from the circular queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.count == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">this</span>.headIndex = (<span class="keyword">this</span>.headIndex + <span class="number">1</span>) % <span class="keyword">this</span>.capacity;</span><br><span class="line">        <span class="keyword">this</span>.count--;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Get the front item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.count == <span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.queue[<span class="keyword">this</span>.headIndex];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Get the last item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Rear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.count == <span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.queue[(<span class="keyword">this</span>.headIndex + <span class="keyword">this</span>.count -<span class="number">1</span>) % <span class="keyword">this</span>.capacity];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">/** Checks whether the circular queue is empty or not. */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">this</span>.count == <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/** Checks whether the circular queue is full or not. */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">this</span>.count == <span class="keyword">this</span>.capacity);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyCircularQueue object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyCircularQueue obj = new MyCircularQueue(k);</span></span><br><span class="line"><span class="comment"> * boolean param_1 = obj.enQueue(value);</span></span><br><span class="line"><span class="comment"> * boolean param_2 = obj.deQueue();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj.Front();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj.Rear();</span></span><br><span class="line"><span class="comment"> * boolean param_5 = obj.isEmpty();</span></span><br><span class="line"><span class="comment"> * boolean param_6 = obj.isFull();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>文件名：LEQS2</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>力扣刷题总结文章模板</title>
+    <url>/2020/08/31/LTemp/</url>
+    <content><![CDATA[<h1 id="题目：-名字-Easy-Medium-Hard"><a href="#题目：-名字-Easy-Medium-Hard" class="headerlink" title="题目： 名字   Easy/Medium/Hard"></a>题目： 名字   Easy/Medium/Hard</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li><h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3></li>
+<li></li>
+</ol>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li></li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
+<li><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4></li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3></li>
+</ul>
+<h3 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h3><blockquote>
+<p>文件名：LEQS</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最小栈</title>
+    <url>/2020/08/26/LEQS6/</url>
+    <content><![CDATA[<h1 id="题目：-最小栈Easy"><a href="#题目：-最小栈Easy" class="headerlink" title="题目： 最小栈Easy"></a>题目：<a href="https://leetcode-cn.com/problems/min-stack/" target="_blank" rel="noopener"> 最小栈</a>Easy</h1><h1 id="Java实现栈：采用Deque替代Stack"><a href="#Java实现栈：采用Deque替代Stack" class="headerlink" title="Java实现栈：采用Deque替代Stack"></a>Java实现栈：采用Deque替代Stack</h1><p>Java的集合包中本身就有栈的实现Stack，如果看过API或者是源码就会知道Java中的Stack是线程安全的，所有对外暴露的操作都使用了synchronized关键字，即加了一个重锁。什么是重锁？重锁就是需要由用户态切换到核心态，由操作系统来进行线程的同步互斥管理。</p>
+<p>所以一般在单线程情况下，没有必要使用Stack，可以使用<strong>Deque</strong>来替代。Deque中也实现了符合栈特性的<code>push(E e)和pop()</code>操作，但还有一点要注意的是，Deque实现的栈的栈顶是其首元素，即读取栈顶的元素应该使用<code>peekFirst()</code>。</p>
+<p>Deque实现栈常用方法</p>
+<ul>
+<li><code>push(E e)</code></li>
+<li><code>pop()</code></li>
+<li><code>peekFirst()</code> </li>
+<li><code>java.util.ArrayDeque.isEmpty()</code> 如果此双端队列不包含任何元素，则此方法返回true。</li>
+<li><img src="/images/LEQS6/image-20200903165956996.png" alt="image-20200903165956996"></li>
+<li><img src="/images/LEQS6/image-20200905095336981.png" alt="image-20200905095336981"></li>
+</ul>
+<p>接着再总结一下，集合类中大致的操作规律：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>成功</th>
+<th>失败</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>remove</td>
+<td>删除，并获取元素</td>
+<td>抛出异常</td>
+</tr>
+<tr>
+<td>poll</td>
+<td>删除，并获取元素</td>
+<td>返回null</td>
+</tr>
+<tr>
+<td>get</td>
+<td>获取元素</td>
+<td>抛出异常</td>
+</tr>
+<tr>
+<td>peek</td>
+<td>获取元素</td>
+<td>返回null</td>
+</tr>
+<tr>
+<td>add</td>
+<td>添加元素，返回true</td>
+<td>返回false</td>
+</tr>
+</tbody></table>
+<h3 id="解决方案一：辅助栈"><a href="#解决方案一：辅助栈" class="headerlink" title="解决方案一：辅助栈"></a>解决方案一：辅助栈</h3><h4 id="解题逻辑：辅助栈"><a href="#解题逻辑：辅助栈" class="headerlink" title="解题逻辑：辅助栈"></a><strong>解题逻辑</strong>：辅助栈</h4><ul>
+<li><p>借用一个辅助栈<code>min_stack</code>，用于存获取<code>stack</code>中最小值。</p>
+</li>
+<li><img src="/images/LEQS6/28724fa9f92b6952f7fdaf8760edd1dea850b137c22df28751f1cdd4d2680992-155.gif" alt="155.gif" style="zoom:33%;" />
+
+</li>
+</ul>
+<h4 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Deque&lt;Integer&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">private</span> Deque&lt;Integer&gt; minStack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        stack.push(x);</span><br><span class="line">        <span class="keyword">if</span> (minStack.isEmpty())</span><br><span class="line">            minStack.push(x);</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            minStack.push(Math.min(x, minStack.peekFirst()));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        stack.pop();</span><br><span class="line">        minStack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack.peekFirst();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> minStack.peekFirst();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li>Java中的int是基本数据类型，没有继承自Object类，要存放整型数据必须使用整型的封装类</li>
+</ul>
+<h3 id="解决方案二：单栈存储插值"><a href="#解决方案二：单栈存储插值" class="headerlink" title="解决方案二：单栈存储插值"></a>解决方案二：单栈存储插值</h3><h4 id="解题逻辑：存储差值一个栈"><a href="#解题逻辑：存储差值一个栈" class="headerlink" title="解题逻辑：存储差值一个栈"></a><strong>解题逻辑</strong>：存储差值一个栈</h4><ul>
+<li>每次存入的是 <code>原来值 - 当前最小值</code>。</li>
+<li>当原来值大于等于当前最小值的时候，存入就是非负数，出栈的时候就是 <code>栈中的值 + 当前最小值</code> 。</li>
+<li>当原来值小于当前最小值的时候，存入是负值，此时的值不入栈，用 <code>min</code> 保存起来，同时将差值入栈。</li>
+<li>负数存入，后续通过计算可得到次最小值，依次可将各个阶段站内最小值记录</li>
+</ul>
+<h4 id="代码分析-1"><a href="#代码分析-1" class="headerlink" title="代码分析"></a>代码分析</h4><h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> min;</span><br><span class="line">	Stack&lt;Long&gt; stack;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span></span>&#123;</span><br><span class="line">        stack=<span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (stack.isEmpty()) &#123;</span><br><span class="line">			min = x;</span><br><span class="line">			stack.push(x - min);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			stack.push(x - min);</span><br><span class="line">			<span class="keyword">if</span> (x &lt; min)&#123;</span><br><span class="line">				min = x; <span class="comment">// 更新最小值</span></span><br><span class="line">			&#125;</span><br><span class="line">				</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (stack.isEmpty())</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">long</span> pop = stack.pop();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//弹出的是负值，要更新 min</span></span><br><span class="line">		<span class="keyword">if</span> (pop &lt; <span class="number">0</span>) &#123;</span><br><span class="line">			min = min - pop;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">long</span> top = stack.peek();</span><br><span class="line">		<span class="comment">//负数的话，出栈的值保存在 min 中</span></span><br><span class="line">		<span class="keyword">if</span> (top &lt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> (<span class="keyword">int</span>) (min);</span><br><span class="line">        <span class="comment">//出栈元素加上最小值即可</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> (<span class="keyword">int</span>) (top + min);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="keyword">int</span>) min;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips-1"><a href="#tips-1" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li>上边的解法的一个缺点就是由于我们保存的是差值，所以可能造成溢出，所以我们用了数据范围更大的 <code>long</code> 类型。</li>
+</ul>
+<blockquote>
+<p>文件名：LEQS6</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IDEA快捷键</title>
+    <url>/2020/07/03/IDEASCK/</url>
+    <content><![CDATA[<h1 id="IntelliJ-快捷键"><a href="#IntelliJ-快捷键" class="headerlink" title="IntelliJ 快捷键"></a>IntelliJ 快捷键</h1><p><code>System.out.println（）</code> —— <strong>sout + Enter</strong></p>
+<p><code>System.out.println（&quot;方法 &quot; + 参数）</code> —— <strong>soutv + Enter</strong></p>
+<p><code>public static void main(String[]args){ }</code>——<strong>psvm + enter</strong></p>
+<p><code>for (int i = 0; i &lt; ; i++) { }</code>—<strong>fori + enter</strong></p>
+<p><code>选中该行可选择包围该行的形式</code> —— <strong>ctri+alt+t</strong></p>
+<hr>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">alt+/提示补全</span><br><span class="line">ctrl+/ 单行注释</span><br><span class="line">ctrl+d 复制一行</span><br><span class="line">      ctrl + y删除一行</span><br><span class="line">      alt+down 光标向下移动一个方法</span><br><span class="line">alt+up 光标向上移动一个方法</span><br><span class="line">      </span><br><span class="line">	</span><br><span class="line">shift+enter 向下开始新的一行</span><br><span class="line">ctrl+shift+enter 向上开始新的一行</span><br><span class="line"></span><br><span class="line">alt+left 退回到前一个编辑界面</span><br><span class="line">alt+right 进入到下一个编辑的界面</span><br><span class="line">f4 查看继承关系</span><br><span class="line">ctrl+shift+f 格式化代码</span><br><span class="line">ctrl+alt+/ 提示方法参数类型</span><br><span class="line"></span><br><span class="line">ctrl+y 反撤销</span><br><span class="line">ctrl+x 剪切</span><br><span class="line">	</span><br><span class="line">tab 选中数行，整体往后移动</span><br><span class="line">shift+tab 选中数行，整体向前移动</span><br><span class="line"></span><br><span class="line">ctrl+shift+y 大写转换为小写/小写转换为大写</span><br><span class="line">alt+shift+s 快速生成get set方法 可按住shift进行多选</span><br><span class="line">f2查看文档说明</span><br><span class="line">alt+shift+c 收起所有方法</span><br><span class="line">alt+shift+x打开所有方法</span><br><span class="line">ctrl+shift+x 打开代码所在的硬盘文件夹</span><br><span class="line">alt+shift+z 生成<span class="keyword">try</span>-catch</span><br><span class="line">alt+shift+f 局部变量抽取为成员变量</span><br><span class="line">ctrl+f 查找(代码)</span><br><span class="line">ctrl+h 查找(全局)</span><br><span class="line">双击shift 查找文件</span><br><span class="line">alt+shift+m 抽取方法</span><br><span class="line"></span><br><span class="line">ctrl+e 打开module setting窗口</span><br><span class="line">ctrl+w 关闭当前打开的代码栏</span><br><span class="line">ctrl+shift+w 关闭打开的所有代码栏</span><br><span class="line">ctrl+shift+q 快速搜索类中的错误</span><br><span class="line">ctrl+shift+v 选择要粘贴的内容</span><br><span class="line">ctrl+shift+h 查找方法在哪里被调用</span><br><span class="line">ctrl+alt+h 查看方法的多层重写结构</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="VSCode-快捷键"><a href="#VSCode-快捷键" class="headerlink" title="VSCode 快捷键"></a>VSCode 快捷键</h1><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="code"><pre><span class="line">ctrl + shift + K 删除一行</span><br></pre></td></tr></table></figure></div>
+
+]]></content>
+      <categories>
+        <category>快捷键</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>目标和</title>
+    <url>/2020/09/02/LEQS11/</url>
+    <content><![CDATA[<h1 id="题目：-目标和-Medium"><a href="#题目：-目标和-Medium" class="headerlink" title="题目： 目标和   Medium"></a>题目： <a href="https://leetcode-cn.com/problems/target-sum/" target="_blank" rel="noopener">目标和</a>   Medium</h1><h2 id="1-自己构思：递归系统栈"><a href="#1-自己构思：递归系统栈" class="headerlink" title="1.自己构思：递归系统栈"></a>1.自己构思：递归系统栈</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li>目标和sum值不能为实例变量，应该在递归参数中随着各个分支处理而不同<strong>变化</strong>，否则递归过程中的<strong>其他分支</strong>sum值都会<strong>受到影响</strong></li>
+<li>在进行递归时传入的目标sum必须有变化，否则为同一种情况，产生重复递归情况</li>
+</ol>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findTargetSumWays</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> S)</span> </span>&#123;</span><br><span class="line">        dfs(nums , <span class="number">0</span> , <span class="number">1</span> , S, <span class="number">0</span>); <span class="comment">//sum不变等于同一种情况，变化的f并未改变sum的值，到下下一轮才影响</span></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span>[] nums , <span class="keyword">int</span> i ,<span class="keyword">int</span> f , <span class="keyword">int</span> s, <span class="keyword">int</span> nums_sum)</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(i == nums.length )&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums_sum == s) res++;  </span><br><span class="line">            <span class="comment">//nums_sum = 0;  </span></span><br><span class="line">            <span class="comment">// 不能将sum值置为0，如此则递归过程中的其他分支sum值都为0；并且sum值不能为应该在递归参数中随着各个分支              的处理而不同变化</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="comment">// nums_sum += nums[i] * f;</span></span><br><span class="line">        <span class="comment">//传入sum值没有变化即等于同一种情况</span></span><br><span class="line">        dfs(nums , i+<span class="number">1</span> , <span class="number">1</span> , s, nums_sum +  nums[i]);</span><br><span class="line">        dfs(nums , i+<span class="number">1</span> , -<span class="number">1</span> ,s, nums_sum -  nums[i] );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一-递归栈"><a href="#解决方案一-递归栈" class="headerlink" title="解决方案一:递归栈"></a>解决方案一:递归栈</h3><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findTargetSumWays</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> S)</span> </span>&#123;</span><br><span class="line">        calculate(nums, <span class="number">0</span>, <span class="number">0</span>, S);</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">calculate</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> sum, <span class="keyword">int</span> S)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (i == nums.length) &#123;</span><br><span class="line">            <span class="keyword">if</span> (sum == S)</span><br><span class="line">                count++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//直接传入计算好的不同sum值进行递归</span></span><br><span class="line">            calculate(nums, i + <span class="number">1</span>, sum + nums[i], S);</span><br><span class="line">            calculate(nums, i + <span class="number">1</span>, sum - nums[i], S);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><a href="https://blog.csdn.net/chenkaibsw/article/details/78989459" target="_blank" rel="noopener">控制台打印数组的方法</a>，Arrays.toString();</li>
+<li>IDEA中在调用函数方法时，要求是static静态的，或者创建该类的实例对象进行调用</li>
+</ul>
+<h3 id="解决方案二：动态规划"><a href="#解决方案二：动态规划" class="headerlink" title="解决方案二：动态规划"></a>解决方案二：动态规划</h3><h3 id="解决方案三：动态规划-空间优化"><a href="#解决方案三：动态规划-空间优化" class="headerlink" title="解决方案三：动态规划 + 空间优化"></a><strong>解决方案</strong>三：动态规划 + 空间优化</h3><blockquote>
+<p>文件名：LEQS11</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>岛屿数量</title>
+    <url>/2020/08/23/LEQS5/</url>
+    <content><![CDATA[<h1 id="题目：-岛屿数量-Medium"><a href="#题目：-岛屿数量-Medium" class="headerlink" title="题目： 岛屿数量 Medium"></a>题目： <a href="https://leetcode-cn.com/problems/number-of-islands/" target="_blank" rel="noopener">岛屿数量</a> Medium</h1><h3 id="解决方案一：BFS"><a href="#解决方案一：BFS" class="headerlink" title="解决方案一：BFS"></a>解决方案一：BFS</h3><h4 id="解题逻辑：BFS广度优先搜索"><a href="#解题逻辑：BFS广度优先搜索" class="headerlink" title="解题逻辑：BFS广度优先搜索"></a><strong>解题逻辑</strong>：BFS广度优先搜索</h4><p>为了求出岛屿的数量，我们可以扫描整个二维网格。如果一个位置为 1，则将其加入队列，开始进行广度优先搜索。在广度优先搜索的过程中，每个搜索到的 1都会被重新标记为 0。直到队列为空，搜索结束。</p>
+<p>最终岛屿的数量就是我们进行广度优先搜索的次数。</p>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numIslands</span><span class="params">(<span class="keyword">char</span>[][] grid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (grid == <span class="keyword">null</span> || grid.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> nr = grid.length;</span><br><span class="line">        <span class="keyword">int</span> nc = grid[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span> num_islands = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> r = <span class="number">0</span>; r &lt; nr; ++r) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> c = <span class="number">0</span>; c &lt; nc; ++c) &#123;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (grid[r][c] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                    ++num_islands;</span><br><span class="line">                    grid[r][c] = <span class="string">'0'</span>;<span class="comment">//将搜索到的1重新标记为 0,防止重复计算</span></span><br><span class="line">                    </span><br><span class="line">                    Queue&lt;Integer&gt; neighbors = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">                    neighbors.add(r * nc + c);</span><br><span class="line">                    <span class="keyword">while</span> (!neighbors.isEmpty()) &#123;</span><br><span class="line">                        </span><br><span class="line">                        <span class="keyword">int</span> id = neighbors.remove();</span><br><span class="line">                        <span class="keyword">int</span> row = id / nc;</span><br><span class="line">                        <span class="keyword">int</span> col = id % nc;</span><br><span class="line">                        <span class="comment">//上下左右遍历邻居加入队列</span></span><br><span class="line">                        <span class="keyword">if</span> (row - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; grid[row-<span class="number">1</span>][col] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                            neighbors.add((row-<span class="number">1</span>) * nc + col);</span><br><span class="line">                            grid[row-<span class="number">1</span>][col] = <span class="string">'0'</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">if</span> (row + <span class="number">1</span> &lt; nr &amp;&amp; grid[row+<span class="number">1</span>][col] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                            neighbors.add((row+<span class="number">1</span>) * nc + col);</span><br><span class="line">                            grid[row+<span class="number">1</span>][col] = <span class="string">'0'</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">if</span> (col - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; grid[row][col-<span class="number">1</span>] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                            neighbors.add(row * nc + col-<span class="number">1</span>);</span><br><span class="line">                            grid[row][col-<span class="number">1</span>] = <span class="string">'0'</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">if</span> (col + <span class="number">1</span> &lt; nc &amp;&amp; grid[row][col+<span class="number">1</span>] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                            neighbors.add(row * nc + col+<span class="number">1</span>);</span><br><span class="line">                            grid[row][col+<span class="number">1</span>] = <span class="string">'0'</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> num_islands;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="解决方案二：DFS"><a href="#解决方案二：DFS" class="headerlink" title="解决方案二：DFS"></a>解决方案二：DFS</h3><img src="/images/LEQS5/image-20200830173102730.png" alt="image-20200830173102730" style="zoom: 80%;" />
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numIslands</span><span class="params">(<span class="keyword">char</span>[][] grid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; grid.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; grid[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(grid[i][j] == <span class="string">'1'</span>)&#123;</span><br><span class="line">                    dfs(grid, i, j);</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">char</span>[][] grid, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="comment">//递归结束条件</span></span><br><span class="line">        <span class="keyword">if</span>(i &lt; <span class="number">0</span> || j &lt; <span class="number">0</span> || i &gt;= grid.length || j &gt;= grid[<span class="number">0</span>].length || grid[i][j] == <span class="string">'0'</span>) <span class="keyword">return</span>;</span><br><span class="line">        <span class="comment">//循环执行</span></span><br><span class="line">        grid[i][j] = <span class="string">'0'</span>;</span><br><span class="line">        dfs(grid, i + <span class="number">1</span>, j);</span><br><span class="line">        dfs(grid, i, j + <span class="number">1</span>);</span><br><span class="line">        dfs(grid, i - <span class="number">1</span>, j);</span><br><span class="line">        dfs(grid, i, j - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li>if按照（）内条件顺序进行判断，将可能导致数组越界的条件放到最后避免报错</li>
+</ul>
+<h3 id="解决方案三：并查集"><a href="#解决方案三：并查集" class="headerlink" title="解决方案三：并查集"></a>解决方案三：并查集</h3><blockquote>
+<p>文件名：LEQS5</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>每日温度</title>
+    <url>/2020/08/30/LEQS8/</url>
+    <content><![CDATA[<h1 id="题目：-每日温度-Medium"><a href="#题目：-每日温度-Medium" class="headerlink" title="题目：  每日温度   Medium"></a>题目： <a href="https://leetcode-cn.com/problems/daily-temperatures/" target="_blank" rel="noopener"> 每日温度</a>   Medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li>出栈入栈条件代码编写共同逻辑混乱</li>
+</ol>
+<h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3><ol>
+<li>栈外元素比较无论如何都需进栈</li>
+<li>不推荐使用stack，用deque实现栈结构【线程安全，同步操作会降低性能】</li>
+<li>涉及长度length可创建临时变量</li>
+</ol>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一：单调栈"><a href="#解决方案一：单调栈" class="headerlink" title="解决方案一：单调栈"></a>解决方案一：单调栈</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li><p>维护一个存储下标的单调栈，从栈底到栈顶的下标对应的温度列表中的温度依次递减。如果一个下标在单调栈里，则表示尚未找到下一次温度更高的下标。</p>
+</li>
+<li><p>向遍历温度列表。对于温度列表中的每个元素 T[i]，如果栈为空，则直接将 i 进栈，如果栈不为空，则比较栈顶元素 prevIndex 对应的温度 T[prevIndex] 和当前温度 T[i]，如果 T[i] &gt; T[prevIndex]，则将 prevIndex 移除，并将 prevIndex 对应的等待天数赋为 i - prevIndex，重复上述操作直到栈为空或者栈顶元素对应的温度小于等于当前温度，然后将 i 进栈。</p>
+</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] dailyTemperatures(<span class="keyword">int</span>[] T) &#123;</span><br><span class="line">        <span class="keyword">int</span> length = T.length;</span><br><span class="line">        <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[length];</span><br><span class="line">        Deque&lt;Integer&gt; stack = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> temperature = T[i];</span><br><span class="line">            <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; temperature &gt; T[stack.peek()]) &#123;</span><br><span class="line">                <span class="keyword">int</span> prevIndex = stack.pop();</span><br><span class="line">                ans[prevIndex] = i - prevIndex;</span><br><span class="line">            &#125;</span><br><span class="line">            stack.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li></li>
+</ul>
+<blockquote>
+<p>文件名：LEQS8</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>转盘问题之BFS解题框架</title>
+    <url>/2020/08/23/LEQS3/</url>
+    <content><![CDATA[<h1 id="题目：-转盘问题之BFS解题框架"><a href="#题目：-转盘问题之BFS解题框架" class="headerlink" title="题目： 转盘问题之BFS解题框架"></a>题目： 转盘问题之BFS解题框架</h1><h2 id="BFS解题框架"><a href="#BFS解题框架" class="headerlink" title="BFS解题框架"></a>BFS解题框架</h2><ul>
+<li>BFS本质<strong>就是在一幅「图」中找到从起点 <code>start</code> 到终点 <code>target</code> 的最近距离</strong></li>
+<li>与DFS区别是空间复杂度高</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 计算从起点 start 到终点 target 的最近距离</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BFS</span><span class="params">(Node start, Node target)</span> </span>&#123;</span><br><span class="line">    Queue&lt;Node&gt; q; <span class="comment">// 核心数据结构</span></span><br><span class="line">    Set&lt;Node&gt; visited; <span class="comment">// 避免走回头路</span></span><br><span class="line">    </span><br><span class="line">    q.offer(start); <span class="comment">// 将起点加入队列</span></span><br><span class="line">    visited.add(start);</span><br><span class="line">    <span class="keyword">int</span> step = <span class="number">0</span>; <span class="comment">// 记录扩散的步数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (q not empty) &#123;</span><br><span class="line">        <span class="keyword">int</span> sz = q.size();</span><br><span class="line">        <span class="comment">/* 将当前队列中的所有节点向四周扩散 */</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sz; i++) &#123;</span><br><span class="line">            Node cur = q.poll();</span><br><span class="line">            <span class="comment">/* 划重点：这里判断是否到达终点 */</span></span><br><span class="line">            <span class="keyword">if</span> (cur is target)</span><br><span class="line">                <span class="keyword">return</span> step;</span><br><span class="line">            <span class="comment">/* 将 cur 的相邻节点加入队列 */</span></span><br><span class="line">            <span class="keyword">for</span> (Node x : cur.adj())</span><br><span class="line">                <span class="keyword">if</span> (x not in visited) &#123;</span><br><span class="line">                    q.offer(x);</span><br><span class="line">                    visited.add(x);</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/* 划重点：更新步数在这里 */</span></span><br><span class="line">        step++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ol>
+<li>队列是BFS 的核心的数据结构；</li>
+<li>cur.adj() 泛指 cur 相邻的节点，比如说二维数组中，cur 上下左右四面的位置就是相邻节点；</li>
+<li>visited 的主要作用是防止走回头路，大部分时候都是必须的，但是像一 般的二叉树结构，没有子节点到父节点的指针，不会走回头路就不需要 visited。</li>
+</ol>
+<h3 id="解决方案一：BFS框架穷举解题"><a href="#解决方案一：BFS框架穷举解题" class="headerlink" title="解决方案一：BFS框架穷举解题"></a>解决方案一：BFS框架穷举解题</h3><h4 id="解题逻辑：BFS框架解题"><a href="#解题逻辑：BFS框架解题" class="headerlink" title="解题逻辑：BFS框架解题"></a><strong>解题逻辑</strong>：BFS框架解题</h4><ul>
+<li><p>计算出最少的转动次数</p>
+<p><strong>第一步，不管所有的限制条件，不管 <code>deadends</code> 和 <code>target</code> 的限制，穷举所有可能的密码组合</strong></p>
+<p>转一下锁总共8 种可能：</p>
+<p>比如说从 “0000” 开始，转一次，可以穷举出 “1000”, “9000”, “0100”, “0900”… 共 8 种密码。然后，再以这 8 种密码作为基础，对每个密码再转一下，穷举出所有可能…</p>
+<p>可以抽象成一幅图，每个节点有 8 个相邻的节点，求最短距离，典型的 BFS 。</p>
+</li>
+<li><p><strong>第二步</strong>加上限制条件、终止条件、避免走回头路:</p>
+<ol>
+<li>使用hashset记录死亡密码进行跳过</li>
+<li>添加找到target 就结束且返回波动次数</li>
+<li>使用hashset记录已经穷举的密码避免回头路</li>
+</ol>
+</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//向上拨动轮盘</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">plusOne</span><span class="params">(String s , <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] ch = s.toCharArray();</span><br><span class="line">        <span class="keyword">if</span>(ch[j] == <span class="string">'9'</span> ) ch[j] = <span class="string">'0'</span>;</span><br><span class="line">        <span class="keyword">else</span> ch[j]++;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(ch);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">//向下波动轮盘</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">minusOne</span><span class="params">(String s ,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] ch = s.toCharArray();</span><br><span class="line">        <span class="keyword">if</span>(ch[j] == <span class="string">'0'</span>) ch[j] = <span class="string">'9'</span>;</span><br><span class="line">        <span class="keyword">else</span> ch[j]--;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(ch);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">openLock</span><span class="params">(String[] deadends, String target)</span></span>&#123;</span><br><span class="line">        <span class="comment">//记录要跳过的死亡密码</span></span><br><span class="line">        Set&lt;String&gt; deads = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(String dead : deadends)</span><br><span class="line">            deads.add(dead);</span><br><span class="line">        <span class="comment">//记录已经穷举过的密码防止走回头路</span></span><br><span class="line">        Set&lt;String&gt; visited =  <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="comment">//建立队列，从起点开始进行广度优先搜索</span></span><br><span class="line">        Queue&lt;String&gt; q =<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> step = <span class="number">0</span>;</span><br><span class="line">        q.offer(<span class="string">"0000"</span>);</span><br><span class="line">        visited.add(<span class="string">"0000"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(!q.isEmpty())&#123;</span><br><span class="line">            <span class="keyword">int</span> sz = q.size();</span><br><span class="line">            <span class="comment">/* 将当前队列中的所有节点向周围扩散 */</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;sz;i++)&#123;</span><br><span class="line">                String cur = q.poll();</span><br><span class="line">                </span><br><span class="line">                 <span class="comment">/* 判断是否到达终点 */</span>   </span><br><span class="line">                <span class="keyword">if</span>(deads.contains(cur)) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span> (cur.equals(target)) <span class="keyword">return</span> step;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">/* 将一个节点的未遍历相邻节点加入队列 */</span></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; <span class="number">4</span>; j++)&#123;</span><br><span class="line">                    String up = plusOne(cur,j);</span><br><span class="line">                    <span class="keyword">if</span>(!visited.contains(up))&#123;</span><br><span class="line">                        q.offer(up);</span><br><span class="line">                        visited.add(up);</span><br><span class="line">                     &#125;</span><br><span class="line">                    String down =  minusOne(cur,j);</span><br><span class="line">                    <span class="keyword">if</span>(!visited.contains(down))&#123;</span><br><span class="line">                        q.offer(down);</span><br><span class="line">                        visited.add(down);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">           </span><br><span class="line">            &#125;</span><br><span class="line">            step++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><p>char 类型的运算</p>
+<p>Java中的“向上兼容”，即：不同数据类型的数据参与运算，数据类型要强制转换，转换的方向是：char-&gt;short-&gt;int-&gt;long-&gt;float-&gt;double。</p>
+<p>在<code>System.out.println(y+1);</code>这个语句中，y是char类型，1是int类型，所以把y强转成int，然后运算结果是99，输出也是int类型99。</p>
+</li>
+<li><p><a href="https://stackoverflow.com/questions/21317631/java-char-int-conversions" target="_blank" rel="noopener">不是final不能+，c++和c += 1等于c = (char)(c + 1);</a></p>
+</li>
+<li><p>字符串与字符数组相互<a href="https://blog.csdn.net/MrTreeson/article/details/83746412" target="_blank" rel="noopener">转化方法</a>。</p>
+<ol>
+<li><p>string.toCharArray()</p>
+</li>
+<li><p>new String(char) 直接当参数构造</p>
+<p>String.valueOf(char)方法构造</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="解决方案二：双向BFS"><a href="#解决方案二：双向BFS" class="headerlink" title="解决方案二：双向BFS"></a>解决方案二：双向BFS</h3><blockquote>
+<p>文件名：LEQS3</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>KMP算法</title>
     <url>/2020/08/07/LEAS4/</url>
     <content><![CDATA[<h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><h2 id="1-ASCII编码表"><a href="#1-ASCII编码表" class="headerlink" title="1.ASCII编码表"></a>1.<a href="https://www.jianshu.com/p/b4a24355c448" target="_blank" rel="noopener">ASCII编码表</a></h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><blockquote>
@@ -117,10 +837,21 @@
 </blockquote>
 <p>前128个字符编码英语为确定，后128字符由其他国家定义未定义</p>
 <p>强制类型转换遵循ASCII表 ,常用<code>&#39;a&#39; = 97,&#39;A&#39; = 65,0 = 48</code></p>
-<h1 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h1><h2 id="方法一：构造next数组"><a href="#方法一：构造next数组" class="headerlink" title="方法一：构造next数组"></a>方法一：<a href="https://leetcode-cn.com/leetbook/read/array-and-string/cpoo6/" target="_blank" rel="noopener">构造next数组</a></h2><h3 id="核心思想：构造next数组，在匹配不成功时减少回退数量"><a href="#核心思想：构造next数组，在匹配不成功时减少回退数量" class="headerlink" title="核心思想：构造next数组，在匹配不成功时减少回退数量"></a><strong>核心思想</strong>：构造next数组，在匹配不成功时减少回退数量</h3><h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>传统暴力依次匹配进行每一轮匹配时，总是会重复对 A 进行比较。也就是说，对于 S 中的每个字符，我们都需要从 T 第一个位置重新开始比较，并且 S 前面的 A 越多，浪费的时间也就越多。假设 S 的长度为 mmm，T 的长度为 nnn，理论上讲，最坏情况下迭代 m−n+1m - n + 1m−n+1 轮，每轮最多进行 n 次比对，一共比较了 (m−n+1)×n次，当 m&gt;&gt;n时，渐进时间复杂度为 <strong>O(mn)</strong></p>
-<p>KMP 复杂度可降到O(m+n)</p>
+<h1 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a><a href="https://www.bilibili.com/video/BV1jb411V78H?from=search&seid=10108032066910417231" target="_blank" rel="noopener">KMP算法</a></h1><h2 id="方法一：构造next数组"><a href="#方法一：构造next数组" class="headerlink" title="方法一：构造next数组"></a>方法一：<a href="https://www.bilibili.com/video/BV1Z7411R7eC?p=146" target="_blank" rel="noopener">构造next数组</a></h2><h3 id="核心思想：最长公共前后缀，构造next数组，"><a href="#核心思想：最长公共前后缀，构造next数组，" class="headerlink" title="核心思想：最长公共前后缀，构造next数组，"></a><strong>核心思想</strong>：最长公共前后缀，构造next数组，</h3><p>传统暴力依次匹配进行每一轮匹配时，总是会重复对 A 进行比较。也就是说，对于 S 中的每个字符，我们都需要从 T 第一个位置重新开始比较，并且 S 前面的 A 越多，浪费的时间也就越多。假设 S 的长度为 m，T 的长度为 n，理论上讲，最坏情况下迭代 m−n+1m - n + 1m−n+1 轮，每轮最多进行 n 次比对，一共比较了 (m−n+1)×n次，当 m&gt;n时，渐进时间复杂度为 <strong>O(mn)</strong></p>
+<p>KMP 复杂度可降到<strong>O(m+n)</strong></p>
 <h4 id="构建next数组"><a href="#构建next数组" class="headerlink" title="构建next数组"></a>构建next数组</h4><p><strong><code>P[i]</code> 对应的下标，为 <code>P[0...i + 1]</code> 的最长公共前缀后缀的长度</strong></p>
+<ul>
+<li><code>next[0]</code>处为-1 因为第0个字符对应的是长度为1的子串没有更小的字串了不可能产生匹配所以置为-1，不肯配上的值就置为-1，寻找最长子串。</li>
+<li>只需要根据模式串构建next数组即可</li>
+<li>构建next数组时，当前位置的数值可以参考前一位的数值</li>
+</ul>
+<img src="/images/LEAS4/image-20200820152013405.png" alt="image-20200820152013405" style="zoom: 67%;" />
+
 <img src="/images/LEAS4/8cd158c08b74130068b580d6d8830ecb700af1e84897ac07a6c533b9c6c0c6a6-8.png" alt="8.png" style="zoom:50%;" />
+
+<h3 id="完整代码一（next数组除第一位外无可回溯目标时置0）"><a href="#完整代码一（next数组除第一位外无可回溯目标时置0）" class="headerlink" title="完整代码一（next数组除第一位外无可回溯目标时置0）"></a>完整代码一（next数组除第一位外无可回溯目标时置0）</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">     <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对主串s和模式串t进行KMP模式匹配</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> haystack 主串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> needle 模式串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 若匹配成功，返回needle在haystack中的位置（第一个相同字符对应的位置），若匹配失败，返回-1</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(needle.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;	<span class="comment">//needle 为空 返回0</span></span><br><span class="line">        </span><br><span class="line">       	<span class="keyword">char</span>[] s_arr = haystack.toCharArray();	<span class="comment">//转换为好操作的字符数组</span></span><br><span class="line">        <span class="keyword">char</span>[] t_arr = needle.toCharArray();</span><br><span class="line">        <span class="keyword">int</span>[] next = getNextArray(t_arr);		<span class="comment">//创建next数组</span></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;	<span class="comment">// i 为 主串指针，j 为 模式串指针</span></span><br><span class="line">        <span class="keyword">while</span> (i&lt;s_arr.length &amp;&amp; j&lt;t_arr.length)&#123;</span><br><span class="line">            <span class="keyword">if</span>(j == -<span class="number">1</span> || s_arr[i]==t_arr[j])&#123;		<span class="comment">//若匹配成功，或者模式串next数组回溯到无匹配子串则主串前进一位且模式串从头匹配</span></span><br><span class="line">                i++;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                j = next[j]; <span class="comment">//模式串指针回溯到最长公共位再进行匹配</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j == t_arr.length)	</span><br><span class="line">            <span class="keyword">return</span> i-j;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 求出一个字符数组的next数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> t 字符数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> next数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] getNextArray(<span class="keyword">char</span>[] t) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] next = <span class="keyword">new</span> <span class="keyword">int</span>[t.length];</span><br><span class="line">        next[<span class="number">0</span>] = -<span class="number">1</span>;		<span class="comment">// 没有更小的字串了不可能产生匹配所以置为-1</span></span><br><span class="line">        <span class="keyword">int</span> k;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; t.length; j++) &#123;</span><br><span class="line">            k=next[j-<span class="number">1</span>];	<span class="comment">//k 记录前一位的next值 方便下一位next值的确定</span></span><br><span class="line">            <span class="keyword">while</span> (k!=-<span class="number">1</span>) &#123;	<span class="comment">// 一直往前找匹配的最长子串，直到上一位的next值为-1表识没有公共前后缀了为止</span></span><br><span class="line">                <span class="keyword">if</span> (t[j - <span class="number">1</span>] == t[k]) &#123;  <span class="comment">// 找到匹配的</span></span><br><span class="line">                    next[j] = k + <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    k = next[k];			<span class="comment">//往前找</span></span><br><span class="line">                &#125;</span><br><span class="line">                next[j] = <span class="number">0</span>;   <span class="comment">//没有公共子串，则置为0，匹配时从模式串开头匹配</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="完整代码二（next数组无可回溯目标都置-1）（mooc）"><a href="#完整代码二（next数组无可回溯目标都置-1）（mooc）" class="headerlink" title="完整代码二（next数组无可回溯目标都置-1）（mooc）"></a>完整代码二（next数组无可回溯目标都置-1）（<a href="https://www.bilibili.com/video/BV1Z7411R7eC?t=500&p=147" target="_blank" rel="noopener">mooc</a>）</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(needle.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">char</span>[] s_arr = haystack.toCharArray();</span><br><span class="line">        <span class="keyword">char</span>[] t_arr = needle.toCharArray();</span><br><span class="line">        <span class="keyword">int</span>[] next = getNextArray(t_arr);</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i&lt;s_arr.length &amp;&amp; j&lt;t_arr.length)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s_arr[i] == t_arr[j])&#123;</span><br><span class="line">                i++;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>( j &gt; <span class="number">0</span> ) j = next[j-<span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> i++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(j == t_arr.length)</span><br><span class="line">            <span class="keyword">return</span> i-j;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] getNextArray(<span class="keyword">char</span>[] t) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] next = <span class="keyword">new</span> <span class="keyword">int</span>[t.length];</span><br><span class="line">        next[<span class="number">0</span>] = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; t.length; j++) &#123;</span><br><span class="line">            i = next[j-<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">while</span>(i&gt;=<span class="number">0</span> &amp;&amp; t[i+<span class="number">1</span>] != t[j])</span><br><span class="line">                i = next[i];</span><br><span class="line">            <span class="keyword">if</span>(t[i+<span class="number">1</span>] == t[j])</span><br><span class="line">                next[j] = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> next[j] = -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <h2 id="方法二：构建影子变量，状态转换"><a href="#方法二：构建影子变量，状态转换" class="headerlink" title="方法二：构建影子变量，状态转换"></a>方法二：构建影子变量，状态转换</h2><h3 id="核心思想：确定状态转换行为"><a href="#核心思想：确定状态转换行为" class="headerlink" title="核心思想：确定状态转换行为"></a>核心思想：确定状态转换行为</h3><p>得明确两个变量，一个是当前的<strong>匹配状态</strong>，另一个是<strong>遇到的字符</strong>；</p>
 <p>确定了这两个变量后，就可以知道这个情况下应该转移到哪个状态。</p>
@@ -130,10 +861,27 @@
 <p>在 <code>pat</code> 匹配 <code>txt</code> 的过程中，只要明确了「当前处在哪个状态」和「遇到的字符是什么」这两个问题，就可以确定应该转移到哪个状态（推进或回退）。</p>
 <img src="/images/LEAS4/1.gif" style="zoom:50%;" />
 
-<p>完整代码</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(needle.equals(<span class="string">""</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(haystack.equals(<span class="string">""</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 构造KMP中的dp矩阵</span></span><br><span class="line">        <span class="keyword">int</span> m = needle.length();</span><br><span class="line">        <span class="comment">// 各个状态(行)遇到下一个字符(列)跳转到哪个状态</span></span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m][<span class="number">256</span>]; </span><br><span class="line">        <span class="comment">// 影子状态</span></span><br><span class="line">        <span class="keyword">int</span> X = <span class="number">0</span>;  </span><br><span class="line">        dp[<span class="number">0</span>][needle.charAt(<span class="number">0</span>)] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">256</span>; j++) &#123;</span><br><span class="line">                <span class="comment">//假设下个字符不匹配，此时要回去看影子状态，从而得知跳转到哪个状态</span></span><br><span class="line">                dp[i][j] = dp[X][j];  </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 只有pat上i的字符匹配，跳转到下个状态</span></span><br><span class="line">            dp[i][needle.charAt(i)] = i + <span class="number">1</span>;  </span><br><span class="line">            <span class="comment">// 更新影子状态</span></span><br><span class="line">            X = dp[X][needle.charAt(i)];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 构造dp完成后，开始search</span></span><br><span class="line">        <span class="comment">// 初始状态为0</span></span><br><span class="line">        <span class="keyword">int</span> s = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; haystack.length(); i++) &#123;</span><br><span class="line">            s = dp[s][haystack.charAt(i)];</span><br><span class="line">            <span class="keyword">if</span> (s == m) &#123;</span><br><span class="line">                <span class="keyword">return</span> i - m + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 匹配失败，返回-1</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(needle.equals(<span class="string">""</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(haystack.equals(<span class="string">""</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 构造KMP中的dp矩阵</span></span><br><span class="line">        <span class="keyword">int</span> m = needle.length();</span><br><span class="line">        <span class="comment">// 各个状态(行)遇到下一个字符(列)跳转到哪个状态</span></span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m][<span class="number">256</span>]; </span><br><span class="line">        <span class="comment">// 影子状态</span></span><br><span class="line">        <span class="keyword">int</span> X = <span class="number">0</span>;  </span><br><span class="line">        dp[<span class="number">0</span>][needle.charAt(<span class="number">0</span>)] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">256</span>; j++) &#123;</span><br><span class="line">                <span class="comment">//假设下个字符不匹配，此时要回去看影子状态，从而得知跳转到哪个状态</span></span><br><span class="line">                dp[i][j] = dp[X][j];  </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 只有pat上i的字符匹配，跳转到下个状态</span></span><br><span class="line">            dp[i][needle.charAt(i)] = i + <span class="number">1</span>;  </span><br><span class="line">            <span class="comment">// 更新影子状态</span></span><br><span class="line">            X = dp[X][needle.charAt(i)];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 构造dp完成后，开始search</span></span><br><span class="line">        <span class="comment">// 初始状态为0</span></span><br><span class="line">        <span class="keyword">int</span> s = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; haystack.length(); i++) &#123;</span><br><span class="line">            s = dp[s][haystack.charAt(i)];</span><br><span class="line">            <span class="keyword">if</span> (s == m) &#123;</span><br><span class="line">                <span class="keyword">return</span> i - m + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 匹配失败，返回-1</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
 
-<h1 id="双指针解法"><a href="#双指针解法" class="headerlink" title="双指针解法"></a>双指针解法</h1>]]></content>
+<h1 id="双指针解法"><a href="#双指针解法" class="headerlink" title="双指针解法"></a>双指针解法</h1><h3 id="完整代码-1"><a href="#完整代码-1" class="headerlink" title="完整代码"></a>完整代码</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> L = needle.length(), n = haystack.length();</span><br><span class="line">    <span class="keyword">if</span> (L == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> pn = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (pn &lt; n - L + <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// find the position of the first needle character</span></span><br><span class="line">      <span class="comment">// in the haystack string</span></span><br><span class="line">      <span class="keyword">while</span> (pn &lt; n - L + <span class="number">1</span> &amp;&amp; haystack.charAt(pn) != needle.charAt(<span class="number">0</span>)) ++pn;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// compute the max match string</span></span><br><span class="line">      <span class="keyword">int</span> currLen = <span class="number">0</span>, pL = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">while</span> (pL &lt; L &amp;&amp; pn &lt; n &amp;&amp; haystack.charAt(pn) == needle.charAt(pL)) &#123;</span><br><span class="line">        ++pn;</span><br><span class="line">        ++pL;</span><br><span class="line">        ++currLen;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// if the whole needle string is found,</span></span><br><span class="line">      <span class="comment">// return its start position</span></span><br><span class="line">      <span class="keyword">if</span> (currLen == L) <span class="keyword">return</span> pn - L;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// otherwise, backtrack</span></span><br><span class="line">      pn = pn - currLen + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h1 id="子串逐一比较解法"><a href="#子串逐一比较解法" class="headerlink" title="子串逐一比较解法"></a>子串逐一比较解法</h1><h3 id="完整代码-2"><a href="#完整代码-2" class="headerlink" title="完整代码"></a>完整代码</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> L = needle.length(), n = haystack.length();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> start = <span class="number">0</span>; start &lt; n - L + <span class="number">1</span>; ++start) &#123;</span><br><span class="line">      <span class="keyword">if</span> (haystack.substring(start, start + L).equals(needle)) &#123;</span><br><span class="line">        <span class="keyword">return</span> start;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h3><ol>
+<li>String substring(a , b) 不包含b</li>
+<li>boolean equals(a , b)</li>
+</ol>
+<h1 id="Sunday解法（比kmp简单）"><a href="#Sunday解法（比kmp简单）" class="headerlink" title="Sunday解法（比kmp简单）"></a><a href="https://blog.csdn.net/q547550831/article/details/51860017" target="_blank" rel="noopener">Sunday解法（比kmp简单）</a></h1><p>该算法的思路相较于KMP十分容易理解:</p>
+<ol>
+<li>构建一张偏移表，该表主要记录了模式串中的每一个字符，以及每个字符在模式串中出现的最右位置到尾部的距离+1，未在模式串中出现的字符对应的偏移距离都是”模式串长度+1”。</li>
+<li>有了偏移表之后开始比较，用idx作为当前查询索引，每次截取目标字符串的[idx，idx+模式串长度]子串和模式串比较，如果相等则返回idx。</li>
+<li>如果不相等，查看子串在目标串中的后一个字符c是否存在于偏移表中，如果存在则idx=idx+偏移表[c]；如果不存在idx=idx+模式串长度。循环直至idx+模式串长度&gt;目标字符串长度。</li>
+</ol>
+<h3 id="完整代码-3"><a href="#完整代码-3" class="headerlink" title="完整代码"></a>完整代码</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack,String needle)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (needle.equals(<span class="string">""</span>))<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> hLen=haystack.length(),nLen=needle.length();</span><br><span class="line">        <span class="keyword">if</span> (hLen&lt;nLen)<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"><span class="comment">//        创建偏移表</span></span><br><span class="line">        Map&lt;Character,Integer&gt; offsetMap=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nLen;i++)&#123;</span><br><span class="line">            offsetMap.put(needle.charAt(i),nLen-i);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        开始查找模式串</span></span><br><span class="line">        <span class="keyword">int</span> idx=<span class="number">0</span>;</span><br><span class="line"><span class="comment">//        循环直至idx+模式串长度&gt;目标字符串长度</span></span><br><span class="line">        <span class="keyword">while</span> (idx+nLen&lt;=hLen)&#123;</span><br><span class="line"><span class="comment">//            截取目标字符串</span></span><br><span class="line">            String cutHay = haystack.substring(idx, idx + nLen);</span><br><span class="line"><span class="comment">//            如果子串和模式串相等，则返回idx</span></span><br><span class="line">            <span class="keyword">if</span> (cutHay.equals(needle))&#123;</span><br><span class="line">                <span class="keyword">return</span> idx;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;==【 </span><br><span class="line"><span class="comment">//                边界处理</span></span><br><span class="line">                <span class="keyword">if</span>(idx+nLen&gt;=hLen)<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"><span class="comment">//                如果子串在目标串中的后一个字符c是否存在于偏移表中</span></span><br><span class="line">                <span class="keyword">if</span> (offsetMap.containsKey(haystack.charAt(idx+nLen)))&#123;</span><br><span class="line">                    idx+=offsetMap.get(haystack.charAt(idx+nLen));</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    idx+=nLen;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
@@ -250,39 +998,6 @@
 </ul>
 <blockquote>
 <p>文件名：LEAD8</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreA&amp;S</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>力扣刷题总结文章模板</title>
-    <url>/2020/06/11/LTemp/</url>
-    <content><![CDATA[<h1 id="题目：-名字-Easy-Medium-Hard"><a href="#题目：-名字-Easy-Medium-Hard" class="headerlink" title="题目： 名字   Easy/Medium/Hard"></a>题目： 名字   Easy/Medium/Hard</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
-<li><h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3></li>
-<li></li>
-</ol>
-<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
-<li></li>
-</ul>
-<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
-<li><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4></li>
-</ul>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-
-
-
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
-<li></li>
-</ul>
-<blockquote>
-<p>文件名：L</p>
 </blockquote>
 ]]></content>
       <categories>
@@ -968,15 +1683,6 @@
       <tags>
         <tag>AlgorithmBasics</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>IDEA快捷键</title>
-    <url>/2020/07/03/IDEASCK/</url>
-    <content><![CDATA[<h1 id="IntelliJ-快捷键"><a href="#IntelliJ-快捷键" class="headerlink" title="IntelliJ 快捷键"></a>IntelliJ 快捷键</h1><p><code>System.out.println（）</code> —— <strong>sout + Enter</strong></p>
-]]></content>
-      <categories>
-        <category>快捷键</category>
-      </categories>
   </entry>
   <entry>
     <title>JavaStduyRoad</title>
