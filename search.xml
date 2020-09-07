@@ -58,6 +58,61 @@
       </tags>
   </entry>
   <entry>
+    <title>队列和栈篇总结</title>
+    <url>/2020/08/07/LEQS1/</url>
+    <content><![CDATA[<h1 id="队列和栈篇总结"><a href="#队列和栈篇总结" class="headerlink" title="队列和栈篇总结"></a>队列和栈篇总结</h1><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>地址：<a href="https://leetcode-cn.com/leetbook/read/queue-stack/xkrhpg/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/queue-stack/xkrhpg/</a></p>
+<ul>
+<li>队列：先进先出</li>
+<li>栈：后入先出</li>
+</ul>
+<p>包含内容：</p>
+<ol>
+<li>FIFO 和 LIFO 处理顺序的原理；</li>
+<li><strong>实现</strong>队列和栈数据结构；</li>
+<li>熟悉<strong>内置</strong>的队列和栈结构；</li>
+<li>解决基本的<strong>队列相关问题</strong>，尤其是 <strong>BFS</strong>；</li>
+<li>解决基本的<strong>栈相关问题</strong>；</li>
+<li>理解在使用 <strong>DFS</strong> 和其他 <strong>递归 算法</strong>来解决问题时，系统<strong>栈</strong>是如何发挥作用的。</li>
+</ol>
+<h2 id="队列：先入先出数据结构"><a href="#队列：先入先出数据结构" class="headerlink" title="队列：先入先出数据结构"></a>队列：先入先出数据结构</h2><ol>
+<li><a href="https://jq20.gitee.io/2020/08/11/LEQS2/" target="_blank" rel="noopener">队列构造与内置函数</a>：<strong>Queue，Deque的常见用法</strong>,<strong>数组构建循环队列</strong></li>
+</ol>
+<h2 id="队列和广度优先搜索"><a href="#队列和广度优先搜索" class="headerlink" title="队列和广度优先搜索"></a>队列和广度优先搜索</h2><ol>
+<li><a href="https://jq20.gitee.io/2020/08/23/LEQS3/" target="_blank" rel="noopener">转盘问题</a>之<strong>BFS解题框架</strong> , 双向BFS【坑】</li>
+<li><a href="https://jq20.gitee.io/2020/08/23/LEQS5/" target="_blank" rel="noopener">岛屿数量</a>：<strong>BFS，DFS，并查集</strong>【坑】</li>
+<li><a href="https://jq20.gitee.io/2020/08/11/LEQS4/" target="_blank" rel="noopener">完全平方数</a>：<strong>BFS+队列</strong></li>
+</ol>
+<h2 id="栈：后入先出的数据结构"><a href="#栈：后入先出的数据结构" class="headerlink" title="栈：后入先出的数据结构"></a>栈：后入先出的数据结构</h2><ol>
+<li><a href="https://jq20.gitee.io/2020/08/26/LEQS6/" target="_blank" rel="noopener">最小栈</a>：<strong>java实现栈及常见用法</strong>，辅助栈，栈存差值</li>
+<li><a href="https://jq20.gitee.io/2020/08/11/LEQS7/" target="_blank" rel="noopener">有效括号</a>：<strong>HashMap键值匹配用法</strong></li>
+<li><a href="https://jq20.gitee.io/2020/08/30/LEQS8/" target="_blank" rel="noopener">每日温度</a>：单调栈</li>
+<li><a href="https://jq20.gitee.io/2020/08/30/LEQS9/" target="_blank" rel="noopener">逆波兰表达式求值</a>：栈实现，数组实现栈</li>
+</ol>
+<h2 id="栈和深度优先搜索"><a href="#栈和深度优先搜索" class="headerlink" title="栈和深度优先搜索"></a>栈和深度优先搜索</h2><ol>
+<li><a href="https://jq20.gitee.io/2020/08/31/LEQS10/" target="_blank" rel="noopener">克隆图</a>：<strong>DFS，BFS</strong></li>
+<li><a href="https://jq20.gitee.io/2020/09/02/LEQS11/" target="_blank" rel="noopener">目标和</a>：<strong>递归栈，动态规划</strong>【坑】</li>
+<li><a href="https://jq20.gitee.io/2020/09/02/LEQS12/" target="_blank" rel="noopener">二叉树的中序遍历</a>：栈</li>
+</ol>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ol>
+<li><a href="https://jq20.gitee.io/2020/09/05/LEQS13/" target="_blank" rel="noopener">字符串解码</a>：栈，递归栈【坑】，<code>API String，Character，StringBuffer，LinkedList</code></li>
+<li><a href="https://jq20.gitee.io/2020/09/05/LEQS14/" target="_blank" rel="noopener">图像渲染</a>：DFS，BFS【坑】</li>
+<li><a href="https://jq20.gitee.io/2020/09/06/LEQS15/" target="_blank" rel="noopener">矩阵</a>：BFS</li>
+<li><a href="https://jq20.gitee.io/2020/09/06/LEQS16/" target="_blank" rel="noopener">钥匙和房间</a>：BFS</li>
+</ol>
+<blockquote>
+<p>文件名：LEQS1</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>最长公共前缀</title>
     <url>/2020/07/03/LEAS1/</url>
     <content><![CDATA[<h1 id="题目：-最长公共前缀-Easy"><a href="#题目：-最长公共前缀-Easy" class="headerlink" title="题目： 最长公共前缀  Easy"></a>题目： <a href="https://leetcode-cn.com/problems/longest-common-prefix/" target="_blank" rel="noopener">最长公共前缀</a>  Easy</h1><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
@@ -108,59 +163,6 @@
         <tag>LeetCode</tag>
         <tag>LeetCodeExplore</tag>
         <tag>LeetcodeExploreA&amp;S</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>队列和栈篇总结</title>
-    <url>/2020/08/07/LEQS1/</url>
-    <content><![CDATA[<h1 id="队列和栈篇总结"><a href="#队列和栈篇总结" class="headerlink" title="队列和栈篇总结"></a>队列和栈篇总结</h1><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>地址：<a href="https://leetcode-cn.com/leetbook/read/queue-stack/xkrhpg/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/queue-stack/xkrhpg/</a></p>
-<ul>
-<li>队列：先进先出</li>
-<li>栈：后入先出</li>
-</ul>
-<p>包含内容：</p>
-<ol>
-<li>FIFO 和 LIFO 处理顺序的原理；</li>
-<li><strong>实现</strong>队列和栈数据结构；</li>
-<li>熟悉<strong>内置</strong>的队列和栈结构；</li>
-<li>解决基本的<strong>队列相关问题</strong>，尤其是 <strong>BFS</strong>；</li>
-<li>解决基本的<strong>栈相关问题</strong>；</li>
-<li>理解在使用 <strong>DFS</strong> 和其他 <strong>递归 算法</strong>来解决问题时，系统<strong>栈</strong>是如何发挥作用的。</li>
-</ol>
-<h2 id="队列：先入先出数据结构"><a href="#队列：先入先出数据结构" class="headerlink" title="队列：先入先出数据结构"></a>队列：先入先出数据结构</h2><ol>
-<li>队列构造与内置函数：<strong>Queue，Deque的常见用法</strong>,<strong>数组构建循环队列</strong></li>
-</ol>
-<h2 id="队列和广度优先搜索"><a href="#队列和广度优先搜索" class="headerlink" title="队列和广度优先搜索"></a>队列和广度优先搜索</h2><ol>
-<li>转盘问题之<strong>BFS解题框架</strong> , 双向BFS【坑】</li>
-<li>岛屿数量：<strong>BFS，DFS，并查集</strong>【坑】</li>
-<li>完全平方数：<strong>BFS+队列</strong></li>
-</ol>
-<h2 id="栈：后入先出的数据结构"><a href="#栈：后入先出的数据结构" class="headerlink" title="栈：后入先出的数据结构"></a>栈：后入先出的数据结构</h2><ol>
-<li>最小栈：<strong>java实现栈及常见用法</strong>，辅助栈，栈存差值</li>
-<li>有效括号：<strong>HashMap键值匹配用法</strong></li>
-<li>每日温度：单调栈</li>
-<li>逆波兰表达式求值：栈实现，数组实现栈</li>
-</ol>
-<h2 id="栈和深度优先搜索"><a href="#栈和深度优先搜索" class="headerlink" title="栈和深度优先搜索"></a>栈和深度优先搜索</h2><ol>
-<li>克隆图：<strong>DFS，BFS</strong></li>
-<li>目标和：<strong>递归栈，动态规划</strong>【坑】</li>
-<li>二叉树的中序遍历：栈</li>
-<li>字符串解码：栈，递归栈【坑】，<code>API String，Character，StringBuffer，LinkedList</code></li>
-<li>图像渲染：DFS，BFS【坑】BFS</li>
-<li>钥匙和房间：BFS</li>
-<li></li>
-</ol>
-<blockquote>
-<p>文件名：LEQS1</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreQ&amp;S</tag>
       </tags>
   </entry>
   <entry>
