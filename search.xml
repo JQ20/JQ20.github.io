@@ -21,7 +21,7 @@
 </ul>
 <h2 id="双指针技巧"><a href="#双指针技巧" class="headerlink" title="双指针技巧"></a>双指针技巧</h2><ul>
 <li><a href="https://jq20.gitee.io/2020/09/09/LEL4/" target="_blank" rel="noopener">环形链表</a> <strong>HashSet 快慢双指针</strong></li>
-<li><a href="https://jq20.gitee.io/2020/09/11/LEL10/" target="_blank" rel="noopener">相交链表</a>  <strong>HashSet 双指针 暴力</strong></li>
+<li><a href="https://jq20.gitee.io/2020/09/09/LEL4/" target="_blank" rel="noopener">相交链表</a>  <strong>HashSet 双指针 暴力</strong></li>
 <li><a href="https://jq20.gitee.io/2020/09/09/LEL5/" target="_blank" rel="noopener">删除链表的倒数第N个节点</a> <strong>双指针</strong></li>
 </ul>
 <h2 id="经典问题"><a href="#经典问题" class="headerlink" title="经典问题"></a>经典问题</h2><ul>
