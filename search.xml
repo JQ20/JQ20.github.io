@@ -172,6 +172,756 @@
       </tags>
   </entry>
   <entry>
+    <title>二叉树总结</title>
+    <url>/2020/09/27/LEBT10/</url>
+    <content><![CDATA[<h1 id="二叉树总结"><a href="#二叉树总结" class="headerlink" title="二叉树总结"></a>二叉树总结</h1><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>LeetCode地址：<a href="https://leetcode-cn.com/leetbook/read/data-structure-binary-tree/x63shc/" target="_blank" rel="noopener">https://leetcode-cn.com/leetbook/read/data-structure-binary-tree/x63shc/</a></p>
+<p>树 是一种经常用到的数据结构，用来模拟具有树状结构性质的数据集合。</p>
+<p>树里的每一个节点有一个值和一个包含所有子节点的列表。从图的观点来看，树也可视为一个拥有N 个节点和N-1 条边的一个有向无环图。</p>
+<p>二叉树是一种更为典型的树状结构。如它名字所描述的那样，二叉树是每个节点最多有两个子树的树结构，通常子树被称作“左子树”和“右子树”。</p>
+<p>本章包含：</p>
+<ul>
+<li>掌握树和二叉树的概念</li>
+<li>熟悉不同的<strong>遍历</strong>方法</li>
+<li>运用<strong>递归</strong>解决二叉树相关题目</li>
+</ul>
+<h3 id="树的遍历"><a href="#树的遍历" class="headerlink" title="树的遍历"></a>树的遍历</h3><p>通过递归和迭代方法采用系统栈或者队列结构可对二叉树进行遍历。</p>
+<p>二叉树遍历 <strong>递归框架、迭代框架</strong></p>
+<ul>
+<li>前序遍历 </li>
+<li>中序遍历</li>
+<li>后序遍历</li>
+<li>层序遍历 <strong>队列，一层结点同时出栈</strong></li>
+</ul>
+<h2 id="运用递归解决问题"><a href="#运用递归解决问题" class="headerlink" title="运用递归解决问题"></a>运用递归解决问题</h2><ul>
+<li>自顶向下和自底向上的递归方案 <strong>把握操作结点时机与返回值操作</strong></li>
+<li>二叉树的最大深度  <strong>递归迭代比较左右子树最大值</strong></li>
+<li>对称二叉树 <strong>递归 双指针</strong></li>
+<li>路径总和 <strong>双队列 递归</strong></li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><p>从中序与后序/前序与中序遍历序列构造二叉树  <strong>递归建树 掌握遍历中根节点与左右子树关系</strong></p>
+</li>
+<li><p>填充每个节点的下一个右侧节点指针 <strong>层次遍历</strong></p>
+</li>
+<li><p>二叉树的最近公共祖先  <strong>递归比较情况</strong></p>
+</li>
+<li><p>二叉树的序列化与反序列化 <strong>DFS递归，掌握字符串特性与遍历特性</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>文件名：LBT10</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreBT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从中序与后序遍历序列构造二叉树</title>
+    <url>/2020/09/24/LEBT5/</url>
+    <content><![CDATA[<h1 id="题目：-从中序与后序遍历序列构造二叉树-Medium"><a href="#题目：-从中序与后序遍历序列构造二叉树-Medium" class="headerlink" title="题目： 从中序与后序遍历序列构造二叉树   Medium"></a>题目： <a href="https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/" target="_blank" rel="noopener">从中序与后序遍历序列构造二叉树</a>   Medium</h1><h3 id="解决方案一-：递归建树"><a href="#解决方案一-：递归建树" class="headerlink" title="解决方案一 ：递归建树"></a>解决方案一 ：递归建树</h3><h4 id="解题逻辑：根据中序和后序遍历结果还原二叉树"><a href="#解题逻辑：根据中序和后序遍历结果还原二叉树" class="headerlink" title="解题逻辑：根据中序和后序遍历结果还原二叉树"></a><strong>解题逻辑</strong>：根据中序和后序遍历结果还原二叉树</h4><ol>
+<li><h4 id="中序遍历和后续遍历的特性"><a href="#中序遍历和后续遍历的特性" class="headerlink" title="中序遍历和后续遍历的特性"></a>中序遍历和后续遍历的特性</h4><ol>
+<li><p>在后序遍历序列中,最后一个元素为树的<strong>根节点</strong></p>
+</li>
+<li><p>在中序遍历序列中,根节点的左边为<strong>左子树</strong>，根节点的右边为<strong>右子树</strong></p>
+<p><img src="/images/LEBT5/3293e7ccb41baaf52adca7e13cc0f258e1c83a4c588f9b6cb3e86410a540f298-%E6%A0%91%E7%9A%84%E7%89%B9%E6%80%A7.png" alt="树的特性.png"></p>
+</li>
+</ol>
+</li>
+<li><h4 id="树的还原过程描述"><a href="#树的还原过程描述" class="headerlink" title="树的还原过程描述"></a>树的还原过程描述</h4><ol>
+<li><p>首先在后序遍历序列中找到<strong>根节点</strong>(最后一个元素)<br>根据根节点在中序遍历序列中找到<strong>根节点的位置</strong><br>根据根节点的位置将中序遍历序列分为<strong>左子树</strong>和<strong>右子树</strong><br>根据根节点的位置确定左子树和右子树在中序数组和后续数组中的<strong>左右边界位置</strong><br>递归构造左子树和右子树<br>返回根节点结束</p>
+<p><img src="/images/LEBT5/image-20200924161625705.png" alt="image-20200924161625705"></p>
+</li>
+<li><p>​    <strong>核心</strong>：找到根节点，确定左右子树，确定根节点的左右孩子，确定边界，递归左右子树。【通过中序遍历确定后序遍历中左右子树的分界点从而能确定找到下个递归的左右根节点，即当前根节点的左右结点】</p>
+</li>
+<li><p><strong>HashMap</strong>  需要一个哈希表来保存中序遍历序列中,元素和索引的位置关系.因为从后序序列中拿到根节点后，要在中序序列中查找<strong>对应的位置</strong>,从而将数组分为*左子树和右子树。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    HashMap&lt;Integer,Integer&gt; memo = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">int</span>[] post;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildTree</span><span class="params">(<span class="keyword">int</span>[] inorder, <span class="keyword">int</span>[] postorder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; inorder.length; i++) memo.put(inorder[i], i);</span><br><span class="line">        post = postorder;</span><br><span class="line">        TreeNode root = buildTree(<span class="number">0</span>, inorder.length - <span class="number">1</span>, <span class="number">0</span>, post.length - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildTree</span><span class="params">(<span class="keyword">int</span> is, <span class="keyword">int</span> ie, <span class="keyword">int</span> ps, <span class="keyword">int</span> pe)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ie &lt; is || pe &lt; ps) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">		<span class="comment">//核心计算后序遍历中左子树的边界，</span></span><br><span class="line">        <span class="comment">//已知中序遍历左子树的ri位置得左子树长度ri-is</span></span><br><span class="line">        <span class="comment">//得中序遍历右子树的起始位置ps+ri-is</span></span><br><span class="line">        <span class="comment">//则中序遍历左子树的终点位置为ps+ri-is-1</span></span><br><span class="line">        <span class="keyword">int</span> root = post[pe];</span><br><span class="line">        <span class="keyword">int</span> ri = memo.get(root);</span><br><span class="line"></span><br><span class="line">        TreeNode node = <span class="keyword">new</span> TreeNode(root);</span><br><span class="line">        node.left = buildTree(is, ri - <span class="number">1</span>, ps, ps + ri - is - <span class="number">1</span>);</span><br><span class="line">        node.right = buildTree(ri + <span class="number">1</span>, ie, ps + ri - is, pe - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="同类题：从前序与中序遍历序列构造二叉树-Medium"><a href="#同类题：从前序与中序遍历序列构造二叉树-Medium" class="headerlink" title="同类题：从前序与中序遍历序列构造二叉树  Medium"></a>同类题：<a href="https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/" target="_blank" rel="noopener">从前序与中序遍历序列构造二叉树 </a> Medium</h1><h2 id="Tips-必须有中序参与才能建立唯一二叉树"><a href="#Tips-必须有中序参与才能建立唯一二叉树" class="headerlink" title="Tips: 必须有中序参与才能建立唯一二叉树"></a>Tips: 必须有中序参与才能建立唯一二叉树</h2><p>原因：只有存在中序才能确定左右子树</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="comment">//换汤不换药</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    HashMap&lt;Integer,Integer&gt; mem = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">int</span>[] pre;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildTree</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;preorder.length;i++) mem.put(inorder[i],i);</span><br><span class="line">        pre = preorder;</span><br><span class="line">        <span class="keyword">return</span> buildTree(<span class="number">0</span>,inorder.length-<span class="number">1</span>,<span class="number">0</span>,pre.length-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildTree</span><span class="params">(<span class="keyword">int</span> is ,<span class="keyword">int</span> ie,<span class="keyword">int</span> ps,<span class="keyword">int</span> pe)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ie&lt;is||pe&lt;ps) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        TreeNode node = <span class="keyword">new</span> TreeNode(pre[ps]);</span><br><span class="line">        <span class="keyword">int</span> root = mem.get(pre[ps]);</span><br><span class="line">        node.left = buildTree(is,root-<span class="number">1</span>,ps+<span class="number">1</span>,ps+root-is);</span><br><span class="line">        node.right = buildTree(root+<span class="number">1</span>,ie,ps+root-is+<span class="number">1</span>,pe);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<blockquote>
+<p>文件名：LBT5</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreBT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Model</title>
+    <url>/2020/09/14/LEBT11/</url>
+    <content><![CDATA[<h1 id="题目：-名字-Easy-Medium-Hard"><a href="#题目：-名字-Easy-Medium-Hard" class="headerlink" title="题目： 名字   Easy/Medium/Hard"></a>题目： 名字   Easy/Medium/Hard</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li><h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3></li>
+<li></li>
+</ol>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li></li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
+<li><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4></li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3></li>
+</ul>
+<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h3><blockquote>
+<p>文件名：LBT</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreBT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二叉树的序列化与反序列化</title>
+    <url>/2020/09/27/LEBT9/</url>
+    <content><![CDATA[<h1 id="题目：-二叉树的序列化与反序列化-Hard"><a href="#题目：-二叉树的序列化与反序列化-Hard" class="headerlink" title="题目： 二叉树的序列化与反序列化   Hard"></a>题目： <a href="https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/" target="_blank" rel="noopener">二叉树的序列化与反序列化</a>   Hard</h1><h3 id="解决方案一-DFS-递归"><a href="#解决方案一-DFS-递归" class="headerlink" title="解决方案一: DFS 递归"></a>解决方案一: DFS 递归</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><img src="/images/LEBT9/image-20200927144739272.png" alt="image-20200927144739272" style="zoom: 67%;" />
+
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><ul>
+<li><p>序列化部分：遇到null结点 则添加“NONE”字符串代表</p>
+</li>
+<li><p>反序列化部分：遇NONE 返回null</p>
+</li>
+<li><p>.split（）将字符串按照分隔符分成字符数组</p>
+</li>
+<li><p>Arrays.asList（）将字符数组转化为list</p>
+</li>
+<li><p>+= “ ” 连接生成新字符串</p>
+</li>
+<li><p><strong>Integer.valueOf（）</strong>字符串转化为整形  <code>Integer.valueOf(l.get(0))</code></p>
+<p><strong>String.valueOf(int i)</strong> : 将 int 变量 i 转换成字符串 <code>str.valueOf(root.val)</code></p>
+</li>
+<li><p>equals()</p>
+</li>
+</ul>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Codec</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">rserialize</span><span class="params">(TreeNode root, String str)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//注意逗号</span></span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            str += <span class="string">"None,"</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            str += str.valueOf(root.val) + <span class="string">","</span>;</span><br><span class="line">            str = rserialize(root.left, str);</span><br><span class="line">            str = rserialize(root.right, str);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">serialize</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> rserialize(root, <span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> <span class="comment">//通过删除列表头元素并且查找头元素满足先序遍历条件</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">rdeserialize</span><span class="params">(List&lt;String&gt; l)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l.get(<span class="number">0</span>).equals(<span class="string">"None"</span>)) &#123;</span><br><span class="line">            l.remove(<span class="number">0</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">  </span><br><span class="line">        TreeNode root = <span class="keyword">new</span> TreeNode(Integer.valueOf(l.get(<span class="number">0</span>)));</span><br><span class="line">        l.remove(<span class="number">0</span>);</span><br><span class="line">        root.left = rdeserialize(l);</span><br><span class="line">        root.right = rdeserialize(l);</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">deserialize</span><span class="params">(String data)</span> </span>&#123;</span><br><span class="line">        String[] data_array = data.split(<span class="string">","</span>);</span><br><span class="line">        <span class="comment">//使用linkedlist 方便删除读取数据</span></span><br><span class="line">        List&lt;String&gt; data_list = <span class="keyword">new</span> LinkedList&lt;String&gt;(Arrays.asList(data_array));</span><br><span class="line">        <span class="keyword">return</span> rdeserialize(data_list);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>文件名：LBT9</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreBT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二叉树的最近公共祖先</title>
+    <url>/2020/09/27/LEBT7/</url>
+    <content><![CDATA[<h1 id="题目：-二叉树的最近公共祖先-Medium"><a href="#题目：-二叉树的最近公共祖先-Medium" class="headerlink" title="题目：  二叉树的最近公共祖先  Medium"></a>题目： <a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/" target="_blank" rel="noopener"> 二叉树的最近公共祖先</a>  Medium</h1><h3 id="解决方案一-：递归"><a href="#解决方案一-：递归" class="headerlink" title="解决方案一 ：递归"></a>解决方案一 ：递归</h3><h4 id="解题逻辑：分解情况判断root位置"><a href="#解题逻辑：分解情况判断root位置" class="headerlink" title="解题逻辑：分解情况判断root位置"></a><strong>解题逻辑</strong>：分解情况判断root位置</h4><ol>
+<li><p>最近公共祖先定义：设节点 rootroot 为节点 p, q的某公共祖先，若其左子节点 root.left和右子节点root.right 都不是 p,q的公共祖先，则称 root是 “最近的公共祖先” 。</p>
+<ul>
+<li>情况分析：<ul>
+<li>p 和 q 在 root 的子树中，且分列 root 的 异侧（即分别在左、右子树中）；</li>
+<li>p = root，且 q 在 root的左或右子树中；</li>
+<li>q = root，且 p在 root 的左或右子树中；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>核心思想：通过递归对二叉树进行<strong>后序遍历</strong>，当遇到节点 p 或 q时返回。从底至顶回溯，当节点 p, q 在节点 root 的异侧时，节点 root 即为最近公共祖先，则向上返回 root 。</p>
+<ul>
+<li>后序遍历的遍历顺序很好的方便对回溯上来的左右结点值进行处理，然后再向上层进行结果返回。</li>
+<li>该题目中的递归返回结果就是公共祖先的值，root or null</li>
+</ul>
+</li>
+</ol>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><img src="/images/LEBT7/image-20200927142149446.png" alt="image-20200927142149446" style="zoom: 67%;" />
+
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span> || root == p || root == q) <span class="keyword">return</span> root;</span><br><span class="line">        TreeNode left = lowestCommonAncestor(root.left, p, q);</span><br><span class="line">        TreeNode right = lowestCommonAncestor(root.right, p, q);</span><br><span class="line">        <span class="comment">// if(left == null &amp;&amp; right == null) return null; // 1.情况可以合并到下面3. 4.情况中 都是返回null</span></span><br><span class="line">        <span class="keyword">if</span>(left == <span class="keyword">null</span>) <span class="keyword">return</span> right; <span class="comment">//3.</span></span><br><span class="line">        <span class="keyword">if</span>(right == <span class="keyword">null</span>) <span class="keyword">return</span> left; <span class="comment">//4.</span></span><br><span class="line">        <span class="keyword">return</span> root; <span class="comment">// 2. if(left != null and right != null)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>文件名：LBT7</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreBT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>路径总和</title>
+    <url>/2020/09/23/LEBT4/</url>
+    <content><![CDATA[<h1 id="题目：-路径总和-Easy"><a href="#题目：-路径总和-Easy" class="headerlink" title="题目： 路径总和   Easy"></a>题目： <a href="https://leetcode-cn.com/problems/path-sum/" target="_blank" rel="noopener">路径总和</a>   Easy</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li>根节点为0情况未考虑</li>
+<li>对叶子节点的判断失误</li>
+<li>对sum的计算顺序失误</li>
+</ol>
+<h3 id="问题解决：精简自底向上-递归-见方案二"><a href="#问题解决：精简自底向上-递归-见方案二" class="headerlink" title="问题解决：精简自底向上 递归 见方案二"></a>问题解决：精简自底向上 递归 见方案二</h3><ol>
+<li>增加对根节点为null的判断</li>
+<li>修改叶子结点临界的判断</li>
+<li>优先计算sum</li>
+</ol>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> result = <span class="keyword">false</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasPathSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        pathSum(root,<span class="number">0</span>,sum);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pathSum</span><span class="params">(TreeNode node,<span class="keyword">int</span> sum,<span class="keyword">int</span> Target)</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        sum = sum + node.val;</span><br><span class="line">        <span class="keyword">if</span>(node.left == <span class="keyword">null</span> &amp;&amp; node.right == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(sum == Target)</span><br><span class="line">              result = <span class="keyword">true</span>;  </span><br><span class="line">            <span class="keyword">return</span>; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(node.left != <span class="keyword">null</span>)</span><br><span class="line">        pathSum(node.left,sum,Target);</span><br><span class="line">        <span class="keyword">if</span>(node.right != <span class="keyword">null</span>)</span><br><span class="line">        pathSum(node.right,sum,Target);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一：双队列-BFS"><a href="#解决方案一：双队列-BFS" class="headerlink" title="解决方案一：双队列 BFS"></a>解决方案一：双队列 BFS</h3><h4 id="解题逻辑：BFS"><a href="#解题逻辑：BFS" class="headerlink" title="解题逻辑：BFS"></a><strong>解题逻辑</strong>：BFS</h4><ul>
+<li>使用两个队列，分别存储将要遍历的节点，以及根节点到这些节点的路径和即可。</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码："><a href="#实现代码：" class="headerlink" title="实现代码："></a>实现代码：</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasPathSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Queue&lt;TreeNode&gt; queNode = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</span><br><span class="line">        Queue&lt;Integer&gt; queVal = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line">        queNode.offer(root);</span><br><span class="line">        queVal.offer(root.val);</span><br><span class="line">        <span class="keyword">while</span> (!queNode.isEmpty()) &#123;</span><br><span class="line">            TreeNode now = queNode.poll();</span><br><span class="line">            <span class="keyword">int</span> temp = queVal.poll();</span><br><span class="line">            <span class="keyword">if</span> (now.left == <span class="keyword">null</span> &amp;&amp; now.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (temp == sum) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (now.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                queNode.offer(now.left);</span><br><span class="line">                queVal.offer(now.left.val + temp);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (now.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                queNode.offer(now.right);</span><br><span class="line">                queVal.offer(now.right.val + temp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="解决方案二-：递归"><a href="#解决方案二-：递归" class="headerlink" title="解决方案二 ：递归"></a>解决方案二 ：递归</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a>解题逻辑：</h4><ul>
+<li>询问是否存在从当前节点 <code>root</code> 到叶子节点的路径，满足其路径和为 <code>sum</code>。</li>
+<li>假定从根节点到当前节点的值之和为 <code>val</code>，我们可以将这个<strong><em>大问题转化为一个小问题</em></strong>：<ul>
+<li>是否存在从当前节点的子节点到叶子的路径，满足其路径和为 <code>sum - val</code>。</li>
+</ul>
+</li>
+</ul>
+<p>不难发现这满足递归的性质，若当前节点就是叶子节点，那么我们<strong>直接判断 sum 是否等于 val</strong> 即可（因为路径和已经确定，就是当前节点的值，我们只需要判断该路径和是否满足条件）。若当前节点不是叶子节点，我们只需要递归地询问它的子节点是否能满足条件即可。</p>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasPathSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (root.left == <span class="keyword">null</span> &amp;&amp; root.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> sum == root.val;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h3><blockquote>
+<p>文件名：LBT4</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreBT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>填充每个节点的下一个右侧节点指针</title>
+    <url>/2020/09/24/LEBT6/</url>
+    <content><![CDATA[<h1 id="题目：-填充每个节点的下一个右侧节点指针-Medium"><a href="#题目：-填充每个节点的下一个右侧节点指针-Medium" class="headerlink" title="题目： 填充每个节点的下一个右侧节点指针 Medium"></a>题目： <a href="https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/" target="_blank" rel="noopener">填充每个节点的下一个右侧节点指针</a> Medium</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="思想：队列进行层次遍历，指派指针"><a href="#思想：队列进行层次遍历，指派指针" class="headerlink" title="思想：队列进行层次遍历，指派指针"></a>思想：队列进行层次遍历，指派指针</h3><h3 id="代码优化：根据方案一"><a href="#代码优化：根据方案一" class="headerlink" title="代码优化：根据方案一"></a>代码优化：根据方案一</h3><ul>
+<li>指派指针时不需要记录前面指针然后等后面指针出列后指派<ul>
+<li>直接使用peekFirst（）查询队首指针</li>
+<li>到达最右边指针后无需判断因为默认就是null指针</li>
+</ul>
+</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">// Definition for a Node.</span></span><br><span class="line"><span class="comment">class Node &#123;</span></span><br><span class="line"><span class="comment">    public int val;</span></span><br><span class="line"><span class="comment">    public Node left;</span></span><br><span class="line"><span class="comment">    public Node right;</span></span><br><span class="line"><span class="comment">    public Node next;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    public Node() &#123;&#125;</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    public Node(int _val) &#123;</span></span><br><span class="line"><span class="comment">        val = _val;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    public Node(int _val, Node _left, Node _right, Node _next) &#123;</span></span><br><span class="line"><span class="comment">        val = _val;</span></span><br><span class="line"><span class="comment">        left = _left;</span></span><br><span class="line"><span class="comment">        right = _right;</span></span><br><span class="line"><span class="comment">        next = _next;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">connect</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">        Deque&lt;Node&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span> root;</span><br><span class="line">        q.addLast(root);</span><br><span class="line">        <span class="keyword">while</span>(!q.isEmpty())&#123;</span><br><span class="line">            Node pre= <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">int</span> len = q.size();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">                Node nodei = q.pop();</span><br><span class="line">                <span class="keyword">if</span>(i == len-<span class="number">1</span>) nodei.next = <span class="keyword">null</span>;</span><br><span class="line">                <span class="keyword">if</span>(pre != <span class="keyword">null</span>) pre.next = nodei;</span><br><span class="line">                pre = nodei;</span><br><span class="line">                <span class="keyword">if</span>(nodei.left!=<span class="keyword">null</span>)</span><br><span class="line">                q.addLast(nodei.left);</span><br><span class="line">                <span class="keyword">if</span>(nodei.right!=<span class="keyword">null</span>)</span><br><span class="line">                q.addLast(nodei.right);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一-：层次遍历"><a href="#解决方案一-：层次遍历" class="headerlink" title="解决方案一 ：层次遍历"></a>解决方案一 ：层次遍历</h3><h4 id="解题逻辑：层次遍历-同自己解法"><a href="#解题逻辑：层次遍历-同自己解法" class="headerlink" title="解题逻辑：层次遍历,同自己解法"></a><strong>解题逻辑</strong>：层次遍历,同自己解法</h4><h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">connect</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Initialize a queue data structure which contains</span></span><br><span class="line">        <span class="comment">// just the root of the tree</span></span><br><span class="line">        Queue&lt;Node&gt; Q = <span class="keyword">new</span> LinkedList&lt;Node&gt;(); </span><br><span class="line">        Q.add(root);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Outer while loop which iterates over </span></span><br><span class="line">        <span class="comment">// each level</span></span><br><span class="line">        <span class="keyword">while</span> (Q.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// Note the size of the queue</span></span><br><span class="line">            <span class="keyword">int</span> size = Q.size();</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// Iterate over all the nodes on the current level</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// Pop a node from the front of the queue</span></span><br><span class="line">                Node node = Q.poll();</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// This check is important. We don't want to</span></span><br><span class="line">                <span class="comment">// establish any wrong connections. The queue will</span></span><br><span class="line">                <span class="comment">// contain nodes from 2 levels at most at any</span></span><br><span class="line">                <span class="comment">// point in time. This check ensures we only </span></span><br><span class="line">                <span class="comment">// don't establish next pointers beyond the end</span></span><br><span class="line">                <span class="comment">// of a level</span></span><br><span class="line">                <span class="keyword">if</span> (i &lt; size - <span class="number">1</span>) &#123;</span><br><span class="line">                    node.next = Q.peek();</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// Add the children, if any, to the back of</span></span><br><span class="line">                <span class="comment">// the queue</span></span><br><span class="line">                <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    Q.add(node.left);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    Q.add(node.right);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Since the tree has now been modified, return the root node</span></span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="解决方案二：迭代指派孩子结点"><a href="#解决方案二：迭代指派孩子结点" class="headerlink" title="解决方案二：迭代指派孩子结点"></a>解决方案二：迭代指派孩子结点</h3><img src="/images/LEBT6/img11.png" alt="img" style="zoom:33%;" />
+
+<h3 id="复杂度："><a href="#复杂度：" class="headerlink" title="复杂度："></a>复杂度：</h3><p>空间复杂度：O(N)。这是一棵完美二叉树，它的最后一个层级包含 N/2 个节点。广度优先遍历的复杂度取决于一个层级上的最大元素数量。这种情况下空间复杂度为 O(N)O(N)。</p>
+<p>作者：LeetCode</p>
+<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">connect</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Start with the root node. There are no next pointers</span></span><br><span class="line">        <span class="comment">// that need to be set up on the first level</span></span><br><span class="line">        Node leftmost = root;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Once we reach the final level, we are done</span></span><br><span class="line">        <span class="keyword">while</span> (leftmost.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// Iterate the "linked list" starting from the head</span></span><br><span class="line">            <span class="comment">// node and using the next pointers, establish the </span></span><br><span class="line">            <span class="comment">// corresponding links for the next level</span></span><br><span class="line">            Node head = leftmost;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (head != <span class="keyword">null</span>) &#123;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// CONNECTION 1</span></span><br><span class="line">                head.left.next = head.right;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// CONNECTION 2</span></span><br><span class="line">                <span class="keyword">if</span> (head.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    head.right.next = head.next.left;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// Progress along the list (nodes on the current level)</span></span><br><span class="line">                head = head.next;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// Move onto the next level</span></span><br><span class="line">            leftmost = leftmost.left;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="解决方案三：递归指派孩子结点"><a href="#解决方案三：递归指派孩子结点" class="headerlink" title="解决方案三：递归指派孩子结点"></a>解决方案三：递归指派孩子结点</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(Node left, Node right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (left == <span class="keyword">null</span> || right == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        left.next = right;</span><br><span class="line">        dfs(left.left, left.right);</span><br><span class="line">        dfs(right.left, right.right);</span><br><span class="line">        dfs(left.right, right.left);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">connect</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        dfs(root.left, root.right);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>文件名：LBT6</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreBT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>队列构造与内置用法</title>
+    <url>/2020/08/11/LEQS2/</url>
+    <content><![CDATA[<h1 id="java-内置队列库实现常见队列操作"><a href="#java-内置队列库实现常见队列操作" class="headerlink" title="java 内置队列库实现常见队列操作"></a>java 内置队列库实现常见队列操作</h1><ol>
+<li>Queue<T>  q  = new LinkedList();</li>
+<li>q.size() // 获取队列元素数量</li>
+<li>q.offer();/add();</li>
+<li>q.poll();/remove();</li>
+<li>//add()和remove()方法在失败的时候会抛出异常(不推荐)</li>
+<li><img src="/images/LEQS2/image-20200903170626591.png" alt="image-20200903170626591" style="zoom: 80%;" />
+
+</li>
+</ol>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// "static void main" must be defined in a public class.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. Initialize a queue.</span></span><br><span class="line">        Queue&lt;Integer&gt; q = <span class="keyword">new</span> LinkedList();</span><br><span class="line">        <span class="comment">// 2. Get the first element - return null if queue is empty.</span></span><br><span class="line">        System.out.println(<span class="string">"The first element is: "</span> + q.peek());</span><br><span class="line">        <span class="comment">// 3. Push new element.</span></span><br><span class="line">        q.offer(<span class="number">5</span>);</span><br><span class="line">        q.offer(<span class="number">13</span>);</span><br><span class="line">        q.offer(<span class="number">8</span>);</span><br><span class="line">        q.offer(<span class="number">6</span>);</span><br><span class="line">        <span class="comment">// 4. Pop an element.</span></span><br><span class="line">        q.poll();</span><br><span class="line">        <span class="comment">// 5. Get the first element.</span></span><br><span class="line">        System.out.println(<span class="string">"The first element is: "</span> + q.peek());</span><br><span class="line">        <span class="comment">// 7. Get the size of the queue.</span></span><br><span class="line">        System.out.println(<span class="string">"The size is: "</span> + q.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ol>
+<li>java.util.* 代表导入util包下的所有类不包含接口</li>
+<li>queue为接口需要重新导入</li>
+<li><a href="https://cloud.tencent.com/developer/article/1515562" target="_blank" rel="noopener">阅读</a></li>
+<li>java14,util包在javabase/java/util</li>
+</ol>
+<h1 id="低效率列表实现"><a href="#低效率列表实现" class="headerlink" title="低效率列表实现"></a>低效率列表实现</h1><h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// "static void main" must be defined in a public class.</span></span><br><span class="line"><span class="comment">//低效率浪费空间</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyQueue</span> </span>&#123;</span><br><span class="line">    <span class="comment">// store elements</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Integer&gt; data;         </span><br><span class="line">    <span class="comment">// a pointer to indicate the start position</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> p_start;            </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        p_start = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** Insert an element into the queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">enQueue</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        data.add(x);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;;    </span><br><span class="line">    <span class="comment">/** Delete an element from the queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty() == <span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        p_start++;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** Get the front item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data.get(p_start);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** Checks whether the queue is empty or not. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> p_start &gt;= data.size();</span><br><span class="line">    &#125;     </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MyQueue q = <span class="keyword">new</span> MyQueue();</span><br><span class="line">        q.enQueue(<span class="number">5</span>);</span><br><span class="line">        q.enQueue(<span class="number">3</span>);</span><br><span class="line">        <span class="keyword">if</span> (q.isEmpty() == <span class="keyword">false</span>) &#123;</span><br><span class="line">            System.out.println(q.Front());</span><br><span class="line">        &#125;</span><br><span class="line">        q.deQueue();</span><br><span class="line">        <span class="keyword">if</span> (q.isEmpty() == <span class="keyword">false</span>) &#123;</span><br><span class="line">            System.out.println(q.Front());</span><br><span class="line">        &#125;</span><br><span class="line">        q.deQueue();</span><br><span class="line">        <span class="keyword">if</span> (q.isEmpty() == <span class="keyword">false</span>) &#123;</span><br><span class="line">            System.out.println(q.Front());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="循环队列数组实现"><a href="#循环队列数组实现" class="headerlink" title="循环队列数组实现"></a>循环队列数组实现</h1><h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><ul>
+<li>计算队尾指针位置<img src="/images/LEQS2/image-20200822155337704.png" alt="image-20200822155337704" style="zoom:50%;" /></li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCircularQueue</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] queue;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> headIndex;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> capacity;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Initialize your data structure here. Set the size of the queue to be k. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyCircularQueue</span><span class="params">(<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.capacity = k;</span><br><span class="line">        <span class="keyword">this</span>.queue =  <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        <span class="keyword">this</span>.headIndex = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.count = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Insert an element into the circular queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">enQueue</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.count == <span class="keyword">this</span>.capacity) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">this</span>.count++;</span><br><span class="line">        <span class="keyword">this</span>.queue[(<span class="keyword">this</span>.headIndex + <span class="keyword">this</span>.count -<span class="number">1</span>) % <span class="keyword">this</span>.capacity] = value;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Delete an element from the circular queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.count == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">this</span>.headIndex = (<span class="keyword">this</span>.headIndex + <span class="number">1</span>) % <span class="keyword">this</span>.capacity;</span><br><span class="line">        <span class="keyword">this</span>.count--;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Get the front item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.count == <span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.queue[<span class="keyword">this</span>.headIndex];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Get the last item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Rear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.count == <span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.queue[(<span class="keyword">this</span>.headIndex + <span class="keyword">this</span>.count -<span class="number">1</span>) % <span class="keyword">this</span>.capacity];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">/** Checks whether the circular queue is empty or not. */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">this</span>.count == <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/** Checks whether the circular queue is full or not. */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">this</span>.count == <span class="keyword">this</span>.capacity);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyCircularQueue object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyCircularQueue obj = new MyCircularQueue(k);</span></span><br><span class="line"><span class="comment"> * boolean param_1 = obj.enQueue(value);</span></span><br><span class="line"><span class="comment"> * boolean param_2 = obj.deQueue();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj.Front();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj.Rear();</span></span><br><span class="line"><span class="comment"> * boolean param_5 = obj.isEmpty();</span></span><br><span class="line"><span class="comment"> * boolean param_6 = obj.isFull();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>文件名：LEQS2</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>对称二叉树</title>
+    <url>/2020/09/23/LEBT3/</url>
+    <content><![CDATA[<h1 id="题目：-对称二叉树-Easy"><a href="#题目：-对称二叉树-Easy" class="headerlink" title="题目： 对称二叉树 Easy"></a>题目： <a href="https://leetcode-cn.com/problems/symmetric-tree/solution/dui-cheng-er-cha-shu-by-leetcode-solution/" target="_blank" rel="noopener">对称二叉树</a> Easy</h1><h3 id="解决方案一-递归-双指针"><a href="#解决方案一-递归-双指针" class="headerlink" title="解决方案一 : 递归 双指针"></a>解决方案一 : 递归 双指针</h3><h4 id="解题逻辑：深度自底向上"><a href="#解题逻辑：深度自底向上" class="headerlink" title="解题逻辑：深度自底向上"></a><strong>解题逻辑</strong>：深度自底向上</h4><ul>
+<li>过「同步移动」<strong>两个指针</strong>的方法来遍历这棵树，pp指针和 q 指针一开始都指向这棵树的根，随后 p 右移时，q左移，p 左移时，q右移。每次检查当前 p 和 q节点的值是否相等，如果相等再判断左右子树是否对称。</li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> check(root, root);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">check</span><span class="params">(TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (p == <span class="keyword">null</span> &amp;&amp; q == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (p == <span class="keyword">null</span> || q == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> p.val == q.val &amp;&amp; check(p.left, q.right) &amp;&amp; check(p.right, q.left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="解决方案二：-队列迭代，双结点"><a href="#解决方案二：-队列迭代，双结点" class="headerlink" title="解决方案二： 队列迭代，双结点"></a>解决方案二： 队列迭代，双结点</h3><p>重点：队列可以offer入null元素，并且完整出列</p>
+<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> check(root, root);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">check</span><span class="params">(TreeNode u, TreeNode v)</span> </span>&#123;</span><br><span class="line">     Deque&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">     queue.offerLast(u);queue.offerLast(v);</span><br><span class="line">     <span class="keyword">while</span>(!queue.isEmpty())&#123;</span><br><span class="line">         u = queue.pollFirst();</span><br><span class="line">         v = queue.pollFirst();</span><br><span class="line">         <span class="keyword">if</span>(u==<span class="keyword">null</span> &amp;&amp; v==<span class="keyword">null</span>) <span class="keyword">continue</span>;</span><br><span class="line">         <span class="keyword">if</span>(u == <span class="keyword">null</span> || v==<span class="keyword">null</span> || u.val != v.val ) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">         queue.offerLast(u.left);</span><br><span class="line">         queue.offerLast(v.right);</span><br><span class="line">         queue.offerLast(u.right);</span><br><span class="line">         queue.offerLast(v.left);                        </span><br><span class="line">     &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<blockquote>
+<p>文件名：LBT3</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreBT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>运用递归解决树的问题</title>
+    <url>/2020/09/23/LEBT2/</url>
+    <content><![CDATA[<h1 id="题目：-运用递归解决树的问题"><a href="#题目：-运用递归解决树的问题" class="headerlink" title="题目： 运用递归解决树的问题"></a>题目： <a href="https://leetcode-cn.com/leetbook/read/data-structure-binary-tree/xefb4e/" target="_blank" rel="noopener">运用递归解决树的问题</a></h1><ul>
+<li><p>树可以以递归的方式定义为一个节点（根节点），它包括一个值和一个指向其他节点指针的列表。</p>
+</li>
+<li><p>递归是<strong>树的特性之一</strong>。 因此，许多树问题可以通过递归的方式来解决。</p>
+</li>
+<li><p>对于每个递归层级，我们只能关注<strong>单个节点内的问题</strong>，并通过<strong>递归调用函数</strong>来解决其<strong>子节点问题</strong>。</p>
+</li>
+<li><p>通常，我们可以通过 “<strong>自顶向下</strong>” 或 “<strong>自底向上”</strong> 的递归来解决树问题。</p>
+<p>以<em>给定一个二叉树，请寻找它的最大深度</em>为例</p>
+</li>
+</ul>
+<h2 id="自顶向下"><a href="#自顶向下" class="headerlink" title="自顶向下"></a>自顶向下</h2><p>核心：每个递归层级，我们将首先<strong>访问节点</strong>来计算一些值，并在递归调用函数时将这些值<strong>传递到子节点</strong>。</p>
+<p><strong>TIPS:</strong> 无需返回值，直接每层操作结果answer到底时结算</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> answer;		<span class="comment">// don't forget to initialize answer before call maximum_depth</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">maximum_depth</span><span class="params">(TreeNode root, <span class="keyword">int</span> depth)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (root.left == <span class="keyword">null</span> &amp;&amp; root.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">        answer = Math.max(answer, depth);</span><br><span class="line">    &#125;</span><br><span class="line">    maximum_depth(root.left, depth + <span class="number">1</span>);</span><br><span class="line">    maximum_depth(root.right, depth + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="自底向上"><a href="#自底向上" class="headerlink" title="自底向上"></a>自底向上</h2><p>核心：在每个递归层次上，我们首先对所有子节点递归地调用函数，然后<strong>根据返回值</strong>和根节点本身的值得到答案。</p>
+<p><strong>TIPs:</strong> 层层操作返回值，并且在每层进行计算后返回，累积起来得到结果answer</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximum_depth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;                                   <span class="comment">// return 0 for null node</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> left_depth = maximum_depth(root.left);</span><br><span class="line">	<span class="keyword">int</span> right_depth = maximum_depth(root.right);</span><br><span class="line">	<span class="keyword">return</span> Math.max(left_depth, right_depth) + <span class="number">1</span>;	<span class="comment">// return depth of the subtree rooted at root</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<blockquote>
+<p>文件名：LBT2</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreBT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>树的遍历</title>
+    <url>/2020/09/21/LEBT1/</url>
+    <content><![CDATA[<h1 id="题目：-树的遍历"><a href="#题目：-树的遍历" class="headerlink" title="题目： 树的遍历"></a>题目： <a href="https://leetcode-cn.com/leetbook/read/data-structure-binary-tree/xezko3/" target="_blank" rel="noopener">树的遍历</a></h1><h2 id="二叉树重要性"><a href="#二叉树重要性" class="headerlink" title="二叉树重要性"></a>二叉树重要性</h2><ol>
+<li>回溯、动归、分治算法，其实都是树</li>
+<li>快速排序就是个二叉树的前序遍历，归并排序就是个二叉树的后续遍历【坑】</li>
+</ol>
+<h2 id="写递归算法的秘诀"><a href="#写递归算法的秘诀" class="headerlink" title="写递归算法的秘诀"></a>写递归算法的秘诀</h2><ul>
+<li><strong>写递归算法的关键是要明确函数的「定义」是什么，然后相信这个定义，利用这个定义推导最终结果，绝不要跳入递归的细节</strong>。</li>
+</ul>
+<h3 id="例题：计算一颗二叉树有多少结点"><a href="#例题：计算一颗二叉树有多少结点" class="headerlink" title="例题：计算一颗二叉树有多少结点"></a>例题：计算一颗二叉树有多少结点</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义：count(root) 返回以 root 为根的树有多少节点</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// base case</span></span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 自己加上子树的节点数就是整棵树的节点数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> + count(root.left) + count(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="要点："><a href="#要点：" class="headerlink" title="要点："></a>要点：</h3><ul>
+<li><strong>写树相关的算法，简单说就是，先搞清楚当前</strong> <strong><code>root</code></strong> <strong>节点该做什么，然后根据函数定义递归调用子节点</strong>，递归调用会让孩子节点做相同的事情。</li>
+</ul>
+<h2 id="二叉树递归框架"><a href="#二叉树递归框架" class="headerlink" title="二叉树递归框架"></a>二叉树递归框架</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 二叉树遍历框架 */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 前序遍历</span></span><br><span class="line">    traverse(root.left)</span><br><span class="line">    <span class="comment">// 中序遍历</span></span><br><span class="line">    traverse(root.right)</span><br><span class="line">    <span class="comment">// 后序遍历</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="二叉树迭代查询"><a href="#二叉树迭代查询" class="headerlink" title="二叉树迭代查询"></a>二叉树迭代查询</h2><h4 id="前序遍历："><a href="#前序遍历：" class="headerlink" title="前序遍历："></a>前序遍历：</h4><p>要点：</p>
+<p>简单栈结构，直接按照 <code>Top-&gt;Bottom</code> 和 <code>Left-&gt;Right</code>压栈即可</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    LinkedList&lt;TreeNode&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    LinkedList&lt;Integer&gt; output = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> output;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    stack.add(root);</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">      TreeNode node = stack.pollLast();</span><br><span class="line">      output.add(node.val);</span><br><span class="line">      <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">        stack.add(node.right);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">        stack.add(node.left);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> output;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="中序遍历："><a href="#中序遍历：" class="headerlink" title="中序遍历："></a>中序遍历：</h4><p>要点：</p>
+<p>左孩子最先出栈，两个while循环保证出栈顺序正确</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        Deque&lt;TreeNode&gt; stk = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</span><br><span class="line">        <span class="keyword">while</span> (root != <span class="keyword">null</span> || !stk.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">while</span> (root != <span class="keyword">null</span>) &#123;</span><br><span class="line">                stk.push(root);</span><br><span class="line">                root = root.left;</span><br><span class="line">            &#125;</span><br><span class="line">            root = stk.pop();</span><br><span class="line">            res.add(root.val);</span><br><span class="line">            root = root.right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="后序遍历："><a href="#后序遍历：" class="headerlink" title="后序遍历："></a>后序遍历：</h4><p>要点：</p>
+<p>从下到上、从左至右，所以需要将输出列表逆序输出，即在加入结果集时逆序加入即可。</p>
+<p><strong>Tips：</strong></p>
+<ul>
+<li>必须创建LinkedList才能使用addFirst（）函数</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    LinkedList&lt;TreeNode&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    LinkedList&lt;Integer&gt; output = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> output;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    stack.add(root);</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">      TreeNode node = stack.pollLast();</span><br><span class="line">      output.addFirst(node.val);</span><br><span class="line">      <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">        stack.add(node.left);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">        stack.add(node.right);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> output;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="层次遍历：BFS"><a href="#层次遍历：BFS" class="headerlink" title="层次遍历：BFS"></a>层次遍历：BFS</h4><p>要点：记录队列一层节点数，获取数量，一口气出栈一层结点即可区分一层</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 二叉树的层序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    queue.add(root);</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = queue.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123; </span><br><span class="line">            <span class="comment">// 变量 i 无实际意义，只是为了循环 n 次</span></span><br><span class="line">            TreeNode node = queue.poll();</span><br><span class="line">            <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                queue.add(node.left);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                queue.add(node.right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<blockquote>
+<p>文件名：LBT1</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreBT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IDEA配置</title>
+    <url>/2020/09/22/IDEA/</url>
+    <content><![CDATA[<p><a href="https://how2j.cn/k/idea/idea-config-place/1360.html" target="_blank" rel="noopener">更改配置文件位置</a></p>
+<p>同时修改plugins 和 log 的path</p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreBT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaWeb(一)</title>
+    <url>/2020/07/25/javaweb1/</url>
+    <content><![CDATA[<h1 id="HTML-amp-CSS"><a href="#HTML-amp-CSS" class="headerlink" title="HTML&amp;CSS"></a>HTML&amp;CSS</h1><h2 id="B-S软件结构"><a href="#B-S软件结构" class="headerlink" title="B/S软件结构"></a>B/S软件结构</h2><h2 id="一些标签"><a href="#一些标签" class="headerlink" title="一些标签"></a>一些标签</h2><h4 id="table"><a href="#table" class="headerlink" title="table"></a>table</h4><ul>
+<li><p><strong>tr</strong>   table data row</p>
+</li>
+<li><p><strong>td</strong>  table data cell</p>
+</li>
+<li><p><strong>th</strong> table header cell</p>
+</li>
+</ul>
+<h2 id="css-选择器"><a href="#css-选择器" class="headerlink" title="css 选择器"></a>css 选择器</h2><ol>
+<li>标签名选择器  div{ }</li>
+<li>id选择器 <strong>#</strong>id { } id=””</li>
+<li>class选择器 <strong>.</strong>class{ }  class=””</li>
+<li>组合选择器  1，2，3…{ }</li>
+</ol>
+<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>JS是弱类型语言，定义变量的时候类型不确定可变。</p>
+<h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><ol>
+<li>交互（浏览器页面信息动态交互，用户输入与客户端反馈）</li>
+<li>安全性（不允许直接访问本地硬盘）</li>
+<li>跨平台性（只要是可以解释JS的浏览器都可以执行，平台无关）</li>
+</ol>
+<h2 id="与Html结合"><a href="#与Html结合" class="headerlink" title="与Html结合"></a>与Html结合</h2><ol>
+<li>直接在body，head 中用<script>标签引入</li>
+<li>单独写在js文件中，用<script>引入</li>
+</ol>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="文本和属性"><a href="#文本和属性" class="headerlink" title="文本和属性"></a><a href="https://zh.javascript.info/object#wen-ben-he-shu-xing" target="_blank" rel="noopener">文本和属性</a></h3><p>我们可以在创建对象的时候，立即将一些属性以键值对的形式放到 <code>{...}</code> 中。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;     <span class="comment">// 一个对象</span></span><br><span class="line">  name: <span class="string">"John"</span>,  <span class="comment">// 键 "name"，值 "John"</span></span><br><span class="line">  age: <span class="number">30</span>        <span class="comment">// 键 "age"，值 30</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<p>属性有键（或者也可以叫做“名字”或“标识符”），位于冒号 <code>&quot;:&quot;</code> 的前面，值在冒号的右边。</p>
+<p>在 <code>user</code> 对象中，有两个属性：</p>
+<ol>
+<li>第一个的键是 <code>&quot;name&quot;</code>，值是 <code>&quot;John&quot;</code>。</li>
+<li>第二个的键是 <code>&quot;age&quot;</code>，值是 <code>30</code>。</li>
+</ol>
+<p>生成的 <code>user</code> 对象可以被想象为一个放置着两个标记有 “name” 和 “age” 的文件的柜子。</p>
+<p>我们可以随时添加、删除和读取文件。</p>
+<p>可以使用点符号访问属性值：</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>自动扩容</p>
+<h3 id="数组可以存储任何类型的元素。"><a href="#数组可以存储任何类型的元素。" class="headerlink" title="数组可以存储任何类型的元素。"></a>数组可以存储任何类型的元素。</h3><p>例如:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 混合值</span></span><br><span class="line"><span class="keyword">let</span> arr = [ <span class="string">'Apple'</span>, &#123; <span class="attr">name</span>: <span class="string">'John'</span> &#125;, <span class="literal">true</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; alert(<span class="string">'hello'</span>); &#125; ];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取索引为 1 的对象然后显示它的 name</span></span><br><span class="line">alert( arr[<span class="number">1</span>].name ); <span class="comment">// John</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取索引为 3 的函数并执行</span></span><br><span class="line">arr[<span class="number">3</span>](); <span class="comment">// hello</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="定义方式"><a href="#定义方式" class="headerlink" title="定义方式"></a>定义方式</h3><ol>
+<li><code>function fun() {}</code> 直接加return 代表有返回值</li>
+<li><code>var fun =fuction() { }</code></li>
+</ol>
+<h3 id="js函数不能重载，只会覆盖上层定义"><a href="#js函数不能重载，只会覆盖上层定义" class="headerlink" title="js函数不能重载，只会覆盖上层定义"></a>js函数不能重载，只会覆盖上层定义</h3><h3 id="arguments隐形参数（只在function内部，无需定义）"><a href="#arguments隐形参数（只在function内部，无需定义）" class="headerlink" title="arguments隐形参数（只在function内部，无需定义）"></a>arguments隐形参数（只在function内部，无需定义）</h3><p>类似于传入参数的可变长数组集合</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line">fun(<span class="number">1</span>,<span class="string">"a"</span>,<span class="literal">true</span>)</span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">arguments</span>[<span class="number">0</span>]) <span class="comment">//1</span></span><br><span class="line">alert(<span class="built_in">arguments</span>[<span class="number">1</span>]) <span class="comment">//"a"</span></span><br><span class="line">alert(<span class="built_in">arguments</span>[<span class="number">2</span>])  <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">亦可进行遍历</span><br><span class="line"></span><br><span class="line">js中+ 不同类型为字符串拼接</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="自定义对象"><a href="#自定义对象" class="headerlink" title="自定义对象"></a>自定义对象</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="keyword">new</span> object()</span><br><span class="line">name.value = value;</span><br><span class="line">name.fun =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">访问</span><br><span class="line">name.value</span><br><span class="line"></span><br><span class="line">&#123;&#125; <span class="comment">//自定义空对象 object类</span></span><br><span class="line"><span class="keyword">var</span> variable =&#123;</span><br><span class="line">    name1:value,</span><br><span class="line">    name2,value,</span><br><span class="line">    name_of_function : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="js事件"><a href="#js事件" class="headerlink" title="js事件"></a>js事件</h3><h4 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h4><ul>
+<li><strong>onload</strong> ：浏览器解析完自动触发事件</li>
+<li><strong>onclick</strong> :   常用于按钮的点击响应操作。</li>
+<li><strong>onblur</strong> : 失去焦点事件： 常用用于输入框失去焦点后验证其输入内容是否合法。</li>
+<li><strong>onchange</strong> : 内容发生改变事件： 常用于下拉列表和输入框内容发生改变后操作</li>
+<li><strong>onsubmit</strong>  : 表单提交事件： 常用于表单提交前，验证所有表单项是否合法</li>
+</ul>
+<h4 id="静态注册和动态注册"><a href="#静态注册和动态注册" class="headerlink" title="静态注册和动态注册"></a>静态注册和动态注册</h4><p>注册：告诉浏览器，当时间响应后执行哪些操作代码，叫事件注册</p>
+<p>静态：html事件属性直接赋值于事件响应后的代码 【标签中添加】</p>
+<p>动态：通过js代码得到标签的dom对象，通过dom对象.事件名 = functiong(){} 赋予事件响应后代码 【通过id获取 然后通过标签进行】</p>
+<p>动态注册<strong>基本步骤</strong>：</p>
+<ol>
+<li>获取标签对象</li>
+<li>标签对象.事件名= functiong(){}</li>
+</ol>
+<p><strong>onload</strong> 加载完成事件</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// onload 事件动态注册。是固定写法</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">alert(<span class="string">" 动态注册的 onload  事件"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//静态注册 onload 事件</span></span><br><span class="line"><span class="comment">//onload 事件是浏览器解析完页面之后就会自动触发的事件</span></span><br><span class="line">&lt;body onload=<span class="string">"onloadFun();"</span>&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p> <strong>onclick</strong> 单击事件</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 动态注册 onclick 事件</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// 1 获取标签对象</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* document 是 JavaScript 语言提供的一个对象（文档） &lt;br/&gt;</span></span><br><span class="line"><span class="comment">* getElementById 通过 id 属性获取标签对象</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">var</span> btnObj = <span class="built_in">document</span>.getElementById(<span class="string">"btn01"</span>);</span><br><span class="line"><span class="comment">// alert( btnObj );</span></span><br><span class="line"><span class="comment">// 2 通过标签对象 . 事件名 = function()&#123;&#125;</span></span><br><span class="line">btnObj.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">alert(<span class="string">" 动态注册的 onclick  事件"</span>);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">  &lt;!-- 静态注册 onClick 事件 --&gt;</span><br><span class="line">&lt;button onclick=<span class="string">"onclickFun();"</span>&gt;按钮 <span class="number">1</span> &lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;button id="btn01"&gt;按钮 2&lt;/</span>button&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>onblur</strong> 失去焦点事件</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 静态注册失去焦点事件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onblurFun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// console 是控制台对象，是由 JavaScript 语言提供，专门用来向浏览器的控制器打印输出， 用于测试使用</span></span><br><span class="line"><span class="comment">// log() 是打印的方法</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">" 静态注册失去焦点事件"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 动态注册 onblur 事件 利用id获取</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">//1 获取标签对象</span></span><br><span class="line"><span class="keyword">var</span> passwordObj = <span class="built_in">document</span>.getElementById(<span class="string">"password"</span>);</span><br><span class="line"><span class="comment">// alert(passwordObj);</span></span><br><span class="line"><span class="comment">//2 通过标签对象 . 事件名 = function()&#123;&#125;;</span></span><br><span class="line">passwordObj.onblur = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">" 动态注册失去焦点事件"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">用户名:<span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">onblur</span>=<span class="string">"onblurFun();"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line">密码:&lt;input id="password" type="text" &gt;&lt;br/&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>onchange</strong> 内容发生改变事件</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onchangeFun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">alert(<span class="string">" 女神已经改变了"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">//1 获取标签对象</span></span><br><span class="line"><span class="keyword">var</span> selObj = <span class="built_in">document</span>.getElementById(<span class="string">"sel01"</span>);</span><br><span class="line"><span class="comment">// alert( selObj );</span></span><br><span class="line"><span class="comment">//2 通过标签对象 . 事件名 = function()&#123;&#125;</span></span><br><span class="line">selObj.onchange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">alert(<span class="string">" 男神已经改变了"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;!-- 静态注册 onchange 事件 --&gt;</span></span><br><span class="line"><span class="regexp">&lt;select onchange="onchangeFun();"&gt;</span></span><br><span class="line"><span class="regexp">&lt;option&gt;--女神--&lt;/</span>option&gt;</span><br><span class="line">&lt;option&gt;芳芳&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">&lt;option&gt;佳佳&lt;/</span>option&gt;</span><br><span class="line">&lt;option&gt;娘娘&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>select&gt;</span><br><span class="line"></span><br><span class="line">请选择你心中的男神：</span><br><span class="line">&lt;select id=<span class="string">"sel01"</span>&gt;</span><br><span class="line">&lt;option&gt;--男神--&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">&lt;option&gt;国哥&lt;/</span>option&gt;</span><br><span class="line">&lt;option&gt;华仔&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">&lt;option&gt;富城&lt;/</span>option&gt;</span><br><span class="line">&lt;<span class="regexp">/select&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>onsubmit</strong>  : 表单提交事件</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> &gt;</span><br><span class="line"><span class="comment">// 静态注册表单提交事务</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onsubmitFun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="comment">// 要验证所有表单项是否合法，如果，有一个不合法就阻止表单提交</span></span><br><span class="line">alert(<span class="string">" 静态注册表单提交事件---- 发现不合法"</span>);</span><br><span class="line"><span class="keyword">return</span> flase;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">//1 获取标签对象</span></span><br><span class="line"><span class="keyword">var</span> formObj = <span class="built_in">document</span>.getElementById(<span class="string">"form01"</span>);</span><br><span class="line"><span class="comment">//2 通过标签对象 . 事件名 = function()&#123;&#125;</span></span><br><span class="line">formObj.onsubmit = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// 要验证所有表单项是否合法，如果，有一个不合法就阻止表单提交</span></span><br><span class="line">alert(<span class="string">" 动态注册表单提交事件---- 发现不合法"</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;!--return false 可以阻止 表单提交 --&gt;</span></span><br><span class="line"><span class="regexp">&lt;form action="http:/</span><span class="regexp">/localhost:8080" method="get" onsubmit="return onsubmitFun();"&gt;</span></span><br><span class="line"><span class="regexp">&lt;input type="submit" value=" 静态注册"/</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/form&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;form action="http:/</span><span class="regexp">/localhost:8080" id="form01"&gt;</span></span><br><span class="line"><span class="regexp">&lt;input type="submit" value=" 动态注册"/</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/form&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="JavaScript-HTML-DOM"><a href="#JavaScript-HTML-DOM" class="headerlink" title="JavaScript HTML DOM"></a>JavaScript HTML DOM</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p><strong>DOM</strong> 全称是 Document Object Model 文档对象模型<br>把文档中的标签，属性，文本，<strong>转换成为对象管理。</strong></p>
+<p><img src="/images/javaweb1/pic_htmltree.gif" alt="DOM HTML tree"></p>
+<h3 id="Document-对象中的方法介绍"><a href="#Document-对象中的方法介绍" class="headerlink" title="Document  对象中的方法介绍"></a>Document  对象中的方法介绍</h3><ul>
+<li><p>document.getElementBy<strong>Id</strong>(elementId)<br>通过标签的 id 属性查找标签 dom 对象，elementId 是标签的 id 属性值，</p>
+</li>
+<li><p>document.getElementsBy<a href="https://www.runoob.com/jsref/met-doc-getelementsbyname.html" target="_blank" rel="noopener"><strong>Name</strong></a>(elementName)<br>通过标签的 name 属性查找标签 dom 对象，elementName 标签的 name 属性值, 返回对象集合</p>
+</li>
+<li><p>document.getElementsBy<strong>TagName</strong>(tagname)<br>通过标签名查找标签 dom 对象。tagname 是标签名，, 返回对象集合</p>
+</li>
+<li><p>document.<strong>createElement(</strong> tagName)<br>方法，通过给定的标签名，创建一个标签对象。tagName 是要创建的标签名</p>
+<p>注：优先用id查询其余依次往后范围扩大。</p>
+<p>返回对象为空时考虑页面加载完后显示：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;如 document.body</span><br><span class="line"></span><br><span class="line">window.onload &#x3D; function() &#123;</span><br><span class="line"></span><br><span class="line">document.body.appendChild(divobject);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; window.onload 为DOM时间对象通常用于 &lt;body&gt; 元素，在页面完全载入后(包括图片、css文件等等。)执行脚本代码。</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;appendChild 为DOM元素对象</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+</li>
+</ul>
+<h4 id="document-getElementById-elementId"><a href="#document-getElementById-elementId" class="headerlink" title="document.getElementById(elementId)"></a>document.getElementBy<strong>Id</strong>(elementId)</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> usernameSpanObj = <span class="built_in">document</span>.getElementById(<span class="string">"usernameSpan"</span>);</span><br><span class="line"><span class="comment">// innerHTML 表示起始标签和结束标签中的内容</span></span><br><span class="line"><span class="comment">// innerHTML 这个属性可读，可写</span></span><br><span class="line">usernameSpanObj.innerHTML = <span class="string">""</span>;</span><br><span class="line">usernameSpanObj.innerHTML = <span class="string">"&lt;img src=\"right.png\" width=\"18\" height=\"18\"&gt;"</span>;</span><br><span class="line"><span class="comment">//可放如图片等标签内容验证搜索</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+
+
+
+
+<h3 id="JavaScript-RegExp-对象-正则表达式"><a href="#JavaScript-RegExp-对象-正则表达式" class="headerlink" title="JavaScript RegExp 对象[正则表达式]"></a><a href="https://www.runoob.com/jsref/jsref-obj-regexp.html" target="_blank" rel="noopener">JavaScript RegExp 对象[正则表达式]</a></h3><ul>
+<li>语法</li>
+<li>修饰符</li>
+<li>方括号</li>
+<li>元字符</li>
+<li>量词</li>
+<li>对象方法</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> patt = <span class="regexp">/^\w&#123;5,12&#125;$/</span>;</span><br><span class="line"><span class="comment">// 大意：必须由字母，数字。下划线组成。并且长度是 5 到 12 位</span></span><br><span class="line"><span class="comment">// /^a/,以a打头;</span></span><br><span class="line"><span class="comment">// /a$/,以a结尾;</span></span><br><span class="line"><span class="comment">// /^a$/,从头到尾都是a,即“a”</span></span><br><span class="line"><span class="comment">// \w 单词字符</span></span><br><span class="line"><span class="comment">// &#123;5，12&#125; 5到12位</span></span><br></pre></td></tr></table></figure></div>
+
+<h1 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="什么是-jQuery"><a href="#什么是-jQuery" class="headerlink" title="什么是 jQuery ?"></a>什么是 jQuery ?</h3><p>jQuery，顾名思义，也就是 JavaScript 和查询（Query），它就是辅助 JavaScript 开发的 <strong>js 类库</strong>。</p>
+<p>jQuery  <strong>核心思想</strong><br>它的核心思想是 write less,do more(写得更少,做得更多)，所以它实现了很多浏览器的兼容问题。</p>
+<p>jQuery  <strong>好处</strong><br>jQuery 是免费、开源的，jQuery 的语法设计可以使开发更加便捷，例如操作文档对象、选择 DOM 元素、制作动画效果、事件处理、使用 Ajax 以及其他功能。</p>
+<h2 id="第一个单击事件程序"><a href="#第一个单击事件程序" class="headerlink" title="第一个单击事件程序"></a>第一个单击事件程序</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//引入下载好的JQuery包</span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"../script/jquery-1.7.2.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">$(function () &#123; /</span><span class="regexp">/ 表示页面加载完成 之后，相当 window.onload = function () &#123;&#125;</span></span><br><span class="line"><span class="regexp">var $btnObj = $("#btnId"); /</span><span class="regexp">/ 表示按 id 查询标签对象</span></span><br><span class="line"><span class="regexp">$btnObj.click(function () &#123; /</span><span class="regexp">/ 绑定单击事件</span></span><br><span class="line"><span class="regexp">alert("jQuery  的单击事件");</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="jQuery-核心函数"><a href="#jQuery-核心函数" class="headerlink" title="jQuery  核心函数"></a>jQuery  核心函数</h2><p><code>$</code> 是 jQuery 的核心函数，能完成 jQuery 的很多功能。<code>$()</code> 调用<code>$</code>这个函数</p>
+<ol>
+<li><p>传入参数为 [ 函数 ] 时：<br>表示页面加载完成之后。相当于 <code>window.onload = function(){}</code></p>
+</li>
+<li><p>传入参数为 [ HTML 字符串 ] 时：<br>会对我们创建这个 html 标签对象<img src="/images/javaweb1/image-20200731202713780.png" alt="image-20200731202713780"></p>
+</li>
+<li><p>传入参数为 [ 选择器字符串 ] 时：<br><code>$(“#id 属性值”);</code>       id 选择器，根据 id 查询标签对象<br><code>$(“标签名”);</code>               标签名选择器，根据指定的标签名查询标签对象<br><code>$(“.class 属性值”);</code> 类型选择器，可以根据 class 属性查询标签对象</p>
+</li>
+<li><p>传入参数为 [ DOM 对象 ] 时：<br>会把这个 dom 对象转换为 jQuery 对象</p>
+</li>
+</ol>
+<h1 id="IDEA使用"><a href="#IDEA使用" class="headerlink" title="IDEA使用"></a>IDEA使用</h1><h2 id="配置Maven项目"><a href="#配置Maven项目" class="headerlink" title="配置Maven项目"></a>配置Maven项目</h2><p><a href="https://how2j.cn/k/maven/maven-download-config/1329.html" target="_blank" rel="noopener">maven教程</a></p>
+<ol>
+<li><p><a href="https://blog.csdn.net/kangshuangzhu/article/details/100718142" target="_blank" rel="noopener">maven用IDEA社区版创建web项目</a></p>
+</li>
+<li><p><a href="https://www.cnblogs.com/hongmoshui/p/10762272.html" target="_blank" rel="noopener">Maven全局配置文件settings.xml详解</a></p>
+<p>a.<a href="https://blog.csdn.net/qq_45309297/article/details/106436535" target="_blank" rel="noopener">idea创建Maven报错</a></p>
+<p>b.<a href="https://blog.csdn.net/weixin_42683077/article/details/105310649" target="_blank" rel="noopener">Maven更新问题</a></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>最小栈【Java栈实现方法】</title>
+    <url>/2020/08/26/LEQS6/</url>
+    <content><![CDATA[<h1 id="题目：-最小栈Easy【Java栈实现方法】"><a href="#题目：-最小栈Easy【Java栈实现方法】" class="headerlink" title="题目： 最小栈Easy【Java栈实现方法】"></a>题目：<a href="https://leetcode-cn.com/problems/min-stack/" target="_blank" rel="noopener"> 最小栈</a>Easy【Java栈实现方法】</h1><h1 id="Java实现栈：采用Deque替代Stack"><a href="#Java实现栈：采用Deque替代Stack" class="headerlink" title="Java实现栈：采用Deque替代Stack"></a>Java实现栈：采用Deque替代Stack</h1><p>Java的集合包中本身就有栈的实现Stack，如果看过API或者是源码就会知道Java中的Stack是线程安全的，所有对外暴露的操作都使用了synchronized关键字，即加了一个重锁。什么是重锁？重锁就是需要由用户态切换到核心态，由操作系统来进行线程的同步互斥管理。</p>
+<p>所以一般在单线程情况下，没有必要使用Stack，可以使用<strong>Deque</strong>来替代。Deque中也实现了符合栈特性的<code>push(E e)和pop()</code>操作，但还有一点要注意的是，Deque实现的栈的栈顶是其首元素，即读取栈顶的元素应该使用<code>peekFirst()</code>。</p>
+<p>Deque实现栈常用方法</p>
+<ul>
+<li><code>push(E e)</code></li>
+<li><code>pop()</code></li>
+<li><code>peekFirst()</code> </li>
+<li><code>java.util.ArrayDeque.isEmpty()</code> 如果此双端队列不包含任何元素，则此方法返回true。</li>
+<li><img src="/images/LEQS6/image-20200903165956996.png" alt="image-20200903165956996"></li>
+<li><img src="/images/LEQS6/image-20200905095336981.png" alt="image-20200905095336981"></li>
+</ul>
+<p>接着再总结一下，集合类中大致的操作规律：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>成功</th>
+<th>失败</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>remove</td>
+<td>删除，并获取元素</td>
+<td>抛出异常</td>
+</tr>
+<tr>
+<td>poll</td>
+<td>删除，并获取元素</td>
+<td>返回null</td>
+</tr>
+<tr>
+<td>get</td>
+<td>获取元素</td>
+<td>抛出异常</td>
+</tr>
+<tr>
+<td>peek</td>
+<td>获取元素</td>
+<td>返回null</td>
+</tr>
+<tr>
+<td>add</td>
+<td>添加元素，返回true</td>
+<td>返回false</td>
+</tr>
+</tbody></table>
+<h3 id="解决方案一：辅助栈"><a href="#解决方案一：辅助栈" class="headerlink" title="解决方案一：辅助栈"></a>解决方案一：辅助栈</h3><h4 id="解题逻辑：辅助栈"><a href="#解题逻辑：辅助栈" class="headerlink" title="解题逻辑：辅助栈"></a><strong>解题逻辑</strong>：辅助栈</h4><ul>
+<li><p>借用一个辅助栈<code>min_stack</code>，用于存获取<code>stack</code>中最小值。</p>
+</li>
+<li><img src="/images/LEQS6/28724fa9f92b6952f7fdaf8760edd1dea850b137c22df28751f1cdd4d2680992-155.gif" alt="155.gif" style="zoom:33%;" />
+
+</li>
+</ul>
+<h4 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Deque&lt;Integer&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">private</span> Deque&lt;Integer&gt; minStack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        stack.push(x);</span><br><span class="line">        <span class="keyword">if</span> (minStack.isEmpty())</span><br><span class="line">            minStack.push(x);</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            minStack.push(Math.min(x, minStack.peekFirst()));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        stack.pop();</span><br><span class="line">        minStack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack.peekFirst();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> minStack.peekFirst();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li>Java中的int是基本数据类型，没有继承自Object类，要存放整型数据必须使用整型的封装类</li>
+</ul>
+<h3 id="解决方案二：单栈存储插值"><a href="#解决方案二：单栈存储插值" class="headerlink" title="解决方案二：单栈存储插值"></a>解决方案二：单栈存储插值</h3><h4 id="解题逻辑：存储差值一个栈"><a href="#解题逻辑：存储差值一个栈" class="headerlink" title="解题逻辑：存储差值一个栈"></a><strong>解题逻辑</strong>：存储差值一个栈</h4><ul>
+<li>每次存入的是 <code>原来值 - 当前最小值</code>。</li>
+<li>当原来值大于等于当前最小值的时候，存入就是非负数，出栈的时候就是 <code>栈中的值 + 当前最小值</code> 。</li>
+<li>当原来值小于当前最小值的时候，存入是负值，此时的值不入栈，用 <code>min</code> 保存起来，同时将差值入栈。</li>
+<li>负数存入，后续通过计算可得到次最小值，依次可将各个阶段站内最小值记录</li>
+</ul>
+<h4 id="代码分析-1"><a href="#代码分析-1" class="headerlink" title="代码分析"></a>代码分析</h4><h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> min;</span><br><span class="line">	Stack&lt;Long&gt; stack;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span></span>&#123;</span><br><span class="line">        stack=<span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (stack.isEmpty()) &#123;</span><br><span class="line">			min = x;</span><br><span class="line">			stack.push(x - min);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			stack.push(x - min);</span><br><span class="line">			<span class="keyword">if</span> (x &lt; min)&#123;</span><br><span class="line">				min = x; <span class="comment">// 更新最小值</span></span><br><span class="line">			&#125;</span><br><span class="line">				</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (stack.isEmpty())</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">long</span> pop = stack.pop();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//弹出的是负值，要更新 min</span></span><br><span class="line">		<span class="keyword">if</span> (pop &lt; <span class="number">0</span>) &#123;</span><br><span class="line">			min = min - pop;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">long</span> top = stack.peek();</span><br><span class="line">		<span class="comment">//负数的话，出栈的值保存在 min 中</span></span><br><span class="line">		<span class="keyword">if</span> (top &lt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> (<span class="keyword">int</span>) (min);</span><br><span class="line">        <span class="comment">//出栈元素加上最小值即可</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> (<span class="keyword">int</span>) (top + min);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="keyword">int</span>) min;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="tips-1"><a href="#tips-1" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li>上边的解法的一个缺点就是由于我们保存的是差值，所以可能造成溢出，所以我们用了数据范围更大的 <code>long</code> 类型。</li>
+</ul>
+<blockquote>
+<p>文件名：LEQS6</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreQ&amp;S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Excel操作</title>
+    <url>/2020/07/03/Excel/</url>
+    <content><![CDATA[<h1 id="Excel操作"><a href="#Excel操作" class="headerlink" title="Excel操作"></a>Excel操作</h1><h2 id="保持某个单元格不改变"><a href="#保持某个单元格不改变" class="headerlink" title="保持某个单元格不改变"></a>保持某个单元格不改变</h2><p><strong>$</strong> 符号</p>
+<p>例子：实现excel后一行减前一行得数的公式输入</p>
+<p><img src="../images/Excel/image-20200919202128258.png" alt="image-20200919202128258"></p>
+]]></content>
+      <categories>
+        <category>Excel操作</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>快捷键</title>
+    <url>/2020/07/03/Shortcuts/</url>
+    <content><![CDATA[<h1 id="IntelliJ-快捷键"><a href="#IntelliJ-快捷键" class="headerlink" title="IntelliJ 快捷键"></a>IntelliJ 快捷键</h1><p><code>System.out.println（）</code> —— <strong>sout + Enter</strong></p>
+<p><code>System.out.println（&quot;方法 &quot; + 参数）</code> —— <strong>soutv + Enter</strong></p>
+<p><code>public static void main(String[]args){ }</code>——<strong>psvm + enter</strong></p>
+<p><code>for (int i = 0; i &lt; ; i++) { }</code>—<strong>fori + enter</strong></p>
+<p><code>选中该行可选择包围该行的形式</code> —— <strong>ctri+alt+t</strong></p>
+<hr>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">alt+/提示补全</span><br><span class="line">ctrl+/ 单行注释</span><br><span class="line">ctrl+d 复制一行</span><br><span class="line">      ctrl + y删除一行</span><br><span class="line">      alt+down 光标向下移动一个方法</span><br><span class="line">alt+up 光标向上移动一个方法</span><br><span class="line">      </span><br><span class="line">	</span><br><span class="line">shift+enter 向下开始新的一行</span><br><span class="line">ctrl+shift+enter 向上开始新的一行</span><br><span class="line"></span><br><span class="line">alt+left 退回到前一个编辑界面</span><br><span class="line">alt+right 进入到下一个编辑的界面</span><br><span class="line">f4 查看继承关系</span><br><span class="line">ctrl+shift+f 格式化代码</span><br><span class="line">ctrl+alt+/ 提示方法参数类型</span><br><span class="line"></span><br><span class="line">ctrl+y 反撤销</span><br><span class="line">ctrl+x 剪切</span><br><span class="line">	</span><br><span class="line">tab 选中数行，整体往后移动</span><br><span class="line">shift+tab 选中数行，整体向前移动</span><br><span class="line"></span><br><span class="line">ctrl+shift+y 大写转换为小写/小写转换为大写</span><br><span class="line">alt+shift+s 快速生成get set方法 可按住shift进行多选</span><br><span class="line">f2查看文档说明</span><br><span class="line">alt+shift+c 收起所有方法</span><br><span class="line">alt+shift+x打开所有方法</span><br><span class="line">ctrl+shift+x 打开代码所在的硬盘文件夹</span><br><span class="line">alt+shift+z 生成<span class="keyword">try</span>-catch</span><br><span class="line">alt+shift+f 局部变量抽取为成员变量</span><br><span class="line">ctrl+f 查找(代码)</span><br><span class="line">ctrl+h 查找(全局)</span><br><span class="line">双击shift 查找文件</span><br><span class="line">alt+shift+m 抽取方法</span><br><span class="line"></span><br><span class="line">ctrl+e 打开module setting窗口</span><br><span class="line">ctrl+w 关闭当前打开的代码栏</span><br><span class="line">ctrl+shift+w 关闭打开的所有代码栏</span><br><span class="line">ctrl+shift+q 快速搜索类中的错误</span><br><span class="line">ctrl+shift+v 选择要粘贴的内容</span><br><span class="line">ctrl+shift+h 查找方法在哪里被调用</span><br><span class="line">ctrl+alt+h 查看方法的多层重写结构</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="VSCode-快捷键"><a href="#VSCode-快捷键" class="headerlink" title="VSCode 快捷键"></a>VSCode 快捷键</h1><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="code"><pre><span class="line"> ctrl + shift + K   //删除一行</span><br><span class="line"> ！ + enter         //快速创建HTML标准格式的代码   </span><br><span class="line">ctrl + space 更改为 alt + /    // trigger suggest</span><br></pre></td></tr></table></figure></div>
+
+]]></content>
+      <categories>
+        <category>快捷键</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Model</title>
+    <url>/2020/09/14/LTemp/</url>
+    <content><![CDATA[<h1 id="题目：-名字-Easy-Medium-Hard"><a href="#题目：-名字-Easy-Medium-Hard" class="headerlink" title="题目： 名字   Easy/Medium/Hard"></a>题目： 名字   Easy/Medium/Hard</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
+<li><h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3></li>
+<li></li>
+</ol>
+<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
+<li></li>
+</ul>
+<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
+<li><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4></li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
+<li><h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3></li>
+</ul>
+<h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h3><blockquote>
+<p>文件名：LBT</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>LeetCodeExplore</tag>
+        <tag>LeetcodeExploreBT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>设计链表</title>
     <url>/2020/09/07/LEL2/</url>
     <content><![CDATA[<h1 id="题目：设计链表-Easy"><a href="#题目：设计链表-Easy" class="headerlink" title="题目：设计链表 Easy"></a>题目：设计链表 Easy</h1><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><ul>
@@ -685,57 +1435,6 @@
       </tags>
   </entry>
   <entry>
-    <title>快捷键</title>
-    <url>/2020/07/03/IDEASCK/</url>
-    <content><![CDATA[<h1 id="IntelliJ-快捷键"><a href="#IntelliJ-快捷键" class="headerlink" title="IntelliJ 快捷键"></a>IntelliJ 快捷键</h1><p><code>System.out.println（）</code> —— <strong>sout + Enter</strong></p>
-<p><code>System.out.println（&quot;方法 &quot; + 参数）</code> —— <strong>soutv + Enter</strong></p>
-<p><code>public static void main(String[]args){ }</code>——<strong>psvm + enter</strong></p>
-<p><code>for (int i = 0; i &lt; ; i++) { }</code>—<strong>fori + enter</strong></p>
-<p><code>选中该行可选择包围该行的形式</code> —— <strong>ctri+alt+t</strong></p>
-<hr>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">alt+/提示补全</span><br><span class="line">ctrl+/ 单行注释</span><br><span class="line">ctrl+d 复制一行</span><br><span class="line">      ctrl + y删除一行</span><br><span class="line">      alt+down 光标向下移动一个方法</span><br><span class="line">alt+up 光标向上移动一个方法</span><br><span class="line">      </span><br><span class="line">	</span><br><span class="line">shift+enter 向下开始新的一行</span><br><span class="line">ctrl+shift+enter 向上开始新的一行</span><br><span class="line"></span><br><span class="line">alt+left 退回到前一个编辑界面</span><br><span class="line">alt+right 进入到下一个编辑的界面</span><br><span class="line">f4 查看继承关系</span><br><span class="line">ctrl+shift+f 格式化代码</span><br><span class="line">ctrl+alt+/ 提示方法参数类型</span><br><span class="line"></span><br><span class="line">ctrl+y 反撤销</span><br><span class="line">ctrl+x 剪切</span><br><span class="line">	</span><br><span class="line">tab 选中数行，整体往后移动</span><br><span class="line">shift+tab 选中数行，整体向前移动</span><br><span class="line"></span><br><span class="line">ctrl+shift+y 大写转换为小写/小写转换为大写</span><br><span class="line">alt+shift+s 快速生成get set方法 可按住shift进行多选</span><br><span class="line">f2查看文档说明</span><br><span class="line">alt+shift+c 收起所有方法</span><br><span class="line">alt+shift+x打开所有方法</span><br><span class="line">ctrl+shift+x 打开代码所在的硬盘文件夹</span><br><span class="line">alt+shift+z 生成<span class="keyword">try</span>-catch</span><br><span class="line">alt+shift+f 局部变量抽取为成员变量</span><br><span class="line">ctrl+f 查找(代码)</span><br><span class="line">ctrl+h 查找(全局)</span><br><span class="line">双击shift 查找文件</span><br><span class="line">alt+shift+m 抽取方法</span><br><span class="line"></span><br><span class="line">ctrl+e 打开module setting窗口</span><br><span class="line">ctrl+w 关闭当前打开的代码栏</span><br><span class="line">ctrl+shift+w 关闭打开的所有代码栏</span><br><span class="line">ctrl+shift+q 快速搜索类中的错误</span><br><span class="line">ctrl+shift+v 选择要粘贴的内容</span><br><span class="line">ctrl+shift+h 查找方法在哪里被调用</span><br><span class="line">ctrl+alt+h 查看方法的多层重写结构</span><br></pre></td></tr></table></figure></div>
-
-<h1 id="VSCode-快捷键"><a href="#VSCode-快捷键" class="headerlink" title="VSCode 快捷键"></a>VSCode 快捷键</h1><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="code"><pre><span class="line">ctrl + shift + K   //删除一行</span><br><span class="line">！ + enter         //快速创建HTML标准格式的代码</span><br></pre></td></tr></table></figure></div>
-
-]]></content>
-      <categories>
-        <category>快捷键</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Model</title>
-    <url>/2020/09/07/LTemp/</url>
-    <content><![CDATA[<h1 id="题目：-名字-Easy-Medium-Hard"><a href="#题目：-名字-Easy-Medium-Hard" class="headerlink" title="题目： 名字   Easy/Medium/Hard"></a>题目： 名字   Easy/Medium/Hard</h1><h2 id="1-自己构思"><a href="#1-自己构思" class="headerlink" title="1.自己构思"></a>1.自己构思</h2><h3 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h3><ol>
-<li><h3 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h3></li>
-<li></li>
-</ol>
-<h2 id="2-学习题解代码"><a href="#2-学习题解代码" class="headerlink" title="2.学习题解代码"></a>2.学习题解代码</h2><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
-<li></li>
-</ul>
-<h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><h4 id="解决自己问题："><a href="#解决自己问题：" class="headerlink" title="解决自己问题："></a>解决自己问题：</h4><ul>
-<li><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4></li>
-</ul>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-
-
-
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
-<li><h3 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h3></li>
-</ul>
-<h3 id="解决方案三"><a href="#解决方案三" class="headerlink" title="解决方案三"></a>解决方案三</h3><blockquote>
-<p>文件名：LEL</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreLL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>最长公共前缀</title>
     <url>/2020/07/03/LEAS1/</url>
     <content><![CDATA[<h1 id="题目：-最长公共前缀-Easy"><a href="#题目：-最长公共前缀-Easy" class="headerlink" title="题目： 最长公共前缀  Easy"></a>题目： <a href="https://leetcode-cn.com/problems/longest-common-prefix/" target="_blank" rel="noopener">最长公共前缀</a>  Easy</h1><h3 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h3><h4 id="解题逻辑："><a href="#解题逻辑：" class="headerlink" title="解题逻辑："></a><strong>解题逻辑</strong>：</h4><ul>
@@ -1112,131 +1811,6 @@
 </ul>
 <blockquote>
 <p>文件名：LEQS4</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreQ&amp;S</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>队列构造与内置用法</title>
-    <url>/2020/08/11/LEQS2/</url>
-    <content><![CDATA[<h1 id="java-内置队列库实现常见队列操作"><a href="#java-内置队列库实现常见队列操作" class="headerlink" title="java 内置队列库实现常见队列操作"></a>java 内置队列库实现常见队列操作</h1><ol>
-<li>Queue<T>  q  = new LinkedList();</li>
-<li>q.offer();/add();</li>
-<li>q.poll();/remove();</li>
-<li>//add()和remove()方法在失败的时候会抛出异常(不推荐)</li>
-<li><img src="/images/LEQS2/image-20200903170626591.png" alt="image-20200903170626591" style="zoom: 80%;" />
-
-</li>
-</ol>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// "static void main" must be defined in a public class.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. Initialize a queue.</span></span><br><span class="line">        Queue&lt;Integer&gt; q = <span class="keyword">new</span> LinkedList();</span><br><span class="line">        <span class="comment">// 2. Get the first element - return null if queue is empty.</span></span><br><span class="line">        System.out.println(<span class="string">"The first element is: "</span> + q.peek());</span><br><span class="line">        <span class="comment">// 3. Push new element.</span></span><br><span class="line">        q.offer(<span class="number">5</span>);</span><br><span class="line">        q.offer(<span class="number">13</span>);</span><br><span class="line">        q.offer(<span class="number">8</span>);</span><br><span class="line">        q.offer(<span class="number">6</span>);</span><br><span class="line">        <span class="comment">// 4. Pop an element.</span></span><br><span class="line">        q.poll();</span><br><span class="line">        <span class="comment">// 5. Get the first element.</span></span><br><span class="line">        System.out.println(<span class="string">"The first element is: "</span> + q.peek());</span><br><span class="line">        <span class="comment">// 7. Get the size of the queue.</span></span><br><span class="line">        System.out.println(<span class="string">"The size is: "</span> + q.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ol>
-<li>java.util.* 代表导入util包下的所有类不包含接口</li>
-<li>queue为接口需要重新导入</li>
-<li><a href="https://cloud.tencent.com/developer/article/1515562" target="_blank" rel="noopener">阅读</a></li>
-<li>java14,util包在javabase/java/util</li>
-</ol>
-<h1 id="低效率列表实现"><a href="#低效率列表实现" class="headerlink" title="低效率列表实现"></a>低效率列表实现</h1><h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// "static void main" must be defined in a public class.</span></span><br><span class="line"><span class="comment">//低效率浪费空间</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyQueue</span> </span>&#123;</span><br><span class="line">    <span class="comment">// store elements</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Integer&gt; data;         </span><br><span class="line">    <span class="comment">// a pointer to indicate the start position</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> p_start;            </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        p_start = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** Insert an element into the queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">enQueue</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        data.add(x);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;;    </span><br><span class="line">    <span class="comment">/** Delete an element from the queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty() == <span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        p_start++;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** Get the front item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data.get(p_start);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** Checks whether the queue is empty or not. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> p_start &gt;= data.size();</span><br><span class="line">    &#125;     </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MyQueue q = <span class="keyword">new</span> MyQueue();</span><br><span class="line">        q.enQueue(<span class="number">5</span>);</span><br><span class="line">        q.enQueue(<span class="number">3</span>);</span><br><span class="line">        <span class="keyword">if</span> (q.isEmpty() == <span class="keyword">false</span>) &#123;</span><br><span class="line">            System.out.println(q.Front());</span><br><span class="line">        &#125;</span><br><span class="line">        q.deQueue();</span><br><span class="line">        <span class="keyword">if</span> (q.isEmpty() == <span class="keyword">false</span>) &#123;</span><br><span class="line">            System.out.println(q.Front());</span><br><span class="line">        &#125;</span><br><span class="line">        q.deQueue();</span><br><span class="line">        <span class="keyword">if</span> (q.isEmpty() == <span class="keyword">false</span>) &#123;</span><br><span class="line">            System.out.println(q.Front());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h1 id="循环队列数组实现"><a href="#循环队列数组实现" class="headerlink" title="循环队列数组实现"></a>循环队列数组实现</h1><h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><ul>
-<li>计算队尾指针位置<img src="/images/LEQS2/image-20200822155337704.png" alt="image-20200822155337704" style="zoom:50%;" /></li>
-</ul>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCircularQueue</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] queue;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> headIndex;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> capacity;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Initialize your data structure here. Set the size of the queue to be k. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyCircularQueue</span><span class="params">(<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.capacity = k;</span><br><span class="line">        <span class="keyword">this</span>.queue =  <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        <span class="keyword">this</span>.headIndex = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.count = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Insert an element into the circular queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">enQueue</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.count == <span class="keyword">this</span>.capacity) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">this</span>.count++;</span><br><span class="line">        <span class="keyword">this</span>.queue[(<span class="keyword">this</span>.headIndex + <span class="keyword">this</span>.count -<span class="number">1</span>) % <span class="keyword">this</span>.capacity] = value;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Delete an element from the circular queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.count == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">this</span>.headIndex = (<span class="keyword">this</span>.headIndex + <span class="number">1</span>) % <span class="keyword">this</span>.capacity;</span><br><span class="line">        <span class="keyword">this</span>.count--;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Get the front item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.count == <span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.queue[<span class="keyword">this</span>.headIndex];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Get the last item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Rear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.count == <span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.queue[(<span class="keyword">this</span>.headIndex + <span class="keyword">this</span>.count -<span class="number">1</span>) % <span class="keyword">this</span>.capacity];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">/** Checks whether the circular queue is empty or not. */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">this</span>.count == <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/** Checks whether the circular queue is full or not. */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">this</span>.count == <span class="keyword">this</span>.capacity);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyCircularQueue object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyCircularQueue obj = new MyCircularQueue(k);</span></span><br><span class="line"><span class="comment"> * boolean param_1 = obj.enQueue(value);</span></span><br><span class="line"><span class="comment"> * boolean param_2 = obj.deQueue();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj.Front();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj.Rear();</span></span><br><span class="line"><span class="comment"> * boolean param_5 = obj.isEmpty();</span></span><br><span class="line"><span class="comment"> * boolean param_6 = obj.isFull();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure></div>
-
-<blockquote>
-<p>文件名：LEQS2</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>LeetCodeExplore</tag>
-        <tag>LeetcodeExploreQ&amp;S</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>最小栈</title>
-    <url>/2020/08/26/LEQS6/</url>
-    <content><![CDATA[<h1 id="题目：-最小栈Easy"><a href="#题目：-最小栈Easy" class="headerlink" title="题目： 最小栈Easy"></a>题目：<a href="https://leetcode-cn.com/problems/min-stack/" target="_blank" rel="noopener"> 最小栈</a>Easy</h1><h1 id="Java实现栈：采用Deque替代Stack"><a href="#Java实现栈：采用Deque替代Stack" class="headerlink" title="Java实现栈：采用Deque替代Stack"></a>Java实现栈：采用Deque替代Stack</h1><p>Java的集合包中本身就有栈的实现Stack，如果看过API或者是源码就会知道Java中的Stack是线程安全的，所有对外暴露的操作都使用了synchronized关键字，即加了一个重锁。什么是重锁？重锁就是需要由用户态切换到核心态，由操作系统来进行线程的同步互斥管理。</p>
-<p>所以一般在单线程情况下，没有必要使用Stack，可以使用<strong>Deque</strong>来替代。Deque中也实现了符合栈特性的<code>push(E e)和pop()</code>操作，但还有一点要注意的是，Deque实现的栈的栈顶是其首元素，即读取栈顶的元素应该使用<code>peekFirst()</code>。</p>
-<p>Deque实现栈常用方法</p>
-<ul>
-<li><code>push(E e)</code></li>
-<li><code>pop()</code></li>
-<li><code>peekFirst()</code> </li>
-<li><code>java.util.ArrayDeque.isEmpty()</code> 如果此双端队列不包含任何元素，则此方法返回true。</li>
-<li><img src="/images/LEQS6/image-20200903165956996.png" alt="image-20200903165956996"></li>
-<li><img src="/images/LEQS6/image-20200905095336981.png" alt="image-20200905095336981"></li>
-</ul>
-<p>接着再总结一下，集合类中大致的操作规律：</p>
-<table>
-<thead>
-<tr>
-<th>操作</th>
-<th>成功</th>
-<th>失败</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>remove</td>
-<td>删除，并获取元素</td>
-<td>抛出异常</td>
-</tr>
-<tr>
-<td>poll</td>
-<td>删除，并获取元素</td>
-<td>返回null</td>
-</tr>
-<tr>
-<td>get</td>
-<td>获取元素</td>
-<td>抛出异常</td>
-</tr>
-<tr>
-<td>peek</td>
-<td>获取元素</td>
-<td>返回null</td>
-</tr>
-<tr>
-<td>add</td>
-<td>添加元素，返回true</td>
-<td>返回false</td>
-</tr>
-</tbody></table>
-<h3 id="解决方案一：辅助栈"><a href="#解决方案一：辅助栈" class="headerlink" title="解决方案一：辅助栈"></a>解决方案一：辅助栈</h3><h4 id="解题逻辑：辅助栈"><a href="#解题逻辑：辅助栈" class="headerlink" title="解题逻辑：辅助栈"></a><strong>解题逻辑</strong>：辅助栈</h4><ul>
-<li><p>借用一个辅助栈<code>min_stack</code>，用于存获取<code>stack</code>中最小值。</p>
-</li>
-<li><img src="/images/LEQS6/28724fa9f92b6952f7fdaf8760edd1dea850b137c22df28751f1cdd4d2680992-155.gif" alt="155.gif" style="zoom:33%;" />
-
-</li>
-</ul>
-<h4 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h4><h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Deque&lt;Integer&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">private</span> Deque&lt;Integer&gt; minStack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        stack.push(x);</span><br><span class="line">        <span class="keyword">if</span> (minStack.isEmpty())</span><br><span class="line">            minStack.push(x);</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            minStack.push(Math.min(x, minStack.peekFirst()));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        stack.pop();</span><br><span class="line">        minStack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack.peekFirst();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> minStack.peekFirst();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h4><ul>
-<li>Java中的int是基本数据类型，没有继承自Object类，要存放整型数据必须使用整型的封装类</li>
-</ul>
-<h3 id="解决方案二：单栈存储插值"><a href="#解决方案二：单栈存储插值" class="headerlink" title="解决方案二：单栈存储插值"></a>解决方案二：单栈存储插值</h3><h4 id="解题逻辑：存储差值一个栈"><a href="#解题逻辑：存储差值一个栈" class="headerlink" title="解题逻辑：存储差值一个栈"></a><strong>解题逻辑</strong>：存储差值一个栈</h4><ul>
-<li>每次存入的是 <code>原来值 - 当前最小值</code>。</li>
-<li>当原来值大于等于当前最小值的时候，存入就是非负数，出栈的时候就是 <code>栈中的值 + 当前最小值</code> 。</li>
-<li>当原来值小于当前最小值的时候，存入是负值，此时的值不入栈，用 <code>min</code> 保存起来，同时将差值入栈。</li>
-<li>负数存入，后续通过计算可得到次最小值，依次可将各个阶段站内最小值记录</li>
-</ul>
-<h4 id="代码分析-1"><a href="#代码分析-1" class="headerlink" title="代码分析"></a>代码分析</h4><h4 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> min;</span><br><span class="line">	Stack&lt;Long&gt; stack;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span></span>&#123;</span><br><span class="line">        stack=<span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (stack.isEmpty()) &#123;</span><br><span class="line">			min = x;</span><br><span class="line">			stack.push(x - min);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			stack.push(x - min);</span><br><span class="line">			<span class="keyword">if</span> (x &lt; min)&#123;</span><br><span class="line">				min = x; <span class="comment">// 更新最小值</span></span><br><span class="line">			&#125;</span><br><span class="line">				</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (stack.isEmpty())</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">long</span> pop = stack.pop();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//弹出的是负值，要更新 min</span></span><br><span class="line">		<span class="keyword">if</span> (pop &lt; <span class="number">0</span>) &#123;</span><br><span class="line">			min = min - pop;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">long</span> top = stack.peek();</span><br><span class="line">		<span class="comment">//负数的话，出栈的值保存在 min 中</span></span><br><span class="line">		<span class="keyword">if</span> (top &lt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> (<span class="keyword">int</span>) (min);</span><br><span class="line">        <span class="comment">//出栈元素加上最小值即可</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> (<span class="keyword">int</span>) (top + min);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="keyword">int</span>) min;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="tips-1"><a href="#tips-1" class="headerlink" title="tips:"></a>tips:</h4><ul>
-<li>上边的解法的一个缺点就是由于我们保存的是差值，所以可能造成溢出，所以我们用了数据范围更大的 <code>long</code> 类型。</li>
-</ul>
-<blockquote>
-<p>文件名：LEQS6</p>
 </blockquote>
 ]]></content>
       <categories>
@@ -2040,138 +2614,6 @@
         <tag>LeetCodeExplore</tag>
         <tag>LeetcodeExploreA&amp;S</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>JavaWeb(一)</title>
-    <url>/2020/07/25/javaweb1/</url>
-    <content><![CDATA[<h1 id="HTML-amp-CSS"><a href="#HTML-amp-CSS" class="headerlink" title="HTML&amp;CSS"></a>HTML&amp;CSS</h1><h2 id="B-S软件结构"><a href="#B-S软件结构" class="headerlink" title="B/S软件结构"></a>B/S软件结构</h2><h2 id="一些标签"><a href="#一些标签" class="headerlink" title="一些标签"></a>一些标签</h2><h4 id="table"><a href="#table" class="headerlink" title="table"></a>table</h4><ul>
-<li><p><strong>tr</strong>   table data row</p>
-</li>
-<li><p><strong>td</strong>  table data cell</p>
-</li>
-<li><p><strong>th</strong> table header cell</p>
-</li>
-</ul>
-<h2 id="css-选择器"><a href="#css-选择器" class="headerlink" title="css 选择器"></a>css 选择器</h2><ol>
-<li>标签名选择器  div{ }</li>
-<li>id选择器 <strong>#</strong>id { } id=””</li>
-<li>class选择器 <strong>.</strong>class{ }  class=””</li>
-<li>组合选择器  1，2，3…{ }</li>
-</ol>
-<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>JS是弱类型语言，定义变量的时候类型不确定可变。</p>
-<h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><ol>
-<li>交互（浏览器页面信息动态交互，用户输入与客户端反馈）</li>
-<li>安全性（不允许直接访问本地硬盘）</li>
-<li>跨平台性（只要是可以解释JS的浏览器都可以执行，平台无关）</li>
-</ol>
-<h2 id="与Html结合"><a href="#与Html结合" class="headerlink" title="与Html结合"></a>与Html结合</h2><ol>
-<li>直接在body，head 中用<script>标签引入</li>
-<li>单独写在js文件中，用<script>引入</li>
-</ol>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>自动扩容</p>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="定义方式"><a href="#定义方式" class="headerlink" title="定义方式"></a>定义方式</h3><ol>
-<li><code>function fun() {}</code> 直接加return 代表有返回值</li>
-<li><code>var fun =fuction() { }</code></li>
-</ol>
-<h3 id="js函数不能重载，只会覆盖上层定义"><a href="#js函数不能重载，只会覆盖上层定义" class="headerlink" title="js函数不能重载，只会覆盖上层定义"></a>js函数不能重载，只会覆盖上层定义</h3><h3 id="arguments隐形参数（只在function内部，无需定义）"><a href="#arguments隐形参数（只在function内部，无需定义）" class="headerlink" title="arguments隐形参数（只在function内部，无需定义）"></a>arguments隐形参数（只在function内部，无需定义）</h3><p>类似于传入参数的可变长数组集合</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line">fun(<span class="number">1</span>,<span class="string">"a"</span>,<span class="literal">true</span>)</span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">arguments</span>[<span class="number">0</span>]) <span class="comment">//1</span></span><br><span class="line">alert(<span class="built_in">arguments</span>[<span class="number">1</span>]) <span class="comment">//"a"</span></span><br><span class="line">alert(<span class="built_in">arguments</span>[<span class="number">2</span>])  <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">亦可进行遍历</span><br><span class="line"></span><br><span class="line">js中+ 不同类型为字符串拼接</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="自定义对象"><a href="#自定义对象" class="headerlink" title="自定义对象"></a>自定义对象</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="keyword">new</span> object()</span><br><span class="line">name.value = value;</span><br><span class="line">name.fun =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">访问</span><br><span class="line">name.value</span><br><span class="line"></span><br><span class="line">&#123;&#125; <span class="comment">//自定义空对象 object类</span></span><br><span class="line"><span class="keyword">var</span> variable =&#123;</span><br><span class="line">    name1:value,</span><br><span class="line">    name2,value,</span><br><span class="line">    name_of_function : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="js事件"><a href="#js事件" class="headerlink" title="js事件"></a>js事件</h3><h4 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h4><ul>
-<li><strong>onload</strong> ：浏览器解析完自动触发事件</li>
-<li><strong>onclick</strong> :   常用于按钮的点击响应操作。</li>
-<li><strong>onblur</strong> : 失去焦点事件： 常用用于输入框失去焦点后验证其输入内容是否合法。</li>
-<li><strong>onchange</strong> : 内容发生改变事件： 常用于下拉列表和输入框内容发生改变后操作</li>
-<li><strong>onsubmit</strong>  : 表单提交事件： 常用于表单提交前，验证所有表单项是否合法</li>
-</ul>
-<h4 id="静态注册和动态注册"><a href="#静态注册和动态注册" class="headerlink" title="静态注册和动态注册"></a>静态注册和动态注册</h4><p>注册：告诉浏览器，当时间响应后执行哪些操作代码，叫事件注册</p>
-<p>静态：html事件属性直接赋值于事件响应后的代码 【标签中添加】</p>
-<p>动态：通过js代码得到标签的dom对象，通过dom对象.事件名 = functiong(){} 赋予事件响应后代码 【通过id获取 然后通过标签进行】</p>
-<p>动态注册<strong>基本步骤</strong>：</p>
-<ol>
-<li>获取标签对象</li>
-<li>标签对象.事件名= functiong(){}</li>
-</ol>
-<p><strong>onload</strong> 加载完成事件</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// onload 事件动态注册。是固定写法</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">alert(<span class="string">" 动态注册的 onload  事件"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//静态注册 onload 事件</span></span><br><span class="line"><span class="comment">//onload 事件是浏览器解析完页面之后就会自动触发的事件</span></span><br><span class="line">&lt;body onload=<span class="string">"onloadFun();"</span>&gt;</span><br></pre></td></tr></table></figure></div>
-
-<p> <strong>onclick</strong> 单击事件</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 动态注册 onclick 事件</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// 1 获取标签对象</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* document 是 JavaScript 语言提供的一个对象（文档） &lt;br/&gt;</span></span><br><span class="line"><span class="comment">* getElementById 通过 id 属性获取标签对象</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">var</span> btnObj = <span class="built_in">document</span>.getElementById(<span class="string">"btn01"</span>);</span><br><span class="line"><span class="comment">// alert( btnObj );</span></span><br><span class="line"><span class="comment">// 2 通过标签对象 . 事件名 = function()&#123;&#125;</span></span><br><span class="line">btnObj.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">alert(<span class="string">" 动态注册的 onclick  事件"</span>);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">  &lt;!-- 静态注册 onClick 事件 --&gt;</span><br><span class="line">&lt;button onclick=<span class="string">"onclickFun();"</span>&gt;按钮 <span class="number">1</span> &lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;button id="btn01"&gt;按钮 2&lt;/</span>button&gt;</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>onblur</strong> 失去焦点事件</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 静态注册失去焦点事件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onblurFun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// console 是控制台对象，是由 JavaScript 语言提供，专门用来向浏览器的控制器打印输出， 用于测试使用</span></span><br><span class="line"><span class="comment">// log() 是打印的方法</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">" 静态注册失去焦点事件"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 动态注册 onblur 事件 利用id获取</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">//1 获取标签对象</span></span><br><span class="line"><span class="keyword">var</span> passwordObj = <span class="built_in">document</span>.getElementById(<span class="string">"password"</span>);</span><br><span class="line"><span class="comment">// alert(passwordObj);</span></span><br><span class="line"><span class="comment">//2 通过标签对象 . 事件名 = function()&#123;&#125;;</span></span><br><span class="line">passwordObj.onblur = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">" 动态注册失去焦点事件"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">用户名:<span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">onblur</span>=<span class="string">"onblurFun();"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line">密码:&lt;input id="password" type="text" &gt;&lt;br/&gt;</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>onchange</strong> 内容发生改变事件</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onchangeFun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">alert(<span class="string">" 女神已经改变了"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">//1 获取标签对象</span></span><br><span class="line"><span class="keyword">var</span> selObj = <span class="built_in">document</span>.getElementById(<span class="string">"sel01"</span>);</span><br><span class="line"><span class="comment">// alert( selObj );</span></span><br><span class="line"><span class="comment">//2 通过标签对象 . 事件名 = function()&#123;&#125;</span></span><br><span class="line">selObj.onchange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">alert(<span class="string">" 男神已经改变了"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;!-- 静态注册 onchange 事件 --&gt;</span></span><br><span class="line"><span class="regexp">&lt;select onchange="onchangeFun();"&gt;</span></span><br><span class="line"><span class="regexp">&lt;option&gt;--女神--&lt;/</span>option&gt;</span><br><span class="line">&lt;option&gt;芳芳&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">&lt;option&gt;佳佳&lt;/</span>option&gt;</span><br><span class="line">&lt;option&gt;娘娘&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>select&gt;</span><br><span class="line"></span><br><span class="line">请选择你心中的男神：</span><br><span class="line">&lt;select id=<span class="string">"sel01"</span>&gt;</span><br><span class="line">&lt;option&gt;--男神--&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">&lt;option&gt;国哥&lt;/</span>option&gt;</span><br><span class="line">&lt;option&gt;华仔&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">&lt;option&gt;富城&lt;/</span>option&gt;</span><br><span class="line">&lt;<span class="regexp">/select&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p><strong>onsubmit</strong>  : 表单提交事件</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> &gt;</span><br><span class="line"><span class="comment">// 静态注册表单提交事务</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onsubmitFun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="comment">// 要验证所有表单项是否合法，如果，有一个不合法就阻止表单提交</span></span><br><span class="line">alert(<span class="string">" 静态注册表单提交事件---- 发现不合法"</span>);</span><br><span class="line"><span class="keyword">return</span> flase;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">//1 获取标签对象</span></span><br><span class="line"><span class="keyword">var</span> formObj = <span class="built_in">document</span>.getElementById(<span class="string">"form01"</span>);</span><br><span class="line"><span class="comment">//2 通过标签对象 . 事件名 = function()&#123;&#125;</span></span><br><span class="line">formObj.onsubmit = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// 要验证所有表单项是否合法，如果，有一个不合法就阻止表单提交</span></span><br><span class="line">alert(<span class="string">" 动态注册表单提交事件---- 发现不合法"</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;!--return false 可以阻止 表单提交 --&gt;</span></span><br><span class="line"><span class="regexp">&lt;form action="http:/</span><span class="regexp">/localhost:8080" method="get" onsubmit="return onsubmitFun();"&gt;</span></span><br><span class="line"><span class="regexp">&lt;input type="submit" value=" 静态注册"/</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/form&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;form action="http:/</span><span class="regexp">/localhost:8080" id="form01"&gt;</span></span><br><span class="line"><span class="regexp">&lt;input type="submit" value=" 动态注册"/</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/form&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<h2 id="JavaScript-HTML-DOM"><a href="#JavaScript-HTML-DOM" class="headerlink" title="JavaScript HTML DOM"></a>JavaScript HTML DOM</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p><strong>DOM</strong> 全称是 Document Object Model 文档对象模型<br>把文档中的标签，属性，文本，<strong>转换成为对象管理。</strong></p>
-<p><img src="/images/javaweb1/pic_htmltree.gif" alt="DOM HTML tree"></p>
-<h3 id="Document-对象中的方法介绍"><a href="#Document-对象中的方法介绍" class="headerlink" title="Document  对象中的方法介绍"></a>Document  对象中的方法介绍</h3><ul>
-<li><p>document.getElementBy<strong>Id</strong>(elementId)<br>通过标签的 id 属性查找标签 dom 对象，elementId 是标签的 id 属性值，</p>
-</li>
-<li><p>document.getElementsBy<strong>Name</strong>(elementName)<br>通过标签的 name 属性查找标签 dom 对象，elementName 标签的 name 属性值, 返回对象集合</p>
-</li>
-<li><p>document.getElementsBy<strong>TagName</strong>(tagname)<br>通过标签名查找标签 dom 对象。tagname 是标签名，, 返回对象集合</p>
-</li>
-<li><p>document.<strong>createElement(</strong> tagName)<br>方法，通过给定的标签名，创建一个标签对象。tagName 是要创建的标签名</p>
-<p>注：优先用id查询其余依次往后范围扩大。</p>
-<p>返回对象为空时考虑页面加载完后显示：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;如 document.body</span><br><span class="line"></span><br><span class="line">window.onload &#x3D; function() &#123;</span><br><span class="line"></span><br><span class="line">document.body.appendChild(divobject);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; window.onload 为DOM时间对象通常用于 &lt;body&gt; 元素，在页面完全载入后(包括图片、css文件等等。)执行脚本代码。</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;appendChild 为DOM元素对象</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-</li>
-</ul>
-<h4 id="document-getElementById-elementId"><a href="#document-getElementById-elementId" class="headerlink" title="document.getElementById(elementId)"></a>document.getElementBy<strong>Id</strong>(elementId)</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> usernameSpanObj = <span class="built_in">document</span>.getElementById(<span class="string">"usernameSpan"</span>);</span><br><span class="line"><span class="comment">// innerHTML 表示起始标签和结束标签中的内容</span></span><br><span class="line"><span class="comment">// innerHTML 这个属性可读，可写</span></span><br><span class="line">usernameSpanObj.innerHTML = <span class="string">""</span>;</span><br><span class="line">usernameSpanObj.innerHTML = <span class="string">"&lt;img src=\"right.png\" width=\"18\" height=\"18\"&gt;"</span>;</span><br><span class="line"><span class="comment">//可放如图片等标签内容验证搜索</span></span><br></pre></td></tr></table></figure></div>
-
-
-
-
-
-
-
-<h3 id="JavaScript-RegExp-对象-正则表达式"><a href="#JavaScript-RegExp-对象-正则表达式" class="headerlink" title="JavaScript RegExp 对象[正则表达式]"></a><a href="https://www.runoob.com/jsref/jsref-obj-regexp.html" target="_blank" rel="noopener">JavaScript RegExp 对象[正则表达式]</a></h3><ul>
-<li>语法</li>
-<li>修饰符</li>
-<li>方括号</li>
-<li>元字符</li>
-<li>量词</li>
-<li>对象方法</li>
-</ul>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> patt = <span class="regexp">/^\w&#123;5,12&#125;$/</span>;</span><br><span class="line"><span class="comment">// 必须由字母，数字。下划线组成。并且长度是 5 到 12 位</span></span><br><span class="line"><span class="comment">// /^a/,以a打头;</span></span><br><span class="line"><span class="comment">// /a$/,以a结尾;</span></span><br><span class="line"><span class="comment">// /^a$/,从头到尾都是a,即“a”</span></span><br><span class="line"><span class="comment">// \w 单词字符</span></span><br><span class="line"><span class="comment">// &#123;5，12&#125; 5到12位</span></span><br></pre></td></tr></table></figure></div>
-
-<h1 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="什么是-jQuery"><a href="#什么是-jQuery" class="headerlink" title="什么是 jQuery ?"></a>什么是 jQuery ?</h3><p>jQuery，顾名思义，也就是 JavaScript 和查询（Query），它就是辅助 JavaScript 开发的 <strong>js 类库</strong>。</p>
-<p>jQuery  <strong>核心思想</strong><br>它的核心思想是 write less,do more(写得更少,做得更多)，所以它实现了很多浏览器的兼容问题。</p>
-<p>jQuery  <strong>好处</strong><br>jQuery 是免费、开源的，jQuery 的语法设计可以使开发更加便捷，例如操作文档对象、选择 DOM 元素、制作动画效果、事件处理、使用 Ajax 以及其他功能。</p>
-<h2 id="第一个单击事件程序"><a href="#第一个单击事件程序" class="headerlink" title="第一个单击事件程序"></a>第一个单击事件程序</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//引入下载好的JQuery包</span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"../script/jquery-1.7.2.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">$(function () &#123; /</span><span class="regexp">/ 表示页面加载完成 之后，相当 window.onload = function () &#123;&#125;</span></span><br><span class="line"><span class="regexp">var $btnObj = $("#btnId"); /</span><span class="regexp">/ 表示按 id 查询标签对象</span></span><br><span class="line"><span class="regexp">$btnObj.click(function () &#123; /</span><span class="regexp">/ 绑定单击事件</span></span><br><span class="line"><span class="regexp">alert("jQuery  的单击事件");</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br></pre></td></tr></table></figure></div>
-
-<h2 id="jQuery-核心函数"><a href="#jQuery-核心函数" class="headerlink" title="jQuery  核心函数"></a>jQuery  核心函数</h2><p><code>$</code> 是 jQuery 的核心函数，能完成 jQuery 的很多功能。<code>$()</code> 调用<code>$</code>这个函数</p>
-<ol>
-<li><p>传入参数为 [ 函数 ] 时：<br>表示页面加载完成之后。相当于 <code>window.onload = function(){}</code></p>
-</li>
-<li><p>传入参数为 [ HTML 字符串 ] 时：<br>会对我们创建这个 html 标签对象<img src="/images/javaweb1/image-20200731202713780.png" alt="image-20200731202713780"></p>
-</li>
-<li><p>传入参数为 [ 选择器字符串 ] 时：<br><code>$(“#id 属性值”);</code>       id 选择器，根据 id 查询标签对象<br><code>$(“标签名”);</code>               标签名选择器，根据指定的标签名查询标签对象<br><code>$(“.class 属性值”);</code> 类型选择器，可以根据 class 属性查询标签对象</p>
-</li>
-<li><p>传入参数为 [ DOM 对象 ] 时：<br>会把这个 dom 对象转换为 jQuery 对象</p>
-</li>
-</ol>
-<h1 id="IDEA使用"><a href="#IDEA使用" class="headerlink" title="IDEA使用"></a>IDEA使用</h1><h2 id="配置Maven项目"><a href="#配置Maven项目" class="headerlink" title="配置Maven项目"></a>配置Maven项目</h2><ol>
-<li><p><a href="https://blog.csdn.net/kangshuangzhu/article/details/100718142" target="_blank" rel="noopener">maven用IDEA社区版创建web项目</a></p>
-</li>
-<li><p><a href="https://www.cnblogs.com/hongmoshui/p/10762272.html" target="_blank" rel="noopener">Maven全局配置文件settings.xml详解</a></p>
-<p>a.<a href="https://blog.csdn.net/qq_45309297/article/details/106436535" target="_blank" rel="noopener">idea创建Maven报错</a></p>
-<p>b.<a href="https://blog.csdn.net/weixin_42683077/article/details/105310649" target="_blank" rel="noopener">Maven更新问题</a></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>JavaWeb</category>
-      </categories>
   </entry>
   <entry>
     <title>算法学习笔记（一）</title>

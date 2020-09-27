@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题目： 最小栈EasyJava实现栈：采用Deque替代StackJava的集合包中本身就有栈的实现Stack，如果看过API或者是源码就会知道Java中的Stack是线程安全的，所有对外暴露的操作都使用了synchronized关键字，即加了一个重锁。什么是重锁？重锁就是需要由用户态切换到核心态，由操作系统来进行线程的同步互斥管理。 所以一般在单线程情况下，没有必要使用Stack，可以使用Deq">
+<meta name="description" content="题目： 最小栈Easy【Java栈实现方法】Java实现栈：采用Deque替代StackJava的集合包中本身就有栈的实现Stack，如果看过API或者是源码就会知道Java中的Stack是线程安全的，所有对外暴露的操作都使用了synchronized关键字，即加了一个重锁。什么是重锁？重锁就是需要由用户态切换到核心态，由操作系统来进行线程的同步互斥管理。 所以一般在单线程情况下，没有必要使用St">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最小栈">
+<meta property="og:title" content="最小栈【Java栈实现方法】">
 <meta property="og:url" content="https://gitee.com/JQ20/JQ20.git/2020/08/26/LEQS6/index.html">
 <meta property="og:site_name" content="JQBlog">
-<meta property="og:description" content="题目： 最小栈EasyJava实现栈：采用Deque替代StackJava的集合包中本身就有栈的实现Stack，如果看过API或者是源码就会知道Java中的Stack是线程安全的，所有对外暴露的操作都使用了synchronized关键字，即加了一个重锁。什么是重锁？重锁就是需要由用户态切换到核心态，由操作系统来进行线程的同步互斥管理。 所以一般在单线程情况下，没有必要使用Stack，可以使用Deq">
+<meta property="og:description" content="题目： 最小栈Easy【Java栈实现方法】Java实现栈：采用Deque替代StackJava的集合包中本身就有栈的实现Stack，如果看过API或者是源码就会知道Java中的Stack是线程安全的，所有对外暴露的操作都使用了synchronized关键字，即加了一个重锁。什么是重锁？重锁就是需要由用户态切换到核心态，由操作系统来进行线程的同步互斥管理。 所以一般在单线程情况下，没有必要使用St">
 <meta property="og:image" content="https://gitee.com/images/LEQS6/image-20200903165956996.png">
 <meta property="og:image" content="https://gitee.com/images/LEQS6/image-20200905095336981.png">
 <meta property="og:image" content="https://gitee.com/images/LEQS6/28724fa9f92b6952f7fdaf8760edd1dea850b137c22df28751f1cdd4d2680992-155.gif">
 <meta property="article:published_time" content="2020-08-26T09:53:20.000Z">
-<meta property="article:modified_time" content="2020-09-05T01:53:48.531Z">
+<meta property="article:modified_time" content="2020-09-21T10:23:35.646Z">
 <meta property="article:author" content="JamesQiang">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="LeetCodeExplore">
@@ -131,7 +131,7 @@
 
 
 
-  <title>最小栈 | JQBlog</title>
+  <title>最小栈【Java栈实现方法】 | JQBlog</title>
   
 
 
@@ -167,7 +167,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Just Live</p>
+        <p class="site-subtitle">To Be Productive</p>
       
   </div>
 
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">最小栈</h1>
+          <h1 class="post-title" itemprop="name headline">最小栈【Java栈实现方法】</h1>
         
 
         <div class="post-meta">
@@ -351,8 +351,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-09-05T09:53:48+08:00">
-                2020-09-05
+              <time title="更新于" itemprop="dateModified" datetime="2020-09-21T18:23:35+08:00">
+                2020-09-21
               </time>
             
           </span>
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  810
+                  817
                 </span>
               
 
@@ -438,7 +438,7 @@
       
 
       
-        <h1 id="题目：-最小栈Easy"><a href="#题目：-最小栈Easy" class="headerlink" title="题目： 最小栈Easy"></a>题目：<a href="https://leetcode-cn.com/problems/min-stack/" target="_blank" rel="noopener"> 最小栈</a>Easy</h1><h1 id="Java实现栈：采用Deque替代Stack"><a href="#Java实现栈：采用Deque替代Stack" class="headerlink" title="Java实现栈：采用Deque替代Stack"></a>Java实现栈：采用Deque替代Stack</h1><p>Java的集合包中本身就有栈的实现Stack，如果看过API或者是源码就会知道Java中的Stack是线程安全的，所有对外暴露的操作都使用了synchronized关键字，即加了一个重锁。什么是重锁？重锁就是需要由用户态切换到核心态，由操作系统来进行线程的同步互斥管理。</p>
+        <h1 id="题目：-最小栈Easy【Java栈实现方法】"><a href="#题目：-最小栈Easy【Java栈实现方法】" class="headerlink" title="题目： 最小栈Easy【Java栈实现方法】"></a>题目：<a href="https://leetcode-cn.com/problems/min-stack/" target="_blank" rel="noopener"> 最小栈</a>Easy【Java栈实现方法】</h1><h1 id="Java实现栈：采用Deque替代Stack"><a href="#Java实现栈：采用Deque替代Stack" class="headerlink" title="Java实现栈：采用Deque替代Stack"></a>Java实现栈：采用Deque替代Stack</h1><p>Java的集合包中本身就有栈的实现Stack，如果看过API或者是源码就会知道Java中的Stack是线程安全的，所有对外暴露的操作都使用了synchronized关键字，即加了一个重锁。什么是重锁？重锁就是需要由用户态切换到核心态，由操作系统来进行线程的同步互斥管理。</p>
 <p>所以一般在单线程情况下，没有必要使用Stack，可以使用<strong>Deque</strong>来替代。Deque中也实现了符合栈特性的<code>push(E e)和pop()</code>操作，但还有一点要注意的是，Deque实现的栈的栈顶是其首元素，即读取栈顶的元素应该使用<code>peekFirst()</code>。</p>
 <p>Deque实现栈常用方法</p>
 <ul>
@@ -637,7 +637,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -648,7 +648,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -659,7 +659,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -702,7 +702,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目：-最小栈Easy"><span class="nav-number">1.</span> <span class="nav-text">题目： 最小栈Easy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java实现栈：采用Deque替代Stack"><span class="nav-number">2.</span> <span class="nav-text">Java实现栈：采用Deque替代Stack</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案一：辅助栈"><span class="nav-number">2.0.1.</span> <span class="nav-text">解决方案一：辅助栈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题逻辑：辅助栈"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">解题逻辑：辅助栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码分析"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">代码分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现代码"><span class="nav-number">2.0.1.3.</span> <span class="nav-text">实现代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tips"><span class="nav-number">2.0.1.4.</span> <span class="nav-text">tips:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案二：单栈存储插值"><span class="nav-number">2.0.2.</span> <span class="nav-text">解决方案二：单栈存储插值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题逻辑：存储差值一个栈"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">解题逻辑：存储差值一个栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码分析-1"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">代码分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现代码-1"><span class="nav-number">2.0.2.3.</span> <span class="nav-text">实现代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tips-1"><span class="nav-number">2.0.2.4.</span> <span class="nav-text">tips:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目：-最小栈Easy【Java栈实现方法】"><span class="nav-number">1.</span> <span class="nav-text">题目： 最小栈Easy【Java栈实现方法】</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java实现栈：采用Deque替代Stack"><span class="nav-number">2.</span> <span class="nav-text">Java实现栈：采用Deque替代Stack</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案一：辅助栈"><span class="nav-number">2.0.1.</span> <span class="nav-text">解决方案一：辅助栈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题逻辑：辅助栈"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">解题逻辑：辅助栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码分析"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">代码分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现代码"><span class="nav-number">2.0.1.3.</span> <span class="nav-text">实现代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tips"><span class="nav-number">2.0.1.4.</span> <span class="nav-text">tips:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案二：单栈存储插值"><span class="nav-number">2.0.2.</span> <span class="nav-text">解决方案二：单栈存储插值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题逻辑：存储差值一个栈"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">解题逻辑：存储差值一个栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码分析-1"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">代码分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现代码-1"><span class="nav-number">2.0.2.3.</span> <span class="nav-text">实现代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tips-1"><span class="nav-number">2.0.2.4.</span> <span class="nav-text">tips:</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -736,7 +736,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">38.1k</span>
+    <span title="Site words total count">43.3k</span>
   
 </div>
 
