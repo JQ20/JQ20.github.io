@@ -298,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/15/LEAD6/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/02/LEQS11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -317,7 +317,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/08/15/LEAD6/" itemprop="url">反转字符串中单词 Ⅲ</a></h1>
+                <a class="post-title-link" href="/2020/09/02/LEQS11/" itemprop="url">目标和</a></h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-15T10:53:20+08:00">
-                2020-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-02T12:53:20+08:00">
+                2020-09-02
               </time>
             
 
@@ -348,8 +348,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-15T12:20:27+08:00">
-                2020-08-15
+              <time title="更新于" itemprop="dateModified" datetime="2020-09-03T15:12:02+08:00">
+                2020-09-03
               </time>
             
           </span>
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  290
+                  449
                 </span>
               
 
@@ -437,14 +437,15 @@
       
         
           
-          题目： 反转字符串中单词 Ⅲ   Easy前置知识
-StringBuffer使用详解
+          题目： 目标和   Medium1.自己构思：递归系统栈出现问题：
+目标和sum值不能为实例变量，应该在递归参数中随着各个分支处理而不同变化，否则递归过程中的其他分支sum值都会受到影响
+在进行递归时传入的目标sum必须有变化，否则为同一种情况，产生重复递归情况
 
-2.学习题解代码解决方案一解题逻辑：Stringbuffer API代码分析：实现代码12345678910public class Solution&#123;    public String reverse
+12345678910111213
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/08/15/LEAD6/#more" rel="contents">
+            <a class="btn" href="/2020/09/02/LEQS11/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -495,7 +496,7 @@ StringBuffer使用详解
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/10/LEAD1/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/23/LEQS5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -514,7 +515,7 @@ StringBuffer使用详解
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/08/10/LEAD1/" itemprop="url">反转字符串</a></h1>
+                <a class="post-title-link" href="/2020/08/23/LEQS5/" itemprop="url">岛屿数量</a></h1>
         
 
         <div class="post-meta">
@@ -529,8 +530,8 @@ StringBuffer使用详解
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-10T14:28:52+08:00">
-                2020-08-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-23T12:53:20+08:00">
+                2020-08-23
               </time>
             
 
@@ -545,8 +546,8 @@ StringBuffer使用详解
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-14T16:24:48+08:00">
-                2020-08-14
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-31T16:14:57+08:00">
+                2020-08-31
               </time>
             
           </span>
@@ -595,7 +596,202 @@ StringBuffer使用详解
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  139
+                  533
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          题目： 岛屿数量 Medium解决方案一：BFS解题逻辑：BFS广度优先搜索为了求出岛屿的数量，我们可以扫描整个二维网格。如果一个位置为 1，则将其加入队列，开始进行广度优先搜索。在广度优先搜索的过程中，每个搜索到的 1都会被重新标记为 0。直到队列为空，搜索结束。
+最终岛屿的数量就是我们进行广度优
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/08/23/LEQS5/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/30/LEQS8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JamesQiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JQBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/30/LEQS8/" itemprop="url">每日温度</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+				
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-30T15:53:20+08:00">
+                2020-08-30
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-30T15:24:20+08:00">
+                2020-08-30
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  375
                 </span>
               
 
@@ -634,19 +830,20 @@ StringBuffer使用详解
       
         
           
-          题目： 反转字符串   Easy1.自己构思出现问题：
-处理字符数组为空或长度为零情况
+          题目：  每日温度   Medium1.自己构思出现问题：
+出栈入栈条件代码编写共同逻辑混乱
 
 问题解决：
-if(s == null || s.length == 0) return; 
-void 函数 使用return；中断程序执行
+栈外元素比较无论如何都需进栈
+不推荐使用stack，用deque实现栈结构【线程安全，同步操作会降低性能】
+涉及长度length可创建临时变量
 
+2.学习题解代码解决方案一：单调栈解题逻辑：
 
-2.学习题解代码解决方案一解题逻辑：双指针实现代码12345678
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/08/10/LEAD1/#more" rel="contents">
+            <a class="btn" href="/2020/08/30/LEQS8/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -697,7 +894,7 @@ void 函数 使用return；中断程序执行
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/14/LEAD7/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/23/LEQS3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -716,7 +913,7 @@ void 函数 使用return；中断程序执行
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/08/14/LEAD7/" itemprop="url">杨辉三角ii</a></h1>
+                <a class="post-title-link" href="/2020/08/23/LEQS3/" itemprop="url">转盘问题之BFS解题框架</a></h1>
         
 
         <div class="post-meta">
@@ -731,8 +928,8 @@ void 函数 使用return；中断程序执行
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-14T12:53:20+08:00">
-                2020-08-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-23T12:53:20+08:00">
+                2020-08-23
               </time>
             
 
@@ -747,8 +944,8 @@ void 函数 使用return；中断程序执行
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-14T16:22:41+08:00">
-                2020-08-14
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-24T17:51:40+08:00">
+                2020-08-24
               </time>
             
           </span>
@@ -797,7 +994,7 @@ void 函数 使用return；中断程序执行
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  321
+                  990
                 </span>
               
 
@@ -813,7 +1010,7 @@ void 函数 使用return；中断程序执行
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -836,14 +1033,15 @@ void 函数 使用return；中断程序执行
       
         
           
-          题目： 杨辉三角 ii  Easy解决方案一解题逻辑：双List 迭代构造至所需行数
-动态规划，双List 迭代构造至所需行数
+          题目： 转盘问题之BFS解题框架BFS解题框架
+BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的最近距离
+与DFS区别是空间复杂度高
 
-代码分析：实现代码12345678910111213141516public List&lt;Integer&gt; getRow(int rowIndex) &#123
+12345678910111213141516171819202122232425262728// 计算从起点 start 到终点 ta
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/08/14/LEAD7/#more" rel="contents">
+            <a class="btn" href="/2020/08/23/LEQS3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -894,7 +1092,7 @@ void 函数 使用return；中断程序执行
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/11/LEAD5/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/07/LEAS4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -913,7 +1111,7 @@ void 函数 使用return；中断程序执行
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/08/11/LEAD5/" itemprop="url">最大连续1的个数</a></h1>
+                <a class="post-title-link" href="/2020/08/07/LEAS4/" itemprop="url">KMP算法</a></h1>
         
 
         <div class="post-meta">
@@ -928,8 +1126,8 @@ void 函数 使用return；中断程序执行
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-11T17:53:20+08:00">
-                2020-08-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-07T14:46:50+08:00">
+                2020-08-07
               </time>
             
 
@@ -944,8 +1142,8 @@ void 函数 使用return；中断程序执行
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-11T17:29:31+08:00">
-                2020-08-11
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-22T13:22:28+08:00">
+                2020-08-22
               </time>
             
           </span>
@@ -994,7 +1192,7 @@ void 函数 使用return；中断程序执行
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  206
+                  2.2k
                 </span>
               
 
@@ -1010,7 +1208,7 @@ void 函数 使用return；中断程序执行
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  9
                 </span>
               
             </div>
@@ -1033,11 +1231,12 @@ void 函数 使用return；中断程序执行
       
         
           
-          题目： 最大连续1的个数 Easy1.自己构思实现代码123456789101112131415class Solution &#123;    public int findMaxConsecutiveOnes(int[] nums) &#123;        if(nums == null |
+          前置知识1.ASCII编码表定义
+在计算机中，一个字节可以表示八位二进制数，一个二进制数由0和1两种状态，因此一个字节有256种状态。如果这 256 中状态每一个都对应一个符号，就能通过 1 字节的数据表示 256 个字符。美国人于是就制定了一套编码（其实就是个字典），描述英语中的字符和这 8 位二
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/08/11/LEAD5/#more" rel="contents">
+            <a class="btn" href="/2020/08/07/LEAS4/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1088,7 +1287,7 @@ void 函数 使用return；中断程序执行
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/11/HexoProblem1/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/04/LEAS3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -1107,7 +1306,7 @@ void 函数 使用return；中断程序执行
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/08/11/HexoProblem1/" itemprop="url">HexoProblem1</a></h1>
+                <a class="post-title-link" href="/2020/08/04/LEAS3/" itemprop="url">翻转字符串里的单词</a></h1>
         
 
         <div class="post-meta">
@@ -1122,8 +1321,8 @@ void 函数 使用return；中断程序执行
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-11T15:46:51+08:00">
-                2020-08-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-04T19:32:21+08:00">
+                2020-08-04
               </time>
             
 
@@ -1138,183 +1337,8 @@ void 函数 使用return；中断程序执行
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-11T17:12:42+08:00">
-                2020-08-11
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  30
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Hexo相关问题1.部署到gitee样式出现问题解答：在_config.yaml中修改
-12url: https://gitee.com/JQ20/JQ20.gitroot: /
-
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/08/11/HexoProblem1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/10/LEAD3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JamesQiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JQBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/08/10/LEAD3/" itemprop="url">两数之和 II - 输入有序数组</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-				
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-10T14:29:01+08:00">
-                2020-08-10
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-10T15:48:54+08:00">
-                2020-08-10
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-19T15:53:00+08:00">
+                2020-08-19
               </time>
             
           </span>
@@ -1363,7 +1387,7 @@ void 函数 使用return；中断程序执行
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  239
+                  511
                 </span>
               
 
@@ -1379,7 +1403,7 @@ void 函数 使用return；中断程序执行
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -1402,11 +1426,19 @@ void 函数 使用return；中断程序执行
       
         
           
-          题目：两数之和 II - 输入有序数组 Easy1.自己构思实现代码123456789101112131415class Solution &#123;    public int[] twoSum(int[] numbers, int target) &#123;        int[] res
+          题目： 反转字符串里的单词   Medium解决方案一解题逻辑：API解决
+split（拆分），reverse（翻转）和 join（连接）
+
+
+
+代码分析：解决自己问题：
+API String  trim()
+API String[] split()
+API Collections.reverse(
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/08/10/LEAD3/#more" rel="contents">
+            <a class="btn" href="/2020/08/04/LEAS3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1457,7 +1489,7 @@ void 函数 使用return；中断程序执行
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/10/LEAD2/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/07/25/LEAS2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -1476,7 +1508,7 @@ void 函数 使用return；中断程序执行
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/08/10/LEAD2/" itemprop="url">数组拆分Ⅰ</a></h1>
+                <a class="post-title-link" href="/2020/07/25/LEAS2/" itemprop="url">最长回文子串</a></h1>
         
 
         <div class="post-meta">
@@ -1491,417 +1523,26 @@ void 函数 使用return；中断程序执行
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-10T14:28:56+08:00">
-                2020-08-10
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-10T15:36:09+08:00">
-                2020-08-10
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  55
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          题目： 数组拆分Ⅰ  Easy1.自己构思实现代码12345678910public class Solution &#123;    public int arrayPairSum(int[] nums) &#123;        Arrays.sort(nums);        int su
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/08/10/LEAD2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/07/26/Algorithm1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JamesQiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JQBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/26/Algorithm1/" itemprop="url">算法学习笔记（一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-				
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-26T21:43:14+08:00">
-                2020-07-26
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2020-07-26T22:01:30+08:00">
-                2020-07-26
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  235
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          算法基础数据结构的存储方式底层基础数据储存方式：数组、链表。优缺点比较：
-
-数组：紧凑连续存储，随机访问，节约空间；需要一次分配足够大的空间，否则需要扩容操作，插入删除操作需要挪动保证连续O(n)。
-链表：存储元素不连续，无扩容问题，知道前驱后驱，可直接插入O(1)；无法根据索引得到地址，不能随机访
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/07/26/Algorithm1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/06/08/JavaRoad/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JamesQiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JQBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/08/JavaRoad/" itemprop="url">JavaStduyRoad</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-				
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-08T22:04:40+08:00">
-                2020-06-08
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2020-07-25T14:26:34+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-25T00:00:00+08:00">
                 2020-07-25
               </time>
             
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-19T15:52:58+08:00">
+                2020-08-19
+              </time>
+            
           </span>
 
           
@@ -1917,8 +1558,8 @@ void 函数 使用return；中断程序执行
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
                   </a>
                 </span>
 
@@ -1948,7 +1589,7 @@ void 函数 使用return；中断程序执行
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  28
+                  412
                 </span>
               
 
@@ -1964,7 +1605,7 @@ void 函数 使用return；中断程序执行
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -1987,21 +1628,14 @@ void 函数 使用return；中断程序执行
       
         
           
-          本篇总结Java学习资源路线
+          题目： 最长回文子串   Medium解决方案一解题逻辑：暴力破解
+暴力破解
 
-
-根据JavaGuid补基础、
-重读《Head First  Java》JAVASE
-javaweb
-
-
-文件名：JavaRoad
-
-
-          
+代码分析：实现代码12345678910111213141516171819202122232425262728293031class Solution &#123;    public String longestPa
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/06/08/JavaRoad/#more" rel="contents">
+            <a class="btn" href="/2020/07/25/LEAS2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2052,7 +1686,7 @@ javaweb
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/06/13/JB2/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/12/LEAD8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -2071,7 +1705,7 @@ javaweb
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/13/JB2/" itemprop="url">JavaBasics（二）</a></h1>
+                <a class="post-title-link" href="/2020/08/12/LEAD8/" itemprop="url">长度最小的子数组</a></h1>
         
 
         <div class="post-meta">
@@ -2086,8 +1720,8 @@ javaweb
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-13T21:36:37+08:00">
-                2020-06-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-12T16:30:32+08:00">
+                2020-08-12
               </time>
             
 
@@ -2102,8 +1736,8 @@ javaweb
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-06-19T15:02:55+08:00">
-                2020-06-19
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-19T15:49:52+08:00">
+                2020-08-19
               </time>
             
           </span>
@@ -2121,8 +1755,8 @@ javaweb
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaBasics/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaBasics</span>
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
                   </a>
                 </span>
 
@@ -2152,7 +1786,7 @@ javaweb
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  7.9k
+                  265
                 </span>
               
 
@@ -2168,7 +1802,7 @@ javaweb
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  28
+                  1
                 </span>
               
             </div>
@@ -2191,14 +1825,414 @@ javaweb
       
         
           
-          Java基本功--JAVA面向对象
+          题目： 209. 长度最小的子数组  Medium1.自己构思出现问题：
+双指针执行情况判断混乱
 
-JAVA面向对象类和对象面向对象和面向过程的区别
-面向过程 ：面向过程性能比面向对象高。 因为类调用时需要实例化，开销比较大，比较消耗资源，所以当性能是最重要的考量因素的时候，比如单片机、嵌入式开发、Linux/Unix 等一般采用面向过程开发。但是，面向过程没
+2.学习题解代码解决方案一解题逻辑：暴力破解
+Integer.MAX_VALUE 表示int类整数的最大值是2的31次方-1
+
+代码分析：实现代码123456789101112131415161718
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/06/13/JB2/#more" rel="contents">
+            <a class="btn" href="/2020/08/12/LEAD8/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/17/LEAD12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JamesQiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JQBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/17/LEAD12/" itemprop="url">移动零</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+				
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-17T12:53:20+08:00">
+                2020-08-17
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-19T15:06:23+08:00">
+                2020-08-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  608
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          题目： 移动零   Easy1.自己构思出现问题：
+超过数组上限
+结果0在非零元素前面
+
+问题解决：
+while循环括号内判断条件按顺序进行,nums[slow]判断放前面超过数组上限，放后面即可
+slow指针移动不能快过fast否则会出现后面的slow零元素与前面的fast非零元素互换，导致判断逻
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/08/17/LEAD12/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/17/LEAD10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JamesQiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JQBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/17/LEAD10/" itemprop="url">寻找旋转排序数组中的最小值</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+				
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-17T12:53:20+08:00">
+                2020-08-17
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-19T15:01:55+08:00">
+                2020-08-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  155
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          题目：寻找旋转排序数组中的最小值   Medium解决方案一解题逻辑：二分查找
+找到变化点从而判断旋转位置
+
+代码分析：实现代码1234567891011121314151617class solution&#123;    public int findMin(int[] nums)&#123; 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/08/17/LEAD10/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2240,7 +2274,7 @@ JAVA面向对象类和对象面向对象和面向过程的区别
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-hand-o-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-hand-o-right" aria-label="accessibility.next_page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-hand-o-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-hand-o-right" aria-label="accessibility.next_page"></i></a>
   </nav>
 
           </div>
@@ -2288,7 +2322,7 @@ JAVA面向对象类和对象面向对象和面向过程的区别
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2299,7 +2333,7 @@ JAVA面向对象类和对象面向对象和面向过程的区别
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2310,7 +2344,7 @@ JAVA面向对象类和对象面向对象和面向过程的区别
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2371,7 +2405,7 @@ JAVA面向对象类和对象面向对象和面向过程的区别
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">43.3k</span>
+    <span title="Site words total count">56.3k</span>
   
 </div>
 

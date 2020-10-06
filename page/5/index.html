@@ -298,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/05/LEQS14/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/10/LEL9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -317,7 +317,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/09/05/LEQS14/" itemprop="url">图像渲染</a></h1>
+                <a class="post-title-link" href="/2020/09/10/LEL9/" itemprop="url">回文链表</a></h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-05T11:53:20+08:00">
-                2020-09-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-10T17:00:00+08:00">
+                2020-09-10
               </time>
             
 
@@ -348,8 +348,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-09-07T09:43:30+08:00">
-                2020-09-07
+              <time title="更新于" itemprop="dateModified" datetime="2020-09-13T22:01:23+08:00">
+                2020-09-13
               </time>
             
           </span>
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  183
+                  561
                 </span>
               
 
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -437,14 +437,18 @@
       
         
           
-          题目：  图像渲染   Easy1.自己构思：递归栈出现问题：
-未考虑oldColor == newColor情况
+          题目： 回文链表   Easy解决方案一 ：将值复制到数组中后用双指针法解题逻辑：
+分为两个步骤：
+复制链表值到数组列表中。
+使用双指针法判断是否为回文。
 
-代码：1234567891011121314151617181920212223class Solution &#123;    int oldColor;    public in
+
+
+代码分析：实现代码1234567891011121314151617181920212223242526class Solution &#
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/09/05/LEQS14/#more" rel="contents">
+            <a class="btn" href="/2020/09/10/LEL9/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -495,7 +499,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/05/LEQS13/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/09/LEL5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -514,7 +518,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/09/05/LEQS13/" itemprop="url">字符串解码</a></h1>
+                <a class="post-title-link" href="/2020/09/09/LEL5/" itemprop="url">删除链表的倒数第N个节点</a></h1>
         
 
         <div class="post-meta">
@@ -529,8 +533,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-05T10:53:20+08:00">
-                2020-09-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-09T21:00:00+08:00">
+                2020-09-09
               </time>
             
 
@@ -545,8 +549,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-09-07T09:43:27+08:00">
-                2020-09-07
+              <time title="更新于" itemprop="dateModified" datetime="2020-09-13T21:58:35+08:00">
+                2020-09-13
               </time>
             
           </span>
@@ -595,7 +599,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  574
+                  335
                 </span>
               
 
@@ -611,7 +615,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -634,17 +638,19 @@
       
         
           
-          题目： 字符串解码   Medium1.自己构思：栈出现问题：
-出栈后克隆数个单字符以及最后组合成结果字符串的方式方法不清楚
-遇到右括号出栈时字符串颠倒错误
-最后出栈时，从栈底到栈头遍历出栈，LinkedList好处出来了
+          题目： 删除链表的倒数第N个节点   Medium1.自己构思：双指针出现问题：
+直接新键node指向head，对list很短情况如[1]出现边界问题
 
 问题解决：
-出栈时遇到左括号后， 弹出，根据此时栈顶数字将出栈字符反序拼接
+采用头部哨兵结点dummy保证不为空，方便处理list全部删除情况
+
+2.学习题解代码解决方案一：双指针
+
+实现代码123456789
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/09/05/LEQS13/#more" rel="contents">
+            <a class="btn" href="/2020/09/09/LEL5/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -695,7 +701,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/31/LEQS10/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/13/LEL12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -714,7 +720,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/08/31/LEQS10/" itemprop="url">克隆图</a></h1>
+                <a class="post-title-link" href="/2020/09/13/LEL12/" itemprop="url">扁平化多级双向链表</a></h1>
         
 
         <div class="post-meta">
@@ -729,8 +735,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-31T16:53:20+08:00">
-                2020-08-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-13T17:38:00+08:00">
+                2020-09-13
               </time>
             
 
@@ -745,8 +751,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-09-07T09:43:01+08:00">
-                2020-09-07
+              <time title="更新于" itemprop="dateModified" datetime="2020-09-13T17:41:10+08:00">
+                2020-09-13
               </time>
             
           </span>
@@ -795,7 +801,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  491
+                  364
                 </span>
               
 
@@ -834,15 +840,17 @@
       
         
           
-          题目： 克隆图 Medium解决方案一:DFS解题逻辑：
-HashMap记录已访问节点避免递归过程中死循环
+          题目： 扁平化多级双向链表   Medium解决方案一：递归DFS解题逻辑：
 
 
-代码分析：实现代码123456789101112131415161718192021222324class Solution &#123;    private HashMap &lt;N
+
+
+
+代码分析：实现代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/*// Definit
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/08/31/LEQS10/#more" rel="contents">
+            <a class="btn" href="/2020/09/13/LEL12/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -893,7 +901,7 @@ HashMap记录已访问节点避免递归过程中死循环
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/11/LEQS4/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/11/LEL11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -912,7 +920,7 @@ HashMap记录已访问节点避免递归过程中死循环
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/08/11/LEQS4/" itemprop="url">完全平方数</a></h1>
+                <a class="post-title-link" href="/2020/09/11/LEL11/" itemprop="url">两数相加</a></h1>
         
 
         <div class="post-meta">
@@ -927,8 +935,8 @@ HashMap记录已访问节点避免递归过程中死循环
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-11T12:53:20+08:00">
-                2020-08-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-11T17:00:00+08:00">
+                2020-09-11
               </time>
             
 
@@ -943,8 +951,8 @@ HashMap记录已访问节点避免递归过程中死循环
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-09-07T09:42:50+08:00">
-                2020-09-07
+              <time title="更新于" itemprop="dateModified" datetime="2020-09-11T17:29:29+08:00">
+                2020-09-11
               </time>
             
           </span>
@@ -993,7 +1001,7 @@ HashMap记录已访问节点避免递归过程中死循环
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  405
+                  563
                 </span>
               
 
@@ -1009,7 +1017,7 @@ HashMap记录已访问节点避免递归过程中死循环
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -1032,611 +1040,17 @@ HashMap记录已访问节点避免递归过程中死循环
       
         
           
-          题目：完全平方数   Medium解决方案一：BFS+队列解题逻辑：
-当每一次都可以判断出多种情况，有多次的时候就适合用BFS-广度优先遍历
-队列：用来存储每一轮遍历得到的节点；标记：对于遍历过的节点，应该将它标记，防止重复遍历。
-
-为了节省遍历的时间，曾经（ n - 以前出现的平方数） 这个值出现
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/08/11/LEQS4/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/02/LEQS11/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JamesQiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JQBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/02/LEQS11/" itemprop="url">目标和</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-				
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-02T12:53:20+08:00">
-                2020-09-02
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2020-09-03T15:12:02+08:00">
-                2020-09-03
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  449
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          题目： 目标和   Medium1.自己构思：递归系统栈出现问题：
-目标和sum值不能为实例变量，应该在递归参数中随着各个分支处理而不同变化，否则递归过程中的其他分支sum值都会受到影响
-在进行递归时传入的目标sum必须有变化，否则为同一种情况，产生重复递归情况
-
-12345678910111213
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/09/02/LEQS11/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/23/LEQS5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JamesQiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JQBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/08/23/LEQS5/" itemprop="url">岛屿数量</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-				
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-23T12:53:20+08:00">
-                2020-08-23
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-31T16:14:57+08:00">
-                2020-08-31
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  533
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          题目： 岛屿数量 Medium解决方案一：BFS解题逻辑：BFS广度优先搜索为了求出岛屿的数量，我们可以扫描整个二维网格。如果一个位置为 1，则将其加入队列，开始进行广度优先搜索。在广度优先搜索的过程中，每个搜索到的 1都会被重新标记为 0。直到队列为空，搜索结束。
-最终岛屿的数量就是我们进行广度优
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/08/23/LEQS5/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/30/LEQS8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JamesQiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JQBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/08/30/LEQS8/" itemprop="url">每日温度</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-				
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-30T15:53:20+08:00">
-                2020-08-30
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-30T15:24:20+08:00">
-                2020-08-30
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  375
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          题目：  每日温度   Medium1.自己构思出现问题：
-出栈入栈条件代码编写共同逻辑混乱
+          题目： 两数相加  Medium1.自己构思出现问题：
+链表末尾判断进位刚开始有点模糊
 
 问题解决：
-栈外元素比较无论如何都需进栈
-不推荐使用stack，用deque实现栈结构【线程安全，同步操作会降低性能】
-涉及长度length可创建临时变量
+增加while循环判断进位情况
 
-2.学习题解代码解决方案一：单调栈解题逻辑：
-
+实现代码123456789101112131415161718192021222324252627282930313233343536373839404142434
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/08/30/LEQS8/#more" rel="contents">
+            <a class="btn" href="/2020/09/11/LEL11/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1687,7 +1101,7 @@ HashMap记录已访问节点避免递归过程中死循环
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/23/LEQS3/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/11/LEL10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -1706,7 +1120,7 @@ HashMap记录已访问节点避免递归过程中死循环
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/08/23/LEQS3/" itemprop="url">转盘问题之BFS解题框架</a></h1>
+                <a class="post-title-link" href="/2020/09/11/LEL10/" itemprop="url">合并两个有序链表</a></h1>
         
 
         <div class="post-meta">
@@ -1721,8 +1135,8 @@ HashMap记录已访问节点避免递归过程中死循环
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-23T12:53:20+08:00">
-                2020-08-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-11T15:50:00+08:00">
+                2020-09-11
               </time>
             
 
@@ -1737,8 +1151,8 @@ HashMap记录已访问节点避免递归过程中死循环
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-24T17:51:40+08:00">
-                2020-08-24
+              <time title="更新于" itemprop="dateModified" datetime="2020-09-11T15:50:46+08:00">
+                2020-09-11
               </time>
             
           </span>
@@ -1787,7 +1201,7 @@ HashMap记录已访问节点避免递归过程中死循环
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  990
+                  325
                 </span>
               
 
@@ -1803,7 +1217,7 @@ HashMap记录已访问节点避免递归过程中死循环
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  1
                 </span>
               
             </div>
@@ -1826,15 +1240,13 @@ HashMap记录已访问节点避免递归过程中死循环
       
         
           
-          题目： 转盘问题之BFS解题框架BFS解题框架
-BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的最近距离
-与DFS区别是空间复杂度高
-
-12345678910111213141516171819202122232425262728// 计算从起点 start 到终点 ta
+          题目：  合并两个有序链表   Easy解决方案一：迭代解题逻辑：
+用迭代的方法来实现。当 l1 和 l2 都不是空链表时，判断 l1 和 l2 哪一个链表的头节点的值更小，将较小值的节点添加到结果里，当一个节点被添加到结果里之后，将对应链表中的节点向后移一位。
+看成重新构建一个新的列表，通过筛选排
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/08/23/LEQS3/#more" rel="contents">
+            <a class="btn" href="/2020/09/11/LEL10/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1885,7 +1297,7 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/07/LEAS4/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/10/LEL8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -1904,7 +1316,7 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/08/07/LEAS4/" itemprop="url">KMP算法</a></h1>
+                <a class="post-title-link" href="/2020/09/10/LEL8/" itemprop="url">奇偶链表</a></h1>
         
 
         <div class="post-meta">
@@ -1919,8 +1331,8 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-07T14:46:50+08:00">
-                2020-08-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-10T16:00:00+08:00">
+                2020-09-10
               </time>
             
 
@@ -1935,8 +1347,8 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-22T13:22:28+08:00">
-                2020-08-22
+              <time title="更新于" itemprop="dateModified" datetime="2020-09-10T16:08:04+08:00">
+                2020-09-10
               </time>
             
           </span>
@@ -1985,7 +1397,7 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.2k
+                  174
                 </span>
               
 
@@ -2001,7 +1413,7 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  1
                 </span>
               
             </div>
@@ -2024,12 +1436,22 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
       
         
           
-          前置知识1.ASCII编码表定义
-在计算机中，一个字节可以表示八位二进制数，一个二进制数由0和1两种状态，因此一个字节有256种状态。如果这 256 中状态每一个都对应一个符号，就能通过 1 字节的数据表示 256 个字符。美国人于是就制定了一套编码（其实就是个字典），描述英语中的字符和这 8 位二
+          题目： 奇偶链表   Medium1.自己构思出现问题：
+循环遍历链表空指针异常
+
+问题解决：
+对走在前面的even结点及其next结点进行null判断
+
+2.学习题解代码解决方案一：奇偶双指针拼接链表解题逻辑：
+将奇节点放在一个链表里，偶链表放在另一个链表里。然后把偶链表接在奇链表的尾部。
+
+
+
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/08/07/LEAS4/#more" rel="contents">
+            <a class="btn" href="/2020/09/10/LEL8/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2080,7 +1502,7 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/08/04/LEAS3/">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/10/LEL7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesQiang">
@@ -2099,7 +1521,7 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/08/04/LEAS3/" itemprop="url">翻转字符串里的单词</a></h1>
+                <a class="post-title-link" href="/2020/09/10/LEL7/" itemprop="url">移除链表元素</a></h1>
         
 
         <div class="post-meta">
@@ -2114,8 +1536,8 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-04T19:32:21+08:00">
-                2020-08-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-10T10:00:00+08:00">
+                2020-09-10
               </time>
             
 
@@ -2130,8 +1552,8 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-19T15:53:00+08:00">
-                2020-08-19
+              <time title="更新于" itemprop="dateModified" datetime="2020-09-10T15:57:56+08:00">
+                2020-09-10
               </time>
             
           </span>
@@ -2180,7 +1602,7 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  511
+                  271
                 </span>
               
 
@@ -2196,7 +1618,7 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -2219,19 +1641,606 @@ BFS本质就是在一幅「图」中找到从起点 start 到终点 target 的�
       
         
           
-          题目： 反转字符串里的单词   Medium解决方案一解题逻辑：API解决
-split（拆分），reverse（翻转）和 join（连接）
-
-
-
-代码分析：解决自己问题：
-API String  trim()
-API String[] split()
-API Collections.reverse(
+          题目： 移除链表元素   Easy1.自己构思只设置一个哨兵结点，未设置前置结点，直接next.next
+实现代码：12345678910111213class Solution &#123;    public ListNode removeElements(ListNode head, int 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/08/04/LEAS3/#more" rel="contents">
+            <a class="btn" href="/2020/09/10/LEL7/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/10/LEL6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JamesQiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JQBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/10/LEL6/" itemprop="url">反转链表</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+				
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-10T10:00:00+08:00">
+                2020-09-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-09-10T11:13:28+08:00">
+                2020-09-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  354
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          题目： 反转链表   Easy1.自己构思出现问题：
+过于复杂的头插法操作
+
+问题解决：
+直接反向next链接即可，注意存储上一个元素
+
+实现代码1234567891011121314151617181920212223class Solution &#123;    public ListNode
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/09/10/LEL6/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/09/LEL4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JamesQiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JQBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/09/LEL4/" itemprop="url">相交链表</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+				
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-09T17:00:00+08:00">
+                2020-09-09
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-09-09T17:26:45+08:00">
+                2020-09-09
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  186
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          题目： 相交链表   Easy解决方案一 : 双指针【最优】解题逻辑：
+
+
+实现代码12345678910public class Solution &#123;    public ListNode getIntersectionNode(ListNode headA, ListNode head
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/09/09/LEL4/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gitee.com/JQ20/JQ20.git/2020/09/09/LEL3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JamesQiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JQBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/09/LEL3/" itemprop="url">环形链表I&II</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+				
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-09T15:00:00+08:00">
+                2020-09-09
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-09-09T16:23:38+08:00">
+                2020-09-09
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  649
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          题目：环形链表 Easy解决方案一：HashSet解题逻辑：
+通过检查一个结点此前是否被访问过来判断链表是否为环形链表
+
+实现代码123456789101112public boolean hasCycle(ListNode head) &#123;    Set&lt;ListNode&gt; n
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/09/09/LEL3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2273,7 +2282,7 @@ API Collections.reverse(
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-hand-o-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-hand-o-right" aria-label="accessibility.next_page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-hand-o-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-hand-o-right" aria-label="accessibility.next_page"></i></a>
   </nav>
 
           </div>
@@ -2321,7 +2330,7 @@ API Collections.reverse(
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2332,7 +2341,7 @@ API Collections.reverse(
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2343,7 +2352,7 @@ API Collections.reverse(
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2404,7 +2413,7 @@ API Collections.reverse(
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">43.3k</span>
+    <span title="Site words total count">56.3k</span>
   
 </div>
 
