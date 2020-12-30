@@ -222,6 +222,114 @@
       </tags>
   </entry>
   <entry>
+    <title>StudyNotesFromSasa(28-30/12/2020)</title>
+    <url>/2020/12/29/StudyNotesFromSasa/</url>
+    <content><![CDATA[<h1 id="StudyNotesFromSasa-28-30-12-2020"><a href="#StudyNotesFromSasa-28-30-12-2020" class="headerlink" title="StudyNotesFromSasa(28-30/12/2020)"></a>StudyNotesFromSasa(28-30/12/2020)</h1><h2 id="Key-module"><a href="#Key-module" class="headerlink" title="Key module"></a>Key module</h2><ul>
+<li>picture slide board</li>
+<li>hover menu</li>
+<li>onlick menu</li>
+<li>absolute layout</li>
+<li>hover style change</li>
+</ul>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="lt-a-target-quot-quot-Where-to-display-the-linked-URL"><a href="#lt-a-target-quot-quot-Where-to-display-the-linked-URL" class="headerlink" title="&lt;a target=&quot;&quot;  Where to display the linked URL"></a><code>&lt;a target=&quot;&quot;</code>  Where to display the linked URL</h3><p><code>_blank</code>: usually <strong>a new tab</strong>, but users can configure browsers to open a new window instead.</p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="alpha"><a href="#alpha" class="headerlink" title="alpha"></a><code>alpha</code></h3><p>alpha parameter defines the opacity</p>
+<p>*<em>Difference  with opacity: *</em>The alpha channel can specifically set the transparency value for an attribute of the element</p>
+<h3 id="opacity"><a href="#opacity" class="headerlink" title="opacity"></a><code>opacity</code></h3><p>The <strong><code>opacity</code></strong> CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.</p>
+<h3 id="border-radius-achieve-round-control-bar"><a href="#border-radius-achieve-round-control-bar" class="headerlink" title="border-radius  achieve round control bar"></a><code>border-radius</code>  achieve round control bar</h3><p>make circular corners</p>
+<h3 id="absolute-achieve-overlapping-images"><a href="#absolute-achieve-overlapping-images" class="headerlink" title="absolute achieve overlapping images"></a><code>absolute</code> achieve overlapping images</h3><h3 id="box-sizing-border-box-width-and-height-contain-any-border-and-padding"><a href="#box-sizing-border-box-width-and-height-contain-any-border-and-padding" class="headerlink" title="box-sizing: border-box  width and height contain any border and padding"></a><strong><code>box-sizing: border-box</code></strong>  width and height contain any border and padding</h3><p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width" target="_blank" rel="noopener"><code>width</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/height" target="_blank" rel="noopener"><code>height</code></a> properties include the content, padding, and border, but <strong>do not include the margin</strong>.</p>
+<h3 id="input-focus"><a href="#input-focus" class="headerlink" title="input:focus"></a><code>input:focus</code></h3><p>change the style when focus</p>
+<h3 id="width"><a href="#width" class="headerlink" title="width"></a><code>width</code></h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">width</span>: <span class="selector-tag">calc</span>(100% <span class="selector-tag">-</span> 20<span class="selector-tag">px</span>);</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="transition-all-0-15s-linear-Change-the-button-colour-linearly"><a href="#transition-all-0-15s-linear-Change-the-button-colour-linearly" class="headerlink" title="transition: all 0.15s linear; Change the button colour linearly"></a><code>transition: all 0.15s linear;</code> Change the button colour linearly</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">transition: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt;;</span><br></pre></td></tr></table></figure></div>
+
+<p>define the transition between two states of an element</p>
+<h3 id="line-height-same-as-the-height-making-child-elements-Vertically-centered"><a href="#line-height-same-as-the-height-making-child-elements-Vertically-centered" class="headerlink" title="line-height : same as the height making child elements Vertically centered"></a><code>line-height</code> : same as the height making child elements Vertically centered</h3><ul>
+<li>used to set the distance between lines of text</li>
+<li>On block-level elements, it specifies the minimum height of line boxes within the element.</li>
+</ul>
+<h3 id="overflow-fit-in-its-block-formatting-context"><a href="#overflow-fit-in-its-block-formatting-context" class="headerlink" title="overflow  fit in its block formatting  context"></a><code>overflow</code>  fit in its block formatting  context</h3><h3 id="Padding"><a href="#Padding" class="headerlink" title="Padding"></a><code>Padding</code></h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* vertical | horizontal */</span></span><br><span class="line"><span class="selector-tag">padding</span>: 5% 10%;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="background-url-no-repeat-adding-image-in-lt-a-gt-by-adding-class-style"><a href="#background-url-no-repeat-adding-image-in-lt-a-gt-by-adding-class-style" class="headerlink" title="background: url() no-repeat   adding image  in  &lt;a&gt;  by adding class style"></a><code>background: url() no-repeat</code>   adding image  in  &lt;a&gt;  by adding class style</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;bg-layer&gt; = &lt;bg-image&gt; || &lt;repeat-style&gt; </span><br><span class="line"></span><br><span class="line">&lt;repeat-style&gt; = repeat-x | repeat-y | [ repeat | space | round | no-repeat ]&#123;1,2&#125;</span><br><span class="line">&lt;image&gt; = &lt;url&gt; | &lt;image()&gt; | &lt;image-set()&gt; | &lt;element()&gt; | &lt;paint()&gt; | &lt;cross-fade()&gt; | &lt;gradient&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="CSS-Selectors"><a href="#CSS-Selectors" class="headerlink" title="CSS Selectors"></a><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors" target="_blank" rel="noopener">CSS Selectors</a></h4><ul>
+<li><p><strong>descendant combinator</strong> &amp;&amp; <strong>Class selectors</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.topbar_link_list</span> <span class="selector-tag">a</span><span class="selector-class">.divider</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">4px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong>child combinator</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.topbar_link_list</span> &gt; * &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong>pseudo-classes</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="code"><pre><span class="line">  // achieve hover trigger menu</span><br><span class="line">  <span class="selector-class">.topbar_wrapper</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  	<span class="attribute">color</span>: <span class="number">#fc2e7a</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">// creates a pseudo-element that is the last child of the selected element.</span><br><span class="line">  // used to realize line-through style</span><br><span class="line">  <span class="selector-class">.product_item_price_old</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">      <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#666</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+</li>
+</ul>
+<h3 id="inline-block-meaning"><a href="#inline-block-meaning" class="headerlink" title="inline-block meaning"></a><a href="https://zhuanlan.zhihu.com/p/31856017" target="_blank" rel="noopener"><code>inline-block</code> meaning</a></h3><ol>
+<li><p><code>inline-block</code> working in block elements</p>
+<p>Making elements show in one line  and still can <strong>set width and height</strong></p>
+</li>
+<li><p><code>inline-block</code> working in inline elements (&lt;span&gt;)</p>
+<ul>
+<li>still can <strong>set width and height</strong></li>
+<li>inline alignment(text align way)</li>
+</ul>
+</li>
+</ol>
+<h3 id="border-achieve-arrow-style"><a href="#border-achieve-arrow-style" class="headerlink" title="border achieve arrow style"></a><code>border</code> achieve arrow style</h3><h3 id="outlines-never-take-up-space-differ-from-borders"><a href="#outlines-never-take-up-space-differ-from-borders" class="headerlink" title="outlines never take up space (differ from borders)"></a><code>outlines</code> never take up space (differ from borders)</h3><h3 id="positon-and-float"><a href="#positon-and-float" class="headerlink" title="positon and float"></a><code>positon</code> and <code>float</code></h3><ol>
+<li><p>with <code>position: relative、float、（top / left / bottom / right）</code>simultaneously</p>
+<p>float to the location and then move basing on <code>（top / left / bottom / right）</code></p>
+</li>
+<li><p>with <code>position: absolute and float</code></p>
+<p><code>float</code> failure </p>
+</li>
+</ol>
+<h3 id="Specificity-gt-style-priority"><a href="#Specificity-gt-style-priority" class="headerlink" title="Specificity  -&gt; style priority"></a><a href="https://www.w3.org/TR/selectors-3/#specificity" target="_blank" rel="noopener"><strong>Specificity</strong></a>  -&gt; style priority</h3><h4 id="a-selector’s-specificity"><a href="#a-selector’s-specificity" class="headerlink" title="a selector’s specificity"></a>a selector’s specificity</h4><p>A selector’s specificity is calculated as follows:</p>
+<ul>
+<li>count the number of <strong>ID selectors</strong> in the selector (= a)</li>
+<li>count the number of <strong>class selectors, attributes selectors, and pseudo-classes</strong> in the selector (= b)</li>
+<li>count the number of <strong>type selectors and pseudo-elements</strong> in the selector (= c)</li>
+<li><strong>ignor</strong>e the universal selector(=d)</li>
+</ul>
+<h5 id="Example-in-Sasa"><a href="#Example-in-Sasa" class="headerlink" title="Example in Sasa"></a>Example in Sasa</h5><p>Based on the rule b,d <code>.category_expand_item a</code> has higher specificity</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="comment">/* a=0 b=2 c=0 -&gt; specificity =   2 */</span></span><br><span class="line"><span class="selector-class">.category_expand_item</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#444</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* a=0 b=1 c=0 -&gt; specificity =   1 */</span></span><br><span class="line"><span class="selector-class">.category_expand_column_container</span> * &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">18px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">6px</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class="category_expand_item"&gt;</span><br><span class="line">...</span><br><span class="line">	&lt;div class="category_expand_column_container"&gt;</span><br><span class="line">		&lt;a&gt;日霜&lt;/a&gt; </span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="important"><a href="#important" class="headerlink" title="!important"></a><code>!important</code></h4><p>this declaration <strong>overrides</strong> any other declarations</p>
+<h3 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a><code>z-index</code></h3><p>sets the z-order of a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank" rel="noopener">positioned</a> element and its descendants or flex items.</p>
+<h3 id="text-transform-uppercase"><a href="#text-transform-uppercase" class="headerlink" title="text-transform: uppercase"></a><code>text-transform: uppercase</code></h3><p>converts all characters to uppercase.</p>
+<h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><h3 id="Set-Interval-timing-and-stop"><a href="#Set-Interval-timing-and-stop" class="headerlink" title="Set Interval timing and stop"></a>Set Interval timing and stop</h3><ul>
+<li>setInterval  repeatedly calls a function with a fixed time delay between each call</li>
+<li>clearInterval </li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// set Interval timing</span></span><br><span class="line">				<span class="keyword">var</span> looptimer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">					next_on = now_on + <span class="number">1</span>;</span><br><span class="line">					<span class="keyword">if</span> (next_on == pic_div.length) &#123;next_on = <span class="number">0</span>;&#125;</span><br><span class="line">					startrun(pic_div[now_on],<span class="number">0</span>);</span><br><span class="line">					startrun(pic_div[next_on],<span class="number">100</span>);</span><br><span class="line">					buttonOff(controlb_div[now_on]);</span><br><span class="line">					buttonOn(controlb_div[next_on]);</span><br><span class="line">					now_on = next_on;</span><br><span class="line">				&#125;,<span class="number">5000</span>);</span><br><span class="line"><span class="comment">//stop changing when the mouse is over the pic</span></span><br><span class="line">				pic.onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">					clearInterval(looptimer);</span><br><span class="line">				&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><strong>Achieve Gradient Change of image color</strong></li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">startrun</span>(<span class="params">obj, target</span>) </span>&#123;</span><br><span class="line">    clearInterval(obj.timer);</span><br><span class="line">    obj.timer = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> speed = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (target &gt; obj.alpha) &#123;</span><br><span class="line">            speed = <span class="number">5</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            speed = <span class="number">-5</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (obj.alpha == target) &#123;</span><br><span class="line">            <span class="comment">//when the color back to the target, stop the loop</span></span><br><span class="line">            clearInterval(obj.timer);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            obj.alpha = obj.alpha + speed;</span><br><span class="line">            obj.style.filter = <span class="string">"alpha(opacity="</span> + obj.alpha + <span class="string">")"</span>;</span><br><span class="line">            obj.style.opacity = obj.alpha / <span class="number">100</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="number">30</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Monitor-mouse"><a href="#Monitor-mouse" class="headerlink" title="Monitor mouse"></a>Monitor mouse</h3><ul>
+<li>onmouseover</li>
+<li>onmouseout</li>
+</ul>
+<h2 id="Other-Tips"><a href="#Other-Tips" class="headerlink" title="Other Tips"></a>Other Tips</h2><h3 id="margin-overflow"><a href="#margin-overflow" class="headerlink" title="margin overflow"></a>margin overflow</h3><p><strong>Problem</strong> ： big  blank block appears in the right border</p>
+<p><strong>Solution</strong>： check the element with more width over the main border</p>
+<h3 id="folding-css-code-as-region"><a href="#folding-css-code-as-region" class="headerlink" title="folding css code as region"></a>folding css code as region</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* #region */</span></span><br><span class="line"><span class="comment">/* #endregion */</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<blockquote>
+<p>File name：StudyNotesFromSasa</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>RisksisStudy</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git常用操作</title>
     <url>/2020/10/10/Git/</url>
     <content><![CDATA[<h1 id="Git常用操作"><a href="#Git常用操作" class="headerlink" title="Git常用操作"></a>Git常用操作</h1><h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><h3 id="Create-a-new-local-repository"><a href="#Create-a-new-local-repository" class="headerlink" title="Create a new local repository."></a>Create a new local repository.</h3><p>Download your <code>lab4</code> sails system from our course room and open it with <strong>VSCode</strong>. Then, bring up the terminal.</p>
@@ -255,59 +363,6 @@
       <categories>
         <category>Git</category>
       </categories>
-  </entry>
-  <entry>
-    <title>StudyNotesFromSasa(28/12/2020)</title>
-    <url>/2020/12/28/StudyNotesFromSasa/</url>
-    <content><![CDATA[<h1 id="StudyNotesFromSasa-28-12-2020"><a href="#StudyNotesFromSasa-28-12-2020" class="headerlink" title="StudyNotesFromSasa(28/12/2020)"></a>StudyNotesFromSasa(28/12/2020)</h1><h2 id="Key-module"><a href="#Key-module" class="headerlink" title="Key module"></a>Key module</h2><ul>
-<li>picture slide board</li>
-<li>hover menu</li>
-<li>onlick menu</li>
-<li>absolute layout</li>
-<li>hover style change</li>
-</ul>
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="alpha"><a href="#alpha" class="headerlink" title="alpha"></a><code>alpha</code></h3><p>alpha parameter defines the opacity</p>
-<p>*<em>Difference  with opacity: *</em>The alpha channel can specifically set the transparency value for an attribute of the element</p>
-<h3 id="opacity"><a href="#opacity" class="headerlink" title="opacity"></a><code>opacity</code></h3><p>The <strong><code>opacity</code></strong> CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.</p>
-<h3 id="border-radius-achieve-round-control-bar"><a href="#border-radius-achieve-round-control-bar" class="headerlink" title="border-radius  achieve round control bar"></a><code>border-radius</code>  achieve round control bar</h3><p>make circular corners</p>
-<h3 id="absolute-achieve-overlapping-images"><a href="#absolute-achieve-overlapping-images" class="headerlink" title="absolute achieve overlapping images"></a><code>absolute</code> achieve overlapping images</h3><h3 id="hover-achieve-hover-trigger-menu"><a href="#hover-achieve-hover-trigger-menu" class="headerlink" title="hover achieve  hover trigger menu"></a><code>hover</code> achieve  hover trigger menu</h3><h3 id="box-sizing-border-box-width-and-height-contain-any-border-and-padding"><a href="#box-sizing-border-box-width-and-height-contain-any-border-and-padding" class="headerlink" title="box-sizing: border-box  width and height contain any border and padding"></a><strong><code>box-sizing: border-box</code></strong>  width and height contain any border and padding</h3><p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width" target="_blank" rel="noopener"><code>width</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/height" target="_blank" rel="noopener"><code>height</code></a> properties include the content, padding, and border, but <strong>do not include the margin</strong>.</p>
-<h3 id="input-focus"><a href="#input-focus" class="headerlink" title="input:focus"></a><code>input:focus</code></h3><p>change the style when focus</p>
-<h3 id="width"><a href="#width" class="headerlink" title="width"></a><code>width</code></h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">width</span>: <span class="selector-tag">calc</span>(100% <span class="selector-tag">-</span> 20<span class="selector-tag">px</span>);</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="transition-all-0-15s-linear-Change-the-button-colour-linearly"><a href="#transition-all-0-15s-linear-Change-the-button-colour-linearly" class="headerlink" title="transition: all 0.15s linear; Change the button colour linearly"></a><code>transition: all 0.15s linear;</code> Change the button colour linearly</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">transition: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt;;</span><br></pre></td></tr></table></figure></div>
-
-<p>define the transition between two states of an element</p>
-<h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><h3 id="Set-Interval-timing-and-stop"><a href="#Set-Interval-timing-and-stop" class="headerlink" title="Set Interval timing and stop"></a>Set Interval timing and stop</h3><ul>
-<li>setInterval  repeatedly calls a function with a fixed time delay between each call</li>
-<li>clearInterval </li>
-</ul>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// set Interval timing</span></span><br><span class="line">				<span class="keyword">var</span> looptimer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">					next_on = now_on + <span class="number">1</span>;</span><br><span class="line">					<span class="keyword">if</span> (next_on == pic_div.length) &#123;next_on = <span class="number">0</span>;&#125;</span><br><span class="line">					startrun(pic_div[now_on],<span class="number">0</span>);</span><br><span class="line">					startrun(pic_div[next_on],<span class="number">100</span>);</span><br><span class="line">					buttonOff(controlb_div[now_on]);</span><br><span class="line">					buttonOn(controlb_div[next_on]);</span><br><span class="line">					now_on = next_on;</span><br><span class="line">				&#125;,<span class="number">5000</span>);</span><br><span class="line"><span class="comment">//stop changing when the mouse is over the pic</span></span><br><span class="line">				pic.onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">					clearInterval(looptimer);</span><br><span class="line">				&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li><strong>Achieve Gradient Change of image color</strong></li>
-</ul>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">startrun</span>(<span class="params">obj, target</span>) </span>&#123;</span><br><span class="line">    clearInterval(obj.timer);</span><br><span class="line">    obj.timer = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> speed = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (target &gt; obj.alpha) &#123;</span><br><span class="line">            speed = <span class="number">5</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            speed = <span class="number">-5</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (obj.alpha == target) &#123;</span><br><span class="line">            <span class="comment">//when the color back to the target, stop the loop</span></span><br><span class="line">            clearInterval(obj.timer);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            obj.alpha = obj.alpha + speed;</span><br><span class="line">            obj.style.filter = <span class="string">"alpha(opacity="</span> + obj.alpha + <span class="string">")"</span>;</span><br><span class="line">            obj.style.opacity = obj.alpha / <span class="number">100</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="number">30</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="Monitor-mouse"><a href="#Monitor-mouse" class="headerlink" title="Monitor mouse"></a>Monitor mouse</h3><ul>
-<li>onmouseover</li>
-<li>onmouseout</li>
-</ul>
-<h2 id="Other-Tips"><a href="#Other-Tips" class="headerlink" title="Other Tips"></a>Other Tips</h2><h3 id="margin-overflow"><a href="#margin-overflow" class="headerlink" title="margin overflow"></a>margin overflow</h3><p><strong>Problem</strong> ： big  blank block appears in the right border</p>
-<p><strong>Solution</strong>： check the element with more width over the main border</p>
-<h3 id="folding-css-code-as-region"><a href="#folding-css-code-as-region" class="headerlink" title="folding css code as region"></a>folding css code as region</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* #region */</span></span><br><span class="line"><span class="comment">/* #endregion */</span></span><br></pre></td></tr></table></figure></div>
-
-
-
-<blockquote>
-<p>File name：StudyNotesFromSasa</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>RisksisStudy</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-      </tags>
   </entry>
   <entry>
     <title>树的遍历</title>

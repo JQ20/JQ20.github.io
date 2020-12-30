@@ -82,7 +82,7 @@
 <meta name="description" content="Work harder to be better">
 <meta property="og:type" content="website">
 <meta property="og:title" content="JQBlog">
-<meta property="og:url" content="https://github.com/JQ20/JQ20.github.io.git/tags/Java/index.html">
+<meta property="og:url" content="https://github.com/JQ20/JQ20.github.io.git/tags/JAVA/index.html">
 <meta property="og:site_name" content="JQBlog">
 <meta property="og:description" content="Work harder to be better">
 <meta property="article:author" content="JamesQiang">
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/JQ20/JQ20.github.io.git/tags/Java/"/>
+  <link rel="canonical" href="https://github.com/JQ20/JQ20.github.io.git/tags/JAVA/"/>
 
 
 
 
 
-  <title>标签: Java | JQBlog</title>
+  <title>标签: JAVA | JQBlog</title>
   
 
 
@@ -290,7 +290,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Java<small>标签</small>
+        <h1>JAVA<small>标签</small>
         </h1>
       </div>
 
@@ -302,37 +302,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2020/09/30/JavaMethod/" itemprop="url">
+            <a class="post-title-link" href="/2020/10/02/JavaSE/" itemprop="url">
               
-                <span itemprop="name">Java常用方法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-09-30T16:00:00+08:00"
-              content="2020-09-30" >
-          09-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/25/javaweb1/" itemprop="url">
-              
-                <span itemprop="name">JavaWeb(一)</span>
+                <span itemprop="name">JavaSE查漏补缺</span>
               
             </a>
         
@@ -340,93 +312,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-25T14:24:36+08:00"
-              content="2020-07-25" >
-          07-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/06/13/JB2/" itemprop="url">
-              
-                <span itemprop="name">JavaBasics（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-06-13T21:36:37+08:00"
-              content="2020-06-13" >
-          06-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/06/09/JB1/" itemprop="url">
-              
-                <span itemprop="name">JavaBasics（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-06-09T15:38:45+08:00"
-              content="2020-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/06/08/JavaRoad/" itemprop="url">
-              
-                <span itemprop="name">JavaStduyRoad</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-06-08T22:04:40+08:00"
-              content="2020-06-08" >
-          06-08
+              datetime="2020-10-02T19:31:00+08:00"
+              content="2020-10-02" >
+          10-02
         </time>
       </div>
 
@@ -572,7 +460,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">54.9k</span>
+    <span title="Site words total count">55.4k</span>
   
 </div>
 
@@ -986,6 +874,100 @@
                   resultItems.push({
                     item: resultItem,
                     searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+earchTextCount,
                     hitCount: hitCount,
                     id: resultItems.length
                   });
