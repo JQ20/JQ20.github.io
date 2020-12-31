@@ -222,21 +222,31 @@
       </tags>
   </entry>
   <entry>
-    <title>StudyNotesFromSasa(28-30/12/2020)</title>
-    <url>/2020/12/29/StudyNotesFromSasa/</url>
-    <content><![CDATA[<h1 id="StudyNotesFromSasa-28-30-12-2020"><a href="#StudyNotesFromSasa-28-30-12-2020" class="headerlink" title="StudyNotesFromSasa(28-30/12/2020)"></a>StudyNotesFromSasa(28-30/12/2020)</h1><h2 id="Key-module"><a href="#Key-module" class="headerlink" title="Key module"></a>Key module</h2><ul>
-<li>picture slide board</li>
-<li>hover menu</li>
-<li>onlick menu</li>
-<li>absolute layout</li>
-<li>hover style change</li>
+    <title>StudyNotesFromSasa(28-31/12/2020)</title>
+    <url>/2020/12/31/StudyNotesFromSasa/</url>
+    <content><![CDATA[<h1 id="StudyNotesFromSasa-28-31-12-2020"><a href="#StudyNotesFromSasa-28-31-12-2020" class="headerlink" title="StudyNotesFromSasa(28-31/12/2020)"></a>StudyNotesFromSasa(28-31/12/2020)</h1><h2 id="Key-module"><a href="#Key-module" class="headerlink" title="Key module"></a>Key module</h2><ul>
+<li><p>slide board function module</p>
+</li>
+<li><p>scroll up module</p>
+</li>
+<li><p>picture slide board</p>
+</li>
+<li><p>hover menu</p>
+</li>
+<li><p>onclick menu</p>
+</li>
+<li><p>absolute layout</p>
+</li>
+<li><p>hover style change</p>
+</li>
 </ul>
 <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="lt-a-target-quot-quot-Where-to-display-the-linked-URL"><a href="#lt-a-target-quot-quot-Where-to-display-the-linked-URL" class="headerlink" title="&lt;a target=&quot;&quot;  Where to display the linked URL"></a><code>&lt;a target=&quot;&quot;</code>  Where to display the linked URL</h3><p><code>_blank</code>: usually <strong>a new tab</strong>, but users can configure browsers to open a new window instead.</p>
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="alpha"><a href="#alpha" class="headerlink" title="alpha"></a><code>alpha</code></h3><p>alpha parameter defines the opacity</p>
 <p>*<em>Difference  with opacity: *</em>The alpha channel can specifically set the transparency value for an attribute of the element</p>
 <h3 id="opacity"><a href="#opacity" class="headerlink" title="opacity"></a><code>opacity</code></h3><p>The <strong><code>opacity</code></strong> CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.</p>
 <h3 id="border-radius-achieve-round-control-bar"><a href="#border-radius-achieve-round-control-bar" class="headerlink" title="border-radius  achieve round control bar"></a><code>border-radius</code>  achieve round control bar</h3><p>make circular corners</p>
-<h3 id="absolute-achieve-overlapping-images"><a href="#absolute-achieve-overlapping-images" class="headerlink" title="absolute achieve overlapping images"></a><code>absolute</code> achieve overlapping images</h3><h3 id="box-sizing-border-box-width-and-height-contain-any-border-and-padding"><a href="#box-sizing-border-box-width-and-height-contain-any-border-and-padding" class="headerlink" title="box-sizing: border-box  width and height contain any border and padding"></a><strong><code>box-sizing: border-box</code></strong>  width and height contain any border and padding</h3><p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width" target="_blank" rel="noopener"><code>width</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/height" target="_blank" rel="noopener"><code>height</code></a> properties include the content, padding, and border, but <strong>do not include the margin</strong>.</p>
+<h3 id="absolute-achieve-overlapping-images"><a href="#absolute-achieve-overlapping-images" class="headerlink" title="absolute achieve overlapping images"></a><code>absolute</code> achieve overlapping images</h3><h3 id="Fixed-achieve-scroll-bar"><a href="#Fixed-achieve-scroll-bar" class="headerlink" title="Fixed achieve scroll bar"></a><code>Fixed</code> achieve scroll bar</h3><p>when scroll bar occurs, the element won’t change its position, which is different from <code>absolute</code></p>
+<h3 id="box-sizing-border-box-width-and-height-contain-any-border-and-padding"><a href="#box-sizing-border-box-width-and-height-contain-any-border-and-padding" class="headerlink" title="box-sizing: border-box  width and height contain any border and padding"></a><strong><code>box-sizing: border-box</code></strong>  width and height contain any border and padding</h3><p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width" target="_blank" rel="noopener"><code>width</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/height" target="_blank" rel="noopener"><code>height</code></a> properties include the content, padding, and border, but <strong>do not include the margin</strong>.</p>
 <h3 id="input-focus"><a href="#input-focus" class="headerlink" title="input:focus"></a><code>input:focus</code></h3><p>change the style when focus</p>
 <h3 id="width"><a href="#width" class="headerlink" title="width"></a><code>width</code></h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">width</span>: <span class="selector-tag">calc</span>(100% <span class="selector-tag">-</span> 20<span class="selector-tag">px</span>);</span><br></pre></td></tr></table></figure></div>
 
@@ -259,7 +269,8 @@
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.topbar_link_list</span> &gt; * &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 </li>
 <li><p><strong>pseudo-classes</strong></p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="code"><pre><span class="line">  // achieve hover trigger menu</span><br><span class="line">  <span class="selector-class">.topbar_wrapper</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  	<span class="attribute">color</span>: <span class="number">#fc2e7a</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">// creates a pseudo-element that is the last child of the selected element.</span><br><span class="line">  // used to realize line-through style</span><br><span class="line">  <span class="selector-class">.product_item_price_old</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">      <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#666</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="code"><pre><span class="line">// achieve hover trigger menu</span><br><span class="line"><span class="selector-class">.topbar_wrapper</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#fc2e7a</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// creates a pseudo-element that is the last child of the selected element.</span><br><span class="line">  // used to realize line-through style</span><br><span class="line">  <span class="selector-class">.product_item_price_old</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">      <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#666</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></div>
+
 
 
 
@@ -291,8 +302,9 @@
 <li>count the number of <strong>type selectors and pseudo-elements</strong> in the selector (= c)</li>
 <li><strong>ignor</strong>e the universal selector(=d)</li>
 </ul>
-<h5 id="Example-in-Sasa"><a href="#Example-in-Sasa" class="headerlink" title="Example in Sasa"></a>Example in Sasa</h5><p>Based on the rule b,d <code>.category_expand_item a</code> has higher specificity</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="comment">/* a=0 b=2 c=0 -&gt; specificity =   2 */</span></span><br><span class="line"><span class="selector-class">.category_expand_item</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#444</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* a=0 b=1 c=0 -&gt; specificity =   1 */</span></span><br><span class="line"><span class="selector-class">.category_expand_column_container</span> * &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">18px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">6px</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class="category_expand_item"&gt;</span><br><span class="line">...</span><br><span class="line">	&lt;div class="category_expand_column_container"&gt;</span><br><span class="line">		&lt;a&gt;日霜&lt;/a&gt; </span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="Example-in-Sasa"><a href="#Example-in-Sasa" class="headerlink" title="Example in Sasa"></a>Example in Sasa</h5><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="code"><pre><span class="line">// Based on the rule b,d `.category_expand_item a` has higher specificity</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="comment">/* a=0 b=2 c=0 -&gt; specificity =   2 */</span></span></span><br><span class="line"><span class="css"><span class="selector-class">.category_expand_item</span> <span class="selector-tag">a</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#444</span>;</span></span><br><span class="line">    display: block;</span><br><span class="line">    float: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="comment">/* a=0 b=1 c=0 -&gt; specificity =   1 */</span></span></span><br><span class="line"><span class="css"><span class="selector-class">.category_expand_column_container</span> * &#123;</span></span><br><span class="line">    float: left;</span><br><span class="line">    font-size: 12px;</span><br><span class="line">    line-height: 18px;</span><br><span class="line">    padding: 0 6px 0 0;</span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#999</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"category_expand_item"</span>&gt;</span></span><br><span class="line">...</span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"category_expand_column_container"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">a</span>&gt;</span>日霜<span class="tag">&lt;/<span class="name">a</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
 
 <h4 id="important"><a href="#important" class="headerlink" title="!important"></a><code>!important</code></h4><p>this declaration <strong>overrides</strong> any other declarations</p>
 <h3 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a><code>z-index</code></h3><p>sets the z-order of a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank" rel="noopener">positioned</a> element and its descendants or flex items.</p>
@@ -312,12 +324,27 @@
 <li>onmouseover</li>
 <li>onmouseout</li>
 </ul>
+<h2 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h2><h3 id="document-ready"><a href="#document-ready" class="headerlink" title="$(document).ready"></a><code>$(document).ready</code></h3><ul>
+<li>do things when page is fully loaded</li>
+<li>can shorten as <code>$(function(){})</code></li>
+</ul>
+<h3 id="Difference-of-window-and-document"><a href="#Difference-of-window-and-document" class="headerlink" title="Difference of window and document"></a>Difference of <code>window and document</code></h3><ol>
+<li><p><code>$(window).load(function(){})</code> must wait until all the elements in the page, including the image, have loaded</p>
+<p><code>$(document).ready()</code> when DOM drawing is completed, without waiting until the loading is completed.</p>
+</li>
+</ol>
+<h3 id="scrollTop"><a href="#scrollTop" class="headerlink" title="scrollTop()"></a><code>scrollTop()</code></h3><p><em>Get the current vertical position of the scroll bar for the first element</em></p>
+<h3 id="fadein-out"><a href="#fadein-out" class="headerlink" title="fadein/out()"></a><code>fadein/out()</code></h3><h3 id="animate"><a href="#animate" class="headerlink" title=".animate()"></a><code>.animate()</code></h3><p>used to create  <em>perform a custom animation</em></p>
+<p>like <code>animate({&#39;margin-left&#39;: &#39;+=&#39; + bias + &#39;px&#39;}, delay);</code></p>
+<ul>
+<li>we can use this function to realize the slide animation by setting correct delay</li>
+<li>we can realise the scroll to top button</li>
+</ul>
 <h2 id="Other-Tips"><a href="#Other-Tips" class="headerlink" title="Other Tips"></a>Other Tips</h2><h3 id="margin-overflow"><a href="#margin-overflow" class="headerlink" title="margin overflow"></a>margin overflow</h3><p><strong>Problem</strong> ： big  blank block appears in the right border</p>
 <p><strong>Solution</strong>： check the element with more width over the main border</p>
 <h3 id="folding-css-code-as-region"><a href="#folding-css-code-as-region" class="headerlink" title="folding css code as region"></a>folding css code as region</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* #region */</span></span><br><span class="line"><span class="comment">/* #endregion */</span></span><br></pre></td></tr></table></figure></div>
 
-
-
+<h3 id="engine-code"><a href="#engine-code" class="headerlink" title="engine-code"></a><a href="https://www.cnblogs.com/EasonJim/p/6140097.html" target="_blank" rel="noopener">engine-code</a></h3><p>Every browser is backed by a rendering engine to draw the HTML/CSS web page.</p>
 <blockquote>
 <p>File name：StudyNotesFromSasa</p>
 </blockquote>
